@@ -1,0 +1,38 @@
+■ 카카오 API
+ - https://developers.kakao.com/
+   회원가입 필요
+ - 내어플리케이션 플랫폼 웹사이트 등록 필요
+    http://localhost 로 등록
+
+ 1. 카카오 로그인
+참고 사이트
+	https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api
+
+	https://tyrannocoding.tistory.com/61
+
+	https://velog.io/@hwan2da/Spring-%EC%B9%B4%EC%B9%B4%EC%98%A4-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0
+
+■ 아래 순서대로 설정 필요
+1. 플랫폼 등록
+2. 카카오 로그인 활성화
+3. Redirect URI 등록
+	아래 5개 등록 필요	
+	http://localhost/mvc/member/enroll/kakao
+	http://localhost/mvc/kakaoLogin
+	http://localhost/mvc/kakaoPaySuccess
+	http://localhost/mvc/kakaoPayCancel
+	http://localhost/mvc/kakaoPaySuccessFail
+
+4. 동의 항목
+5. REST API 코드 등록
+------------------------------필수
+OpenID Connect 활성화(선택)
+간편가입(카카오싱크 전용)
+
+-------------------------------------------------------
+ ■ 카카오 지도
+   개발자 : https://apis.map.kakao.com/web/sample/
+
+ ■ 카카오 페이
+   개발자 : https://developers.kakao.com/docs/latest/ko/kakaopay/common
+ https://velog.io/@hyoreal51/Main-project-Spring-Boot-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%8E%98%EC%9D%B4-API-%EC%97%B0%EB%8F%99
