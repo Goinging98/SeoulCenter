@@ -8,10 +8,29 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 
-<c:forEach var="item" items="${list}">
- 	${item.title}
+<c:forEach var="aItem" items="${aList}">
+ 	${aItem.title}
  	<br>
+</c:forEach>
 
+<c:forEach var="cItem" items="${cList}">
+ 	${cItem.title}
+ 	<br>
+</c:forEach>
+
+<c:forEach var="tItem" items="${tList}">
+ 	${tItem.title}
+ 	<br>
+</c:forEach>
+
+<c:forEach var="fItem" items="${fList}">
+ 	${fItem.title}
+ 	<br>
+</c:forEach>
+
+<c:forEach var="foItem" items="${foList}">
+ 	${foItem.title}
+ 	<br>
 </c:forEach>
 
 
@@ -190,6 +209,7 @@
 		<div class="tns-carousel-inner"
 			data-carousel-options="{&quot;items&quot;: 4, &quot;gutter&quot;: 24, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1,&quot;nav&quot;:true},&quot;500&quot;:{&quot;items&quot;:2},&quot;850&quot;:{&quot;items&quot;:3},&quot;1400&quot;:{&quot;items&quot;:4,&quot;nav&quot;:false}}}">
 			<!-- Item-->
+			<c:forEach var="aItem" items="${aList}" begin="0" end="5">
 			<div>
 				<div class="position-relative">
 					<div class="position-relative mb-3">
@@ -204,8 +224,9 @@
 							width="300px" height="250px">
 					</div>
 					<h3 class="mb-2 fs-lg">
-						<a class="nav-link stretched-link" href="city-guide-single.html">Berlin
-							Business Hotel</a>
+						<a class="nav-link stretched-link" href="city-guide-single.html">
+							<c:out value="${aItem.title}"></c:out>
+						</a>
 					</h3>
 					<ul class="list-inline mb-0 fs-xs">
 						<li class="list-inline-item pe-1"><i
@@ -219,6 +240,7 @@
 					</ul>
 				</div>
 			</div>
+			</c:forEach>
 			<!-- Item-->
 			<div>
 				<div class="position-relative">
