@@ -7,6 +7,26 @@
 
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
+<<<<<<< HEAD
+=======
+
+<c:forEach var="aItem" items="${aList}">
+ 	${aItem.title}
+ 	<br>
+</c:forEach>
+
+<c:forEach var="cItem" items="${cList}">
+ 	${cItem.title}
+ 	<br>
+</c:forEach>
+
+
+
+
+
+
+
+>>>>>>> refs/remotes/origin/master
 <style>
 	.video-container {
 		position: relative;
