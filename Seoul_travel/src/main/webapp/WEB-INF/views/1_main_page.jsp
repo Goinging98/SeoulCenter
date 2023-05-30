@@ -18,10 +18,7 @@
  	<br>
 </c:forEach>
 
-<c:forEach var="tItem" items="${tList}">
- 	${tItem.title}
- 	<br>
-</c:forEach>
+
 
 
 
