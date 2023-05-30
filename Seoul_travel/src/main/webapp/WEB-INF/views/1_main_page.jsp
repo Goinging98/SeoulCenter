@@ -23,10 +23,6 @@
  	<br>
 </c:forEach>
 
-<c:forEach var="fItem" items="${fList}">
- 	${fItem.title}
- 	<br>
-</c:forEach>
 
 
 
