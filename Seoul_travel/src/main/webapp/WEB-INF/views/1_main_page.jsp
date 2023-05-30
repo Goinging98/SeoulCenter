@@ -28,10 +28,7 @@
  	<br>
 </c:forEach>
 
-<c:forEach var="foItem" items="${foList}">
- 	${foItem.title}
- 	<br>
-</c:forEach>
+
 
 
 <style>
