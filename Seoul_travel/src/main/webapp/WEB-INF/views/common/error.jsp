@@ -3,12 +3,10 @@
 
 <html>
 <head>
-	<title>Error!!!</title>
+<title>Error!!!</title>
 </head>
 <body>
-<h1 style="color: red;">
-	ERROR가 발생하였습니다!!  
-</h1>
+	<h1 style="color: red;">ERROR가 발생하였습니다!!</h1>
 
 </body>
 </html>

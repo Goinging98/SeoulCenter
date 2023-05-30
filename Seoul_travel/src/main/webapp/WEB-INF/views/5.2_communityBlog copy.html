@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>서울상담소</title>
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Finder - Directory &amp; Listings Bootstrap Template">
+  <meta name="keywords"
+    content="bootstrap, business, directory, listings, e-commerce, car dealer, city guide, real estate, job board, user account, multipurpose, ui kit, html5, css3, javascript, gallery, slider, touch">
+  <meta name="author" content="Createx Studio">
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="img\city-guide\logo\logo.gif">
+  <link rel="icon" type="image/png" sizes="32x32" href="img\city-guide\logo\logo.gif">
+  <link rel="icon" type="image/png" sizes="16x16" href="img\city-guide\logo\logo.gif">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+  <meta name="msapplication-TileColor" content="#766df4">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Page loading styles-->
+  <style>
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #666276;
+      ;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #bbb7c5;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <!-- Page loading scripts-->
+  <script>
+    (function () {
+      window.onload = function () {
+        var preloader = document.querySelector('.page-loading');
+        preloader.classList.remove('active');
+        setTimeout(function () {
+          preloader.remove();
+        }, 2000);
+      };
+    })();
+
+  </script>
+  <!-- Vendor Styles-->
+  <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css" />
+  <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css" />
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="css/theme.min.css">
+</head>
+<!-- Body-->
+
+<body class="fixed-bottom-btn">
+  <!-- Page loading spinner-->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>Loading...</span>
+    </div>
+  </div>
+  <main class="page-wrapper">
+    <!-- Sign In Modal-->
+    <div class="modal fade" id="signin-modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered p-2 my-0 mx-auto" style="max-width: 950px;">
+        <div class="modal-content">
+          <div class="modal-body px-0 py-2 py-sm-0">
+            <button class="btn-close position-absolute top-0 end-0 mt-3 me-3" type="button"
+              data-bs-dismiss="modal"></button>
+            <div class="row mx-0 align-items-center">
+              <div class="col-md-6 border-end-md p-4 p-sm-5">
+                <h2 class="h3 mb-4 mb-sm-5">안녕하세요!<br>방문해주셔서 감사합니다.</h2><img class="d-block mx-auto"
+                  src="img/signin-modal/signin.svg" width="344" alt="Illustartion">
+                <div class="mt-4 mt-sm-5">서울상담소의 회원이 아니신가요? <a href="#signup-modal" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">회원가입</a></div>
+              </div>
+              <div class="col-md-6 px-4 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5"><a
+                  class="btn btn-outline-info rounded-pill w-100 mb-3" href="#"><i class="fi-google fs-lg me-1"></i>Sign
+                  in with Google</a><a class="btn btn-outline-info rounded-pill w-100 mb-3" href="#"><i
+                    class="fi-facebook fs-lg me-1"></i>Sign in with Facebook</a>
+                <div class="d-flex align-items-center py-3 mb-3">
+                  <hr class="w-100">
+                  <div class="px-3"></div>
+                  <hr class="w-100">
+                </div>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-4">
+                    <label class="form-label mb-2" for="signin-email">아이디</label>
+                    <input class="form-control" type="email" id="signin-email" placeholder="이메일을 입력하세요." required>
+                  </div>
+                  <div class="mb-4">
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                      <label class="form-label mb-0" for="signin-password">비밀번호</label><a class="fs-sm" href="#">비밀번호
+                        찾기</a>
+                    </div>
+                    <div class="password-toggle">
+                      <input class="form-control" type="password" id="signin-password" placeholder="비밀번호를 입력하세요."
+                        required>
+                      <label class="password-toggle-btn" aria-label="Show/hide password">
+                        <input class="password-toggle-check" type="checkbox"><span
+                          class="password-toggle-indicator"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <button class="btn btn-primary btn-lg rounded-pill w-100" type="submit">로그인</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Sign Up Modal-->
+    <div class="modal fade" id="signup-modal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered p-2 my-0 mx-auto" style="max-width: 950px;">
+        <div class="modal-content">
+          <div class="modal-body px-0 py-2 py-sm-0">
+            <button class="btn-close position-absolute top-0 end-0 mt-3 me-3" type="button"
+              data-bs-dismiss="modal"></button>
+            <div class="row mx-0 align-items-center">
+              <div class="col-md-6 border-end-md p-4 p-sm-5">
+                <h2 class="h3 mb-4 mb-sm-5">서울상담소의<br>회원이 되어보세요.</h2>
+                <ul class="list-unstyled mb-4 mb-sm-5">
+                  <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span>서울에 숙소를 한눈에 보고 예약해
+                      보세요.</span></li>
+                  <li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i><span>마음에 드는 곳을 찜하고 방문해
+                      보세요.</span></li>
+                  <li class="d-flex mb-0"><i class="fi-check-circle text-primary mt-1 me-2"></i><span>서울상담소 회원들의 리뷰를
+                      만나보세요.</span></li>
+                </ul><img class="d-block mx-auto" src="img/signin-modal/signup.svg" width="344" alt="Illustartion">
+                <div class="mt-sm-4 pt-md-3">이미 계정이 있으신가요? <a href="#signin-modal" data-bs-toggle="modal"
+                    data-bs-dismiss="modal">로그인</a></div>
+              </div>
+              <div class="col-md-6 px-4 pt-2 pb-4 px-sm-5 pb-sm-5 pt-md-5"><a
+                  class="btn btn-outline-info rounded-pill w-100 mb-3" href="#"><i class="fi-google fs-lg me-1"></i>Sign
+                  in with Google</a><a class="btn btn-outline-info rounded-pill w-100 mb-3" href="#"><i
+                    class="fi-facebook fs-lg me-1"></i>Sign in with Facebook</a>
+                <div class="d-flex align-items-center py-3 mb-3">
+                  <hr class="w-100">
+                  <div class="px-3"></div>
+                  <hr class="w-100">
+                </div>
+                <form class="needs-validation" novalidate>
+                  <div class="mb-4">
+                    <label class="form-label" for="signup-name">이름</label>
+                    <input class="form-control" type="text" id="signup-name" placeholder="이름을 입력하세요" required>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label" for="signup-email">이메일</label>
+                    <input class="form-control" type="email" id="signup-email" placeholder="이메일을 입력하세요" required>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label" for="signup-password">비밀번호 <span class='fs-sm text-muted'>최소 8자
+                        이상</span></label>
+                    <div class="password-toggle">
+                      <input class="form-control" type="password" id="signup-password" minlength="8" required>
+                      <label class="password-toggle-btn" aria-label="Show/hide password">
+                        <input class="password-toggle-check" type="checkbox"><span
+                          class="password-toggle-indicator"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="form-label" for="signup-password-confirm">비밀번호 확인</label>
+                    <div class="password-toggle">
+                      <input class="form-control" type="password" id="signup-password-confirm" minlength="8" required>
+                      <label class="password-toggle-btn" aria-label="Show/hide password">
+                        <input class="password-toggle-check" type="checkbox"><span
+                          class="password-toggle-indicator"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="agree-to-terms" required>
+                    <label class="form-check-label" for="agree-to-terms"><a href='#'>이용약관</a> 및 <a href='#'>개인정보
+                        보호정책</a>에 동의합니다.</label>
+                  </div>
+                  <button class="btn btn-primary btn-lg rounded-pill w-100" type="submit">회원가입</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar-->
+    <header class="navbar navbar-expand-lg navbar-light bg-white fixed-top" data-scroll-header>
+      <div class="container"><a class="navbar-brand me-3 me-xl-4" href="1_main_page.html"><img class="d-block"
+            src="img\city-guide\logo\logo.gif" width="116" alt="Finder"></a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button><a class="btn btn-sm text-primary d-none d-lg-block order-lg-3"
+          href="#signin-modal" data-bs-toggle="modal"><i class="fi-user me-2"></i>Sign in</a>
+        <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+          <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
+  
+            <!-- Menu items-->
+            <li class="nav-item dropdown active"><a class="nav-link" href="1_main_page.html" role="button"
+                aria-expanded="false"><strong>Home</strong></a>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" href="3_food.html" role="button"
+                aria-expanded="false"><strong>맛집</strong></a>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" href="4_accommodation.html" role="button"
+                aria-expanded="false"><strong>숙소</strong></a>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" href="2_hotplace.html" role="button"
+                aria-expanded="false"><strong>핫플레이스</strong></a>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link" href="5_community.html" role="button"
+                aria-expanded="false"><strong>커뮤니티</strong></a>
+            </li>
+            <li class="nav-item d-lg-none"><a class="nav-link" href="#signin-modal" data-bs-toggle="modal"><i
+                  class="fi-user me-2"></i>Sign in</a></li>
+          </ul>
+        </div>
+      </div>
+    </header> 
+    <!-- 사진 띠 부분-->
+    <section class="bg-dark-overlay-4"
+      style="background-image:url( 'img/community/d94ed70d0a33341d.jpg' ); background-position: center left; background-size: cover; margin-top: 120px; ">
+      <div class="container ">
+        <div class="row ">
+          <div class="col-lg-8 py-xxl-5 my-lg-4 ">
+            <a href="#" class="badge text-bg-primary mb-2"><i class="fas fa-circle me-2 small fw-bold"></i></a>
+            <h1 class="mice text-white fw-bold mb-2"></h1>
+            <p class="mice lead text-white fw-bold mb-0"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page container-->
+    <div class="container mb-md-4 mt-0 pt-4">
+      <!-- Breadcrumb-->
+      <nav class="pt-md-3" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
+          <li class="breadcrumb-item"><a href="5_community.html"><strong>커뮤니티</strong></a></li>
+          <li class="breadcrumb-item active" aria-current="page"><strong>파씽씽식당</strong></li>
+        </ol>
+      </nav>
+      <!-- 사진 -->
+      <h1 class="h2 pb-3" style="text-align: center; margin-top: 100px;">(내돈내산)베리와 함께하는 서울 나가하마만게츠 후기</h1>
+      <div style="text-align: center;">
+        <img class="rounded-3" src="img\city-guide\community\restaurant2.jpeg" alt="Post image" width="800"
+          height="150">
+      </div>
+
+      <div class="row mt-4 pt-3">
+
+        <!-- Sidebar (offcanvas)-->
+        <aside class="col-lg-4">
+          <!-- Offcanvas-->
+          <div class="offcanvas offcanvas-start offcanvas-collapse pe-lg-1" id="blog-sidebar">
+            <div class="offcanvas-header shadow-sm mb-2">
+              <h3 class="h5 offcanvas-title">Sidebar</h3>
+              <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Search-->
+              <div class="position-relative mb-4">
+                <input class="form-control pe-5" type="text" placeholder="검색어를 입력해주세요."><i
+                  class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
+              </div>
+              <!-- Author-->
+              <div class="card card-flush py-2 py-lg-0 mb-4">
+                <div class="card-body d-flex align-items-start"><img class="me-3 rounded-circle"
+                    src="img/avatars/28.png" width="80" alt="Avatar">
+                  <div>
+                    <h4 class="h5 mb-2"><a class="nav-link stretched-link p-0 fw-bold" href="#">자고싶은 코딩맨</a></h4><span
+                      class="d-block mb-3 fs-sm">정회원</span>
+                    <div class="position-relative zindex-5 text-nowrap"><a
+                        class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i
+                          class="fi-facebook"></i></a><a
+                        class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i
+                          class="fi-twitter"></i></a><a
+                        class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2 mb-2" href="#"><i
+                          class="fi-instagram"></i></a></div>
+                  </div>
+                </div>
+              </div>
+              <!-- Categories-->
+              <div class="card card-flush pb-2 pb-lg-0 mb-4">
+                <div class="card-body">
+                  <h3 class="h5">커뮤니티</h3><a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+                    href="5.2_communityBlog.html">공지사항<span class="text-muted ms-394">(2)</span></a><a
+                    class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="5.2_communityBlog.html">핫플레이스<span
+                      class="text-muted ms-300">(4)</span></a><a
+                    class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="5.2_communityBlog.html">맛집<span
+                      class="text-muted ms-300">(5)</span></a><a
+                    class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="5.2_communityBlog.html">숙소<span
+                      class="text-muted ms-2">(1)</span></a><a
+                    class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="5.2_communityBlog.html">Q & A 게시판<span
+                      class="text-muted ms-2">(8)</span></a>
+                </div>
+              </div>
+              <!-- Tags-->
+              <div class="card card-flush pb-2 pb-lg-0 mb-4">
+                <div class="card-body">
+                  <h4 class="h5">여행 태그</h4>
+                  <div class="d-flex flex-wrap mb-n1">
+                    <button
+                      class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">핫플콕콕</button>
+                    <button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼래
+                      터~?</button>
+                    <button
+                      class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
+                    <button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집
+                      맛집</button>
+                    <button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주
+                      핫플</button>
+                    <button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS
+                      핫플!!</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Subscribe-->
+              <div class="card card-flush mb-4">
+
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!-- Post content-->
+        <div class="col-lg-8">
+          <!-- Post meta-->
+          <div class="d-flex flex-wrap border-bottom pb-3 mb-4"><a
+              class="text-uppercase text-decoration-none border-end pe-3 me-3 mb-2" href="#">맛집</a>
+            <div class="d-flex align-items-center border-end pe-3 me-3 mb-2"><i
+                class="fi-calendar-alt opacity-70 me-2"></i><span>2023.05.23</span></div>
+            <div class="d-flex align-items-center border-end pe-3 me-3 mb-2"><i
+                class="fi-clock opacity-70 me-2"></i><span>8분</span></div><a
+              class="nav-link-muted d-flex align-items-center mb-2" href="#"><i
+                class="fi-chat-circle opacity-70 me-2"></i><span>댓글 3개</span></a>
+          </div>
+          <p class="fs-lg fw-bold text-dark mb-4">안녕하세요! 저번주 해운대에 다녀와서 써보는 라멘 맛집 후기입니다!!! </p>
+          <p>사실 여기는 줄이 너무 길어서 테이블링서비스를 미리 하는게 좋은데요 직접가서 여기 기계에 예약하니
+            2시간정도 소요되었습니다 그래서 2시쯤 예약해서 4시에 먹었어요ㅜ 테이블링 이라는 앱이있는데 꼭 그걸로 가시기 두시간 전 미리 예약해 두세요!!! 생각보다 먹고 빠지는 속도가 많이 느립니다ㅜㅜ
+          </p>
+          <p>그래서 예약해두고 저는 해리단길을 구경하면서 여기저기 시간을 보냈습니다 ㅋㅋㅋㅋ
+            그리고 한 세명쯤 남았을때 이동해서 앞에서 기다리다 들어갔어요 내부는 이렇습니다.
+            직원분들이 일본사람처럼 저렇게 이마에 띠를 두르고 계셨습니다 ㅋㅋㅋㅋ
+            들어가자 마자 먼저 주문부터 했는데요 저희는 나가하마라멘 단품 둘 라멘교자세트하나 이렇게 주문했습니다 ㅋㅋㅋㅋ
+            술좋아하는 이강님은 생맥도 추가로 주문했어요ㅋㅋㅋㅋ
+            그리고 직원분이 오셔서 짐이 무거우면 여기 보관하라고 보관대에 옮겨주셨습니다 ㅋㅋㅋㅋㅋㅋ
+          </p>
+          희희 친절하셔서 넘 조아 안할수가 없는 비주얼,,,
+          면도 적당하니 진짜 오랫만에 이런 맛집입니다 포항에는 전문적으로 하는 집이래도
+          가보면 그냥 그런데가 종종 있는데 여기는 진짜 육수만 36시간끓였다는거 보니 지대네요
+          [
+          <p>
+
+          </p>
+          <blockquote class="blockquote pb-2">
+            <p>그리고 후식으로 나오는 크림치즈인데 이거 진짜 개 미쳤습니다
+              왜 이걸 따로 파는지 알겠더라구요 쫀득하고 입에들어가면 사르르 부드러운데 달콤하고
+              이거 머 말로 표현이 안돼요 23000원에 세트로 구매할수 있더라구요
+              이거 쓰면서 또 먹고 싶어지네요,,
+            </p>
+            <footer class="fs-base">— 자고싶은 코딩맨</footer>
+            <!--</blockquote> -->
+
+            <!-- Tags + Sharing-->
+            <div class="pt-4">
+              <div class="d-md-flex align-items-center justify-content-between border-top pt-4">
+                <div class="d-flex align-items-center me-3 mb-3 mb-md-0">
+                  <div class="d-none d-sm-block fw-bold text-nowrap mb-2 me-2 pe-1">Tags:</div>
+                  <div class="d-flex flex-wrap"><a
+                      class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2" href="#">일식</a><a
+                      class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal mb-2" href="#">서울여행</a></div>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="fw-bold text-nowrap pe-1 mb-2">Share:</div>
+                  <div class="d-flex"><a
+                      class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm mb-2 ms-2" href="#"
+                      data-bs-toggle="tooltip" title="Share with Facebook"><i class="fi-facebook"></i></a><a
+                      class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm mb-2 ms-2" href="#"
+                      data-bs-toggle="tooltip" title="Share with Twitter"><i class="fi-twitter"></i></a><a
+                      class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm mb-2 ms-2" href="#"
+                      data-bs-toggle="tooltip" title="Share with LinkedIn"><i class="fi-linkedin"></i></a></div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Carousel-->
+
+
+
+
+
+
+
+
+    </div>
+  </main>
+  <!-- Footer-->
+
+  <footer class="footer pt-lg-1 pt-3 bg-dark text-light">
+    <div class="container mb-1 py-4 pb-lg-1">
+      <div class="row gy-2">
+        <div class="col-lg-5 col-md-2 col-sm-3">
+          <div class="mb-3 pb-sm-3"><a class="d-inline-block" href="1_main_page.html"><img
+                src="img\city-guide\logo\logo.gif" width="100" alt="Logo"></a></div>
+          <ul class="nav nav-light flex-column">
+            <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-light text-nowrap"
+                href="mailto:example@gmail.com"><i
+                  class="fi-mail mt-n1 me-1 align-middle text-primary"></i>Seuoltrip@email.com</a></li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-light text-nowrap" href="tel:4065550120"><i
+                  class="fi-device-mobile mt-n1 me-1 align-middle text-primary"></i>(02) 1234-5678</a></li>
+          </ul>
+        </div>
+        <!-- Links-->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <h3 class="fs-base text-light">SNS</h3>
+          <ul class="list-unstyled fs-sm">
+            <li><a class="nav-link-light" href="#">Blog</a></li>
+            <li><a class="nav-link-light" href="#">Post</a></li>
+            <li><a class="nav-link-light" href="#">FaceBook</a></li>
+            <li><a class="nav-link-light" href="#">Twitter</a></li>
+            <li><a class="nav-link-light" href="#">Kakao Story</a></li>
+            <li><a class="nav-link-light" href="#">Instagram</a></li>
+          </ul>
+        </div>
+
+        <!-- Links-->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <h3 class="fs-base text-light">About </h3>
+          <ul class="list-unstyled fs-sm">
+            <li><a class="nav-link-light" href="#">About us</a></li>
+            <li><a class="nav-link-light" href="#">Contact us</a></li>
+            <li><a class="nav-link-light" href="#">FAQs & support</a></li>
+            <li><a class="nav-link-light" href="#">Mobile app</a></li>
+            <li><a class="nav-link-light" href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Links-->
+
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <h3 class="fs-base text-light">Profile </h3>
+          <ul class="list-unstyled fs-sm">
+            <li><a class="nav-link-light" href="#">My account</a></li>
+            <li><a class="nav-link-light" href="#">My comments</a></li>
+            <li><a class="nav-link-light" href="#">My favorite area</a></li>
+            <li><a class="nav-link-light" href="#">My travel diary</a></li>
+
+          </ul>
+        </div>
+        <!-- Subscription form-->
+      </div>
+
+      </form>
+    </div>
+    </div>
+    </div>
+    <div class="py-1 border-top border-light">
+      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between py-2">
+        <!-- Copyright-->
+        <p class="order-lg-1 order-2 fs-sm mb-2 mb-lg-0"><span class="text-light opacity-60">&copy; All rights reserved.
+            Made by </span><a class="nav-link-light fw-bold" href="https://createx.studio/" target="_blank"
+            rel="noopener">서울상담소</a></p>
+        <div class="d-flex flex-lg-row flex-column align-items-center order-lg-2 order-1 ms-lg-4 mb-lg-0 mb-4">
+          <!-- Links-->
+          <div class="d-flex flex-wrap fs-sm mb-lg-3 mb-4 pe-lg-10"><a class="nav-link-light px-10 mx-10"
+              href="#">개인정보처리방침</a><a class="nav-link-light px-2 mx-1" href="#">이용약관</a><a
+              class="nav-link-light px-2 mx-1" href="#">Q/A</a><a class="nav-link-light px-2 mx-1" href="#">찾아오시는
+              길</a><a class="nav-link-light px-2 mx-1" href="#">저작권정책</a><a class="nav-link-light px-2 mx-1"
+              href="#">고객서비스현장</a></div>
+          <div class="d-flex align-items-center">
+
+            <!-- Socials-->
+            <div class="ms-4 ps-lg-2 text-nowrap"><a
+                class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#"><i
+                  class="fi-facebook"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2"
+                href="#"><i class="fi-twitter"></i></a><a
+                class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#"><i
+                  class="fi-telegram"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2"
+                href="#"><i class="fi-messenger"></i></a></div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+  <!-- Filters sidebar toggle button (mobile)-->
+  <button class="btn btn-primary btn-sm w-100 rounded-0 fixed-bottom d-lg-none" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#blog-sidebar"><i class="fi-sidebar-left me-2"></i>Sidebar</button>
+  <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll><span
+      class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fi-chevron-up">
+    </i></a>
+  <!-- Vendor scrits: js libraries and plugins-->
+  <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+  <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <!-- Main theme script-->
+  <script src="js/theme.min.js"></script>
+</body>
+
+</html>

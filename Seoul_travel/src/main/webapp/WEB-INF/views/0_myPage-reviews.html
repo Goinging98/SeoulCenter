@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>서울상담소</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Finder - Directory &amp; Listings Bootstrap Template">
+    <meta name="keywords" content="bootstrap, business, directory, listings, e-commerce, car dealer, city guide, real estate, job board, user account, multipurpose, ui kit, html5, css3, javascript, gallery, slider, touch">
+    <meta name="author" content="Createx Studio">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img\city-guide\logo\logo.gif">
+    <link rel="icon" type="image/png" sizes="32x32" href="img\city-guide\logo\logo.gif">
+    <link rel="icon" type="image/png" sizes="16x16" href="img\city-guide\logo\logo.gif">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #666276;;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #bbb7c5;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 2000);
+        };
+      })();
+      
+    </script>
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+  </head>
+  <!-- Body-->
+  <body class="bg-secondary">
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <main class="page-wrapper">
+      <!-- Navbar-->
+      <header class="navbar navbar-expand-lg navbar-light fixed-top" data-scroll-header>
+        <div class="container"><a class="navbar-brand me-3 me-xl-4" href="1_main_page.html"><img class="d-block"
+              src="img\city-guide\logo\logo.gif" width="116" alt="Finder"></a>
+          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span
+              class="navbar-toggler-icon"></span></button>
+          <div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3"><a class="d-block py-2"
+              href="0_myPage-info.html"><img class="rounded-circle" src="img/avatars/36.png" width="40"
+                alt="Annette Black"></a>
+            <div class="dropdown-menu dropdown-menu-end">
+              <div class="d-flex align-items-start border-bottom px-3 py-1 mb-2" style="width: 16rem;"><img
+                  class="rounded-circle" src="img/avatars/24.png" width="48" alt="Annette Black">
+                <div class="ps-2">
+                  <h6 class="fs-base mb-0">최길동</h6><span class="star-rating star-rating-sm"><i
+                      class="star-rating-icon fi-star-filled active"></i><i
+                      class="star-rating-icon fi-star-filled active"></i><i
+                      class="star-rating-icon fi-star-filled active"></i><i
+                      class="star-rating-icon fi-star-filled active"></i><i
+                      class="star-rating-icon fi-star-filled active"></i></span>
+                  <div class="fs-xs py-2">010-1234-5678<br>choi@email.com</div>
+                </div>
+              </div><a class="dropdown-item" href="0_myPage-info.html"><i class="fi-user opacity-60 me-2"></i>나의 정보</a><a
+                class="dropdown-item" href="0_myPage-favoritHotel.html"><i class="fi-heart opacity-60 me-2"></i>찜한 숙소</a><a
+                class="dropdown-item" href="0_myPage-favoritFood.html"><i class="fi-heart opacity-60 me-2"></i>찜한 맛집</a><a
+                class="dropdown-item" href="0_myPage-reviews.html"><i class="fi-star opacity-60 me-2"></i>리뷰</a>
+              <div class="dropdown-divider"></div><a class="dropdown-item" href="5.3_Q&A.html">고객센터</a><a
+                class="dropdown-item" href="signin-light.html">로그아웃</a>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+            <ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
+              <!-- Menu items-->
+              <li class="nav-item dropdown active"><a class="nav-link" href="1_main_page.html" role="button"
+                  aria-expanded="false"><strong>Home</strong></a>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link" href="3_food.html" role="button"
+                  aria-expanded="false"><strong>맛집</strong></a>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link" href="4_accommodation.html" role="button"
+                  aria-expanded="false">숙소</a>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link" href="2_hotplace.html" role="button"
+                  aria-expanded="false"><strong>핫플레이스</strong></a>
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link" href="5_community.html" role="button"
+                  aria-expanded="false"><strong>커뮤니티</strong></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <!-- Page container-->
+      <div class="container mt-5 mb-md-4 py-5">
+        <!-- Breadcrumbs-->
+        <nav class="mb-4 pt-2 pt-lg-3" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="1.1_main_page (login).html"><strong>Home</strong></a></li>
+            <li class="breadcrumb-item"><a href="0_myPage-info.html"><strong>마이페이지</strong></a></li>
+            <li class="breadcrumb-item active" aria-current="page"><strong>리뷰</strong></li>
+          </ol>
+        </nav>
+        <!-- Account header-->
+        <div class="d-flex align-items-center justify-content-between pb-4 mb-2">
+          <div class="d-flex align-items-center">
+            <div class="position-relative flex-shrink-0"><img class="rounded-circle border border-white" src="img/avatars/29.png" width="100" alt="Annette Black">
+              <button class="btn btn-icon btn-light btn-xs rounded-circle shadow-sm position-absolute end-0 bottom-0" type="button" data-bs-toggle="tooltip" title="Change image"><i class="fi-pencil fs-xs"></i></button>
+            </div>
+            <div class="ps-3 ps-sm-4">
+              <h3 class="h4 mb-2">최길동</h3><span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i></span>
+            </div>
+          </div><a class="nav-link p-0 d-none d-md-block" href="signin-light.html"><i class="fi-logout mt-n1 me-2"></i>로그아웃</a>
+        </div>
+        <!-- Page content-->
+        <div class="card card-body p-4 p-md-5 shadow-sm">
+          <!-- Account nav-->
+          <div class="mt-md-n3 mb-4"><a class="btn btn-outline-primary btn-lg rounded-pill w-100 d-md-none" href="#account-nav" data-bs-toggle="collapse"><i class="fi-align-justify me-2"></i>마이페이지</a>
+            <div class="collapse d-md-block" id="account-nav">
+              <ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
+                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link" href="0_myPage-info.html"><i class="fi-user mt-n1 me-2 fs-base"></i>나의 정보</a></li>
+                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link" href="0_myPage-favoritHotel.html" aria-current="page"><i class="fi-heart mt-n1 me-2 fs-base"></i>찜한 숙소</a></li>
+                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link" href="0_myPage-favoritFood.html" aria-current="page"><i class="fi-heart mt-n1 me-2 fs-base"></i>찜한 맛집</a></li>
+                <li class="nav-item mb-md-0 me-md-2 pe-md-1"><a class="nav-link active" href="0_myPage-reviews.html"><i class="fi-star mt-n1 me-2 fs-base"></i>나의 리뷰</a></li>
+                
+                <li class="nav-item d-md-none"><a class="nav-link" href="signin-light.html"><i class="fi-logout mt-n1 me-2 fs-base"></i>Sign Out</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-4 py-2">
+            <h1 class="h3 mb-md-0">나의 리뷰</h1>
+            <!-- Sort-->
+            <div class="d-flex align-items-sm-center align-items-end">
+              <div class="d-flex flex-sm-row flex-column align-items-sm-center w-100 pe-sm-2">
+                <label class="mb-sm-0 mb-2 me-sm-2 pe-sm-1 text-nowrap" for="sortby"><i class="fi-arrows-sort me-2"></i> 정렬 : </label>
+                <select class="form-select form-select-sm" id="sortby" style="min-width: 180px;">
+                  <option>최신순</option>
+                  <option>오래된순</option>
+                  <option>평점순</option>
+                </select>
+              </div><a class="d-inline-block ms-sm-4 ms-3 mb-sm-0 mb-2 fs-sm fw-bold text-decoration-none text-nowrap" href="#"><i class="fi-x fs-xs me-2 align-middle"></i>모두 삭제</a>
+            </div>
+          </div>
+          <!-- Review-->
+          <div class="row mb-4 pb-4 border-bottom">
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h2 class="mb-2 fs-base"><span class="fw-normal me-1">For:</span><a class="nav-link d-inline-block p-0" href="city-guide-single.html">어쩌고 콘서트</a></h2>
+              <div class="mb-md-3 mb-2"><span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star"></i><i class="star-rating-icon fi-star"></i><i class="star-rating-icon fi-star"></i></span>
+              </div><span class="fs-sm text-muted">2020.12.17</span>
+            </div>
+            <div class="col-md-9">
+              <p class="mb-3">너무 재밋었습니다.</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <button class="btn-like" type="button"><i class="fi-like"></i><span>(3)</span></button>
+                  <div class="border-end me-1">&nbsp;</div>
+                  <button class="btn-dislike" type="button"><i class="fi-dislike"></i><span>(0)</span></button>
+                </div>
+                <button class="btn btn-link py-1 px-2 opacity-90" data-bs-toggle="tooltip" title="Delete"><i class="fi-trash"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- Review-->
+          <div class="row mb-4 pb-4 border-bottom">
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h2 class="mb-2 fs-base"><span class="fw-normal me-1">For:</span><a class="nav-link d-inline-block p-0" href="city-guide-single.html">Dunkin' Donuts</a></h2>
+              <div class="mb-md-3 mb-2"><span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star"></i></span>
+              </div><span class="fs-sm text-muted">2020.12.1</span>
+            </div>
+            <div class="col-md-9">
+              <p class="mb-3">Tempus cras felis dui volutpat neque, viverra facilisi. Scelerisque non aliquam morbi eleifend aliquet elementum et urna. Proin facilisis ut semper adipiscing gravida urna, integer.</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <button class="btn-like" type="button"><i class="fi-like"></i><span>(0)</span></button>
+                  <div class="border-end me-1">&nbsp;</div>
+                  <button class="btn-dislike" type="button"><i class="fi-dislike"></i><span>(1)</span></button>
+                </div>
+                <button class="btn btn-link py-1 px-2 opacity-90" data-bs-toggle="tooltip" title="Delete"><i class="fi-trash"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- Review-->
+          <div class="row mb-4 pb-4 border-bottom">
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h2 class="mb-2 fs-base"><span class="fw-normal me-1">For:</span><a class="nav-link d-inline-block p-0" href="city-guide-single.html">Grand Resort &amp; Spa</a></h2>
+              <div class="mb-md-3 mb-2"><span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i></span>
+              </div><span class="fs-sm text-muted">2020.10.28</span>
+            </div>
+            <div class="col-md-9">
+              <p class="mb-3">Blandit cras integer placerat sem quisque. Venenatis dictumst mi mattis phasellus in sollicitudin. Nisl, et rhoncus pellentesque volutpat.</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <button class="btn-like" type="button"><i class="fi-like"></i><span>(2)</span></button>
+                  <div class="border-end me-1">&nbsp;</div>
+                  <button class="btn-dislike" type="button"><i class="fi-dislike"></i><span>(1)</span></button>
+                </div>
+                <button class="btn btn-link py-1 px-2 opacity-90" data-bs-toggle="tooltip" title="Delete"><i class="fi-trash"></i></button>
+              </div>
+            </div>
+          </div>
+          <!-- Review-->
+          <div class="row mb-4">
+            <div class="col-md-3 mb-md-0 mb-3">
+              <h2 class="mb-2 fs-base"><span class="fw-normal me-1">For:</span><a class="nav-link d-inline-block p-0" href="city-guide-single.html">Pina Pizza Restaurant</a></h2>
+              <div class="mb-md-3 mb-2"><span class="star-rating"><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i><i class="star-rating-icon fi-star-filled active"></i></span>
+              </div><span class="fs-sm text-muted">2020.10.22</span>
+            </div>
+            <div class="col-md-9">
+              <p class="mb-3">Nec augue ut senectus quisque diam quis. At augue accumsan, in bibendum. A eget et, eget quisque egestas netus vel. Velit, aliquet turpis convallis ullamcorper. Scelerisque sagittis condimentum pretium in vitae etiam lacinia quis amet. Porttitor consequat, sollicitudin vivamus pharetra nibh faucibus neque, viverra. Praesent amet sed lacus vitae etiam scelerisque. Quam in vel diam phasellus eleifend.</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <button class="btn-like" type="button"><i class="fi-like"></i><span>(3)</span></button>
+                  <div class="border-end me-1">&nbsp;</div>
+                  <button class="btn-dislike" type="button"><i class="fi-dislike"></i><span>(0)</span></button>
+                </div>
+                <button class="btn btn-link py-1 px-2 opacity-90" data-bs-toggle="tooltip" title="Delete"><i class="fi-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer-->
+  <footer class="footer pt-lg-1 pt-4 bg-dark text-light" style="margin-top: 100px;">
+    <div class="container-fluid mb-1 py-4 pb-lg-1">
+      <div class="row gy-2">
+        <div class="col-lg-5 col-md-2 col-sm-3">
+          <div class="mb-3 pb-sm-3"><a class="d-inline-block" href="1_main_page.html"><img src="img\city-guide\logo\logo.gif" width="100" alt="Logo"></a></div>
+          <ul class="nav nav-light flex-column">
+            <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-light text-nowrap" href="mailto:example@gmail.com"><i class="fi-mail mt-n1 me-1 align-middle text-primary"></i>Seuoltrip@email.com</a></li>
+            <li class="nav-item mb-2"><a class="nav-link p-0 fw-normal text-light text-nowrap" href="tel:4065550120"><i class="fi-device-mobile mt-n1 me-1 align-middle text-primary"></i>(02) 1234-5678</a></li>
+          </ul>
+        </div>
+        <!-- Links-->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <h3 class="fs-base text-light">SNS</h3>
+          <ul class="list-unstyled fs-sm">
+            <li><a class="nav-link-light" href="#">Blog</a></li>
+            <li><a class="nav-link-light" href="#">Post</a></li>
+            <li><a class="nav-link-light" href="#">FaceBook</a></li>
+            <li><a class="nav-link-light" href="#">Twitter</a></li>
+            <li><a class="nav-link-light" href="#">Kakao Story</a></li>
+            <li><a class="nav-link-light" href="#">Instagram</a></li>
+          </ul>
+        </div>
+        
+        <!-- Links-->
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <h3 class="fs-base text-light">About </h3>
+          <ul class="list-unstyled fs-sm">
+            <li><a class="nav-link-light" href="#">About us</a></li>
+            <li><a class="nav-link-light" href="#">Contact us</a></li>
+            <li><a class="nav-link-light" href="#">FAQs & support</a></li>
+            <li><a class="nav-link-light" href="#">Mobile app</a></li>
+            <li><a class="nav-link-light" href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <!-- Links-->
+
+        <div class="col-lg-2 col-md-3 col-sm-4">
+          <h3 class="fs-base text-light">Profile </h3>
+          <ul class="list-unstyled fs-sm">
+            <li><a class="nav-link-light" href="#">My account</a></li>
+            <li><a class="nav-link-light" href="#">My comments</a></li>
+            <li><a class="nav-link-light" href="#">My favorite area</a></li>
+            <li><a class="nav-link-light" href="#">My travel diary</a></li>
+            
+          </ul>
+        </div>
+        <!-- Subscription form-->
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="py-1 border-top border-light">
+      <div class="container d-flex flex-column flex-lg-row align-items-center justify-content-between py-2">
+        <!-- Copyright-->
+        <p class="order-lg-1 order-2 fs-sm mb-2 mb-lg-0"><span class="text-light opacity-60">&copy; All rights reserved. Made by </span><a class="nav-link-light fw-bold" href="https://createx.studio/" target="_blank" rel="noopener">서울상담소</a></p>
+        <div class="d-flex flex-lg-row flex-column align-items-center order-lg-2 order-1 ms-lg-4 mb-lg-0 mb-4">
+          <!-- Links-->
+          <div class="d-flex flex-wrap fs-sm mb-lg-3 mb-4 pe-lg-10"><a class="nav-link-light px-10 mx-10" href="#">개인정보처리방침</a><a class="nav-link-light px-2 mx-1" href="#">이용약관</a><a class="nav-link-light px-2 mx-1" href="#">Q/A</a><a class="nav-link-light px-2 mx-1" href="#">찾아오시는 길</a><a class="nav-link-light px-2 mx-1" href="#">저작권정책</a><a class="nav-link-light px-2 mx-1" href="#">고객서비스현장</a></div>
+          <div class="d-flex align-items-center">
+           
+            <!-- Socials-->
+            <div class="ms-4 ps-lg-2 text-nowrap"><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#"><i class="fi-facebook"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#"><i class="fi-twitter"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#"><i class="fi-telegram"></i></a><a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#"><i class="fi-messenger"></i></a></div>
+          
+          </div>
+          
+          
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </footer>
+    <!-- Back to top button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon fi-chevron-up">   </i></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+  </body>
+</html>
