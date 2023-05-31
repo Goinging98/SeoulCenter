@@ -4,9 +4,28 @@
 <mapper namespace="com.multi.mvc.tour.model.mapper.AccomoMapper">
 
 	<select id="selectAccomoList" parameterType="map" resultType="Accommodation">
-		SELECT 
-			*
-		FROM Accommodation 
+		SELECT  *
+		FROM Accommodation
+		WHERE 1 = 1 
+		<if test="searchValue != null">
+			AND title LIKE '%${searchValue}%' 
+		</if>
+		ORDER BY contentid LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	<select id="selectAccomoCount" parameterType="map" resultType="int">
+		SELECT  count(*)
+		FROM Accommodation
+		WHERE 1 = 1 
+		<if test="searchValue != null">
+			AND title LIKE '%${searchValue}%' 
+		</if>
+	</select>
+	
+	<select id="selectByContentId" parameterType="int" resultType="Accommodation">
+		SELECT  *
+		FROM Accommodation
+		WHERE contentid = #{id}
 	</select>
 </mapper>
 

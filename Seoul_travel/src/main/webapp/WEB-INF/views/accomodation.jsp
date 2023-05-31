@@ -14,24 +14,6 @@
 </c:forEach>
 
 
-<style>
-.video-container {
-	position: relative;
-	top: -120px; /* 비디오를 위로 130px 이동시키려면 값을 조정하세요 */
-	display: flex;
-	justify-content: center;
-	overflow: hidden;
-	max-width: 100%;
-	max-height: 115%;
-}
-
-.video-container video {
-	width: 100%;
-	height: auto;
-	object-fit: cover;
-}
-</style>
-
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 

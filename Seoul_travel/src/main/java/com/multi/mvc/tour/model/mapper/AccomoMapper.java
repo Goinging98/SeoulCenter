@@ -10,4 +10,6 @@ import com.multi.mvc.tour.model.vo.Accommodation;
 @Mapper
 public interface AccomoMapper {
 	List<Accommodation> selectAccomoList(Map<String, Object> map);
+	int selectAccomoCount(Map<String, Object> map);
+	Accommodation selectByContentId(int id);
 }

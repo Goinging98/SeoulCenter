@@ -329,7 +329,7 @@
 	<!-- Navbar-->
 	<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top"	data-scroll-header>
 		<div class="container">
-			<a class="navbar-brand me-3 me-xl-4" href="city-guide-home-v1.html">
+			<a class="navbar-brand me-3 me-xl-4" href="1_main_page.jsp">
 				<img class="d-block" src="${path}/resources/img/city-guide/logo/logo.gif" width="116" alt="Finder">
 			</a>
 			<button class="navbar-toggler ms-auto" type="button"
@@ -346,27 +346,27 @@
 				<ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
 					<!-- Menu items-->
 					<li class="nav-item dropdown active">
-						<a class="nav-link" href="1_main_page.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link" href="1_main_page.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<strong>Home</strong>
 						</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="3_food.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link" href="3_food.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<strong>맛집</strong>
 						</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link" href="4_accommodation.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<li class="nav-item ">
+						<a class="nav-link" href="accomMain" data-bs-toggle="" aria-expanded="false">
 							<strong>숙소</strong>
 						</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="2_hotplace.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link" href="2_hotplace.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<strong>핫플레이스</strong>
 						</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="5_community.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="nav-link" href="5_community.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							<strong>커뮤니티</strong>
 						</a>
 					</li>

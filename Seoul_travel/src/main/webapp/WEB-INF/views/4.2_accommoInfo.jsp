@@ -21,7 +21,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	</nav>
 	<div
 		class="d-sm-flex align-items-center justify-content-between mb-4 pb-sm-2">
-		<h1 class="h2 me-3 mb-sm-0">Berlin Business Hotel</h1>
+		<h1 class="h2 me-3 mb-sm-0">${item.title }</h1>
 		<div class="text-nowrap">
 			<button
 				class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
@@ -74,10 +74,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				</b><span class="text-muted">(48 reviews)</span></li>
 			</ul>
 			<div class="mb-4 pb-md-3">
-				<p class="mb-1">보문호가 내려다보이는 라한셀렉트 경주는 보문관광단지에서 약 2km, 경주 세계문화
-					엑스포공원에서 차로 10분 거리에 있습니다. 신라의 역사가 고스란히 담긴 첨성대, 안압지, 천마총은 차로 20분,
-					석굴암까지는 차로 35분이 소요됩니다. 또한, 경주고속버스터미널에서 차로 25분, KTX 신경주역은 차로 40분 거리에
-					있습니다. 호텔에는 야외 수영장 뿐만 아니라, 어린이 전용과</p>
+				<p class="mb-1">${item.overview }</p>
 			</div>
 			<!-- 편의 시설/ 서비스 -->
 			<div class="mb-4 pb-md-3">

@@ -7,10 +7,8 @@
 
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
-<<<<<<< HEAD
-=======
 
-<c:forEach var="aItem" items="${aList}">
+<!-- <c:forEach var="aItem" items="${aList}">
  	${aItem.title}
  	<br>
 </c:forEach>
@@ -18,15 +16,10 @@
 <c:forEach var="cItem" items="${cList}">
  	${cItem.title}
  	<br>
-</c:forEach>
+</c:forEach> -->
 
 
 
-
-
-
-
->>>>>>> refs/remotes/origin/master
 <style>
 	.video-container {
 		position: relative;
@@ -61,10 +54,11 @@
 		<div class="mt-5 mb-md-5 py-5">
 			<h1 class="display-5 mb-4 me-lg-n5 text-lg-start text-center mb-4"
 				style="color: white; margin-left: 28px;">
-				고민하지말고 <span style="color: #25af9b;">서울상담소</span> <span> <h8
-						class="text-lg-start text-center mb-4 mb-lg-5 fs-lg"
-						style="color: rgb(255, 255, 255); margin-left: 28px;"> <br>
-					잠들지 않는 도시, 서울에 당신을 초대합니다.</h8>
+				고민하지말고 <span style="color: #25af9b;">서울상담소</span>
+			</h1>
+			<h8	class="text-lg-start text-center mb-4 mb-lg-5 fs-lg" style="color: rgb(255, 255, 255); margin-left: 28px;"> 
+					<br>잠들지 않는 도시, 서울에 당신을 초대합니다.
+			</h8>
 					<div class="col-xl-7 col-lg-9 col-md-10 mx-1 px-lg-1"></div>
 		</div>
 	</div>
@@ -237,7 +231,7 @@
 			<!-- Post-->
 			<article class="card card-horizontal card-hover mb-grid-gutter">
 				<a href="2.2_hotplaceDetailed .html" class="card-img-top"
-					style="background-image: url(img/city-guide/home/deoksugung.jpeg);"><span
+					style="background-image: url(${path}/resources/img/city-guide/home/deoksugung.jpeg);"><span
 					class="badge badge-lg badge-floating text-white"
 					style="background-color: #f74f78;">BEST</span></a>
 				<div class="card-body">
@@ -286,7 +280,7 @@
 						<div class="d-flex align-items-start mb-3 mt-3"
 							style="margin-left: 3%;">
 							<a class="d-block flex-shrink-0" href="3.2_foodDetailed.html"><img
-								class="rounded" src="img\city-guide\home\bbosik.jpg" alt="Post"
+								class="rounded" src="${path}/resources/img/city-guide/home/bbosik.jpg" alt="Post"
 								width="64"></a>
 							<div class="ps-2 ms-1">
 								<h5 class="fs-md nav-heading mb-1">
@@ -299,7 +293,7 @@
 						<div class="d-flex align-items-start mb-3 mt-3"
 							style="margin-left: 3%;">
 							<a class="d-block flex-shrink-0" href="3.2_foodDetailed.html"><img
-								class="rounded" img src="img\city-guide\home\samgyupsal.jpg"
+								class="rounded" img src="${path}/resources/img/city-guide/home/samgyupsal.jpg"
 								alt="Post" width="64"></a>
 							<div class="ps-2 ms-1">
 								<h5 class="fs-md nav-heading mb-1">
@@ -312,7 +306,7 @@
 						<div class="d-flex align-items-start mb-3 mt-3"
 							style="margin-left: 10px;">
 							<a class="d-block flex-shrink-0" href="3.2_foodDetailed.html"><img
-								class="rounded" src="img\city-guide\home\sushi.jpg" alt="Post"
+								class="rounded" src="${path}/resources/img/city-guide/home/sushi.jpg" alt="Post"
 								width="64"></a>
 							<div class="ps-2 ms-1">
 								<h5 class="fs-md nav-heading mb-1">
@@ -360,7 +354,7 @@
 
 
 
-
+<!-- 오늘은 여기 어때요? -->
 <section class="container mb-sm-2 mb-4 pb-lg-4">
 	<div class="row">
 		<div class="col-sm-12 h3 widget-title pb-1">오늘은 여기 어때요?</div>
@@ -379,26 +373,26 @@
                             &quot;680&quot;:{&quot;items&quot;:4, &quot;gutter&quot;: 16},
                             &quot;850&quot;:{&quot;items&quot;:5, &quot;gutter&quot;: 16}}}">
 							<a class="swap-image" href="2.2_hotplaceDetailed .html"><img
-								src="img/city-guide/home/1.jpeg"
+								src="${path}/resources/img/city-guide/home/1.jpeg"
 								class="rounded-2 img-fluid gallery-item" alt="Image1"
 								width="300px" height="250px"></a> <a class="swap-image"
 								href="2.2_hotplaceDetailed .html"><img
-								src="img/city-guide/home/2.jpeg"
+								src="${path}/resources/img/city-guide/home/2.jpeg"
 								class="rounded-2 img-fluid gallery-item" alt="Image1"
 								width="300px" height="250px"></a> <a class="swap-image"
 								href="2.2_hotplaceDetailed .html"><img
-								src="img/city-guide/home/3.jpeg"
+								src="${path}/resources/img/city-guide/home/3.jpeg"
 								class="rounded-2 img-fluid gallery-item" alt="Image1"
 								width="300px" height="250px"></a> <a class="swap-image"
 								href="2.2_hotplaceDetailed .html"><img
-								src="img/city-guide/home/4.jpeg"
+								src="${path}/resources/img/city-guide/home/4.jpeg"
 								class="rounded-2 img-fluid gallery-item" alt="Image1"
 								width="300px" height="250px"></a> <a class="swap-image"
 								href="2.2_hotplaceDetailed .html"><img
-								src="img/city-guide/home/5.jpeg"
+								src="${path}/resources/img/city-guide/home/5.jpeg"
 								class="rounded-2 img-fluid gallery-item" alt="Image1"
 								width="300px" height="250px"></a> <a class="swap-image"
-								href="2.2_hotplaceDetailed .html"><img
+								href="${path}/resources/2.2_hotplaceDetailed .html"><img
 								src="img/city-guide/home/1.jpeg"
 								class="rounded-2 img-fluid gallery-item" alt="Image1"
 								width="300px" height="250px"></a>

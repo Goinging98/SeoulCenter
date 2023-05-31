@@ -7,9 +7,14 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
+<c:forEach var="aItem" items="${aList}">
+ 	${aItem.title}
+ 	<br>
+</c:forEach>
+
 <!-- 사진 띠 부분-->
 <section class="bg-dark-overlay-4"
-	style="background-image: url( 'img/city-guide/accommodation/hotel2.jpeg' ); background-position: center left; background-size: cover; margin-top: 120px;">
+	style="background-image: url( '${path}/resources/img/city-guide/accommodation/hotel2.jpeg' ); background-position: center left; background-size: cover; margin-top: 120px;">
 	<div class="container ">
 		<div class="row ">
 			<div class="col-lg-8 py-xxl-5 my-lg-4 ">
@@ -34,8 +39,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	</nav>
 	<!-- Sponsored posts-->
 </div>
-</header>
 
+<form name="searchForm" action="${path}/accomMain" method="get">
 <div class="container mb-md-4 py-2" style="margin-top: 60px;">
 
 	<!-- List of posts + Sidebar-->
@@ -65,6 +70,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<!-- Search-->
 					<div class="position-relative mb-4">
 						<input class="form-control pe-5" type="text"
+							name="searchValue"
 							placeholder="검색어를 입력해주세요."><i
 							class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
 					</div>
@@ -143,402 +149,35 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<!-- Catalog grid-->
 			<div
 				class="row row-cols-xl-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-xxl-4 py-4">
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/01.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Berlin
-								Business Hotel</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
-								class="text-muted">&nbsp;(48)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/02.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Big
-								Tree Cottage</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.8</b><span
-								class="text-muted">&nbsp;(24)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/03.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Grand
-								Resort &amp; Spa</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.9</b><span
-								class="text-muted">&nbsp;(43)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/04.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Serene
-								Stays</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
-								class="text-muted">&nbsp;(12)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/05.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Leisure
-								Inn</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.0</b><span
-								class="text-muted">&nbsp;(9)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/06.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Bliss
-								Apartment</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.8</b><span
-								class="text-muted">&nbsp;(32)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/07.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Merry
-								Berry Motel</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.5</b><span
-								class="text-muted">&nbsp;(13)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/08.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Serenity
-								Hotel</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
-								class="text-muted">&nbsp;(17)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/09.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Repose
-								Hotel</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
-								class="text-muted">&nbsp;(45)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/10.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Tranquil
-								Hostel</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.0</b><span
-								class="text-muted">&nbsp;(15)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/11.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Soothe
-								&amp; Stay</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.6</b><span
-								class="text-muted">&nbsp;(10)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/12.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Best
-								Nest Apartment</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.9</b><span
-								class="text-muted">&nbsp;(10)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/13.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Pine
-								Cottage</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
-								class="text-muted">&nbsp;(12)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-credit-card mt-n1 me-1 fs-base text-muted align-middle"></i>$$</li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/14.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Greenpoint
-								Boutique Hotel</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.9</b><span
-								class="text-muted">&nbsp;(12)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-credit-card mt-n1 me-1 fs-base text-muted align-middle"></i>$$</li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-						</ul>
-					</article>
-				</div>
-				<!-- Item-->
-				<div class="col pb-sm-2">
-					<article class="position-relative">
-						<div class="position-relative mb-3">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-								title="Add to Favorites">
-								<i class="fi-heart"></i>
-							</button>
-							<img class="rounded-3" src="img/city-guide/catalog/15.jpg"
-								alt="Article img">
-						</div>
-						<h3 class="mb-2 fs-lg">
-							<a class="nav-link stretched-link" href="4.2_accmmoGallery.html">Crystal
-								Apartment</a>
-						</h3>
-						<ul class="list-inline mb-0 fs-xs">
-							<li class="list-inline-item pe-1"><i
-								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.9</b><span
-								class="text-muted">&nbsp;(52)</span></li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-credit-card mt-n1 me-1 fs-base text-muted align-middle"></i>$$</li>
-							<li class="list-inline-item pe-1"><i
-								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>rkdska</li>
-						</ul>
-					</article>
-				</div>
+				
+				<c:forEach var="item" items="${list}">
+					<!-- Item-->
+					<div class="col pb-sm-2">
+						<article class="position-relative">
+							<div class="position-relative mb-3">
+								<button
+									class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
+									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
+									title="Add to Favorites">
+									<i class="fi-heart"></i>
+								</button>
+								<img class="rounded-3" src="${item.firstimage}"
+									alt="Article img">
+							</div>
+							<h3 class="mb-2 fs-lg">
+								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
+							</h3>
+							<ul class="list-inline mb-0 fs-xs">
+								<li class="list-inline-item pe-1"><i
+									class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
+									class="text-muted">&nbsp;(48)</span></li>
+								<li class="list-inline-item pe-1"><i
+									class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
+							</ul>
+						</article>
+					</div>
+				</c:forEach>
+				
 			</div>
 			<!-- Pagination-->
 			<nav class="border-top pb-md-4 pt-4" aria-label="Pagination">
@@ -562,4 +201,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		</div>
 	</div>
 </div>
+
+</form>
+
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

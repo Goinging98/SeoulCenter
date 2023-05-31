@@ -36,24 +36,37 @@ public class HomeController {
 	private FoodService foodService;
 	
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String home_main(Locale locale, Model model) {
 //		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
-		
+		/*
 		model.addAttribute("aList", accomoService.selectAccomoList(new HashMap<String,Object>()));
 		model.addAttribute("tList", tourListService.selectTourListList(new HashMap<String,Object>()));
 		model.addAttribute("cList", cultureContentService.selectCultureContentList(new HashMap<String,Object>()));
 		model.addAttribute("fList", festivalService.selectFestivalList(new HashMap<String,Object>()));
 		model.addAttribute("foList", foodService.selectFoodList(new HashMap<String,Object>()));
-		
+		*/
 		return "1_main_page";
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+//		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
+		/*
+		model.addAttribute("aList", accomoService.selectAccomoList(new HashMap<String,Object>()));
+		model.addAttribute("tList", tourListService.selectTourListList(new HashMap<String,Object>()));
+		model.addAttribute("cList", cultureContentService.selectCultureContentList(new HashMap<String,Object>()));
+		model.addAttribute("fList", festivalService.selectFestivalList(new HashMap<String,Object>()));
+		model.addAttribute("foList", foodService.selectFoodList(new HashMap<String,Object>()));
+		*/
+		return "9_main_page_veryveryveryimportant";
 	}
 	
 	@RequestMapping(value = "/accomodation", method = RequestMethod.GET)
 	public String Accomodation_main(Locale locale, Model model) {
 //		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
 		
-		model.addAttribute("aList", accomoService.selectAccomoList(new HashMap<String,Object>()));
+		//model.addAttribute("aList", accomoService.selectAccomoList(new HashMap<String,Object>()));
 		return "accomodation";
 	}
 	
