@@ -50,12 +50,12 @@ public class HomeController {
 		return "1_main_page";
 	}
 	
-	@RequestMapping(value = "/accomodation", method = RequestMethod.GET)
-	public String Accomodation_main(Locale locale, Model model) {
-//		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
-		
-		//model.addAttribute("aList", accomoService.selectAccomoList(new HashMap<String,Object>()));
-		return "accomodation";
-	}
+//	@RequestMapping(value = "/accomodation", method = RequestMethod.GET)
+//	public String Accomodation_main(Locale locale, Model model) {
+////		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
+//		
+//		//model.addAttribute("aList", accomoService.selectAccomoList(new HashMap<String,Object>()));
+//		return "accomodation";
+//	}
 	
 }
