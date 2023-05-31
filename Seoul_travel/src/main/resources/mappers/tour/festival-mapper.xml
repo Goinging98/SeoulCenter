@@ -4,8 +4,9 @@
 <mapper namespace="com.multi.mvc.tour.model.mapper.FestivalMapper">
 
 	<select id="selectFestivalList" parameterType="map" resultType="Festival">
-		SELECT 
-			*
-		FROM Festival 
+		SELECT title, eventstartdate, eventenddate, firstimage
+		FROM tourapi.festival
+		WHERE date_format(now(), '%Y%m%d') BETWEEN eventstartdate AND eventenddate
+		ORDER BY eventstartdate
 	</select>
 </mapper>

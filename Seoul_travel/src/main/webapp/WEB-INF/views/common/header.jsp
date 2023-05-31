@@ -360,8 +360,8 @@
 							<strong>숙소</strong>
 						</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link" href="2_hotplace.jsp" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<li class="nav-item ">
+						<a class="nav-link" href="hotMain" data-bs-toggle="" aria-expanded="false">
 							<strong>핫플레이스</strong>
 						</a>
 					</li>
