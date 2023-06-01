@@ -8,58 +8,36 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 <!-- Page content-->
-<!-- Page header-->
 <section class="container pt-5 mt-5">
 	<!-- Breadcrumb-->
 	<nav class="mb-3 pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="4_accommodation.html"><strong>숙소</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>Berlin
-					Business Hotel</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>${item.title}</strong></li>
 		</ol>
 	</nav>
 	<div
 		class="d-sm-flex align-items-center justify-content-between mb-4 pb-sm-2">
-		<h1 class="h2 me-3 mb-sm-0">${item.title }</h1>
+		<h1 class="h2 me-3 mb-sm-0">${item.title}</h1>
 		<div class="text-nowrap">
 			<button
 				class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
 				type="button" data-bs-toggle="tooltip" title="Add to Wishlist">
-				<i class="fi-heart"></i>
 			</button>
-			<div class="dropdown d-inline-block" data-bs-toggle="tooltip"
-				title="Share">
-				<button
-					class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2"
-					type="button" data-bs-toggle="dropdown">
-					<i class="fi-share"></i>
-				</button>
-				<div class="dropdown-menu dropdown-menu-end my-1">
-					<button class="dropdown-item" type="button">
-						<i class="fi-facebook fs-base opacity-75 me-2"></i>Facebook
-					</button>
-					<button class="dropdown-item" type="button">
-						<i class="fi-twitter fs-base opacity-75 me-2"></i>Twitter
-					</button>
-					<button class="dropdown-item" type="button">
-						<i class="fi-instagram fs-base opacity-75 me-2"></i>Instagram
-					</button>
-				</div>
-			</div>
 		</div>
 	</div>
 	<!-- Nav pills-->
 	<ul class="nav nav-pills border-bottom pb-3 mb-4">
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center"
-			href="4.2_accmmoGallery.html"><i class="fi-image me-2"></i>갤러리</a></li>
+			href="4.2_accmmoGallery.html">갤러리</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center active"
-			href="4.2_accommoInfo.html"><i class="fi-info-circle me-2"></i>정보</a></li>
+			href="4.2_accommoInfo.html">정보</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center "
-			href="4.2_accommoReview.html"><i class="fi-edit me-2"></i>리뷰</a></li>
+			href="4.2_accommoReview.html">리뷰</a></li>
 	</ul>
 </section>
 <!-- Page content -->
@@ -67,56 +45,29 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<div class="row">
 		<!-- 개요-->
 		<div class="col-md-12 mb-md-0 mb-4 pb-md-0 pb-2">
-			<h2 class="h4">개요</h2>
+			<h2 class="h4">소개</h2>
 			<ul class="list-unstyled">
-				<li><i
-					class="fi-star-filled mt-n1 me-1 text-warning align-middle"></i><b>4.9
-				</b><span class="text-muted">(48 reviews)</span></li>
+				<li><i class="fi-star-filled mt-n1 me-1 text-warning align-middle"></i><b>4.9</b><span class="text-muted">(48 reviews)</span></li>
 			</ul>
 			<div class="mb-4 pb-md-3">
-				<p class="mb-1">${item.overview }</p>
+				<p class="mb-1">${item.addr1}<br/>${item.overview}</p>
 			</div>
 			<!-- 편의 시설/ 서비스 -->
 			<div class="mb-4 pb-md-3">
-				<h2 class="h4">편의 시설 / 서비스</h2>
+				<h2 class="h4">정보</h2>
 				<ul
 					class="list-unstyled row row-cols-lg-3 row-cols-md-2 row-cols-1 gy-1 mb-1 text-nowrap">
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Free WiFi</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>2 swimming
-						pools</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Pets-friendly</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Free parking</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Spa lounge</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Restaurant</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Room service</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Bar</li>
-					<li class="col"><i
-						class="fi-check mt-n1 me-2 fs-lg align-middle"></i>Fitness Center</li>
+					<li class="col"><i class="fi-check mt-n1 me-2 fs-lg align-middle"></i>체크인: ${item.checkintime}</li>
+					<li class="col"><i class="fi-check mt-n1 me-2 fs-lg align-middle"></i>체크아웃: ${item.checkouttime}</li>
+					<li class="col"><i class="fi-check mt-n1 me-2 fs-lg align-middle"></i>주차: ${item.parkinglodging}</li>
+					<li class="col"><i class="fi-check mt-n1 me-2 fs-lg align-middle"></i>픽업: ${item.pickup}</li>
+					<li class="col"><i class="fi-check mt-n1 me-2 fs-lg align-middle"></i>규모: ${item.scalelodging} </li>
 				</ul>
 			</div>
 			<!-- 객실 선택 -->
 			<div class="mb-4 pb-md-3">
-				<h2 class="h4">객실 선택</h2>
-				<ul
-					class="list-unstyled row row-cols-lg-3 row-cols-md-2 row-cols-1 gy-1 mb-1 text-nowrap">
-					<li class="col"><i
-						class="fi-double-bed mt-n1 me-2 fs-lg align-middle"></i>Non-smoking
-						rooms</li>
-					<li class="col"><i
-						class="fi-double-bed mt-n1 me-2 fs-lg align-middle"></i>Single
-						rooms</li>
-					<li class="col"><i
-						class="fi-double-bed mt-n1 me-2 fs-lg align-middle"></i>Family
-						suites</li>
-				</ul>
+				<h2 class="h4">부대시설 </h2>
+				<h5>${item.subfacility}</h5>
 			</div>
 			<!-- Page content-->
 			<section class="container pb-5 mb-md-4">
@@ -129,7 +80,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 									<img src="img/city-guide/brands/hotel.svg" width="60"
 										alt="Thumbnail">
 									<div class="ps-2 ms-1">
-										<h3 class="h5 mb-2">Berlin Business Hotel</h3>
+										<h3 class="h5 mb-2">${item.title}</h3>
 										<ul class="list-unstyled d-flex flex-wrap fs-sm">
 											<li class="me-2 mb-1 pe-1"><i
 												class="fi-star-filled mt-n1 me-1 text-warning align-middle opacity-70"></i><b>4.9

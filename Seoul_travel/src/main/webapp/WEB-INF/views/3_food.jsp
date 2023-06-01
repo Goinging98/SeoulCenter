@@ -6,13 +6,13 @@
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
+
 <!-- 사진 띠 부분-->
 <section class="bg-dark-overlay-4"
-	style="background-image: url( '${path}/resources/img/food/platter-gf9324db74_1280.jpg' ); background-position: center left; background-size: cover; margin-top: 120px;">
+	style="background-image: url('${path}/resources/img/food/platter-gf9324db74_1280.jpg' ); background-position: center left; background-size: cover; margin-top: 120px;">
 	<div class="container ">
 		<div class="row ">
 			<div class="col-lg-8 py-xxl-5 my-lg-4 ">
-				<a href="#" class="badge text-bg-primary mb-2"></a>
 				<h1 class="mice text-white fw-bold mb-2"></h1>
 				<p class="mice lead text-white fw-bold mb-0"></p>
 			</div>
@@ -23,38 +23,28 @@
 
 <!-- Page container-->
 <div class="container mb-md-4 mt-0 pt-4">
-	<!-- Breadcrumb-->
+	<!-- 해당 페이지 위치 표시 : HOME>맛집 -->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="/"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>맛집</strong></li>
 		</ol>
 	</nav>
-	<!-- Sponsored posts-->
 </div>
 
 
 <form name="searchForm" action="${path}/foodMain" method="get">
 <div class="container mb-md-4 py-2" style="margin-top: 60px;">
-
 	<!-- List of posts + Sidebar-->
 	<div class="row">
 		<!-- Sidebar (offcanvas)-->
 		<aside class="col-lg-3">
-			<div class="offcanvas offcanvas-start offcanvas-collapse"
-				id="blog-sidebar">
-
-				<div class="offcanvas-header shadow-sm mb-2">
-					<h2 class="h5 offcanvas-title">Sidebar</h2>
-					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
-				</div>
+			<div class="offcanvas offcanvas-start offcanvas-collapse" id="blog-sidebar">
 				<div class="offcanvas-body">
 					<!-- Sorting-->
 					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap"
-							for="sort"><i
-							class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 정렬
-							: </label> <select class="form-select" id="sort">
+						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">지역검색</label> 
+						<select class="form-select" id="sort">
 							<option>강남구</option>
 							<option>강동구</option>
 							<option>강복구</option>
@@ -77,69 +67,49 @@
 							<option>용산구</option>
 							<option>은평구</option>
 							<option>종로구</option>
-							<option>종구</option>
+							<option>중구</option>
 							<option>중랑구</option>
 						</select>
 					</div>
 					<!-- Search-->
 					<div class="position-relative mb-4">
-						<input class="form-control pe-5" type="text"
-							placeholder="검색어를 입력해주세요."><i
-							class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
+						<input class="form-control pe-5" type="text" placeholder="검색어를 입력해주세요.">
 					</div>
-					
 					
 					<!-- Categories 카테고리  -->
 					<div class="card card-flush pb-2 pb-lg-0 mb-4 ">
 						<div class="card-body ">
 							<h3 class="h5">카테고리</h3>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="3.1_foodKorea.html">한식 <span class=" ms-394">(2)</span></a>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="3.1_foodKorea.html">중식 <span class=" ms-300">(4)</span></a>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="3.1_foodKorea.html">양식 <span class=" ms-300">(5)</span></a>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="3.1_foodKorea.html">일식 <span class=" ms-300">(5)</span></a>
 						</div>
 					</div>
 					<!-- Tags 태그 -->
 					<div class="card card-flush pb-2 pb-lg-0 mb-4">
 						<div class="card-body">
-							<h4 class="h5">맛집 태그</h4>
+							<h4 class="h5">태그로 검색하는 맛집</h4>
 							<div class="d-flex flex-wrap mb-n1">
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이거
-									필요한가요?</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼래
-									터~?</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집
-									맛집</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주
-									핫플</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS
-									핫플!!</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이거 필요한가요?</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼터~?</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집맛집</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주 핫플</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS핫플!!</button>
 							</div>
 						</div>
-
-						<!-- Subscribe-->
-						<div class="card card-flush mb-4"></div>
 					</div>
 				</div>
+			</div>
 		</aside>
 		
 		
-		<!-- Articles list-->
+		<!-- 맛집 리스트 -->
 		<div class="col-lg-9">
 			<div class="ps-lg-3">
 				<!-- Article-->
@@ -157,8 +127,7 @@
 										<div class="tns-carousel-inner" data-autoplay="false"
 											data-arrow="true" data-dots="false" data-items="1">
 											<!-- Image item -->
-											<img src="${item.firstimage}"
-												style="min-width: 279px; min-height: 209px" alt="Card image">
+											<img src="${item.firstimage2}" style="min-width: 279px; min-height: 209px; max-width:279px; min-height: 209px" alt="Card image">
 										</div>
 									</div>
 									<!-- img END -->
@@ -180,22 +149,6 @@
 													class="star-rating-icon fi-star-filled active"></i></li>
 												<li class="list-inline-item me-0 small"></i><i
 													class="star-rating-icon fi-star"></i></li>
-											</ul>
-
-											<ul class="list-inline mb-0 z-index-2">
-												<!-- Heart icon -->
-												<li class="list-inline-item"><a href="#"
-													class="btn btn-sm btn-round btn-light"><i
-														class="fa-solid fa-fw fa-heart"></i></a></li>
-												<!-- Share icon -->
-												<li class="list-inline-item dropdown">
-													<!-- Share button --> <a href="#"
-													class="btn btn-sm btn-round btn-light" role="button"
-													id="dropdownShare" data-bs-toggle="dropdown"
-													aria-expanded="false"> <i
-														class="fa-solid fa-fw fa-share-alt"></i>
-												</a> 
-												</li>
 											</ul>
 										</div>
 
@@ -262,5 +215,6 @@
 	</div>
 </div>
 
+</form>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

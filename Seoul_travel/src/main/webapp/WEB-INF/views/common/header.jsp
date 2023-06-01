@@ -18,9 +18,9 @@
 		<!-- Viewport-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Favicon and Touch Icons-->
-	<link rel="apple-touch-icon" sizes="180x180" href="${path}/resources/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="${path}/resources/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="${path}/resources/favicon-16x16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="${path}/resources/img/city-guide/logo/logo.gif">
+	<link rel="icon" type="image/png" sizes="32x32" href="${path}/resources/img/city-guide/logo/logo.gif">
+	<link rel="icon" type="image/png" sizes="16x16" href="${path}/resources/img/city-guide/logo/logo.gif">
 	<link rel="manifest" href="${path}/resources/site.webmanifest">
 	<link rel="mask-icon" color="#5bbad5" href="${path}/resources/safari-pinned-tab.svg">
 	<meta name="msapplication-TileColor" content="#766df4">
