@@ -36,7 +36,6 @@ public class HomeController {
 	private FoodService foodService;
 	
 	
-
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 //		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());

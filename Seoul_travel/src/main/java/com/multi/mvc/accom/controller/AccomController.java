@@ -9,22 +9,17 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.multi.mvc.board.model.vo.Board;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.service.AccomoService;
 import com.multi.mvc.tour.model.vo.Accommodation;
 
 @Controller
 public class AccomController {
-	
-	
 	@Autowired
 	private AccomoService accomoService;
 	
 	@RequestMapping("/accomMain")
 	public String accomMain(Model model, @RequestParam Map<String,Object> param) {
-		System.out.println(param);
-		
 		int page = 1;
 		try {
 			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
@@ -40,7 +35,6 @@ public class AccomController {
 			if(a.firstimage == null) {
 				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
 			}
-			System.out.println(a);
 		}
 		model.addAttribute("list", list);
 		model.addAttribute("pageInfo", pageInfo);
@@ -56,9 +50,7 @@ public class AccomController {
 			// 에러처리
 		}
 		model.addAttribute("item", accom);
-		return "4.2_accommoInfo";
-		
-		
+		return "4.2_accommoInfo";	
 	}
 	
 	

@@ -1,5 +1,6 @@
 package com.multi.mvc.tour.model.vo;
 
+
 public class Food extends TourVO {
 
 	public String chkcreditcardfood;

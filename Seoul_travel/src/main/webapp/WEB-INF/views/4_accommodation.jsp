@@ -32,7 +32,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="/"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>숙소</strong></li>
 
 		</ol>
@@ -190,9 +190,9 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						href="4_accommodation.html">2</a></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
 						href="4_accommodation.html">3</a></li>
-					<li class="page-item d-none d-sm-block">...</li>
+					<li class="page-item d-none d-sm-block">4</li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="4_accommodation.html">8</a></li>
+						href="4_accommodation.html">5</a></li>
 					<li class="page-item"><a class="page-link"
 						href="4_accommodation.html" aria-label="Next"><i
 							class="fi-chevron-right"></i></a></li>

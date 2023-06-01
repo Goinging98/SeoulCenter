@@ -14,7 +14,7 @@
 	</select>
 	
 	<select id="selectAccomoCount" parameterType="map" resultType="int">
-		SELECT  count(*)
+		SELECT count(*)
 		FROM Accommodation
 		WHERE 1 = 1 
 		<if test="searchValue != null">
@@ -23,7 +23,7 @@
 	</select>
 	
 	<select id="selectByContentId" parameterType="int" resultType="Accommodation">
-		SELECT  *
+		SELECT *
 		FROM Accommodation
 		WHERE contentid = #{id}
 	</select>

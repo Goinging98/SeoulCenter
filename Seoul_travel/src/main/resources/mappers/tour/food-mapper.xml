@@ -4,9 +4,28 @@
 <mapper namespace="com.multi.mvc.tour.model.mapper.FoodMapper">
 
 	<select id="selectFoodList" parameterType="map" resultType="Food">
-		SELECT 
-			*
-		FROM Food 
+		SELECT *
+		FROM Food
+		WHERE 1 = 1 
+		<if test="searchValue != null">
+			AND title LIKE '%${searchValue}%' 
+		</if>
+		ORDER BY contentid LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	<select id="selectFoodCount" parameterType="map" resultType="int">
+		SELECT count(*)
+		FROM Food
+		WHERE 1 = 1 
+		<if test="searchValue != null">
+			AND title LIKE '%${searchValue}%' 
+		</if>
+	</select>
+	
+	<select id="selectByContentId" parameterType="int" resultType="Food">
+		SELECT *
+		FROM Food
+		WHERE contentid = #{id}
 	</select>
 </mapper>
 

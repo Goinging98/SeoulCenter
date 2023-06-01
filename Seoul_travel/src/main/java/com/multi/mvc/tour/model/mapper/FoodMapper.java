@@ -10,4 +10,6 @@ import com.multi.mvc.tour.model.vo.Food;
 @Mapper
 public interface FoodMapper {
 	List<Food> selectFoodList(Map<String, Object> map);
+	int selectFoodCount(Map<String, Object> map);
+	Food selectByContentId(int id);
 }
