@@ -7,6 +7,40 @@
 
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
+
+
+
+
+
+
+<head>
+
+  <!-- ----------------------------------------------booking 연결파트------------------------------------------ -->
+      <script type="text/javascript">
+        var theme = localStorage.getItem('data-theme');
+        var root = document.documentElement;
+        if (theme === 'dark' && theme !== undefined) {
+          root.classList.add('dark-mode');
+        } else {
+          root.classList.remove('dark-mode');
+        }
+      </script>
+
+      <!-- Favicon -->
+      <!-- <link rel="shortcut icon" href="/booking\booking_v1.1.0\template\assets\images\favicon.ico"> -->
+
+      <!-- Plugins CSS -->
+      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/font-awesome/css/all.min.css">
+      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/bootstrap-icons/bootstrap-icons.css">
+      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/tiny-slider/tiny-slider.css">
+      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/glightbox/css/glightbox.css">
+      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/flatpickr/css/flatpickr.min.css">
+      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/choices/css/choices.min.css">
+
+      <!-- Theme CSS -->
+      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/css/style.css">
+</head>
+
 <!--검색바 관련-->
 <style>
 .searchbarmoveTop {
@@ -123,7 +157,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\06.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/06.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -148,7 +182,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\07.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/07.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -173,7 +207,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\08.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/08.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -198,7 +232,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\05.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/05.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -235,7 +269,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\06.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/06.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -260,7 +294,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\07.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/07.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -285,7 +319,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\08.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/08.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -310,7 +344,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="/booking\booking_v1.1.0\template\assets\images\offer\05.jpg"
+							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/05.jpg"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -354,7 +388,7 @@
 									<!-- Element -->
 									<div
 										class="position-absolute top-0 start-0 translate-middle z-index-9 mt-7 ms-4">
-										<img src="assets/images/element/02.svg"
+										<img src="${path}/resources/assets/images/element/02.svg"
 											class="h-60px bg-orange rounded p-2" alt="">
 									</div>
 
@@ -367,7 +401,7 @@
 									</figure>
 
 									<!-- Image -->
-									<img src="img\hotplace\human01.jpg"
+									<img src="${path}/resources/img/hotplace/human01.jpg"
 										class="rounded-3 position-relative" alt="">
 								</div>
 
@@ -420,7 +454,7 @@
 									</figure>
 
 									<!-- Image -->
-									<img src="img\hotplace\human02.jpg"
+									<img src="${path}/resources/img/hotplace/human02.jpg"
 										class="rounded-3 position-relative" alt="">
 								</div>
 
@@ -475,7 +509,7 @@
 		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="img\hotplace\lotteTower.jpeg"
+			<img src="${path}/resources/img/hotplace/lotteTower.jpeg"
 			style="width: 100%; height: auto; object-fit: contain;">
 			<div class="text-overlay"
 				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
@@ -485,10 +519,10 @@
 	</div>
 	<div class="box rounded-2"
 		style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+		onmouseover="this.style.filter =, 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="img\hotplace\royalpalace.jpeg"
+			<img src="${path}/resources/img/hotplace/royalpalace.jpeg"
 			style="width: 100%; height: auto; object-fit: contain;">
 			<div class="text-overlay"
 				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
@@ -501,7 +535,7 @@
 		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="img\hotplace\lotteWorld.jpeg"
+			<img src="${path}/resources/img/hotplace/lotteWorld.jpeg"
 			style="width: 100%; height: auto; object-fit: contain;">
 			<div class="text-overlay"
 				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
@@ -518,7 +552,7 @@
 			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-				<img src="img\hotplace\dMuseum.jpeg"
+				<img src="${path}/resources/img/hotplace/dMuseum.jpeg"
 				style="width: 100%; height: auto; object-fit: contain;">
 				<div class="text-overlay"
 					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
@@ -531,7 +565,7 @@
 			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-				<img src="img\hotplace\seoulArtsCenter.jpeg"
+				<img src="${path}/resources/img/hotplace/seoulArtsCenter.jpeg"
 				style="width: 100%; height: auto; object-fit: contain;">
 				<div class="text-overlay"
 					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
@@ -545,7 +579,7 @@
 			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-				<img src="img\hotplace\coex.jpeg"
+				<img src="${path}/resources/img/hotplace/coex.jpeg"
 				style="width: 100%; height: auto; object-fit: contain;">
 				<div class="text-overlay"
 					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
@@ -554,6 +588,23 @@
 			</a>
 		</div>
 	</div>
+	<!-- ===============================booing 템플릿==================================== -->
+<!-- Bootstrap JS -->
+<!-- <script src="/booking\booking_v1.1.0\template\assets\vendor\bootstrap\dist\js\bootstrap.bundle.min.js"></script>  이거 풀면 검색창 드롭다운 메뉴 오류남-->
+
+<!-- Vendors -->
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/tiny-slider/tiny-slider.js"></script>
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/glightbox/js/glightbox.js"></script>
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/flatpickr/js/flatpickr.min.js"></script>
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/jarallax/jarallax.min.js"></script>
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/jarallax/jarallax.min.js"></script>
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/jarallax/jarallax-video.min.js"></script>
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/choices/js/choices.min.js"></script>
+
+<!-- ThemeFunctions -->
+<script src="${path}/resources/booking/booking_v1.1.0/template/assets/js/functions.js"></script>
 </div>
+
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
