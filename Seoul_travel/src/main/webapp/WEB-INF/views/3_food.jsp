@@ -150,22 +150,6 @@
 												<li class="list-inline-item me-0 small"></i><i
 													class="star-rating-icon fi-star"></i></li>
 											</ul>
-
-											<ul class="list-inline mb-0 z-index-2">
-												<!-- Heart icon -->
-												<li class="list-inline-item"><a href="#"
-													class="btn btn-sm btn-round btn-light"><i
-														class="fa-solid fa-fw fa-heart"></i></a></li>
-												<!-- Share icon -->
-												<li class="list-inline-item dropdown">
-													<!-- Share button --> <a href="#"
-													class="btn btn-sm btn-round btn-light" role="button"
-													id="dropdownShare" data-bs-toggle="dropdown"
-													aria-expanded="false"> <i
-														class="fa-solid fa-fw fa-share-alt"></i>
-												</a> 
-												</li>
-											</ul>
 										</div>
 
 										<!-- Title -->
