@@ -155,7 +155,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="${cItem.firstimage}"
+							src="${cItem.firstimage}" style="width: auto; height: 17rem;"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -194,7 +194,7 @@
 				<div>
 					<div class="card">
 						<img
-							src="${cItem.firstimage}"
+							src="${cItem.firstimage}" style="width: auto; height: 17rem;"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -223,6 +223,9 @@
 <!-- ======================= 추천 문화시설 END -->
 
 <!-- ======================= 슬라이드 후기 -->
+<div class="col-12 text-center mt-4">
+  <h3 class="mb-4">이달의 리뷰</h3>
+</div>
 <section class="pb-0 py-md-5 mt-7" style="background-color: #ace1d9;">
 	<div class="container">
 		<div class="row">
