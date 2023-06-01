@@ -54,6 +54,28 @@ public class AccomController {
 	}
 	
 	
+	@RequestMapping("/accomGall")
+	public String accomGallery() {
+//		Accommodation accomGall = accomoService.selectByContentId(id);
+//		if(accomGall == null) {
+//			 에러처리
+//		}
+//		model.addAttribute("item2", accomGall);
+		
+		return "4.2_accommoGallery";	
+	}
+	
+	
+	@RequestMapping("/accomRev")
+	public String accomReiview() {
+//		Accommodation accomReiview = accomoService.selectByContentId(id);
+//		if(accomReiview == null) {
+//			 에러처리
+//		}
+//		model.addAttribute("item2", accomReiview);
+		
+		return "4.2_accommoReview";	
+	}
 	
 
 }
