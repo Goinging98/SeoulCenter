@@ -201,10 +201,10 @@
 								<div class="px-3">Or</div>
 								<hr class="w-100">
 							</div>
-							<form class="needs-validation" novalidate>
+							<form class="needs-validation" action="${path}/login" method="post" novalidate>
 								<div class="mb-4">
 									<label class="form-label mb-2" for="signin-email">이메일
-										주소</label> <input class="form-control" type="email" id="signin-email"
+										주소</label> <input name="memberId" class="form-control" type="email" id="signin-email"
 										placeholder="이메일을 입력해주세요." required>
 								</div>
 								<div class="mb-4">
@@ -214,7 +214,7 @@
 											class="fs-sm" href="#">비밀번호 찾기</a>
 									</div>
 									<div class="password-toggle">
-										<input class="form-control" type="password"
+										<input class="form-control" name="memberPwd" type="password"
 											id="signin-password" placeholder="비밀번호를 입력해주세요." required>
 										<label class="password-toggle-btn"
 											aria-label="Show/hide password"> <input
@@ -274,23 +274,26 @@
 								<div class="px-3">Or</div>
 								<hr class="w-100">
 							</div>
-							<form class="needs-validation" novalidate>
+							<form class="needs-validation" action="${path}/member/enroll/" method="post"  novalidate>
 								<div class="mb-4">
-									<label class="form-label" for="signup-name">이름</label> <input
+									<label class="form-label" for="signup-name">이름</label> 
+									<input name="name"
 										class="form-control" type="text" id="signup-name"
 										placeholder="이름을 입력하세요" required>
 								</div>
 								<div class="mb-4">
-									<label class="form-label" for="signup-email">이메일 주소</label> <input
+									<label class="form-label" for="signup-email">이메일 주소</label> 
+									<input name="id"
 										class="form-control" type="email" id="signup-email"
 										placeholder="이메일을 입력해주세요" required>
 								</div>
 								<div class="mb-4">
 									<label class="form-label" for="signup-password">비밀번호 <span
-										class='fs-sm text-muted'>최소 8자이상</span></label>
+										class='fs-sm text-muted'>최소 4자이상</span></label>
 									<div class="password-toggle">
 										<input class="form-control" type="password"
-											id="signup-password" minlength="8" required> <label
+										 name="password"
+											id="signup-password" minlength="4" required> <label
 											class="password-toggle-btn" aria-label="Show/hide password">
 											<input class="password-toggle-check" type="checkbox"><span
 											class="password-toggle-indicator"></span>
@@ -302,7 +305,7 @@
 										확인</label>
 									<div class="password-toggle">
 										<input class="form-control" type="password"
-											id="signup-password-confirm" minlength="8" required>
+											id="signup-password-confirm" minlength="4" required>
 										<label class="password-toggle-btn"
 											aria-label="Show/hide password"> <input
 											class="password-toggle-check" type="checkbox"><span
@@ -312,7 +315,7 @@
 								</div>
 								<div class="form-check mb-4">
 									<input class="form-check-input" type="checkbox"
-										id="agree-to-terms" required> <label
+										id="agree-to-terms"> <label
 										class="form-check-label" for="agree-to-terms"><a
 										href='#'>이용약관</a> 및 <a href='#'>개인 정보 보호정책</a>에 동의합니다.</label>
 								</div>
@@ -325,12 +328,14 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- Navbar-->
-	<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top"	data-scroll-header>
+	<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+		data-scroll-header>
 		<div class="container">
-			<a class="navbar-brand me-3 me-xl-4" href="1_main_page.jsp">
-				<img class="d-block" src="${path}/resources/img/city-guide/logo/logo.gif" width="116" alt="Finder">
+			<a class="navbar-brand me-3 me-xl-4" href="1_main_page.jsp"> <img
+				class="d-block" src="${path}/resources/img/city-guide/logo/logo.gif"
+				width="116" alt="Finder">
 			</a>
 			<button class="navbar-toggler ms-auto" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -338,45 +343,78 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="btn btn-sm text-primary d-none d-lg-block order-lg-3"
-				href="#signin-modal" data-bs-toggle="modal">
-				<i class="fi-user me-2"></i>Sign in
-			</a>
-			<div class="collapse navbar-collapse order-lg-2" id="navbarNav">
-				<ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
-					<!-- Menu items-->
-					<li class="nav-item dropdown active">
-						<a class="nav-link" href="/" data-bs-toggle="" aria-expanded="false">
-							<strong>Home</strong>
-						</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link" href="foodMain" data-bs-toggle="" aria-expanded="false">
-							<strong>맛집</strong>
-						</a>
-					</li>
-					<li class="nav-item ">
-						<a class="nav-link" href="accomMain" data-bs-toggle="" aria-expanded="false">
-							<strong>숙소</strong>
-						</a>
-					</li>
-					<li class="nav-item ">
-						<a class="nav-link" href="hotMain" data-bs-toggle="" aria-expanded="false">
-							<strong>핫플레이스</strong>
-						</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link" href="5_community.jsp" data-bs-toggle="" aria-expanded="false">
-							<strong>커뮤니티</strong>
-						</a>
-					</li>
-					<li class="nav-item d-lg-none">
-						<a class="nav-link" href="#signin-modal" data-bs-toggle="modal">
-							<i class="fi-user me-2"></i>Sign in
-						</a>
-					</li>
-				</ul>
-			</div>
+
+			
+
+
+		<div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+			<ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
+				<!-- Menu items-->
+				<li class="nav-item dropdown active"><a class="nav-link"
+					href="/" data-bs-toggle="" aria-expanded="false"> <strong>Home</strong>
+				</a></li>
+				<li class="nav-item dropdown"><a class="nav-link"
+					href="foodMain" data-bs-toggle="" aria-expanded="false"> <strong>맛집</strong>
+				</a></li>
+				<li class="nav-item "><a class="nav-link" href="accomMain"
+					data-bs-toggle="" aria-expanded="false"> <strong>숙소</strong>
+				</a></li>
+				<li class="nav-item "><a class="nav-link" href="hotMain"
+					data-bs-toggle="" aria-expanded="false"> <strong>핫플레이스</strong>
+				</a></li>
+				<li class="nav-item dropdown"><a class="nav-link"
+					href="5_community.jsp" data-bs-toggle="" aria-expanded="false">
+						<strong>커뮤니티</strong>
+				</a></li>
+				<li class="nav-item d-lg-none">
+				<c:if test="${loginMember == null}">
+				<a class="btn btn-sm text-primary d-none d-lg-block order-lg-3"
+					href="#signin-modal" data-bs-toggle="modal"> <i
+					class="fi-user me-2"></i>Sign in
+				</a>
+			</c:if>
+			<c:if test="${loginMember != null}">
+				<div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3">
+					<a class="d-block py-2" href="0_myPage-info.html"><img
+						class="rounded-circle" src="${path}/resources/img/avatars/36.png" width="40"
+						alt="Annette Black"></a>
+					<div class="dropdown-menu dropdown-menu-end">
+						<div class="d-flex align-items-start border-bottom px-3 py-1 mb-2"
+							style="width: 16rem;">
+							<img class="rounded-circle" src="${path}/resources/img/avatars/24.png" width="48"
+								alt="Annette Black">
+							<div class="ps-2">
+								<h6 class="fs-base mb-0">최길동</h6>
+								<span class="star-rating star-rating-sm"><i
+									class="star-rating-icon fi-star-filled active"></i><i
+									class="star-rating-icon fi-star-filled active"></i><i
+									class="star-rating-icon fi-star-filled active"></i><i
+									class="star-rating-icon fi-star-filled active"></i><i
+									class="star-rating-icon fi-star-filled active"></i></span>
+								<div class="fs-xs py-2">
+									010-1234-5678<br>choi@email.com
+								</div>
+							</div>
+						</div>
+						<a class="dropdown-item" href="0_myPage-info.html"><i
+							class="fi-user opacity-60 me-2"></i>나의 정보</a><a class="dropdown-item"
+							href="0_myPage-favoritHotel.html"><i
+							class="fi-heart opacity-60 me-2"></i>찜한 숙소</a><a
+							class="dropdown-item" href="0_myPage-favoritFood.html"><i
+							class="fi-heart opacity-60 me-2"></i>찜한 맛집</a><a
+							class="dropdown-item" href="city-guide-account-reviews.html"><i
+							class="fi-star opacity-60 me-2"></i>리뷰</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="5.3_Q&A.html">고객센터</a><a
+							class="dropdown-item" href="signin-light.html">로그아웃</a>
+					</div>
+				</div>
+		</div>
+		${loginMember.name} ﻿님 ﻿안﻿녕﻿하﻿세﻿요?
+		</c:if>
+		</li>
+			</ul>
+		</div>
 		</div>
 	</header>
 </body>

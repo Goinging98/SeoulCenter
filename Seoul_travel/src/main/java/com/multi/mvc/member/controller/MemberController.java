@@ -120,13 +120,13 @@ public class MemberController {
 		log.info("회원가입 요청");
 		
 		int result = service.save(member);
-		
+		System.out.println(result);
 		if(result > 0) {
 			model.addAttribute("msg", "회원가입 성공하였습니다.");
 			model.addAttribute("location", "/");
 		} else { 
 			model.addAttribute("msg", "회원가입에 실패하였습니다. 입력정보 확인하세요.");
-			model.addAttribute("location", "/member/enroll");
+			model.addAttribute("location", "/");
 		}
 		
 		return "common/msg";

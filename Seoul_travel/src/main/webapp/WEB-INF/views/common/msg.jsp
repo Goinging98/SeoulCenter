@@ -14,10 +14,7 @@
 <body>
 	<script>
 		// 알림메세지를 띄움
-		$
-		{
-			script
-		}
+		${script}
 		alert("${msg}");
 
 		// 페이지 이동
