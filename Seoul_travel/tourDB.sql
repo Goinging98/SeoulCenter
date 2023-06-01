@@ -279,3 +279,60 @@ CREATE TABLE Festival(
 desc festival;
 select * from festival;
 
+
+
+
+
+USE tourapi;
+CREATE TABLE MEMBER (
+    mNO 	 INT  PRIMARY KEY AUTO_INCREMENT,
+    ID 		 VARCHAR(30) NOT NULL UNIQUE,
+    PASSWORD VARCHAR(100) NOT NULL,
+    ROLE 	 VARCHAR(10) DEFAULT 'ROLE_USER',
+    NAME 	 VARCHAR(15) NOT NULL,
+    PHONE 	 VARCHAR(13),
+    EMAIL 	 VARCHAR(100),
+    ADDRESS  VARCHAR(100),
+    HOBBY 	 VARCHAR(100),
+    KAKAOTOKEN	VARCHAR(1000),
+    STATUS 	 VARCHAR(1) DEFAULT 'Y' CHECK(STATUS IN('Y', 'N')),
+    ENROLL_DATE DATETIME  DEFAULT CURRENT_TIMESTAMP,
+    MODIFY_DATE DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+INSERT INTO MEMBER (
+    mNO, 
+    ID, 
+    PASSWORD, 
+    ROLE,
+    NAME, 
+    PHONE, 
+    EMAIL, 
+    ADDRESS, 
+    HOBBY, 
+    KAKAOTOKEN,
+    STATUS, 
+    ENROLL_DATE, 
+    MODIFY_DATE
+) VALUES(
+    0, 
+    'admin', 
+    '1234', 
+    'ROLE_ADMIN', 
+    '관리자', 
+    '010-1234-4341', 
+    'admin@test.com', 
+    '서울시 강남구 역삼동',
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    DEFAULT,
+    DEFAULT
+);
+
+COMMIT;
+
+SELECT * FROM MEMBER;
+

@@ -36,7 +36,7 @@ public class HomeController {
 	private FoodService foodService;
 	
 	
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 //		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
 		/*
@@ -48,13 +48,16 @@ public class HomeController {
 		*/
 		return "1_main_page";
 	}
+
+
+	@RequestMapping(value = "/mypageinfo", method = RequestMethod.GET)
+	public String mypage(Locale locale, Model model) {
+		return "0_myPage-info";
+	}
 	
-//	@RequestMapping(value = "/accomodation", method = RequestMethod.GET)
-//	public String Accomodation_main(Locale locale, Model model) {
-////		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
-//		
-//		//model.addAttribute("aList", accomoService.selectAccomoList(new HashMap<String,Object>()));
-//		return "accomodation";
-//	}
-	
+
+	@RequestMapping(value = "/community", method = RequestMethod.GET)
+	public String community(Locale locale, Model model) {
+		return "5.3_QA";
+	}
 }

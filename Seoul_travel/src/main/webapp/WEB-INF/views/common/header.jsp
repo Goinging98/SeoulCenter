@@ -330,10 +330,9 @@
 	</div>
 
 	<!-- Navbar-->
-	<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
-		data-scroll-header>
+	<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top"	data-scroll-header>
 		<div class="container">
-			<a class="navbar-brand me-3 me-xl-4" href="1_main_page.jsp"> <img
+			<a class="navbar-brand me-3 me-xl-4" href="/main"> <img
 				class="d-block" src="${path}/resources/img/city-guide/logo/logo.gif"
 				width="116" alt="Finder">
 			</a>
@@ -343,31 +342,7 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
-			
-
-
-		<div class="collapse navbar-collapse order-lg-2" id="navbarNav">
-			<ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
-				<!-- Menu items-->
-				<li class="nav-item dropdown active"><a class="nav-link"
-					href="/" data-bs-toggle="" aria-expanded="false"> <strong>Home</strong>
-				</a></li>
-				<li class="nav-item dropdown"><a class="nav-link"
-					href="foodMain" data-bs-toggle="" aria-expanded="false"> <strong>맛집</strong>
-				</a></li>
-				<li class="nav-item "><a class="nav-link" href="accomMain"
-					data-bs-toggle="" aria-expanded="false"> <strong>숙소</strong>
-				</a></li>
-				<li class="nav-item "><a class="nav-link" href="hotMain"
-					data-bs-toggle="" aria-expanded="false"> <strong>핫플레이스</strong>
-				</a></li>
-				<li class="nav-item dropdown"><a class="nav-link"
-					href="5_community.jsp" data-bs-toggle="" aria-expanded="false">
-						<strong>커뮤니티</strong>
-				</a></li>
-				<li class="nav-item d-lg-none">
-				<c:if test="${loginMember == null}">
+			<c:if test="${loginMember == null}">
 				<a class="btn btn-sm text-primary d-none d-lg-block order-lg-3"
 					href="#signin-modal" data-bs-toggle="modal"> <i
 					class="fi-user me-2"></i>Sign in
@@ -375,46 +350,63 @@
 			</c:if>
 			<c:if test="${loginMember != null}">
 				<div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3">
-					<a class="d-block py-2" href="0_myPage-info.html"><img
-						class="rounded-circle" src="${path}/resources/img/avatars/36.png" width="40"
-						alt="Annette Black"></a>
+					<a class="d-block py-2" href="mypageinfo"><img
+						class="rounded-circle" src="${path}/resources/img/avatars/36.png"
+						width="40" alt="member"></a>
 					<div class="dropdown-menu dropdown-menu-end">
 						<div class="d-flex align-items-start border-bottom px-3 py-1 mb-2"
 							style="width: 16rem;">
-							<img class="rounded-circle" src="${path}/resources/img/avatars/24.png" width="48"
-								alt="Annette Black">
+							<img class="rounded-circle"
+								src="${path}/resources/img/avatars/24.png" width="48"
+								alt="member">
 							<div class="ps-2">
-								<h6 class="fs-base mb-0">최길동</h6>
-								<span class="star-rating star-rating-sm"><i
-									class="star-rating-icon fi-star-filled active"></i><i
-									class="star-rating-icon fi-star-filled active"></i><i
-									class="star-rating-icon fi-star-filled active"></i><i
-									class="star-rating-icon fi-star-filled active"></i><i
-									class="star-rating-icon fi-star-filled active"></i></span>
+								<h6 class="fs-base mb-0">${loginMember.name}</h6>
+								<span class="star-rating star-rating-sm"></span>
 								<div class="fs-xs py-2">
-									010-1234-5678<br>choi@email.com
+									${loginMember.email}
 								</div>
 							</div>
 						</div>
-						<a class="dropdown-item" href="0_myPage-info.html"><i
-							class="fi-user opacity-60 me-2"></i>나의 정보</a><a class="dropdown-item"
-							href="0_myPage-favoritHotel.html"><i
-							class="fi-heart opacity-60 me-2"></i>찜한 숙소</a><a
-							class="dropdown-item" href="0_myPage-favoritFood.html"><i
-							class="fi-heart opacity-60 me-2"></i>찜한 맛집</a><a
-							class="dropdown-item" href="city-guide-account-reviews.html"><i
-							class="fi-star opacity-60 me-2"></i>리뷰</a>
+						<a class="dropdown-item" href="mypageinfo">나의 정보</a>
+						<a class="dropdown-item" href="mypageinfo">찜한 숙소</a>
+						<a class="dropdown-item" href="mypageinfo">찜한 맛집</a>
+						<a class="dropdown-item" href="mypageinfo">리뷰</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="5.3_Q&A.html">고객센터</a><a
-							class="dropdown-item" href="signin-light.html">로그아웃</a>
+						<a class="dropdown-item" href="mypageinfo">고객센터</a><a
+							class="dropdown-item" href="main">로그아웃</a>
 					</div>
 				</div>
-		</div>
-		${loginMember.name} ﻿님 ﻿안﻿녕﻿하﻿세﻿요?
-		</c:if>
-		</li>
-			</ul>
-		</div>
+			</c:if>
+			<div class="collapse navbar-collapse order-lg-2" id="navbarNav">
+				<ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
+					<!-- Menu items-->
+					<li class="nav-item dropdown active">
+						<a class="nav-link" href="main" data-bs-toggle="" aria-expanded="false"> 
+							<strong>Home</strong>
+						</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link" href="foodMain" data-bs-toggle="" aria-expanded="false">
+						<strong>맛집</strong>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="accomMain" data-bs-toggle="" aria-expanded="false">
+							<strong>숙소</strong>
+						</a>
+					</li>
+					<li class="nav-item">
+					<a class="nav-link" href="hotMain"	data-bs-toggle="" aria-expanded="false">
+						<strong>핫플레이스</strong>
+						</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link"	href="community" data-bs-toggle="" aria-expanded="false">
+							<strong>커뮤니티</strong>
+						</a>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</header>
 </body>
