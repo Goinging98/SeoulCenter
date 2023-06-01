@@ -96,7 +96,7 @@
 		</div>
 		<div class="row g-4">
 			<!-- Hotel item -->
-			<c:forEach var="fItem" items="${fList}">
+			<c:forEach var="fItem" items="${fList}" begin="0" end="7">
 			<div class="col-sm-6 col-xl-3">
 				<!-- Card START -->
 				<div class="card card-img-scale overflow-hidden bg-transparent">
@@ -519,7 +519,7 @@
 	</div>
 	<div class="box rounded-2"
 		style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-		onmouseover="this.style.filter =, 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
 			<img src="${path}/resources/img/hotplace/royalpalace.jpeg"
