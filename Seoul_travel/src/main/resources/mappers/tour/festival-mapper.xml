@@ -7,6 +7,6 @@
 		SELECT title, eventstartdate, eventenddate, firstimage
 		FROM tourapi.festival
 		WHERE date_format(now(), '%Y%m%d') BETWEEN eventstartdate AND eventenddate
-		ORDER BY eventstartdate
+		ORDER BY RAND() limit 8
 	</select>
 </mapper>

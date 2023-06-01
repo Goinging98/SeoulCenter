@@ -8,4 +8,10 @@
 			*
 		FROM CultureContent
 	</select>
+	
+	<select id="selectCultureContentRandomList" parameterType="map" resultType="CultureContent">
+		SELECT 
+			*
+		FROM CultureContent ORDER BY RAND() limit 12
+	</select>
 </mapper>

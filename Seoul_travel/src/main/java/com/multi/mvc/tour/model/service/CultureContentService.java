@@ -16,8 +16,8 @@ public class CultureContentService {
 	private CultureContentMapper mapper;
 	
 	
-	public List<CultureContent> selectCultureContentList(Map<String, Object> map){
-		return mapper.selectCultureContentList(null);
+	public List<CultureContent> selectCultureContentRandomList(Map<String, Object> map){
+		return mapper.selectCultureContentRandomList(null);
 	}
 }
 

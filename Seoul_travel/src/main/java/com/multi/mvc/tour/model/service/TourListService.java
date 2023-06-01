@@ -16,8 +16,8 @@ public class TourListService {
 	private TourListMapper mapper;
 	
 	
-	public List<TourList> selectTourListList(Map<String, Object> map){
-		return mapper.selectTourListList(null);
+	public List<TourList> selectTourListRandomList(Map<String, Object> map){
+		return mapper.selectTourListRandomList(null);
 	}
 }
 

@@ -10,9 +10,6 @@
 
 
 
-
-
-
 <head>
 
   <!-- ----------------------------------------------booking 연결파트------------------------------------------ -->
@@ -96,7 +93,7 @@
 		</div>
 		<div class="row g-4">
 			<!-- Hotel item -->
-			<c:forEach var="fItem" items="${fList}" begin="0" end="7">
+			<c:forEach var="fItem" items="${fList}">
 			<div class="col-sm-6 col-xl-3">
 				<!-- Card START -->
 				<div class="card card-img-scale overflow-hidden bg-transparent">
@@ -154,10 +151,11 @@
 				data-items-lg="3" data-items-md="2" data-items-sm="1">
 
 				<!-- Offer card START -->
+				<c:forEach var="cItem" items="${cList}" begin="0" end="5">
 				<div>
 					<div class="card">
 						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/06.jpg"
+							src="${cItem.firstimage}"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -165,9 +163,9 @@
 							<div
 								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
 								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
+									<a href="#">${cItem.title}</a>
 								</h6>
-								<small>2023.02 ~</small>
+								<small>${cItem.addr1}</small>
 								<div class="mt-2">
 									<a href="2.2_hotplaceDetailed .html"
 										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
@@ -176,81 +174,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Offer card END -->
-
-				<!-- Offer card START -->
-				<div>
-					<div class="card">
-						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/07.jpg"
-							class="card-img" alt="">
-						<!-- Card body -->
-						<div
-							class="position-absolute top-100 start-50 translate-middle w-100">
-							<div
-								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
-								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
-								</h6>
-								<small>2023.02 ~</small>
-								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
-										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Offer card END -->
-
-				<!-- Offer card START -->
-				<div>
-					<div class="card">
-						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/08.jpg"
-							class="card-img" alt="">
-						<!-- Card body -->
-						<div
-							class="position-absolute top-100 start-50 translate-middle w-100">
-							<div
-								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
-								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
-								</h6>
-								<small>2023.02 ~</small>
-								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
-										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Offer card END -->
-
-				<!-- Offer card START -->
-				<div>
-					<div class="card">
-						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/05.jpg"
-							class="card-img" alt="">
-						<!-- Card body -->
-						<div
-							class="position-absolute top-100 start-50 translate-middle w-100">
-							<div
-								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
-								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
-								</h6>
-								<small>2023.02 ~</small>
-								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
-										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 				<!-- Offer card END -->
 			</div>
 		</div>
@@ -266,10 +190,11 @@
 				data-items-lg="3" data-items-md="2" data-items-sm="1">
 
 				<!-- Offer card START -->
+				<c:forEach var="cItem" items="${cList}" begin="6" end="11">
 				<div>
 					<div class="card">
 						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/06.jpg"
+							src="${cItem.firstimage}"
 							class="card-img" alt="">
 						<!-- Card body -->
 						<div
@@ -277,9 +202,9 @@
 							<div
 								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
 								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
+									<a href="#">${cItem.title}</a>
 								</h6>
-								<small>2023.02 ~</small>
+								<small>${cItem.addr1}</small>
 								<div class="mt-2">
 									<a href="2.2_hotplaceDetailed .html"
 										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
@@ -288,81 +213,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- Offer card END -->
-
-				<!-- Offer card START -->
-				<div>
-					<div class="card">
-						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/07.jpg"
-							class="card-img" alt="">
-						<!-- Card body -->
-						<div
-							class="position-absolute top-100 start-50 translate-middle w-100">
-							<div
-								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
-								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
-								</h6>
-								<small>2023.02 ~</small>
-								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
-										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Offer card END -->
-
-				<!-- Offer card START -->
-				<div>
-					<div class="card">
-						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/08.jpg"
-							class="card-img" alt="">
-						<!-- Card body -->
-						<div
-							class="position-absolute top-100 start-50 translate-middle w-100">
-							<div
-								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
-								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
-								</h6>
-								<small>2023.02 ~</small>
-								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
-										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Offer card END -->
-
-				<!-- Offer card START -->
-				<div>
-					<div class="card">
-						<img
-							src="${path}/resources/booking/booking_v1.1.0/template/assets/images/offer/05.jpg"
-							class="card-img" alt="">
-						<!-- Card body -->
-						<div
-							class="position-absolute top-100 start-50 translate-middle w-100">
-							<div
-								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
-								<h6 class="card-title mb-1">
-									<a href="#">성수 팝업스토어</a>
-								</h6>
-								<small>2023.02 ~</small>
-								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
-										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				</c:forEach>
 				<!-- Offer card END -->
 			</div>
 		</div>
@@ -502,92 +353,42 @@
 		<h3 class="mb-0">관광지는 어때요?</h3>
 	</div>
 </div>
-
 <div style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
+	<c:forEach var="tItem" items="${tList}" begin="0" end="2">
 	<div class="box rounded-2"
 		style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
 		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="${path}/resources/img/hotplace/lotteTower.jpeg"
+			<img src="${tItem.firstimage}"
 			style="width: 100%; height: auto; object-fit: contain;">
 			<div class="text-overlay"
 				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-				<p style="color: #ffffff; font-weight: bold; font-size: 40px;">롯데타워</p>
+				<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
 			</div>
 		</a>
 	</div>
+	</c:forEach>
+</div>
+<div style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
+	<c:forEach var="tItem" items="${tList}" begin="3" end="5">
 	<div class="box rounded-2"
 		style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+		onmouseover="this.style.filter = 'brightness(50%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="${path}/resources/img/hotplace/royalpalace.jpeg"
+			<img src="${tItem.firstimage}"
 			style="width: 100%; height: auto; object-fit: contain;">
 			<div class="text-overlay"
 				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-				<p style="color: white; font-weight: bold; font-size: 40px;">경복궁</p>
+				<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
 			</div>
 		</a>
 	</div>
-	<div class="box rounded-2"
-		style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
-		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="${path}/resources/img/hotplace/lotteWorld.jpeg"
-			style="width: 100%; height: auto; object-fit: contain;">
-			<div class="text-overlay"
-				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-				<p style="color: white; font-weight: bold; font-size: 40px;">롯데월드</p>
-			</div>
-		</a>
-	</div>
+	</c:forEach>
 </div>
 
-<div class="">
-	<div style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 10px; margin-bottom: 10px;">
-		<div class="box rounded-2"
-			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
-			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-				<img src="${path}/resources/img/hotplace/dMuseum.jpeg"
-				style="width: 100%; height: auto; object-fit: contain;">
-				<div class="text-overlay"
-					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-					<p style="color: rgb(255, 255, 255); font-weight: bold; font-size: 40px;">디뮤지엄</p>
-				</div>
-			</a>
-		</div>
-		<div class="box rounded-2"
-			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
-			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-				<img src="${path}/resources/img/hotplace/seoulArtsCenter.jpeg"
-				style="width: 100%; height: auto; object-fit: contain;">
-				<div class="text-overlay"
-					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-					<p style="color: white; font-weight: bold; font-size: 30px;">예술의
-						전당</p>
-				</div>
-			</a>
-		</div>
-		<div class="box rounded-2"
-			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
-			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-				<img src="${path}/resources/img/hotplace/coex.jpeg"
-				style="width: 100%; height: auto; object-fit: contain;">
-				<div class="text-overlay"
-					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-					<p style="color: white; font-weight: bold; font-size: 40px;">코엑스</p>
-				</div>
-			</a>
-		</div>
-	</div>
+
 	<!-- ===============================booing 템플릿==================================== -->
 <!-- Bootstrap JS -->
 <!-- <script src="/booking\booking_v1.1.0\template\assets\vendor\bootstrap\dist\js\bootstrap.bundle.min.js"></script>  이거 풀면 검색창 드롭다운 메뉴 오류남-->

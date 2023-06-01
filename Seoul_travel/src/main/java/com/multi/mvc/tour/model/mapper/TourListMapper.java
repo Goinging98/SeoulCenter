@@ -10,4 +10,5 @@ import com.multi.mvc.tour.model.vo.TourList;
 @Mapper
 public interface TourListMapper {
 	List<TourList> selectTourListList(Map<String, Object> map);
+	List<TourList> selectTourListRandomList(Map<String, Object> map);
 }

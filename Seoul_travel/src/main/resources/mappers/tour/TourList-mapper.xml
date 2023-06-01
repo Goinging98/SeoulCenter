@@ -3,6 +3,12 @@
 
 <mapper namespace="com.multi.mvc.tour.model.mapper.TourListMapper">
 
+	<select id="selectTourListRandomList" parameterType="map" resultType="TourList">
+		SELECT 
+			*
+		FROM TourList ORDER BY RAND() limit 6
+	</select>
+	
 	<select id="selectTourListList" parameterType="map" resultType="TourList">
 		SELECT 
 			*

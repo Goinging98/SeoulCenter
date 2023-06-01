@@ -11,6 +11,7 @@ import com.multi.mvc.tour.model.vo.Festival;
 
 @Service
 public class FestivalService {
+	
 	@Autowired
 	private FestivalMapper mapper;
 	

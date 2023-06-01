@@ -10,4 +10,5 @@ import com.multi.mvc.tour.model.vo.CultureContent;
 @Mapper
 public interface CultureContentMapper {
 	List<CultureContent> selectCultureContentList(Map<String, Object> map);
+	List<CultureContent> selectCultureContentRandomList(Map<String, Object> map);
 }
