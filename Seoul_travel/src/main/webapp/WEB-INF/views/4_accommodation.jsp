@@ -12,14 +12,12 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
  	<br>
 </c:forEach>
 
-<!-- 사진 띠 부분-->
+<!-- 상단 사진 띠 부분-->
 <section class="bg-dark-overlay-4"
 	style="background-image: url( '${path}/resources/img/city-guide/accommodation/hotel2.jpeg' ); background-position: center left; background-size: cover; margin-top: 120px;">
 	<div class="container ">
 		<div class="row ">
 			<div class="col-lg-8 py-xxl-5 my-lg-4 ">
-				<a href="#" class="badge text-bg-primary mb-2"><i
-					class="fas fa-circle me-2 small fw-bold"></i></a>
 				<h1 class="mice text-white fw-bold mb-2"></h1>
 				<p class="mice lead text-white fw-bold mb-0"></p>
 			</div>
@@ -34,52 +32,57 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="/"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>숙소</strong></li>
-
 		</ol>
 	</nav>
-	<!-- Sponsored posts-->
 </div>
 
 <form name="searchForm" action="${path}/accomMain" method="get">
 <div class="container mb-md-4 py-2" style="margin-top: 60px;">
-
 	<!-- List of posts + Sidebar-->
 	<div class="row">
 		<!-- Sidebar (offcanvas)-->
 		<aside class="col-lg-3">
-			<div class="offcanvas offcanvas-start offcanvas-collapse"
-				id="blog-sidebar">
-
-				<div class="offcanvas-header shadow-sm mb-2">
-					<h2 class="h5 offcanvas-title">Sidebar</h2>
-					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
-				</div>
+			<div class="offcanvas offcanvas-start offcanvas-collapse" id="blog-sidebar">
 				<div class="offcanvas-body">
 					<!-- Sorting-->
 					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap"
-							for="sort"><i
-							class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 정렬
-							: </label> <select class="form-select" id="sort">
-							<option>인기순</option>
-							<option>최신순</option>
-							<option>조회순</option>
-							<option>리뷰순</option>
+						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">지역검색</label> 
+						<select class="form-select" id="sort">
+							<option>강남구</option>
+							<option>강동구</option>
+							<option>강복구</option>
+							<option>강서구</option>
+							<option>관징구</option>
+							<option>구로구</option>
+							<option>금천구</option>
+							<option>노원구</option>
+							<option>도봉구</option>
+							<option>동대문구</option>
+							<option>동작구</option>
+							<option>마포구</option>
+							<option>서대문구</option>
+							<option>서초구</option>
+							<option>성동구</option>
+							<option>성북구</option>
+							<option>송파구</option>
+							<option>양천구</option>
+							<option>영등포구</option>
+							<option>용산구</option>
+							<option>은평구</option>
+							<option>종로구</option>
+							<option>중구</option>
+							<option>중랑구</option>
 						</select>
 					</div>
 					<!-- Search-->
 					<div class="position-relative mb-4">
-						<input class="form-control pe-5" type="text"
-							name="searchValue"
-							placeholder="검색어를 입력해주세요."><i
-							class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
+						<input class="form-control pe-5" type="text"name="searchValue" placeholder="검색어를 입력해주세요.">
 					</div>
-					<!-- Categories-->
+					<!-- Categories 카테고리 -->
 					<div class="card card-flush pb-2 pb-lg-0 mb-4">
 						<div class="card-body">
 							<h3 class="h5">카테고리</h3>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="4.1_accommodationCategory.html">호텔<span
 								class="text-muted ms-394">(2)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
@@ -102,64 +105,44 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<!-- Tags-->
 					<div class="card card-flush pb-2 pb-lg-0 mb-4">
 						<div class="card-body">
-							<h4 class="h5">여행 태그</h4>
+							<h4 class="h5">태그로 검색하는 숙소</h4>
 							<div class="d-flex flex-wrap mb-n1">
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">핫플콕콕</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼래
-									터~?</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집
-									맛집</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주
-									핫플</button>
-								<button
-									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS
-									핫플!!</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이거 필요한가요?</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼터~?</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집맛집</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주 핫플</button>
+								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS핫플!!</button>
 							</div>
 						</div>
 					</div>
-					<!-- Subscribe-->
-					<div class="card card-flush mb-4"></div>
 				</div>
 			</div>
 		</aside>
+		
 		<!-- 숙소 리스트 -->
-		<div
-			class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-0 px-3 px-xl-4 px-xxl-5">
+		<div class="col-lg-8 col-xl-9 position-relative overflow-hidden pb-5 pt-0 px-3 px-xl-4 px-xxl-5">
 			<!-- Title-->
-			<div
-				class="d-sm-flex align-items-center justify-content-between pb-3 pb-sm-4">
+			<div class="d-sm-flex align-items-center justify-content-between pb-3 pb-sm-4">
 				<h1 class="h2 mb-sm-0">숙소 검색결과</h1>
 			</div>
 			<!-- Sorting-->
-			<div
-				class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch my-2">
+			<div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch my-2">
 				<hr class="d-none d-sm-block w-100 mx-4">
-				<div
-					class="d-none d-sm-flex align-items-center flex-shrink-0 text-muted">
-					<i class="fi-check-circle me-2"></i><span class="fs-sm mt-n1">148
-						results</span>
+				<div class="d-none d-sm-flex align-items-center flex-shrink-0 text-muted">
+					148	results</span>
 				</div>
 			</div>
 			<!-- Catalog grid-->
-			<div
-				class="row row-cols-xl-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-xxl-4 py-4">
-				
+			<div class="row row-cols-xl-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-xxl-4 py-4">
 				<c:forEach var="item" items="${list}">
 					<!-- Item-->
 					<div class="col pb-sm-2">
 						<article class="position-relative">
 							<div class="position-relative mb-3">
-								<button
-									class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
+								<button class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
 									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
 									title="Add to Favorites">
-									<i class="fi-heart"></i>
 								</button>
 								<img class="rounded-3" src="${item.firstimage}"
 									alt="Article img">
@@ -168,11 +151,9 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
 							</h3>
 							<ul class="list-inline mb-0 fs-xs">
-								<li class="list-inline-item pe-1"><i
-									class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
+								<li class="list-inline-item pe-1"><b>5.0</b><span
 									class="text-muted">&nbsp;(48)</span></li>
-								<li class="list-inline-item pe-1"><i
-									class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
+								<li class="list-inline-item pe-1">강남구</li>
 							</ul>
 						</article>
 					</div>
