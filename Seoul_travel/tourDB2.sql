@@ -336,7 +336,8 @@ CREATE TABLE Food(
 	seat				VARCHAR(500),
 	smoking				VARCHAR(500),
 	treatmenu			VARCHAR(1000),
-	lcnsno				VARCHAR(500)	
+	lcnsno				VARCHAR(500),
+    PRIMARY KEY (contentid)
 );
 -- DROP TABLE food;
 desc food;
@@ -380,12 +381,14 @@ CREATE TABLE Festival(
 	sponsor2			VARCHAR(100),
 	sponsor2tel			VARCHAR(100),
 	subevent			VARCHAR(300),
-	usetimefestival		VARCHAR(300)
+	usetimefestival		VARCHAR(300),
+    PRIMARY KEY (contentid) 
 );
 -- DROP TABLE Festival;
 desc festival;
 select * from Festival;
 
+SELECT contentid FROM Festival;
 
 
 SELECT * FROM Festival WHERE eventstartdate >= DATE_FORMAT(NOW(), '%Y%m01') ORDER BY eventstartdate;
