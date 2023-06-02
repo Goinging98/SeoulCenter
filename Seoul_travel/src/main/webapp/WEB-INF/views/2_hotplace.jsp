@@ -114,7 +114,7 @@
 					<div class="card-body px-2">
 						<!-- Title -->
 						<h5 class="card-title">
-							<a href="2.2_hotplaceDetailed .html" class="stretched-link">${fItem.title}</a>
+							<a href="${path}/hotDetail?id=${fItem.contentid}" class="stretched-link">${fItem.title}</a>
 						</h5>
 						<!-- Price and rating -->
 						<div class="d-flex justify-content-between align-items-center">

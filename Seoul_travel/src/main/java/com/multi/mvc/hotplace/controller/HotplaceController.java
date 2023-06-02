@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.service.CultureContentService;
 import com.multi.mvc.tour.model.service.FestivalService;
 import com.multi.mvc.tour.model.service.TourListService;
@@ -66,5 +67,42 @@ public class HotplaceController {
 		return "2_hotplace";
 	}
 	
+//	핫플레이스 상세 페이지 구현
+//	@RequestMapping("/accomMain")
+//	public String accomMain(Model model, @RequestParam Map<String,Object> param) {
+//		int page = 1;
+//		try {
+//			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
+//			page = Integer.parseInt((String) param.get("page"));
+//		} catch (Exception e) {}
+//		
+//		int count = accomoService.selectAccomoCount(param);
+//		PageInfo pageInfo = new PageInfo(page, 5, count, 12); // 게시글이 보여지는 갯수 = 10
+//		List<Accommodation> list = accomoService.selectAccomoList(pageInfo, param);
+//
+//		// 이미지 없는 것 후처리 
+//		for(Accommodation a : list) {
+//			if(a.firstimage == null) {
+//				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
+//			}
+//		}
+//		model.addAttribute("list", list);
+//		model.addAttribute("pageInfo", pageInfo);
+//		
+//		return "4_accommodation";
+//	}
 
+// 핫플레이스 상세상세 페이지
+	@RequestMapping("/hotDetail")
+	public String hotDetail(Model model, int id) {
+		Festival festival = festivalService.selectByContentId(id);
+		if(festival == null) {
+			// 에러처리
+		}
+		model.addAttribute("item", festival);
+		
+		return "2.2_hotplaceDetailed";
+	}
+	
+	
 }

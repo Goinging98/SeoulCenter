@@ -18,4 +18,9 @@ public class FestivalService {
 	public List<Festival> selectFestivalList(Map<String, Object> map){
 		return mapper.selectFestivalList(null);
 	}
+
+	public Festival selectByContentId(int id) {
+		return mapper.selectByContentId(id);
+		 
+	}
 }

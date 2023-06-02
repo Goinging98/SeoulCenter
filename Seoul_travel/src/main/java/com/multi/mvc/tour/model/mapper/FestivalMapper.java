@@ -10,4 +10,5 @@ import com.multi.mvc.tour.model.vo.Festival;
 @Mapper
 public interface FestivalMapper {
 	List<Festival> selectFestivalList(Map<String, Object> map);
+	Festival selectByContentId(int id);
 }
