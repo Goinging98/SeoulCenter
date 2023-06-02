@@ -11,4 +11,5 @@ import com.multi.mvc.tour.model.vo.Festival;
 public interface FestivalMapper {
 	List<Festival> selectFestivalList(Map<String, Object> map);
 	Festival selectByContentId(int id);
+	List<Festival> selectFestivalRandomList(Map<String, Object> map);
 }

@@ -33,7 +33,7 @@ public class HotplaceController {
 	public String hotMain(Model model, @RequestParam Map<String,Object> param) {
 		System.out.println(param);
 		
-		List<Festival> fList = festivalService.selectFestivalList(param);
+		List<Festival> fList = festivalService.selectFestivalRandomList(param);
 		List<CultureContent> cList = cultureContentService.selectCultureContentRandomList(param);
 		List<TourList> tList = tourListService.selectTourListRandomList(param);
 		
