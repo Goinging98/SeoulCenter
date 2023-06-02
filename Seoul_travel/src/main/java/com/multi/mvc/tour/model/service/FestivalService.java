@@ -25,6 +25,9 @@ public class FestivalService {
 
 	public Festival selectByContentId(int id) {
 		return mapper.selectByContentId(id);
-		 
+	}
+	
+	public int selectFestivalCount(Map<String, Object> map) {
+		return mapper.selectFestivalCount(map);
 	}
 }

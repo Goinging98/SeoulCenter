@@ -89,44 +89,48 @@
 			<div class="col-12 text-center">
 				<h3 class="mb-0">이달의 행사</h3>
 			</div>
+			<div class="text-end">
+				<a class="btn btn-link fw-normal ms-sm-3 p-0"
+					href="${path}/hotMainDetail"> 더 보기 <i
+					class="fi-arrow-long-right ms-2"></i>
+				</a>
+			</div>
 		</div>
 		<div class="row g-4">
 			<!-- Hotel item -->
 			<c:forEach var="fItem" items="${fList}">
-			<div class="col-sm-6 col-xl-3">
-				<!-- Card START -->
-				<div class="card card-img-scale overflow-hidden bg-transparent">
-					<!-- Image and overlay -->
-					<div class="card-img-scale-wrapper rounded-3"
-						style="width: 273px; height: 395px; display: flex; justify-content: center;">
-						<!-- Image -->
-						<img src="${fItem.firstimage}" class="card-img"
-							alt="hotplace image">
-						<!-- Badge -->
-						<div class="position-absolute bottom-0 start-0 p-3">
-							<div class="badge text-bg-dark fs-6 rounded-pill stretched-link">
-								<i class="bi bi-geo-alt me-2"></i>
+				<div class="col-sm-6 col-xl-3">
+					<!-- Card START -->
+					<div class="card card-img-scale overflow-hidden bg-transparent">
+						<!-- Image and overlay -->
+						<div class="card-img-scale-wrapper rounded-3"
+							style="width: 273px; height: 395px; display: flex; justify-content: center;">
+							<!-- Image -->
+							<img src="${fItem.firstimage}" class="card-img"
+								alt="hotplace image">
+							<!-- Badge -->
+							<div class="position-absolute bottom-0 start-0 p-3">
+								<div class="badge text-bg-dark fs-6 rounded-pill stretched-link">
+									<i class="bi bi-geo-alt me-2"></i>
+								</div>
+							</div>
+						</div>
+						<!-- Card body -->
+						<div class="card-body px-2">
+							<!-- Title -->
+							<h5 class="card-title">
+								<a href="${path}/hotDetail?id=${fItem.contentid}"
+									class="stretched-link">${fItem.title}</a>
+							</h5>
+							<!-- Price and rating -->
+							<div class="d-flex justify-content-between align-items-center">
+								<small class=" text-success fw-light"><strong>${fItem.eventstartdate}
+										~ ${fItem.eventenddate}</strong></small>
 							</div>
 						</div>
 					</div>
-					<!-- Card body -->
-					<div class="card-body px-2">
-						<!-- Title -->
-						<h5 class="card-title">
-							<a href="${path}/hotDetail?id=${fItem.contentid}" class="stretched-link">${fItem.title}</a>
-						</h5>
-						<!-- Price and rating -->
-						<div class="d-flex justify-content-between align-items-center">
-							<small class=" text-success fw-light"><strong>${fItem.eventstartdate}
-									~ ${fItem.eventenddate}</strong></small>
-							<h6 class="mb-0">
-								4.5<i class="fa-solid fa-star text-warning ms-1"></i>
-							</h6>
-						</div>
-					</div>
+					<!-- Card END -->
 				</div>
-				<!-- Card END -->
-			</div>
 			</c:forEach>
 		</div>
 	</div>
@@ -141,6 +145,12 @@
 			<div class="col-12 text-center">
 				<h3 class="mb-0">추천 문화시설</h3>
 			</div>
+			<div class="text-end">
+				<a class="btn btn-link fw-normal ms-sm-3 p-0"
+					href="${path}/hotMainDetail"> 더 보기 <i
+					class="fi-arrow-long-right ms-2"></i>
+				</a>
+			</div>
 		</div>
 
 		<!-- Slider START -->
@@ -151,28 +161,27 @@
 
 				<!-- Offer card START -->
 				<c:forEach var="cItem" items="${cList}" begin="0" end="5">
-				<div>
-					<div class="card">
-						<img
-							src="${cItem.firstimage}" style="width: auto; height: 17rem;"
-							class="card-img" alt="">
-						<!-- Card body -->
-						<div
-							class="position-absolute top-100 start-50 translate-middle w-100">
+					<div>
+						<div class="card">
+							<img src="${cItem.firstimage}"
+								style="width: auto; height: 17rem;" class="card-img" alt="">
+							<!-- Card body -->
 							<div
-								class="card-body text-center bg-mode shadow rounded mx-4 p-3">
-								<h6 class="card-title mb-1">
-									<a href="#">${cItem.title}</a>
-								</h6>
-								<small>${cItem.addr1}</small>
-								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
-										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
+								class="position-absolute top-100 start-50 translate-middle w-100">
+								<div
+									class="card-body text-center bg-mode shadow rounded mx-4 p-3">
+									<h6 class="card-title mb-1">
+										<a>${cItem.title}</a>
+									</h6>
+									<small>${cItem.addr1}</small>
+									<div class="mt-2">
+										<a href="${path}/hotDetail?id=${cItem.contentid}"
+											class="btn btn-sm btn-dark mb-0">더 알아보기</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 				</c:forEach>
 				<!-- Offer card END -->
 			</div>
@@ -354,44 +363,52 @@
 	<div class="col-12 text-center">
 		<h3 class="mb-0">관광지는 어때요?</h3>
 	</div>
+	<div class="text-end">
+		<a class="btn btn-link fw-normal ms-sm-3 p-0"
+			href="${path}/hotMainDetail"> 더 보기 <i
+			class="fi-arrow-long-right ms-2"></i>
+		</a>
+	</div>
 </div>
-<div style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
+<div
+	style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
 	<c:forEach var="tItem" items="${tList}" begin="0" end="2">
-	<div class="box rounded-2"
-		style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-		onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
-		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="${tItem.firstimage}"
-			style="width: 100%; height: auto; object-fit: contain;">
-			<div class="text-overlay"
-				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-				<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
-			</div>
-		</a>
-	</div>
+		<div class="box rounded-2"
+			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
+			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
+			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
+				<img src="${tItem.firstimage}"
+				style="width: 100%; height: auto; object-fit: contain;">
+				<div class="text-overlay"
+					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
+					<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
+				</div>
+			</a>
+		</div>
 	</c:forEach>
 </div>
-<div style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
+<div
+	style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
 	<c:forEach var="tItem" items="${tList}" begin="3" end="5">
-	<div class="box rounded-2"
-		style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-		onmouseover="this.style.filter = 'brightness(50%)'; this.querySelector('.text-overlay').style.opacity = '1';"
-		onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-		<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
-			<img src="${tItem.firstimage}"
-			style="width: 100%; height: auto; object-fit: contain;">
-			<div class="text-overlay"
-				style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
-				<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
-			</div>
-		</a>
-	</div>
+		<div class="box rounded-2"
+			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
+			onmouseover="this.style.filter = 'brightness(50%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
+			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
+				<img src="${tItem.firstimage}"
+				style="width: 100%; height: auto; object-fit: contain;">
+				<div class="text-overlay"
+					style="position: absolute; top: 50%; left: 50%; transform: translate(-70%, -70%); opacity: 0;">
+					<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
+				</div>
+			</a>
+		</div>
 	</c:forEach>
 </div>
 
 
-	<!-- ===============================booing 템플릿==================================== -->
+<!-- ===============================booing 템플릿==================================== -->
 <!-- Bootstrap JS -->
 <!-- <script src="/booking\booking_v1.1.0\template\assets\vendor\bootstrap\dist\js\bootstrap.bundle.min.js"></script>  이거 풀면 검색창 드롭다운 메뉴 오류남-->
 

@@ -25,4 +25,9 @@
 		FROM Festival
 		WHERE contentid = #{id}
 	</select>
+	
+	<select id="selectFestivalCount" parameterType="map" resultType="int">
+		SELECT count(*)
+		FROM Festival
+	</select>
 </mapper>

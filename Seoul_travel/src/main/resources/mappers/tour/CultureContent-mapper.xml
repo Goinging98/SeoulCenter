@@ -14,4 +14,16 @@
 			*
 		FROM CultureContent ORDER BY RAND() limit 12
 	</select>
+	
+	<select id="selectByContentId" parameterType="int" resultType="CultureContent">
+		SELECT *
+		FROM CultureContent
+		WHERE contentid = #{id}
+	</select>
+	
+	<select id="selectCultureContentCount" parameterType="map" resultType="int">
+		SELECT count(*)
+		FROM CultureContent
+	</select>
+	
 </mapper>

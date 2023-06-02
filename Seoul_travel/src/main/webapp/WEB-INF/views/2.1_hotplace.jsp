@@ -12,7 +12,7 @@
 
 <!-- 사진 띠 부분-->
 <section class="bg-dark-overlay-4"
-	style="background-image: url( 'img/community/d94ed70d0a33341d.jpg' ); background-position: center left; background-size: cover; margin-top: 120px;">
+	style="background-image: url('${path}/resources/img/community/d94ed70d0a33341d.jpg' ); background-position: center left; background-size: cover; margin-top: 120px;">
 	<div class="container ">
 		<div class="row ">
 			<div class="col-lg-8 py-xxl-5 my-lg-4 ">
@@ -30,8 +30,8 @@
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
-			<li class="breadcrumb-item"><a href="2_hotplace.html"><strong>핫플레이스</strong></a></li>
+			<li class="breadcrumb-item"><a href="${path}/main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>핫플레이스
 					상세</strong></li>
 
@@ -80,13 +80,13 @@
 							<a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="2.1_hotplaceTouristSpot.html">관광지 <span
-								class=" ms-394">(2)</span></a> <a
+								class=" ms-394">${tCount}</span></a> <a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="2.1_hotplaceTouristSpot.html">문화시설 <span
-								class=" ms-300">(4)</span></a> <a
+								class=" ms-300">${cCount}</span></a> <a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="2.1_hotplaceTouristSpot.html">축제/공연 행사 <span
-								class=" ms-300">(5)</span></a>
+								class=" ms-300">${fCount}</span></a>
 							<!-- <a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="#">일식
                             <span class=" ms-2">(1)</span></a>
                             <a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="#">등등등...
@@ -132,7 +132,7 @@
 
 					<div
 						class="tns-carousel-wrapper  overflow-hidden rounded-2 position-relative rounded-3 me-sm-4 mb-sm-0 mb-3"
-						style="width: 23em; height: auto;">
+						style="max-height: 16rem; width: 23rem;">
 						<div class="tns-carousel-inner "
 							data-carousel-options='{"gutter": 16}'>
 

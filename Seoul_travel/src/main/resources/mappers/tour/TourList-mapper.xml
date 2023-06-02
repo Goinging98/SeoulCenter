@@ -14,4 +14,16 @@
 			*
 		FROM TourList
 	</select>
+	
+	<select id="selectByContentId" parameterType="int" resultType="TourList">
+		SELECT *
+		FROM TourList
+		WHERE contentid = #{id}
+	</select>
+	
+	<select id="selectTourListCount" parameterType="map" resultType="int">
+		SELECT count(*)
+		FROM TourList
+	</select>
+	
 </mapper>

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.multi.mvc.tour.model.mapper.CultureContentMapper;
 import com.multi.mvc.tour.model.vo.CultureContent;
+import com.multi.mvc.tour.model.vo.Festival;
 
 @Service
 public class CultureContentService {
@@ -20,9 +21,16 @@ public class CultureContentService {
 		return mapper.selectCultureContentRandomList(null);
 	}
 
-
 	public List<CultureContent> selectCultureContentList(Map<String, Object> param) {
 		return mapper.selectCultureContentList(null);
+	}
+	
+	public CultureContent selectByContentId(int id) {
+		return mapper.selectByContentId(id);
+	}
+	
+	public int selectCultureContentCount(Map<String, Object> map) {
+		return mapper.selectCultureContentCount(map);
 	}
 }
 

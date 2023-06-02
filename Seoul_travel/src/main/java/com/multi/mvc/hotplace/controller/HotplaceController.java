@@ -68,9 +68,25 @@ public class HotplaceController {
 		return "2_hotplace";
 	}
 	
-//	핫플레이스 상세 페이지 구현
-//	@RequestMapping("/accomMain")
-//	public String accomMain(Model model, @RequestParam Map<String,Object> param) {
+	//핫플레이스 상세 페이지
+	@RequestMapping("/hotMainDetail")
+	public String hotMainDetail(Model model, @RequestParam Map<String,Object> param) {
+		int cCount = cultureContentService.selectCultureContentCount(param);
+		int fCount = festivalService.selectFestivalCount(param);
+		int tCount = tourListService.selectTourListCount(param);
+		
+		model.addAttribute("cCount",cCount);
+		model.addAttribute("fCount",fCount);
+		model.addAttribute("tCount",tCount);
+		
+		return "2.1_hotplace";
+	}
+	
+	
+	
+//	핫플레이스 상세 페이지 구현 예시
+//	@RequestMapping("/hotMainDetail")
+//	public String hotMainDetail(Model model, @RequestParam Map<String,Object> param) {
 //		int page = 1;
 //		try {
 //			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
@@ -97,10 +113,14 @@ public class HotplaceController {
 	@RequestMapping(value ="/hotDetail", method = RequestMethod.GET)
 	public String hotDetail(Model model, int id) {
 		Festival festival = festivalService.selectByContentId(id);
+		CultureContent cultureContent = cultureContentService.selectByContentId(id);
+		TourList tourList = tourListService.selectByContentId(id);
 		if(festival == null) {
 			// 에러처리
 		}
-		model.addAttribute("item", festival);
+		model.addAttribute("fItem", festival);
+		model.addAttribute("cItem", cultureContent);
+		model.addAttribute("tItem", tourList);
 		
 		return "2.2_hotplaceDetailed";
 	}

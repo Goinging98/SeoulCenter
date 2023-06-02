@@ -12,4 +12,5 @@ public interface FestivalMapper {
 	List<Festival> selectFestivalList(Map<String, Object> map);
 	Festival selectByContentId(int id);
 	List<Festival> selectFestivalRandomList(Map<String, Object> map);
+	int selectFestivalCount(Map<String, Object> map);
 }
