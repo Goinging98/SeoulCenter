@@ -42,7 +42,6 @@ public class AccomController {
 		return "4_accommodation";
 	}
 	
-	
 	@RequestMapping("/accomDetail")
 	public String accomMain(Model model, int id) {
 		Accommodation accom = accomoService.selectByContentId(id);
@@ -52,6 +51,7 @@ public class AccomController {
 		model.addAttribute("item", accom);
 		return "4.2_accommoInfo";	
 	}
+	
 	
 	
 	@RequestMapping("/accomGall")
@@ -76,6 +76,20 @@ public class AccomController {
 		
 		return "4.2_accommoReview";	
 	}
+	
+	
+	
+	@RequestMapping("/accomCate")
+	public String accomCate() {
+//		Accommodation accomCate = accomoService.selectByContentId(id);
+//		if(accomCate == null) {
+//			 에러처리
+//		}
+//		model.addAttribute("item2", accomReiview);
+		
+		return "4.1_accommodationCategory";	
+	}
+	
 	
 
 }
