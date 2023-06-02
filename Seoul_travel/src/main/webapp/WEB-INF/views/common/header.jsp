@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -238,23 +237,19 @@
 		<div class="modal-dialog modal-lg modal-dialog-centered p-2 my-0 mx-auto" style="max-width: 950px;">
 			<div class="modal-content">
 				<div class="modal-body px-0 py-2 py-sm-0">
-					<button class="btn-close position-absolute top-0 end-0 mt-3 me-3"
-						type="button" data-bs-dismiss="modal"></button>
+					<button class="btn-close position-absolute top-0 end-0 mt-3 me-3" type="button" data-bs-dismiss="modal"></button>
 					<div class="row mx-0 align-items-center">
 						<div class="col-md-6 border-end-md p-4 p-sm-5">
 							<h2 class="h3 mb-4 mb-sm-5">
 								서울상담소의<br>회원이 되어보세요.
 							</h2>
 							<ul class="list-unstyled mb-4 mb-sm-5">
-								<li class="d-flex mb-2"><i
-									class="fi-check-circle text-primary mt-1 me-2"></i><span>서울에
-										숙소를 한눈에 보고 예약해 보세요.</span></li>
-								<li class="d-flex mb-2"><i
-									class="fi-check-circle text-primary mt-1 me-2"></i><span>맘에드는
-										곳을 찜하고 방문해 보세요.</span></li>
-								<li class="d-flex mb-0"><i
-									class="fi-check-circle text-primary mt-1 me-2"></i><span>다른
-										회원들의 리뷰를 만나보세요.</span></li>
+								<li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i>
+									<span>서울의 숙소를 한눈에 보고 예약해 보세요.</span></li>
+								<li class="d-flex mb-2"><i class="fi-check-circle text-primary mt-1 me-2"></i>
+									<span>마음에 드는 곳을 찜하고 방문해 보세요.</span></li>
+								<li class="d-flex mb-0"><i class="fi-check-circle text-primary mt-1 me-2"></i>
+									<span>다른 회원들의 리뷰를 만나보세요.</span></li>
 							</ul>
 							<img class="d-block mx-auto"
 								src="${path}/resources/img/signin-modal/signup.svg" width="344"
@@ -277,22 +272,19 @@
 							<form class="needs-validation" action="${path}/member/enroll/" method="post"  novalidate>
 								<div class="mb-4">
 									<label class="form-label" for="signup-name">이름</label> 
-									<input name="name"
-										class="form-control" type="text" id="signup-name"
+									<input name="name" class="form-control" type="text" id="signup-name"
 										placeholder="이름을 입력하세요" required>
 								</div>
 								<div class="mb-4">
 									<label class="form-label" for="signup-email">이메일 주소</label> 
-									<input name="id"
-										class="form-control" type="email" id="signup-email"
+									<input name="id" class="form-control" type="email" id="signup-email"
 										placeholder="이메일을 입력해주세요" required>
 								</div>
 								<div class="mb-4">
 									<label class="form-label" for="signup-password">비밀번호 <span
 										class='fs-sm text-muted'>최소 4자이상</span></label>
 									<div class="password-toggle">
-										<input class="form-control" type="password"
-										 name="password"
+										<input class="form-control" type="password" name="password"
 											id="signup-password" minlength="4" required> <label
 											class="password-toggle-btn" aria-label="Show/hide password">
 											<input class="password-toggle-check" type="checkbox"><span
@@ -301,8 +293,7 @@
 									</div>
 								</div>
 								<div class="mb-4">
-									<label class="form-label" for="signup-password-confirm">비밀번호
-										확인</label>
+									<label class="form-label" for="signup-password-confirm">비밀번호 확인</label>
 									<div class="password-toggle">
 										<input class="form-control" type="password"
 											id="signup-password-confirm" minlength="4" required>

@@ -20,9 +20,6 @@
 	<!-- Page content-->
 	<div class="container   mb-md-4 ">
 		<!-- Title + Sharing-->
-		<div
-			class="d-sm-flex align-items-end align-items-md-center justify-content-between position-relative mb-4"
-			style="z-index: 1725;"></div>
 		<div class="row">
 			<div class="col-md-8">
 			
@@ -36,11 +33,11 @@
 								class="tns-total-slides fs-5 fw-bold"></span>
 						</div>
 					</div>
-					<div class="tns-carousel-inner"
-						data-carousel-options="{&quot;navAsThumbnails&quot;: true, &quot;navContainer&quot;: &quot;#thumbnails&quot;, &quot;gutter&quot;: 12, &quot;responsive&quot;: {&quot;0&quot;:{&quot;controls&quot;: false},&quot;500&quot;:{&quot;controls&quot;: true}}}">
-						<div>
+					<div class="tns-carousel-inner">
+<!--  						data-carousel-options="{&quot;navAsThumbnails&quot;: true, &quot;navContainer&quot;: &quot;#thumbnails&quot;, &quot;gutter&quot;: 12, &quot;responsive&quot;: {&quot;0&quot;:{&quot;controls&quot;: false},&quot;500&quot;:{&quot;controls&quot;: true}}}">
+-->						<div>
 							<img class="rounded-3"
-								src="https://blog.kakaocdn.net/dn/xr0iG/btrDrQS6JoT/L2ilf1cuJBrjGCEYXjJvI1/img.png"
+								src=${item.firstimage}
 								alt="Image">
 						</div>
 						<div>
@@ -53,7 +50,7 @@
 				</div>
 				<ul class="tns-thumbnails" id="thumbnails">
 					<li class="tns-thumbnail"><img
-						src="https://blog.kakaocdn.net/dn/xr0iG/btrDrQS6JoT/L2ilf1cuJBrjGCEYXjJvI1/img.png"
+						src="${item.firstimage}"
 						alt="Thumbnail"></li>
 					<li class="tns-thumbnail"><img
 						src="https://blog.kakaocdn.net/dn/dGr3Ur/btrvvciLeKl/mwFEMIknLWeofThts39RGk/img.jpg"
@@ -114,7 +111,7 @@
 				<!-- Specs-->
 
 				<div class="py-5">
-					<h2 class="h4  " id="comments">평점</h2>
+					<h2 class="h4 " id="comments">평점</h2>
 					<div class="row  ">
 						<div class="card card-light card-body mb-4">
 							<div class="row mb-md-5 mb-4">
@@ -285,7 +282,7 @@
 			</div>
 
 
-			<!-- Sidebar-->
+			<!-- 음식점 정보 -->
 			<div class="card col-md-4 pt-5 pt-md-0 px-4 pr-5 pb-4 card-dark">
 				<div class="sticky-top pt-5">
 					<div class="d-none d-md-block ">
@@ -296,25 +293,6 @@
 								type="button" data-bs-toggle="tooltip" title="Add to Wishlist">
 								<i class="fi-heart"></i>
 							</button>
-							<div class="dropdown d-inline-block" data-bs-toggle="tooltip"
-								title="Share">
-								<button
-									class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2"
-									type="button" data-bs-toggle="dropdown">
-									<i class="fi-share"></i>
-								</button>
-								<div class="dropdown-menu dropdown-menu-end my-1">
-									<button class="dropdown-item" type="button">
-										<i class="fi-facebook fs-base opacity-75 me-2"></i>Facebook
-									</button>
-									<button class="dropdown-item" type="button">
-										<i class="fi-twitter fs-base opacity-75 me-2"></i>Twitter
-									</button>
-									<button class="dropdown-item" type="button">
-										<i class="fi-instagram fs-base opacity-75 me-2"></i>Instagram
-									</button>
-								</div>
-							</div>
 						</div>
 						<!-- 별점 -->
 						<span class="star-rating"><i
@@ -323,87 +301,48 @@
 							class="star-rating-icon fi-star-filled active"></i><i
 							class="star-rating-icon fi-star-filled active"></i><i
 							class="star-rating-icon fi-star-filled active"></i></span><span
-							class="fs-sm   opacity-70 align-middle ms-1">(5 reviews)</span>
+							class="fs-sm opacity-70 align-middle ms-1">(5 reviews)</span>
 
-						<div class="h1">등촌샤브칼국수 본점</div>
-
-
-
+						<div class="h1">${item.title}</div>
 						<div class="d-flex align-items-center mb-1 ">
 							<div class="text-nowrap border-end border-light pe-3 me-3">
 								<div class="text-nowrap">
 									<i class="fi-cafe fs-lg opacity-70 me-2 "></i> <span
-										class="align-middle">칼국수,만두</span>
+										class="align-middle">${item.firstmenu}</span>
 								</div>
 								<div class="text-nowrap">
 									<i class="fi-map-pin fs-lg opacity-70 me-2"></i> <span
-										class="align-middle">경기 고양시 일산동구 무궁화로 118</span>
+										class="align-middle">${item.addr1}</span>
 								</div>
 								<i class="fi-clock fs-lg opacity-70 me-2"> </i> <span
-									class="align-middle mb-3">영업시간</span>
+									class="align-middle mb-3">${item.opentimefood}, ${item.restdatefood}</span>
 							</div>
 						</div>
 
 						<div class="bg-secondary rounded-2 mt-3">
 							<div class="d-flex align-items-center mx-2 ">
-								<a><strong>브레이크 타임 : </strong><span class="opacity-70 ">11:00
-										~ 21:00 </span>
-							</div>
-							</a>
-							<div class="d-flex align-items-center mx-2 ">
-								<li><a style="color: #55AC9B;"><strong>일요일 : </a></strong><span
-									class="opacity-70 ">11:00 ~ 21:00</span></li>
-							</div>
-							<div class="d-flex align-items-center mx-2 ">
-								<li><a style="color: #55AC9B;"><strong>월요일 : </a></strong><span
-									class="opacity-70 ">11:00 ~ 21:00</span></li>
-							</div>
-							<div class="d-flex align-items-center mx-2 ">
-								<li><a style="color: #55AC9B;"><strong>화요일 : </a></strong><span
-									class="opacity-70 ">11:00 ~ 21:00</span></li>
-							</div>
-							<div class="d-flex align-items-center mx-2 ">
-								<li><a style="color: #55AC9B;"><strong>수요일 : </a></strong><span
-									class="opacity-70 ">11:00 ~ 21:00</span></li>
-							</div>
-							<div class="d-flex align-items-center mx-2 ">
-								<li><a style="color: #55AC9B;"><strong>목요일 : </a></strong><span
-									class="opacity-70 ">11:00 ~ 21:00</span></li>
-							</div>
-							<div class="d-flex align-items-center mx-2 ">
-								<li><a style="color: #55AC9B;"><strong>금요일 : </a></strong><span
-									class="opacity-70 ">11:00 ~ 21:00</span></li>
-							</div>
-							<div class="d-flex align-items-center mx-2 ">
-								<li><a style="color: #55AC9B;"><strong>토요일 : </a></strong><span
-									class="opacity-70 ">11:00 ~ 21:00</span></li>
+								${item.overview}
+								<br/>
+								전화 : ${item.infocenterfood}
 							</div>
 						</div>
 					</div>
+										
 					<!-- Card with icon boxes-->
 					<div class="card card-body p-4 card-light mb-4">
 						<div class="row row-cols-2 row-cols-sm-4 gx-3 gx-xl-4 gy-4">
 							<div class="col text-dark text-center">
 								<div class="d-table bg-secondary rounded-3 mx-auto p-3">
-									<img src="Finder\Finder\dist\img\food\free-icon-parking.png"
-										width="48" alt="Icon">
+									<img src="${path}/resources/img/food/free-icon-parking.png" width="48" alt="Icon">
 								</div>
-								<div class="fs-sm pt-2 mt-1">포장 가능</div>
+								<div class="fs-sm pt-2 mt-1">주차 ${item.parkingfood }</div>
 							</div>
 							<div class="col text-dark text-center">
 								<div class="d-table bg-secondary k rounded-3 mx-auto p-3">
-									<img src="img\food\free-icon-food.png" width="48" alt="Icon">
+									<img src="${path}/resources/img/food/free-icon-food.png" width="48" alt="Icon">
 								</div>
-								<div class="fs-sm pt-2 mt-1">주차 가능</div>
+								<div class="fs-sm pt-2 mt-1">포장 ${item.paking}</div>
 							</div>
-							<!-- <div class="col text-light text-center">
-                  <div class="d-table bg-dark rounded-3 mx-auto p-3"><img src="img/car-finder/icons/driving-test.svg" width="48" alt="Icon"></div>
-                  <div class="fs-sm pt-2 mt-1">Well-Equipped</div>
-                </div>
-                <div class="col text-light text-center">
-                  <div class="d-table bg-dark rounded-3 mx-auto p-3"><img src="img/car-finder/icons/accident.svg" width="48" alt="Icon"></div>
-                  <div class="fs-sm pt-2 mt-1">No Accident / Damage Reported</div>
-                </div> -->
 						</div>
 					</div>
 
@@ -421,12 +360,9 @@
 									class="fi-route me-2"></i>위치 보기</a>
 							</div>
 						</div>
-						<p class="mb-0 fs-sm text-center">28 Jackson Ave Long Island
-							City, NY 67234</p>
+						<p class="mb-0 fs-sm text-center">${item.addr1}</p>
 					</div>
-					</aside>
 				</div>
-				</section>
 
 			</div>
 		</div>

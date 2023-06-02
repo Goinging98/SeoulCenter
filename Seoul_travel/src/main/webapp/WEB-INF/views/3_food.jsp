@@ -127,7 +127,7 @@
 										<div class="tns-carousel-inner" data-autoplay="false"
 											data-arrow="true" data-dots="false" data-items="1">
 											<!-- Image item -->
-											<img src="${item.firstimage2}" style="min-width: 279px; min-height: 209px; max-width:279px; min-height: 209px" alt="Card image">
+											<img src="${item.firstimage}" style="min-width: 279px; min-height: 209px; max-width:279px; min-height: 209px" alt="Card image">
 										</div>
 									</div>
 									<!-- img END -->
@@ -156,7 +156,7 @@
 										<h5 class="card-title mb-1">
 											<a href="${path}/foodDetail?id=${item.contentid}">${item.title}</a>
 										</h5>
-										<small><i class="bi bi-geo-alt me-2"></i>어디어디 강남구 </small>
+										<small><i class="bi bi-geo-alt me-2"></i>${item.addr1}</small>
 										<!-- Amenities -->
 										<ul class="nav nav-divider mt-3">
 											<li class="nav-item">양식</li>
