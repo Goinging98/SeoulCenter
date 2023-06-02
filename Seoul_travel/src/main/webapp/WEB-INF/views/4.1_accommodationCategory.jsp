@@ -27,8 +27,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
-			<li class="breadcrumb-item"><a href="accomMain"><strong>숙소</strong></a></li>
+			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>숙소</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>호텔</strong></li>
 
 		</ol>
@@ -75,22 +75,22 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 							<h3 class="h5">카테고리</h3>
 							<a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">호텔<span
+								href="4.1_accommodationCategory.html">호텔<span
 								class="text-muted ms-394">(2)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">펜션<span
+								href="4.1_accommodationCategory.html">펜션<span
 								class="text-muted ms-300">(4)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4accomCate">모텔<span
+								href="4.1_accommodationCategory.html">모텔<span
 								class="text-muted ms-300">(5)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">게스트하우스<span
+								href="4.1_accommodationCategory.html">게스트하우스<span
 								class="text-muted ms-2">(1)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">한옥<span
+								href="4.1_accommodationCategory.html">한옥<span
 								class="text-muted ms-2">(8)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">기타<span
+								href="4.1_accommodationCategory.html">기타<span
 								class="text-muted ms-2">(8)</span></a>
 						</div>
 					</div>
@@ -549,16 +549,14 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<li class="page-item active d-none d-sm-block" aria-current="page"><span
 						class="page-link">1<span class="visually-hidden">(current)</span></span></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomCate">2</a></li>
+						href="#">2</a></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomCate">3</a></li>
+						href="#">3</a></li>
+					<li class="page-item d-none d-sm-block">...</li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomCate">4</a></li>
-					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomCate">5</a></li>
-					<li class="page-item"><a class="page-link"
-						href="accomCate" aria-label="Next"><i
-							class="fi-chevron-right"></i></a></li>
+						href="#">8</a></li>
+					<li class="page-item"><a class="page-link" href="#"
+						aria-label="Next"><i class="fi-chevron-right"></i></a></li>
 				</ul>
 			</nav>
 		</div>

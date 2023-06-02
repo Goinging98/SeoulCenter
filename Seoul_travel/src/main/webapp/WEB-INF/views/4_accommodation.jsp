@@ -24,13 +24,13 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		</div>
 	</div>
 </section>
-
+<!-- ㅇㄹㄴㄹㅇㅁㄻㄴㅇㄻㄹㅅㄱㄷㅅㅈㅇㅁㄹㄴㅇㄹㄴㅁㄹㅇㄴㅁㄹㄴㅁㄴㄹㅇㅁㄻㄹㅇㅁㄹㅇㄴㅁㅇㄻㄴㄹㄴㅁㄹ -->
 <!-- Page container-->
 <div class="container mb-md-4 mt-0 pt-4">
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="/"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>숙소</strong></li>
 		</ol>
 	</nav>
@@ -50,9 +50,9 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						<select class="form-select" id="sort">
 							<option>강남구</option>
 							<option>강동구</option>
-							<option>강북구</option>
+							<option>강복구</option>
 							<option>강서구</option>
-							<option>관진구</option>
+							<option>관징구</option>
 							<option>구로구</option>
 							<option>금천구</option>
 							<option>노원구</option>
@@ -83,22 +83,22 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						<div class="card-body">
 							<h3 class="h5">카테고리</h3>
 							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">호텔<span
+								href="4.1_accommodationCategory.html">호텔<span
 								class="text-muted ms-394">(2)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">펜션<span
+								href="4.1_accommodationCategory.html">펜션<span
 								class="text-muted ms-300">(4)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">모텔<span
+								href="4.1_accommodationCategory.html">모텔<span
 								class="text-muted ms-300">(5)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">게스트하우스<span
+								href="4.1_accommodationCategory.html">게스트하우스<span
 								class="text-muted ms-2">(1)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">한옥<span
+								href="4.1_accommodationCategory.html">한옥<span
 								class="text-muted ms-2">(8)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">기타<span
+								href="4.1_accommodationCategory.html">기타<span
 								class="text-muted ms-2">(8)</span></a>
 						</div>
 					</div>
@@ -140,13 +140,11 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<div class="col pb-sm-2">
 						<article class="position-relative">
 							<div class="position-relative mb-3">
-									<button
-										class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-5.5 m-2 zindex-5"
-										type="button" data-bs-toggle="tooltip"
-										data-bs-placement="left" title="Add to Favorites">
-										<i class="fi-heart"></i>
-									</button>
-									<img class="rounded-3" src="${item.firstimage}" style="width: 16rem; height: 17rem;"
+								<button class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
+									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
+									title="Add to Favorites">
+								</button>
+								<img class="rounded-3" src="${item.firstimage}"
 									alt="Article img">
 							</div>
 							<h3 class="mb-2 fs-lg">
@@ -170,15 +168,14 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<li class="page-item active d-none d-sm-block" aria-current="page"><span
 						class="page-link">1<span class="visually-hidden">(current)</span></span></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomMain">2</a></li>
+						href="4_accommodation.html">2</a></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomMain">3</a></li>
+						href="4_accommodation.html">3</a></li>
+					<li class="page-item d-none d-sm-block">4</li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomMain">4</a></li>
-					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="accomMain">5</a></li>
+						href="4_accommodation.html">5</a></li>
 					<li class="page-item"><a class="page-link"
-						href="accomMain" aria-label="Next"><i
+						href="4_accommodation.html" aria-label="Next"><i
 							class="fi-chevron-right"></i></a></li>
 				</ul>
 			</nav>
