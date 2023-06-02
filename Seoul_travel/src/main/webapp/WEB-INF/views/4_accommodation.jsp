@@ -24,7 +24,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		</div>
 	</div>
 </section>
-<!-- ㅇㄹㄴㄹㅇㅁㄻㄴㅇㄻㄹㅅㄱㄷㅅㅈㅇㅁㄹㄴㅇㄹㄴㅁㄹㅇㄴㅁㄹㄴㅁㄴㄹㅇㅁㄻㄹㅇㅁㄹㅇㄴㅁㅇㄻㄴㄹㄴㅁㄹ -->
+
 <!-- Page container-->
 <div class="container mb-md-4 mt-0 pt-4">
 	<!-- Breadcrumb-->
@@ -50,9 +50,9 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						<select class="form-select" id="sort">
 							<option>강남구</option>
 							<option>강동구</option>
-							<option>강복구</option>
+							<option>강북구</option>
 							<option>강서구</option>
-							<option>관징구</option>
+							<option>광진구</option>
 							<option>구로구</option>
 							<option>금천구</option>
 							<option>노원구</option>
@@ -134,17 +134,19 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				</div>
 			</div>
 			<!-- Catalog grid-->
-			<div class="row row-cols-xl-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-xxl-4 py-4">
+			<div class="row row-cols-xl-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-xxl-4 py-4" >
 				<c:forEach var="item" items="${list}">
 					<!-- Item-->
 					<div class="col pb-sm-2">
 						<article class="position-relative">
 							<div class="position-relative mb-3">
-								<button class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-									title="Add to Favorites">
-								</button>
-								<img class="rounded-3" src="${item.firstimage}"
+									<button
+										class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-5.5 m-2 zindex-5"
+										type="button" data-bs-toggle="tooltip"
+										data-bs-placement="left" title="Add to Favorites">
+										<i class="fi-heart"></i>
+									</button>
+									<img class="rounded-3" src="${item.firstimage}" style="width: 18rem; height: 12rem;"
 									alt="Article img">
 							</div>
 							<h3 class="mb-2 fs-lg">
