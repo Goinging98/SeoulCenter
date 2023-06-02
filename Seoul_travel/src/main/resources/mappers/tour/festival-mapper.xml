@@ -14,7 +14,7 @@
 	</select>
 
 	<select id="selectFestivalRandomList" parameterType="map" resultType="Festival">
-		SELECT title, eventstartdate, eventenddate, firstimage
+		SELECT contentid, title, eventstartdate, eventenddate, firstimage
 		FROM tourapi.festival
 		WHERE date_format(now(), '%Y%m%d') BETWEEN eventstartdate AND eventenddate
 		ORDER BY RAND() limit 8

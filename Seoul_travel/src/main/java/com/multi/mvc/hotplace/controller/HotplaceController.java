@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.multi.mvc.common.util.PageInfo;
@@ -93,7 +94,7 @@ public class HotplaceController {
 //	}
 
 // 핫플레이스 상세상세 페이지
-	@RequestMapping("/hotDetail")
+	@RequestMapping(value ="/hotDetail", method = RequestMethod.GET)
 	public String hotDetail(Model model, int id) {
 		Festival festival = festivalService.selectByContentId(id);
 		if(festival == null) {

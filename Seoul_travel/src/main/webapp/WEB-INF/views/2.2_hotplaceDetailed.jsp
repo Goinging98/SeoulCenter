@@ -20,8 +20,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<li class="breadcrumb-item"><a href="2_hotplace.html"><strong>핫플레이스</strong></a></li>
 			<li class="breadcrumb-item"><a href="2.1_hotplace.html"><strong>핫플레이스
 						상세</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>핫플레이스
-					상세 상세</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>${item.title}</strong></li>
 		</ol>
 	</nav>
 
