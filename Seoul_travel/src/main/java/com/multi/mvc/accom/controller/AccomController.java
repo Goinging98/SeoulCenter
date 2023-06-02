@@ -77,5 +77,16 @@ public class AccomController {
 		return "4.2_accommoReview";	
 	}
 	
+	@RequestMapping("/accomCate")
+	public String accomCate() {
+//		Accommodation accomCate = accomoService.selectByContentId(id);
+//		if(accomReiview == null) {
+//			 에러처리
+//		}
+//		model.addAttribute("item2", accomCate);
+		
+		return "4.1_accommodationCategory";	
+	}
+	
 
 }

@@ -30,7 +30,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="/"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>숙소</strong></li>
 		</ol>
 	</nav>
@@ -83,22 +83,22 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						<div class="card-body">
 							<h3 class="h5">카테고리</h3>
 							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4.1_accommodationCategory.html">호텔<span
+								href="accomCate">호텔<span
 								class="text-muted ms-394">(2)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4.1_accommodationCategory.html">펜션<span
+								href="4accomCate">펜션<span
 								class="text-muted ms-300">(4)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4.1_accommodationCategory.html">모텔<span
+								href="accomCate">모텔<span
 								class="text-muted ms-300">(5)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4.1_accommodationCategory.html">게스트하우스<span
+								href="accomCate">게스트하우스<span
 								class="text-muted ms-2">(1)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4.1_accommodationCategory.html">한옥<span
+								href="accomCate">한옥<span
 								class="text-muted ms-2">(8)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4.1_accommodationCategory.html">기타<span
+								href="accomCate">기타<span
 								class="text-muted ms-2">(8)</span></a>
 						</div>
 					</div>
@@ -170,14 +170,15 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<li class="page-item active d-none d-sm-block" aria-current="page"><span
 						class="page-link">1<span class="visually-hidden">(current)</span></span></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="4_accommodation.html">2</a></li>
+						href="accomMain">2</a></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="4_accommodation.html">3</a></li>
-					<li class="page-item d-none d-sm-block">4</li>
+						href="accomMain">3</a></li>
 					<li class="page-item d-none d-sm-block"><a class="page-link"
-						href="4_accommodation.html">5</a></li>
+						href="accomMain">4</a></li>
+					<li class="page-item d-none d-sm-block"><a class="page-link"
+						href="accomMain">5</a></li>
 					<li class="page-item"><a class="page-link"
-						href="4_accommodation.html" aria-label="Next"><i
+						href="accomMain" aria-label="Next"><i
 							class="fi-chevron-right"></i></a></li>
 				</ul>
 			</nav>

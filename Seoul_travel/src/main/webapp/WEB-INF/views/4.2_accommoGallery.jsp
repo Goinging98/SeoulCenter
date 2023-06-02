@@ -13,8 +13,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<!-- Breadcrumb-->
 	<nav class="mb-3 pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
-			<li class="breadcrumb-item"><a href="4_accommodation.html"><strong>숙소</strong></a></li>
+			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="accomMain"><strong>숙소</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>Berlin
 					Business Hotel</strong></li>
 		</ol>

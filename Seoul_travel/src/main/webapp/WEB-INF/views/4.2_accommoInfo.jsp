@@ -12,8 +12,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<!-- Breadcrumb-->
 	<nav class="mb-3 pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
-			<li class="breadcrumb-item"><a href="4_accommodation.html"><strong>숙소</strong></a></li>
+			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="accomMain"><strong>숙소</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>${item.title}</strong></li>
 		</ol>
 	</nav>
@@ -31,13 +31,13 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<ul class="nav nav-pills border-bottom pb-3 mb-4">
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center"
-			href="4.2_accmmoGallery.html">갤러리</a></li>
+			href="accomGall">갤러리</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center active"
-			href="4.2_accommoInfo.html">정보</a></li>
+			href="accomDetail">정보</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center "
-			href="4.2_accommoReview.html">리뷰</a></li>
+			href="accomRev">리뷰</a></li>
 	</ul>
 </section>
 <!-- Page content -->
@@ -94,25 +94,29 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 								<div class="mb-3 pb-3 border-bottom">
 									<h4 class="h5 mb-2">Contacts:</h4>
 									<ul class="nav row row-cols-sm-2 row-cols-1 gy-1">
-										<li class="col"><a
-											class="nav-link p-0 fw-normal d-flex align-items-start"
-											href="#"><i
-												class="fi-map-pin mt-1 me-2 align-middle opacity-70"></i>강남구
-												역삼동 676 센터필드타워 웨스트동</a></li>
-										<li class="col"><a
-											class="nav-link d-inline-block p-0 fw-normal d-inline-flex align-items-start"
-											href="tel:3025550107"><i
-												class="fi-phone mt-1 me-2 align-middle opacity-70"></i>(302)
-												555-0107</a>, <a class="nav-link d-inline-block p-0 fw-normal"
-											href="tel:3025550208">(302) 555-0208</a></li>
-										<li class="col"><a
-											class="nav-link p-0 fw-normal d-flex align-items-start"
-											href="#"><i
-												class="fi-globe mt-1 me-2 align-middle opacity-60"></i>bb-hotel.com</a></li>
-										<li class="col"><a
-											class="nav-link p-0 fw-normal d-flex align-items-start"
-											href="mailto:bb-hotel@example.com"><i
-												class="fi-mail mt-1 me-2 align-middle opacity-70"></i>bb-hotel@example.com</a></li>
+										<li class="col"><div
+												class="p-0 fw-normal d-flex align-items-start" href="#">
+												<div class="fi-map-pin mt-1 me-2 align-middle opacity-70"></div>
+												강남구 역삼동 676 센터필드타워 웨스트동
+											</div></li>
+										<li class="col"><div
+												class="d-inline-block p-0 fw-normal d-inline-flex align-items-start">
+												<div class="fi-phone mt-1 me-2 align-middle opacity-70"></div>
+												(302) 555-0107
+											</div>,
+											<div class="nav-link d-inline-block p-0 fw-normal">(302)
+												555-0208</div></li>
+										<li class="col"><div
+												class="p-0 fw-normal d-flex align-items-start">
+												<div class="fi-globe mt-1 me-2 align-middle opacity-60"></div>
+												bb-hotel.com
+											</div></li>
+										<li class="col"><div
+												class="p-0 fw-normal d-flex align-items-start"
+												href="mailto:bb-hotel@example.com">
+												<div class="fi-mail mt-1 me-2 align-middle opacity-70"></div>
+												bb-hotel@example.com
+											</div></li>
 									</ul>
 								</div>
 								<!-- Place pricing-->
@@ -167,7 +171,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				class="d-flex align-items-center justify-content-between mb-4 pb-2">
 				<h2 class="h3 mb-0">추천 숙소</h2>
 				<a class="btn btn-link fw-normal ms-sm-3 p-0"
-					href="city-guide-catalog.html">더 보기<i
+					href="accomMain">더 보기<i
 					class="fi-arrow-long-right ms-2"></i></a>
 			</div>
 			<div
@@ -188,7 +192,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 									alt="Article img">
 							</div>
 							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="#">Repose Hotel</a>
+								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
 							</h3>
 							<ul class="list-inline mb-0 fs-xs">
 								<li class="list-inline-item pe-1"><i
@@ -213,7 +217,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 									alt="Article img">
 							</div>
 							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="#">Leisure Inn</a>
+								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
 							</h3>
 							<ul class="list-inline mb-0 fs-xs">
 								<li class="list-inline-item pe-1"><i
@@ -238,8 +242,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 									alt="Article img">
 							</div>
 							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="#">Soothe &amp;
-									Stay</a>
+								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
 							</h3>
 							<ul class="list-inline mb-0 fs-xs">
 								<li class="list-inline-item pe-1"><i
@@ -264,8 +267,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 									alt="Article img">
 							</div>
 							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="#">Merry Berry
-									Motel</a>
+								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}></a>
 							</h3>
 							<ul class="list-inline mb-0 fs-xs">
 								<li class="list-inline-item pe-1"><i
