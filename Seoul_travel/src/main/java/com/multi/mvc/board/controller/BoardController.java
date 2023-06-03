@@ -48,7 +48,7 @@ public class BoardController {
 //	 param : {page=1, searchType=title, searchValue=아이폰}
 	// /board/list
 //	@GetMapping("list") // /board/list
-	@GetMapping("/board/list")
+	@GetMapping("community")
 	public String list(Model model, @RequestParam Map<String, Object> param) {
 		log.info("board list 요청, param : " + param);
 		
@@ -74,7 +74,7 @@ public class BoardController {
 		model.addAttribute("param", param);
 		model.addAttribute("pageInfo", pageInfo);
 		
-		return "/board/list";
+		return "/5.1_communityMain";
 	}
 	
 	@RequestMapping("/board/view")

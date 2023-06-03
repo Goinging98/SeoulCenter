@@ -36,7 +36,7 @@ public class HomeController {
 	private FoodService foodService;
 	
 	
-	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	@RequestMapping(value = {"/main", "/"}, method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 //		log.info("@@@@@@@@@@@ selectAll : " + memberService.findAll());
 		/*
@@ -55,9 +55,4 @@ public class HomeController {
 		return "0_myPage-info";
 	}
 	
-
-	@RequestMapping(value = "/community", method = RequestMethod.GET)
-	public String community(Locale locale, Model model) {
-		return "5.3_QA";
-	}
 }
