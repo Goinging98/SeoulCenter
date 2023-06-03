@@ -391,20 +391,12 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					</div>
 
 					<!-- Location (Map)-->
+					
 					<div>
 						<div class="position-relative mb-2">
-							<img class="rounded-3" src="img/real-estate/single/map.jpg"
-								alt="Map">
-							<div
-								class="d-flex w-100 h-100 align-items-center justify-content-center position-absolute top-0 start-0">
-								<a class="btn btn-primary stretched-link"
-									href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6145424811048!2d-73.93999278406218!3d40.74850644331743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2592979d4827f%3A0x3a5d8b3cf779f3b6!2s28%20Jackson%20Ave%2C%20Long%20Island%20City%2C%20NY%2011101%2C%20USA!5e0!3m2!1sen!2sua!4v1618074552281!5m2!1sen!2sua"
-									data-iframe="true" data-bs-toggle="lightbox"><i
-									class="fi-route me-2"></i>위치 보기</a>
+							<div id="map" style="width:200px;height:200px;">
 							</div>
 						</div>
-						<p class="mb-0 fs-sm text-center">28 Jackson Ave Long Island
-							City, NY 67234</p>
 					</div>
 
 				</div>
@@ -413,4 +405,60 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	</div>
 </div>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
+
+<!-- 카카오 토큰 JavaScript 키 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31c2dc2677eb86c0811d24bdcfe862f4"></script>
+<script>
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+	mapOption = { 
+	    center: new kakao.maps.LatLng(${fItem.mapy}, ${fItem.mapx}), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+	//마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+	var positions = [
+			{
+			    content: '<div>${fItem.title}</div>', 
+			    latlng: new kakao.maps.LatLng(${fItem.mapy}, ${fItem.mapx})
+			},
+	];
+	
+	for (var i = 0; i < positions.length; i ++) {
+	// 마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	    map: map, // 마커를 표시할 지도
+	    position: positions[i].latlng // 마커의 위치
+	});
+	
+	// 마커에 표시할 인포윈도우를 생성합니다 
+	var infowindow = new kakao.maps.InfoWindow({
+	    content: positions[i].content // 인포윈도우에 표시할 내용
+	});
+	
+	// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+	// 이벤트 리스너로는 클로저를 만들어 등록합니다 
+	// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+	kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+	kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+	}
+	
+	//인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+	function makeOverListener(map, marker, infowindow) {
+	return function() {
+	    infowindow.open(map, marker);
+	};
+	}
+	
+	//인포윈도우를 닫는 클로저를 만드는 함수입니다 
+	function makeOutListener(infowindow) {
+	return function() {
+	    infowindow.close();
+	};
+	}
+</script>
+
 
