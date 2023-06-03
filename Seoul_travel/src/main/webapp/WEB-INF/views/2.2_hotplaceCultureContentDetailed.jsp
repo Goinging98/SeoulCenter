@@ -18,7 +18,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
 			<li class="breadcrumb-item"><a href="${path}/hotMainDetail"><strong>핫플레이스
 						상세</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>${fItem.title}</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>${cItem.title}</strong></li>
 		</ol>
 	</nav>
 
@@ -28,7 +28,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	</div>
 
 	<div class="d-flex justify-content-center">
-		<h1 class=" h2 mb-5">${fItem.title}</h1>
+		<h1 class=" h2 mb-5">${cItem.title}</h1>
 	</div>
 
 	<!-- Heart icon -->
@@ -66,8 +66,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			style="width: 55em; height: auto;">
 			<div class="tns-carousel-inner  "
 				data-carousel-options='{"gutter": 16}'>
-				<img src="${fItem.firstimage}"	alt="Image">
-				<img src="${fItem.firstimage2}"
+				<img src="${cItem.firstimage}"	alt="Image">
+				<img src="${cItem.firstimage2}"
 					alt="Image">
 				<!-- <img class="rounded-3" src="https://mono.aks.ac.kr/s/media/7f/7fb47219-31a1-4dd9-bc41-d1a1bea62190.jpg?preset=page" alt="Image">
         <img class="rounded-3" src="https://media-cdn.tripadvisor.com/media/photo-s/15/6a/f8/e8/palace.jpg" alt="Image"> -->
@@ -88,7 +88,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					href="#comments" data-scroll><i
 					class="fi-chat-circle opacity-70 me-2"></i><span>3 comments</span></a>
 			</div>
-			<p class="fs-lg fw-bold text-dark mb-4">${fItem.overview}</p>
+			<p class="fs-lg fw-bold text-dark mb-4">${cItem.overview}</p>
 
 			<!-- Tags + Sharing-->
 			<div class="pt-4 pb-5 mb-md-3">
@@ -357,21 +357,29 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<div class="card card-flush pb-3 pb-lg-0 mb-4">
 						<div class="card-body">
 
-							<h3 class="h5 mb-2">가이드</h3>
+							<h3 class="h5 mb-2">상세정보</h3>
 
 							<div class="text-nowrap">
-								<i class="fi-map-pin fs-lg opacity-70 me-2"></i> <span
-									class="align-middle">경기 고양시 일산동구 무궁화로 118</span>
+								<i class="fi-map-pin fs-lg opacity-90"></i> 
+								<span class="align-middle">${cItem.addr1}</span>
 							</div>
-							<div class="ps-3 ">
-								<t class="fs-sm text-muted">우편번호 : 30195</t>
+							<div class="ps-4">
+								<t class="fs-sm">우편번호 : ${cItem.zipcode}</t>
 							</div>
+							
+							<!-- Location (Map) start -->
+							<div>
+								<div class="position-relative mb-2">
+									<div id="map" style="width: 345px; height: 200px;"></div>
+								</div>
+							</div>
+							<!-- Location (Map) end -->
+
 
 							<div class="text-nowrap ">
-								<i class="fi-ticket fs-lg opacity-70 me-2"></i> <span
-									class="align-middle">체험 프로그램</span>
+								<i class="fi-ticket fs-lg opacity-70 me-2"></i> 
+								<span class="align-middle">체험 프로그램</span>
 							</div>
-
 							<div class="bg-secondary rounded-2">
 								<div class="align-middle px-2">-</div>
 								<div class="align-middle px-2">-</div>
@@ -390,14 +398,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						</div>
 					</div>
 
-					<!-- Location (Map)-->
 					
-					<div>
-						<div class="position-relative mb-2">
-							<div id="map" style="width:200px;height:200px;">
-							</div>
-						</div>
-					</div>
 
 				</div>
 			</div>
@@ -413,7 +414,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <script>
 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 	mapOption = { 
-	    center: new kakao.maps.LatLng(${fItem.mapy}, ${fItem.mapx}), // 지도의 중심좌표
+	    center: new kakao.maps.LatLng(${cItem.mapy}, ${cItem.mapx}), // 지도의 중심좌표
 	    level: 3 // 지도의 확대 레벨
 	};
 	
@@ -422,8 +423,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	//마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
 	var positions = [
 			{
-			    content: '<div>${fItem.title}</div>', 
-			    latlng: new kakao.maps.LatLng(${fItem.mapy}, ${fItem.mapx})
+			    content: '<div>${cItem.title}</div>', 
+			    latlng: new kakao.maps.LatLng(${cItem.mapy}, ${cItem.mapx})
 			},
 	];
 	

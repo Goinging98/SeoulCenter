@@ -119,7 +119,7 @@
 						<div class="card-body px-2">
 							<!-- Title -->
 							<h5 class="card-title">
-								<a href="${path}/hotDetail?id=${fItem.contentid}"
+								<a href="${path}/hotFestivalDetail?id=${fItem.contentid}"
 									class="stretched-link">${fItem.title}</a>
 							</h5>
 							<!-- Price and rating -->
@@ -175,7 +175,7 @@
 									</h6>
 									<small>${cItem.addr1}</small>
 									<div class="mt-2">
-										<a href="${path}/hotDetail?id=${cItem.contentid}"
+										<a href="${path}/hotCultureDetail?id=${cItem.contentid}"
 											class="btn btn-sm btn-dark mb-0">더 알아보기</a>
 									</div>
 								</div>
@@ -214,7 +214,7 @@
 								</h6>
 								<small>${cItem.addr1}</small>
 								<div class="mt-2">
-									<a href="2.2_hotplaceDetailed .html"
+									<a href="${path}/hotCultureDetail?id=${cItem.contentid}"
 										class="btn btn-sm btn-dark mb-0">더 알아보기</a>
 								</div>
 							</div>
@@ -377,7 +377,7 @@
 			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
 			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
+			<a class="d-block flex-shrink-0 " href="${path}/hotTourListDetail?id=${tItem.contentid}">
 				<img src="${tItem.firstimage}"
 				style="width: 100%; height: auto; object-fit: contain;">
 				<div class="text-overlay"
@@ -393,13 +393,13 @@
 	<c:forEach var="tItem" items="${tList}" begin="3" end="5">
 		<div class="box rounded-2"
 			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-			onmouseover="this.style.filter = 'brightness(50%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
-			<a class="d-block flex-shrink-0 " href="2.2_hotplaceDetailed .html">
+			<a class="d-block flex-shrink-0 " href="${path}/hotTourListDetail?id=${tItem.contentid}">
 				<img src="${tItem.firstimage}"
 				style="width: 100%; height: auto; object-fit: contain;">
 				<div class="text-overlay"
-					style="position: absolute; top: 50%; left: 50%; transform: translate(-70%, -70%); opacity: 0;">
+					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
 					<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
 				</div>
 			</a>

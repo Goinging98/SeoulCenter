@@ -110,20 +110,41 @@ public class HotplaceController {
 //	}
 
 // 핫플레이스 상세상세 페이지
-	@RequestMapping(value ="/hotDetail", method = RequestMethod.GET)
-	public String hotDetail(Model model, int id) {
-		Festival festival = festivalService.selectByContentId(id);
-		CultureContent cultureContent = cultureContentService.selectByContentId(id);
-		TourList tourList = tourListService.selectByContentId(id);
+	@RequestMapping(value ="/hotFestivalDetail", method = RequestMethod.GET)
+	public String hotFestivalDetail(Model model, int id) {
+		Festival festival = festivalService.selectByContentId(id);	
 		if(festival == null) {
 			// 에러처리
 		}
-		model.addAttribute("fItem", festival);
-		model.addAttribute("cItem", cultureContent);
-		model.addAttribute("tItem", tourList);
 		
-		return "2.2_hotplaceDetailed";
+		model.addAttribute("fItem", festival);
+		return "2.2_hotplaceFestivalDetailed";
 	}
 	
+	@RequestMapping(value ="/hotCultureDetail", method = RequestMethod.GET)
+	public String hotCultureDetail(Model model, int id) {
+		CultureContent cultureContent = cultureContentService.selectByContentId(id);
+		if(cultureContent == null) {
+			// 에러처리
+		}
+		
+		model.addAttribute("cItem", cultureContent);
+		return "2.2_hotplaceCultureContentDetailed";
+	}
 	
+	@RequestMapping(value ="/hotTourListDetail", method = RequestMethod.GET)
+	public String hotTourListDetail(Model model, int id) {
+		TourList tourList = tourListService.selectByContentId(id);
+		if(tourList == null) {
+			// 에러처리
+		}
+		
+		model.addAttribute("tItem", tourList);
+		return "2.2_hotplaceTourListDetailed";
+	}
 }
+
+
+
+
+
