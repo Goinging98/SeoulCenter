@@ -69,8 +69,7 @@
 					</div>
 					<!-- Search-->
 					<div class="position-relative mb-4">
-						<input class="form-control pe-5" type="text"
-							placeholder="검색어를 입력해주세요."><i
+						<input class="form-control pe-5" type="text" placeholder="검색어를 입력해주세요."><i
 							class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
 					</div>
 					<!-- Categories-->
