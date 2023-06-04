@@ -38,6 +38,8 @@ public class AccomController {
 		}
 		model.addAttribute("list", list);
 		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("count", count);
+		
 		
 		return "4_accommodation";
 	}
