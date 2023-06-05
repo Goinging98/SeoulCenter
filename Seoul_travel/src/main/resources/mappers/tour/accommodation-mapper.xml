@@ -27,5 +27,15 @@
 		FROM Accommodation
 		WHERE contentid = #{id}
 	</select>
+	
+	<select id="selectRandomAccom" parameterType="map" resultType="Accommodation">
+		SELECT *
+		FROM Accommodation
+		ORDER BY RAND()
+		LIMIT 6
+
+	</select>
+	
+	
 </mapper>
 

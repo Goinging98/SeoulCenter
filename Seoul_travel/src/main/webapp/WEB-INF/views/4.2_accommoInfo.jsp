@@ -204,81 +204,37 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						</div>
 					</div>
 					<!-- Item-->
-					<div>
-						<div class="position-relative">
-							<div class="position-relative mb-3">
-								<button
-									class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-									title="Add to Wishlist">
-									<i class="fi-heart"></i>
-								</button>
-								<img class="rounded-3" src="img/city-guide/catalog/05.jpg"
-									alt="Article img">
-							</div>
-							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
-							</h3>
-							<ul class="list-inline mb-0 fs-xs">
-								<li class="list-inline-item pe-1"><i
-									class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.8</b><span
-									class="text-muted">&nbsp;(24)</span></li>
-								<li class="list-inline-item pe-1"><i
-									class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-							</ul>
-						</div>
-					</div>
-					<!-- Item-->
-					<div>
-						<div class="position-relative">
-							<div class="position-relative mb-3">
-								<button
-									class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-									title="Add to Wishlist">
-									<i class="fi-heart"></i>
-								</button>
-								<img class="rounded-3" src="img/city-guide/catalog/11.jpg"
-									alt="Article img">
-							</div>
-							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
-							</h3>
-							<ul class="list-inline mb-0 fs-xs">
-								<li class="list-inline-item pe-1"><i
-									class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.9</b><span
-									class="text-muted">&nbsp;(43)</span></li>
-								<li class="list-inline-item pe-1"><i
-									class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-							</ul>
-						</div>
-					</div>
-					<!-- Item-->
-					<div>
-						<div class="position-relative">
-							<div class="position-relative mb-3">
-								<button
-									class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-									title="Add to Wishlist">
-									<i class="fi-heart"></i>
-								</button>
-								<img class="rounded-3" src="img/city-guide/catalog/04.jpg"
-									alt="Article img">
-							</div>
-							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}></a>
-							</h3>
-							<ul class="list-inline mb-0 fs-xs">
-								<li class="list-inline-item pe-1"><i
-									class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.5</b><span
-									class="text-muted">&nbsp;(13)</span></li>
-								<li class="list-inline-item pe-1"><i
-									class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+					
+<!-- Item-->
+<c:forEach var="item" items="${randomAccommodations}">
+    <div>
+        <div class="position-relative">
+            <div class="position-relative mb-3">
+                <button class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
+                    type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist">
+                    <i class="fi-heart"></i>
+                </button>
+                <img class="rounded-3" src="${item.firstimage}" alt="Article img">
+            </div>
+            <h3 class="mb-2 fs-lg">
+                <a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
+            </h3>
+            <ul class="list-inline mb-0 fs-xs">
+                <li class="list-inline-item pe-1">
+                    <i class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i>
+                    <b>5.0</b>
+                    <span class="text-muted">&nbsp;(48)</span>
+                </li>
+                <li class="list-inline-item pe-1">
+                    <i class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>
+                    강남구
+                </li>
+            </ul>
+        </div>
+    </div>
+</c:forEach>
+<!-- End Item -->
+
+					
 		</section>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

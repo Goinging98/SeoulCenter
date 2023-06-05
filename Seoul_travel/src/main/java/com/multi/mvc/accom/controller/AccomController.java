@@ -59,17 +59,31 @@ public class AccomController {
 			// 에러처리
 		}
 		model.addAttribute("item", accom);
-		return "4.2_accommoInfo";	
-	}
+
+		
+		
+		
+		
+        // selectRandomAccom을 호출하여 무작위 숙박 시설 목록을 가져옴
+        List<Accommodation> randomAccommodations = accomoService.selectRandomAccom(6);
+        model.addAttribute("randomAccommodations", randomAccommodations);
+
+        return "4.2_accommoInfo";
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	@RequestMapping("/accomGall")
 	public String accomGallery() {
-//		Accommodation accomGall = accomoService.selectByContentId(id);
-//		if(accomGall == null) {
-//			 에러처리
-//		}
-//		model.addAttribute("item2", accomGall);
+
 		
 		return "4.2_accommoGallery";	
 	}

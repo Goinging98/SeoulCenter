@@ -1,5 +1,6 @@
 package com.multi.mvc.tour.model.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -29,6 +30,16 @@ public class AccomoService {
 	
 	public Accommodation selectByContentId(int id) {
 		return mapper.selectByContentId(id);
+	}
+	
+	
+	
+	
+	
+	public List<Accommodation> selectRandomAccom(int count) {
+	    Map<String, Object> map = new HashMap<>();
+	    map.put("count", count);
+	    return mapper.selectRandomAccom(map);
 	}
 }
 
