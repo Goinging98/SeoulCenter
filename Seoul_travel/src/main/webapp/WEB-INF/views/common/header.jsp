@@ -392,7 +392,7 @@
 						</a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link"	href="community" data-bs-toggle="" aria-expanded="false">
+						<a class="nav-link"	href="community/accomodation" data-bs-toggle="" aria-expanded="false">
 							<strong>커뮤니티</strong>
 						</a>
 					</li>

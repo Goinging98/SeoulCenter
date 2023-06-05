@@ -29,7 +29,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>커뮤니티</strong></li>
-
 		</ol>
 	</nav>
 	<!-- Sponsored posts-->
@@ -72,8 +71,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<div class="card card-flush pb-2 pb-lg-0 mb-4">
 						<div class="card-body">
 							<h3 class="h5">커뮤니티</h3>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a 	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="5.1_communityAccommodation.html">공지사항<span
 								class="text-muted ms-394">(2)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
@@ -86,7 +84,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 								href="5.1_communityAccommodation.html">숙소<span
 								class="text-muted ms-2">(1)</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="5.3_Q&A.html">Q & A 게시판<span class="text-muted ms-2">(8)</span></a>
+								href="/qna">Q & A 게시판<span class="text-muted ms-2">(8)</span></a>
 						</div>
 					</div>
 					<!-- Tags-->
@@ -99,7 +97,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 								<button
 									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼래
 									터~?</button>
-								<button
+									<button
 									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
 								<button
 									class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집

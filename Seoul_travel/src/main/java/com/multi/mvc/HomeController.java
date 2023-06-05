@@ -1,6 +1,5 @@
 package com.multi.mvc;
 
-import java.util.HashMap;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,5 +53,11 @@ public class HomeController {
 	public String mypage(Locale locale, Model model) {
 		return "0_myPage-info";
 	}
-	
+
+
+
+	@RequestMapping(value = "/qna", method = RequestMethod.GET)
+	public String qna(Locale locale, Model model) {
+		return "5.1_QA";
+	}
 }
