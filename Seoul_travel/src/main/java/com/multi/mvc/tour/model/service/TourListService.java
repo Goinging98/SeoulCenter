@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.TourListMapper;
 import com.multi.mvc.tour.model.vo.Festival;
 import com.multi.mvc.tour.model.vo.TourList;
@@ -22,7 +23,9 @@ public class TourListService {
 	}
 
 
-	public List<TourList> selectTourListList(Map<String, Object> param) {
+	public List<TourList> selectTourListList(PageInfo pageInfo, Map<String, Object> param) {
+	    param.put("limit", pageInfo.getListLimit());
+	    param.put("offset", (pageInfo.getStartList() - 1));
 		return mapper.selectTourListList(null);
 	}
 	

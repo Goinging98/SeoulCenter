@@ -144,16 +144,13 @@
 
 					<!-- Overlay item -->
 					<div class="position-absolute top-0 start-0 z-index-1 m-2">
-						<span class="badge badge-lg badge-floating text-white"
-							style="background-color: #28c9a9;">BEST</span>
 					</div>
-
+						<c:forEach var="fItem" items="${fList2}">
 					<div class="card-bodypb-lg-5 ">
-
 						<h3 class="h5 pt-1 mb-2">
-							<a class="nav-link" href="2.2_hotplaceDetailed .html">1관광지</a>
+							<a class="nav-link" href="${path}/hotFestivalDetail?id=${fItem.contentid}">${fItem.title}</a>
 						</h3>
-						<p class="fs-sm text-muted">주소</p>
+						<p class="fs-sm text-muted">${fItem.addr1}</p>
 
 						<!-- Price and Button -->
 						<div
@@ -165,6 +162,7 @@
 							</div>
 						</div>
 					</div>
+					</c:forEach>
 				</div>
 
 				<!-- Article-->

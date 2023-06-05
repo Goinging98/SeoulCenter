@@ -144,16 +144,14 @@
 
 					<!-- Overlay item -->
 					<div class="position-absolute top-0 start-0 z-index-1 m-2">
-						<span class="badge badge-lg badge-floating text-white"
-							style="background-color: #28c9a9;">BEST</span>
 					</div>
 
 					<div class="card-bodypb-lg-5 ">
-
+						<c:forEach var="tItem" items="${tList2}">
 						<h3 class="h5 pt-1 mb-2">
-							<a class="nav-link" href="2.2_hotplaceDetailed .html">1관광지</a>
+							<a class="nav-link" href="${path}/hotTourListDetail?id=${tItem.contentid}">${tItem.title}</a>
 						</h3>
-						<p class="fs-sm text-muted">주소</p>
+						<p class="fs-sm text-muted">${tItem.addr1}</p>
 
 						<!-- Price and Button -->
 						<div
@@ -164,6 +162,7 @@
 									class="btn btn-sm btn-dark mb-0 w-100">더보기</a>
 							</div>
 						</div>
+						</c:forEach>
 					</div>
 				</div>
 

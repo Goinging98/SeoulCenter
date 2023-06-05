@@ -81,8 +81,8 @@ public class HotplaceController {
 		int fCount = festivalService.selectFestivalCount(param);
 		int tCount = tourListService.selectTourListCount(param);
 		PageInfo pageInfo = new PageInfo(page, 5, cCount, 12);
-		List<CultureContent> cList = cultureContentService.selectCultureContentList(pageInfo, param);
-		for(CultureContent c : cList) {
+		List<CultureContent> cList2 = cultureContentService.selectCultureContentList(pageInfo, param);
+		for(CultureContent c : cList2) {
 			if(c.firstimage == null) {
 				c.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
 			}
@@ -92,11 +92,11 @@ public class HotplaceController {
 		model.addAttribute("cCount",cCount);
 		model.addAttribute("fCount",fCount);
 		model.addAttribute("tCount",tCount);
-		model.addAttribute("cList",cList);
+		model.addAttribute("cList",cList2);
 		model.addAttribute("maxPage", maxPage);
 		model.addAttribute("page",page);
 		model.addAttribute("pageInfo", pageInfo);
-		model.addAttribute("cultureContentList", cList);
+		model.addAttribute("cultureContentList", cList2);
 		
 		return "2.1_hotplaceCultureContent";
 	}
@@ -104,13 +104,32 @@ public class HotplaceController {
 	//핫플레이스 상세 페이지
 	@RequestMapping("/hotFestival")
 	public String hotFestival(Model model, @RequestParam Map<String,Object> param) {
+		int page = 1;
+		try {
+			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
+			page = Integer.parseInt((String) param.get("page"));
+		} catch (Exception e) {}
+		
 		int cCount = cultureContentService.selectCultureContentCount(param);
 		int fCount = festivalService.selectFestivalCount(param);
 		int tCount = tourListService.selectTourListCount(param);
+		PageInfo pageInfo = new PageInfo(page, 5, cCount, 12);
+		List<Festival> fList2 = festivalService.selectFestivalList(pageInfo, param);
+		for(Festival f : fList2) {
+			if(f.firstimage == null) {
+				f.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+			}
+		}
+		int maxPage = cCount/5;
 		
 		model.addAttribute("cCount",cCount);
 		model.addAttribute("fCount",fCount);
 		model.addAttribute("tCount",tCount);
+		model.addAttribute("fList",fList2);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("page",page);
+		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("festivalList", fList2);
 		
 		return "2.1_hotplaceFestival";
 	}
@@ -118,13 +137,32 @@ public class HotplaceController {
 	//핫플레이스 상세 페이지
 	@RequestMapping("/hotTourList")
 	public String hotTourList(Model model, @RequestParam Map<String,Object> param) {
+		int page = 1;
+		try {
+			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
+			page = Integer.parseInt((String) param.get("page"));
+		} catch (Exception e) {}
+		
 		int cCount = cultureContentService.selectCultureContentCount(param);
 		int fCount = festivalService.selectFestivalCount(param);
 		int tCount = tourListService.selectTourListCount(param);
+		PageInfo pageInfo = new PageInfo(page, 5, cCount, 12);
+		List<TourList> tList2 = tourListService.selectTourListList(pageInfo, param);
+		for(TourList t : tList2) {
+			if(t.firstimage == null) {
+				t.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+			}
+		}
+		int maxPage = cCount/5;
 		
 		model.addAttribute("cCount",cCount);
 		model.addAttribute("fCount",fCount);
 		model.addAttribute("tCount",tCount);
+		model.addAttribute("tList",tList2);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("page",page);
+		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("tourList", tList2);
 		
 		return "2.1_hotplaceTourList";
 	}
