@@ -113,14 +113,14 @@ public class HotplaceController {
 		int cCount = cultureContentService.selectCultureContentCount(param);
 		int fCount = festivalService.selectFestivalCount(param);
 		int tCount = tourListService.selectTourListCount(param);
-		PageInfo pageInfo = new PageInfo(page, 5, cCount, 12);
+		PageInfo pageInfo = new PageInfo(page, 5, fCount, 12);
 		List<Festival> fList2 = festivalService.selectFestivalList(pageInfo, param);
 		for(Festival f : fList2) {
 			if(f.firstimage == null) {
 				f.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
 			}
 		}
-		int maxPage = cCount/5;
+		int maxPage = fCount/5;
 		
 		model.addAttribute("cCount",cCount);
 		model.addAttribute("fCount",fCount);
@@ -146,14 +146,14 @@ public class HotplaceController {
 		int cCount = cultureContentService.selectCultureContentCount(param);
 		int fCount = festivalService.selectFestivalCount(param);
 		int tCount = tourListService.selectTourListCount(param);
-		PageInfo pageInfo = new PageInfo(page, 5, cCount, 12);
+		PageInfo pageInfo = new PageInfo(page, 5, tCount, 12);
 		List<TourList> tList2 = tourListService.selectTourListList(pageInfo, param);
 		for(TourList t : tList2) {
 			if(t.firstimage == null) {
 				t.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
 			}
 		}
-		int maxPage = cCount/5;
+		int maxPage = tCount/5;
 		
 		model.addAttribute("cCount",cCount);
 		model.addAttribute("fCount",fCount);

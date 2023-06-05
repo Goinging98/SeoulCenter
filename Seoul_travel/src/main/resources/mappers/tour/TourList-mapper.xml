@@ -3,21 +3,20 @@
 
 <mapper namespace="com.multi.mvc.tour.model.mapper.TourListMapper">
 
-	<select id="selectTourListRandomList" parameterType="map" resultType="TourList">
-		SELECT 
-			*
-		FROM TourList ORDER BY RAND() limit 6
-	</select>
-	
 	<select id="selectTourListList" parameterType="map" resultType="TourList">
-		SELECT 
-			*
+		SELECT *
 		FROM TourList
 		WHERE 1 = 1
 		<if test="searchValue != null">
 			AND title LIKE '%${searchValue}%'
 		</if>
 		ORDER BY contentid LIMIT ${limit} OFFSET ${offset}
+	</select>
+	
+	<select id="selectTourListRandomList" parameterType="map" resultType="TourList">
+		SELECT 
+			*
+		FROM TourList ORDER BY RAND() limit 6
 	</select>
 	
 	<select id="selectByContentId" parameterType="int" resultType="TourList">

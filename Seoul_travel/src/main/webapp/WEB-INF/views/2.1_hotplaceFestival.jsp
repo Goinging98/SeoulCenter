@@ -145,8 +145,8 @@
 					<!-- Overlay item -->
 					<div class="position-absolute top-0 start-0 z-index-1 m-2">
 					</div>
-						<c:forEach var="fItem" items="${fList2}">
 					<div class="card-bodypb-lg-5 ">
+						<c:forEach var="fItem" items="${fList}">
 						<h3 class="h5 pt-1 mb-2">
 							<a class="nav-link" href="${path}/hotFestivalDetail?id=${fItem.contentid}">${fItem.title}</a>
 						</h3>
@@ -161,8 +161,8 @@
 									class="btn btn-sm btn-dark mb-0 w-100">더보기</a>
 							</div>
 						</div>
-					</div>
 					</c:forEach>
+					</div>
 				</div>
 
 				<!-- Article-->

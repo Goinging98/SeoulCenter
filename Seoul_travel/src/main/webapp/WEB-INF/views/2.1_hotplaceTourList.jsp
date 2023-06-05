@@ -147,7 +147,7 @@
 					</div>
 
 					<div class="card-bodypb-lg-5 ">
-						<c:forEach var="tItem" items="${tList2}">
+						<c:forEach var="tItem" items="${tList}">
 						<h3 class="h5 pt-1 mb-2">
 							<a class="nav-link" href="${path}/hotTourListDetail?id=${tItem.contentid}">${tItem.title}</a>
 						</h3>

@@ -26,7 +26,7 @@ public class TourListService {
 	public List<TourList> selectTourListList(PageInfo pageInfo, Map<String, Object> param) {
 	    param.put("limit", pageInfo.getListLimit());
 	    param.put("offset", (pageInfo.getStartList() - 1));
-		return mapper.selectTourListList(null);
+		return mapper.selectTourListList(param);
 	}
 	
 	public TourList selectByContentId(int id) {

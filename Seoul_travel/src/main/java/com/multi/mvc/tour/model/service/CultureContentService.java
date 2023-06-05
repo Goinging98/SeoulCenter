@@ -25,7 +25,7 @@ public class CultureContentService {
 	public List<CultureContent> selectCultureContentList(PageInfo pageInfo, Map<String, Object> param) {
 	    param.put("limit", pageInfo.getListLimit());
 	    param.put("offset", (pageInfo.getStartList() - 1));
-		return mapper.selectCultureContentList(null);
+		return mapper.selectCultureContentList(param);
 	}
 	
 	public CultureContent selectByContentId(int id) {

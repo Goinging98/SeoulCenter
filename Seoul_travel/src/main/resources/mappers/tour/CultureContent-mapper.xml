@@ -4,7 +4,7 @@
 <mapper namespace="com.multi.mvc.tour.model.mapper.CultureContentMapper">
 
 	<select id="selectCultureContentList" parameterType="map" resultType="CultureContent">
-		SELECT 	*
+		SELECT *
 		FROM CultureContent
 		WHERE 1 = 1 
 		<if test="searchValue != null">
