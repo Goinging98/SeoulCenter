@@ -13,7 +13,7 @@
 			<div class="col-lg-5 col-md-2 col-sm-3">
 				<div class="mb-3 pb-sm-3">
 					<a class="d-inline-block" href="1_main_page.html">
-						<img src="img/city-guide/logo/logo.gif" width="100" alt="Logo"></a>
+						<img src="${path}/resources/img/city-guide/logo/logo.gif" width="100" alt="Logo"></a>
 				</div>
 				<ul class="nav nav-light flex-column">
 					<li class="nav-item mb-2">
@@ -85,23 +85,6 @@
 						class="nav-link-light px-2 mx-1" href="#">찾아오시는 길</a><a
 						class="nav-link-light px-2 mx-1" href="#">저작권정책</a><a
 						class="nav-link-light px-2 mx-1" href="#">고객서비스현장</a>
-				</div>
-				<div class="d-flex align-items-center">
-					<!-- Socials-->
-					<div class="ms-4 ps-lg-2 text-nowrap">
-						<a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#">
-							<i class="fi-facebook"></i>
-						</a>
-						<a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#">
-							<i class="fi-twitter"></i>
-						</a>
-						<a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#">
-							<i class="fi-telegram"></i>
-						</a>
-						<a class="btn btn-icon btn-translucent-light btn-xs rounded-circle ms-2" href="#">
-							<i class="fi-messenger"></i>
-						</a>
-					</div>
 				</div>
 			</div>
 		</div>
