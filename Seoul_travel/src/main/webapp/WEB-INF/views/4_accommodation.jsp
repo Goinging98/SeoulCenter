@@ -164,28 +164,34 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				<!-- Pagination-->
 				<nav class="border-top pb-md-4 pt-4" aria-label="Pagination">
 					<ul class="pagination mb-1">
-						<li class="page-item d-sm-none"><span
-							class="page-link page-link-static">1 / 5</span></li>
+						<li class="page-item"><a class="page-link next-page"
+							href="accomMain?page=${page-3}" aria-label="Next"><i
+								class="fi-chevron-left"></i></a></li>
+							
 
 						<c:if test="${page > 2}">
 							<li class="page-item d-none d-sm-block"><a class="page-link"
 								href="accomMain?page=${page-2}">${page - 2}</a></li>
 						</c:if>
+						
 						<c:if test="${page > 1}">
 							<li class="page-item d-none d-sm-block"><a class="page-link"
 								href="accomMain?page=${page-1}">${page - 1}</a></li>
 						</c:if>
+						
 						<li class="page-item active d-none d-sm-block" aria-current="page"><span
 							class="page-link">${page}<span class="visually-hidden">(current)</span></span></li>
 						
-						<c:if test="${page < maxPage}">
+						<c:if test="${page <= maxPage}">
 						<li class="page-item d-none d-sm-block"><a class="page-link"
 							href="accomMain?page=${page+1}">${page + 1}</a></li>
 						</c:if>
+						
 						<c:if test="${page < maxPage}">
 						<li class="page-item d-none d-sm-block"><a class="page-link"
 							href="accomMain?page=${page+2}">${page + 2}</a></li>
 						</c:if>
+						
 						<c:if test="${page < maxPage}">
 						<li class="page-item"><a class="page-link next-page"
 							href="accomMain?page=${page+3}" aria-label="Next"><i
@@ -193,9 +199,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 								</c:if>
 					</ul>
 				</nav>
-
-
-
 
 
 			</div>

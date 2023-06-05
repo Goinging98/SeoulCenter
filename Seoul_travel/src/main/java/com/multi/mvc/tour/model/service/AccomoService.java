@@ -17,10 +17,10 @@ public class AccomoService {
 	private AccomoMapper mapper;
 	
 	
-	public List<Accommodation> selectAccomoList(PageInfo pageInfo, Map<String, Object> param){
-		param.put("limit", pageInfo.getListLimit());
-		param.put("offset", (pageInfo.getStartList() - 1));
-		return mapper.selectAccomoList(param);
+	public List<Accommodation> selectAccomoList(PageInfo pageInfo, Map<String, Object> param) {
+	    param.put("limit", pageInfo.getListLimit());
+	    param.put("offset", (pageInfo.getStartList() - 1));
+	    return mapper.selectAccomoList(param);
 	}
 	
 	public int selectAccomoCount(Map<String, Object> map) {
