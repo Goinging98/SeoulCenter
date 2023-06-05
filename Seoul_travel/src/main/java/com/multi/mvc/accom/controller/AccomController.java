@@ -30,15 +30,22 @@ public class AccomController {
 		PageInfo pageInfo = new PageInfo(page, 5, count, 12); // 게시글이 보여지는 갯수 = 10
 		List<Accommodation> list = accomoService.selectAccomoList(pageInfo, param);
 
+
 		// 이미지 없는 것 후처리 
 		for(Accommodation a : list) {
 			if(a.firstimage == null) {
 				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
 			}
 		}
+		int maxPage = count/12;
+		
 		model.addAttribute("list", list);
-		model.addAttribute("pageInfo", pageInfo);
 		model.addAttribute("count", count);
+		model.addAttribute("maxPage", maxPage);
+		
+		model.addAttribute("page",page);
+		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("accommodationList", list);
 		
 		
 		return "4_accommodation";
@@ -89,6 +96,8 @@ public class AccomController {
 		
 		return "4.1_accommodationCategory";	
 	}
+	
+	
 	
 
 }
