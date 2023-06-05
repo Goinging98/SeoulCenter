@@ -33,7 +33,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			class="nav-link d-flex align-items-center"
 			href="accomGall">갤러리</a></li>
 		<li class="nav-item"><a
-			class="nav-link d-flex align-items-center active"
+			class="nav-link d-flex align-items-center"
 			href="accomDetail">정보</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center "
@@ -52,6 +52,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<div class="mb-4 pb-md-3">
 				<p class="mb-1">${item.addr1}<br/>${item.overview}</p>
 			</div>
+			</div>
 			<!-- 편의 시설/ 서비스 -->
 			<div class="mb-4 pb-md-3">
 				<h2 class="h4">정보</h2>
@@ -69,6 +70,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				<h2 class="h4">부대시설 </h2>
 				<h5>${item.subfacility}</h5>
 			</div>
+			</div>
+			</section>
 			<!-- Page content-->
 			<section class="container pb-5 mb-md-4">
 				<div class="row">
@@ -77,8 +80,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 							<div class="card-body mx-n2">
 								<!-- Place info-->
 								<div class="d-flex align-items-start mb-3 pb-3 border-bottom">
-									<img src="img/city-guide/brands/hotel.svg" width="60"
-										alt="Thumbnail">
 									<div class="ps-2 ms-1">
 										<h3 class="h5 mb-2">${item.title}</h3>
 										<ul class="list-unstyled d-flex flex-wrap fs-sm">
@@ -166,75 +167,51 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			</section>
 		</div>
 		<!-- Recently viewed-->
-		<section class="container pb-5 mb-lg-4">
+		<section class="container pb-5 mb-lg-4" >
 			<div
-				class="d-flex align-items-center justify-content-between mb-4 pb-2">
+				class="d-flex align-items-center justify-content-between mb-4 pb-2" >
 				<h2 class="h3 mb-0">추천 숙소</h2>
-				<a class="btn btn-link fw-normal ms-sm-3 p-0"
-					href="accomMain">더 보기<i
-					class="fi-arrow-long-right ms-2"></i></a>
+				<a class="btn btn-link fw-normal ms-sm-3 p-0" href="accomMain">더
+					보기<i class="fi-arrow-long-right ms-2"></i>
+				</a>
 			</div>
 			<div
-				class="tns-carousel-wrapper tns-controls-outside-xxl tns-nav-outside mb-xxl-2">
+				class="tns-carousel-wrapper tns-controls-outside-xxl tns-nav-outside mb-xxl-2" >
 				<div class="tns-carousel-inner"
 					data-carousel-options="{&quot;items&quot;: 3, &quot;gutter&quot;: 24, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1,&quot;nav&quot;:true},&quot;500&quot;:{&quot;items&quot;:2},&quot;850&quot;:{&quot;items&quot;:3},&quot;1400&quot;:{&quot;items&quot;:3,&quot;nav&quot;:false}}}">
-					<!-- Item-->
-					<div>
-						<div class="position-relative">
-							<div class="position-relative mb-3">
-								<button
-									class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-									type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-									title="Add to Wishlist">
-									<i class="fi-heart"></i>
-								</button>
-								<img class="rounded-3" src="img/city-guide/catalog/09.jpg"
-									alt="Article img">
-							</div>
-							<h3 class="mb-2 fs-lg">
-								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
-							</h3>
-							<ul class="list-inline mb-0 fs-xs">
-								<li class="list-inline-item pe-1"><i
-									class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
-									class="text-muted">&nbsp;(48)</span></li>
-								<li class="list-inline-item pe-1"><i
-									class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-							</ul>
-						</div>
-					</div>
-					<!-- Item-->
 					
-<!-- Item-->
-<c:forEach var="item" items="${randomAccommodations}">
-    <div>
-        <div class="position-relative">
-            <div class="position-relative mb-3">
-                <button class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-                    type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Add to Wishlist">
-                    <i class="fi-heart"></i>
-                </button>
-                <img class="rounded-3" src="${item.firstimage}" alt="Article img">
-            </div>
-            <h3 class="mb-2 fs-lg">
-                <a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
-            </h3>
-            <ul class="list-inline mb-0 fs-xs">
-                <li class="list-inline-item pe-1">
-                    <i class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i>
-                    <b>5.0</b>
-                    <span class="text-muted">&nbsp;(48)</span>
-                </li>
-                <li class="list-inline-item pe-1">
-                    <i class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>
-                    강남구
-                </li>
-            </ul>
-        </div>
-    </div>
-</c:forEach>
-<!-- End Item -->
 
-					
+					<!-- Item-->
+					<c:forEach var="item" items="${randomAccommodations}">
+						<div >
+							<div class="position-relative" >
+								<div class="position-relative mb-3">
+									<button
+										class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
+										type="button" data-bs-toggle="tooltip"
+										data-bs-placement="left" title="Add to Wishlist">
+										<i class="fi-heart"></i>
+									</button>
+									<img class="rounded-3" src="${item.firstimage}" style="width: 27rem; height: 16rem;
+										alt="Article img">
+								</div>
+								<h3 class="mb-2 fs-lg">
+									<a class="nav-link stretched-link"
+										href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
+								</h3>
+								<ul class="list-inline mb-0 fs-xs">
+									<li class="list-inline-item pe-1"><i
+										class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i>
+										<b>5.0</b> <span class="text-muted">&nbsp;(48)</span></li>
+									<li class="list-inline-item pe-1"><i
+										class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>
+										강남구</li>
+								</ul>
+							</div>
+						</div>
+					</c:forEach>
+					<!-- End Item -->
+					</div>
+					</div>
 		</section>
-<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+		<jsp:include page="/WEB-INF/views/common/footer.jsp" />

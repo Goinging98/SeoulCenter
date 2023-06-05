@@ -55,11 +55,11 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			class="nav-link d-flex align-items-center active"
 			href="4.2_accmmoGallery.html"><i class="fi-image me-2"></i>갤러리</a></li>
 		<li class="nav-item"><a
-			class="nav-link d-flex align-items-center"
-			href="4.2_accommoInfo.html"><i class="fi-info-circle me-2"></i>정보</a></li>
+			class="nav-link d-flex align-items-center" 
+			href="${path}/accomDetail?id=${item.contentid}"><i class="fi-image me-2"></i>정보</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center"
-			href="4.2_accommoReview.html"><i class="fi-edit me-2"></i>리뷰</a></li>
+			href="accomRev"><i class="fi-edit me-2"></i>리뷰</a></li>
 	</ul>
 </section>
 <!-- Gallery-->
@@ -128,8 +128,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				<div class="card-body mx-n2">
 					<!-- Place info-->
 					<div class="d-flex align-items-start mb-3 pb-3 border-bottom">
-						<img src="img/city-guide/brands/hotel.svg" width="60"
-							alt="Thumbnail">
 						<div class="ps-2 ms-1">
 							<h3 class="h5 mb-2">Berlin Business Hotel</h3>
 							<ul class="list-unstyled d-flex flex-wrap fs-sm">

@@ -61,12 +61,19 @@ public class AccomController {
 		model.addAttribute("item", accom);
 
 		
-		
-		
-		
+
         // selectRandomAccom을 호출하여 무작위 숙박 시설 목록을 가져옴
         List<Accommodation> randomAccommodations = accomoService.selectRandomAccom(6);
+        
+        for(Accommodation a : randomAccommodations) {
+			if(a.firstimage == null) {
+				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
+			}
+		}
+        
         model.addAttribute("randomAccommodations", randomAccommodations);
+        
+  
 
         return "4.2_accommoInfo";
     }
@@ -83,10 +90,16 @@ public class AccomController {
 	
 	@RequestMapping("/accomGall")
 	public String accomGallery() {
+		
 
 		
 		return "4.2_accommoGallery";	
 	}
+	
+	
+	
+	
+	
 	
 	
 	@RequestMapping("/accomRev")
