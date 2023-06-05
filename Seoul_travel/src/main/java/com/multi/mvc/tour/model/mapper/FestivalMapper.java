@@ -10,7 +10,7 @@ import com.multi.mvc.tour.model.vo.Festival;
 @Mapper
 public interface FestivalMapper {
 	List<Festival> selectFestivalList(Map<String, Object> map);
-	Festival selectByContentId(int id);
 	List<Festival> selectFestivalRandomList(Map<String, Object> map);
+	Festival selectByContentId(int id);
 	int selectFestivalCount(Map<String, Object> map);
 }

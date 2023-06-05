@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.CultureContentMapper;
 import com.multi.mvc.tour.model.vo.CultureContent;
 import com.multi.mvc.tour.model.vo.Festival;
@@ -21,7 +22,9 @@ public class CultureContentService {
 		return mapper.selectCultureContentRandomList(null);
 	}
 
-	public List<CultureContent> selectCultureContentList(Map<String, Object> param) {
+	public List<CultureContent> selectCultureContentList(PageInfo pageInfo, Map<String, Object> param) {
+	    param.put("limit", pageInfo.getListLimit());
+	    param.put("offset", (pageInfo.getStartList() - 1));
 		return mapper.selectCultureContentList(null);
 	}
 	

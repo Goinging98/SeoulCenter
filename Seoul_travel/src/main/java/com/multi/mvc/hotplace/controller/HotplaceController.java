@@ -69,8 +69,41 @@ public class HotplaceController {
 	}
 	
 	//핫플레이스 상세 페이지
-	@RequestMapping("/hotMainDetail")
-	public String hotMainDetail(Model model, @RequestParam Map<String,Object> param) {
+	@RequestMapping("/hotCultureContent")
+	public String hotCultureContent(Model model, @RequestParam Map<String,Object> param) {
+		int page = 1;
+		try {
+			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
+			page = Integer.parseInt((String) param.get("page"));
+		} catch (Exception e) {}
+		
+		int cCount = cultureContentService.selectCultureContentCount(param);
+		int fCount = festivalService.selectFestivalCount(param);
+		int tCount = tourListService.selectTourListCount(param);
+		PageInfo pageInfo = new PageInfo(page, 5, cCount, 12);
+		List<CultureContent> cList = cultureContentService.selectCultureContentList(pageInfo, param);
+		for(CultureContent c : cList) {
+			if(c.firstimage == null) {
+				c.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+			}
+		}
+		int maxPage = cCount/5;
+		
+		model.addAttribute("cCount",cCount);
+		model.addAttribute("fCount",fCount);
+		model.addAttribute("tCount",tCount);
+		model.addAttribute("cList",cList);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("page",page);
+		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("cultureContentList", cList);
+		
+		return "2.1_hotplaceCultureContent";
+	}
+	
+	//핫플레이스 상세 페이지
+	@RequestMapping("/hotFestival")
+	public String hotFestival(Model model, @RequestParam Map<String,Object> param) {
 		int cCount = cultureContentService.selectCultureContentCount(param);
 		int fCount = festivalService.selectFestivalCount(param);
 		int tCount = tourListService.selectTourListCount(param);
@@ -79,7 +112,21 @@ public class HotplaceController {
 		model.addAttribute("fCount",fCount);
 		model.addAttribute("tCount",tCount);
 		
-		return "2.1_hotplace";
+		return "2.1_hotplaceFestival";
+	}
+	
+	//핫플레이스 상세 페이지
+	@RequestMapping("/hotTourList")
+	public String hotTourList(Model model, @RequestParam Map<String,Object> param) {
+		int cCount = cultureContentService.selectCultureContentCount(param);
+		int fCount = festivalService.selectFestivalCount(param);
+		int tCount = tourListService.selectTourListCount(param);
+		
+		model.addAttribute("cCount",cCount);
+		model.addAttribute("fCount",fCount);
+		model.addAttribute("tCount",tCount);
+		
+		return "2.1_hotplaceTourList";
 	}
 	
 	

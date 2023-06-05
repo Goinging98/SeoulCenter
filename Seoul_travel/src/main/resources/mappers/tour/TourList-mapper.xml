@@ -13,6 +13,11 @@
 		SELECT 
 			*
 		FROM TourList
+		WHERE 1 = 1
+		<if test="searchValue != null">
+			AND title LIKE '%${searchValue}%'
+		</if>
+		ORDER BY contentid LIMIT ${limit} OFFSET ${offset}
 	</select>
 	
 	<select id="selectByContentId" parameterType="int" resultType="TourList">
