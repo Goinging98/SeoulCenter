@@ -1,5 +1,6 @@
 package com.multi.mvc;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.multi.mvc.accom.controller.AccomController;
 import com.multi.mvc.tour.model.service.AccomoService;
 import com.multi.mvc.tour.model.service.CultureContentService;
 import com.multi.mvc.tour.model.service.FestivalService;
 import com.multi.mvc.tour.model.service.FoodService;
 import com.multi.mvc.tour.model.service.TourListService;
+import com.multi.mvc.tour.model.vo.Accommodation;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -45,8 +48,21 @@ public class HomeController {
 		model.addAttribute("fList", festivalService.selectFestivalList(new HashMap<String,Object>()));
 		model.addAttribute("foList", foodService.selectFoodList(new HashMap<String,Object>()));
 		*/
+	
+			// selectRandomAccom을 호출하여 무작위 숙박 시설 목록을 가져옴
+			List<Accommodation> randomAccommodations = accomoService.selectRandomAccom(12);
+
+			for (Accommodation a : randomAccommodations) {
+				if (a.firstimage == null) {
+					a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
+				}
+			}
+			model.addAttribute("randomAccommodations", randomAccommodations);
+			
+		
 		return "1_main_page";
 	}
+	
 
 
 	@RequestMapping(value = "/mypageinfo", method = RequestMethod.GET)
