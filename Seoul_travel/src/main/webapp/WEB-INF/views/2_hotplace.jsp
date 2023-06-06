@@ -8,20 +8,9 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 
-
-
 <head>
 
   <!-- ----------------------------------------------booking 연결파트------------------------------------------ -->
-      <script type="text/javascript">
-        var theme = localStorage.getItem('data-theme');
-        var root = document.documentElement;
-        if (theme === 'dark' && theme !== undefined) {
-          root.classList.add('dark-mode');
-        } else {
-          root.classList.remove('dark-mode');
-        }
-      </script>
 
       <!-- Favicon -->
       <!-- <link rel="shortcut icon" href="/booking\booking_v1.1.0\template\assets\images\favicon.ico"> -->
@@ -108,12 +97,6 @@
 							<!-- Image -->
 							<img src="${fItem.firstimage}" class="card-img"
 								alt="hotplace image">
-							<!-- Badge -->
-							<div class="position-absolute bottom-0 start-0 p-3">
-								<div class="badge text-bg-dark fs-6 rounded-pill stretched-link">
-									<i class="bi bi-geo-alt me-2"></i>
-								</div>
-							</div>
 						</div>
 						<!-- Card body -->
 						<div class="card-body px-2">

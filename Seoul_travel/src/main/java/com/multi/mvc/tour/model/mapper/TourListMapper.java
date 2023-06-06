@@ -5,7 +5,6 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.multi.mvc.tour.model.vo.CultureContent;
 import com.multi.mvc.tour.model.vo.TourList;
 
 @Mapper
