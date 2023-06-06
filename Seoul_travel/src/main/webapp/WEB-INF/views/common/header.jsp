@@ -323,7 +323,7 @@
 	<!-- Navbar-->
 	<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top"	data-scroll-header>
 		<div class="container">
-			<a class="navbar-brand me-3 me-xl-4" href="/main"> <img
+			<a class="navbar-brand me-3 me-xl-4" href="/mvc/main"> <img
 				class="d-block" src="${path}/resources/img/city-guide/logo/logo.gif"
 				width="116" alt="Finder">
 			</a>
