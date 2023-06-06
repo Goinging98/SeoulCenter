@@ -30,17 +30,16 @@ public class AccomoService {
 	
 	public Accommodation selectByContentId(int id) {
 		return mapper.selectByContentId(id);
-	}
-	
-	
-	
-	
-	
+	}	
 	public List<Accommodation> selectRandomAccom(int count) {
 	    Map<String, Object> map = new HashMap<>();
 	    map.put("count", count);
 	    return mapper.selectRandomAccom(map);
 	}
+	
+	
+
+
 }
 
 

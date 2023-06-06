@@ -12,10 +12,7 @@ public interface AccomoMapper {
 	List<Accommodation> selectAccomoList(Map<String, Object> map);
 	int selectAccomoCount(Map<String, Object> map);
 	Accommodation selectByContentId(int id);
-	
-	
-	
-	
-	
 	List<Accommodation> selectRandomAccom(Map<String, Object> map);
+
+	
 }

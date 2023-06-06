@@ -33,9 +33,10 @@
 		FROM Accommodation
 		ORDER BY RAND()
 		LIMIT 6
-
 	</select>
-	
+
+
+
 	
 </mapper>
 

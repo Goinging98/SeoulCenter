@@ -33,7 +33,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			class="nav-link d-flex align-items-center"
 			href="${path}/accomGall?id=${item.contentid}">갤러리</a></li>
 		<li class="nav-item"><a
-			class="nav-link d-flex align-items-center"
+			class="nav-link d-flex align-items-center active"
 			href="${path}/accomDetail?id=${item.contentid}">정보</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center "
@@ -87,7 +87,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 												class="fi-star-filled mt-n1 me-1 text-warning align-middle opacity-70"></i><b>4.9
 											</b>(48)</li>
 											<li class="me-2 mb-1 pe-1"><i
-												class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>강남구</li>
+												class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>${guAddress}</li>
 										</ul>
 									</div>
 								</div>

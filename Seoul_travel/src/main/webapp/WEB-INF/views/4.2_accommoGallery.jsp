@@ -135,7 +135,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 									class="fi-star-filled mt-n1 me-1 text-warning align-middle opacity-70"></i><b>4.9
 								</b>(48)</li>
 								<li class="me-2 mb-1 pe-1"><i
-									class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>강남구</li>
+									class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>${guAddress}</li>
 							</ul>
 						</div>
 					</div>
@@ -145,21 +145,17 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						<ul class="nav row row-cols-sm-2 row-cols-1 gy-1">
 							<li class="col"><a
 								class="nav-link p-0 fw-normal d-flex align-items-start" href="#"><i
-									class="fi-map-pin mt-1 me-2 align-middle opacity-70"></i>강남구
-									역삼동 676 센터필드타워 웨스트동</a></li>
+									class="fi-map-pin mt-1 me-2 align-middle opacity-70"></i>
+									${item.addr1}</a></li>
 							<li class="col"><a
 								class="nav-link d-inline-block p-0 fw-normal d-inline-flex align-items-start"
 								href="tel:3025550107"><i
-									class="fi-phone mt-1 me-2 align-middle opacity-70"></i>(302)
-									555-0107</a>, <a class="nav-link d-inline-block p-0 fw-normal"
-								href="tel:3025550208">(302) 555-0208</a></li>
-							<li class="col"><a
-								class="nav-link p-0 fw-normal d-flex align-items-start" href="#"><i
-									class="fi-globe mt-1 me-2 align-middle opacity-60"></i>bb-hotel.com</a></li>
-							<li class="col"><a
-								class="nav-link p-0 fw-normal d-flex align-items-start"
-								href="mailto:bb-hotel@example.com"><i
-									class="fi-mail mt-1 me-2 align-middle opacity-70"></i>bb-hotel@example.com</a></li>
+									class="fi-phone mt-1 me-2 align-middle opacity-70"></i>${item.tel}</a>
+							<li class="col"><div
+									class="p-0 fw-normal d-flex align-items-start">
+									<div class="fi-globe mt-1 me-2 align-middle opacity-60"></div>
+									${item.homepage }
+								</div></li>
 						</ul>
 					</div>
 					<!-- Place pricing-->
@@ -219,109 +215,38 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<div class="tns-carousel-inner"
 			data-carousel-options="{&quot;items&quot;: 3, &quot;gutter&quot;: 24, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1,&quot;nav&quot;:true},&quot;500&quot;:{&quot;items&quot;:2},&quot;850&quot;:{&quot;items&quot;:3},&quot;1400&quot;:{&quot;items&quot;:3,&quot;nav&quot;:false}}}">
 			<!-- Item-->
-			<div>
-				<div class="position-relative">
-					<div class="position-relative mb-3">
-						<button
-							class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-							type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-							title="Add to Wishlist">
-							<i class="fi-heart"></i>
-						</button>
-						<img class="rounded-3" src="img/city-guide/catalog/09.jpg"
-							alt="Article img">
+			<c:forEach var="item" items="${randomAccommodations}">
+				<div>
+					<div class="position-relative">
+						<div class="position-relative mb-3">
+							<button
+								class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
+								type="button" data-bs-toggle="tooltip" data-bs-placement="left"
+								title="Add to Wishlist">
+								<i class="fi-heart"></i>
+							</button>
+							<img class="rounded-3" src="${item.firstimage}"
+								style="width: 27rem; height: 16rem;" Articleimg">
+						</div>
+						<h3 class="mb-2 fs-lg">
+							<a class="nav-link stretched-link"
+								href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
+						</h3>
+						<ul class="list-inline mb-0 fs-xs">
+							<li class="list-inline-item pe-1"><i
+								class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i>
+								<b>5.0</b> <span class="text-muted">&nbsp;(48)</span></li>
+							<li class="list-inline-item pe-1"><i
+								class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>
+								강남구</li>
+						</ul>
 					</div>
-					<h3 class="mb-2 fs-lg">
-						<a class="nav-link stretched-link" href="#">Repose Hotel</a>
-					</h3>
-					<ul class="list-inline mb-0 fs-xs">
-						<li class="list-inline-item pe-1"><i
-							class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>5.0</b><span
-							class="text-muted">&nbsp;(48)</span></li>
-						<li class="list-inline-item pe-1"><i
-							class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-					</ul>
 				</div>
-			</div>
-			<!-- Item-->
-			<div>
-				<div class="position-relative">
-					<div class="position-relative mb-3">
-						<button
-							class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-							type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-							title="Add to Wishlist">
-							<i class="fi-heart"></i>
-						</button>
-						<img class="rounded-3" src="img/city-guide/catalog/05.jpg"
-							alt="Article img">
-					</div>
-					<h3 class="mb-2 fs-lg">
-						<a class="nav-link stretched-link" href="#">Leisure Inn</a>
-					</h3>
-					<ul class="list-inline mb-0 fs-xs">
-						<li class="list-inline-item pe-1"><i
-							class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.8</b><span
-							class="text-muted">&nbsp;(24)</span></li>
-						<li class="list-inline-item pe-1"><i
-							class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-					</ul>
-				</div>
-			</div>
-			<!-- Item-->
-			<div>
-				<div class="position-relative">
-					<div class="position-relative mb-3">
-						<button
-							class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-							type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-							title="Add to Wishlist">
-							<i class="fi-heart"></i>
-						</button>
-						<img class="rounded-3" src="img/city-guide/catalog/11.jpg"
-							alt="Article img">
-					</div>
-					<h3 class="mb-2 fs-lg">
-						<a class="nav-link stretched-link" href="#">Soothe &amp; Stay</a>
-					</h3>
-					<ul class="list-inline mb-0 fs-xs">
-						<li class="list-inline-item pe-1"><i
-							class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.9</b><span
-							class="text-muted">&nbsp;(43)</span></li>
-						<li class="list-inline-item pe-1"><i
-							class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>강남구</li>
-					</ul>
-				</div>
-			</div>
-			<!-- Item-->
-			<div>
-				<div class="position-relative">
-					<div class="position-relative mb-3">
-						<button
-							class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-							type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-							title="Add to Wishlist">
-							<i class="fi-heart"></i>
-						</button>
-						<img class="rounded-3" src="img/city-guide/catalog/04.jpg"
-							alt="Article img">
-					</div>
-					<h3 class="mb-2 fs-lg">
-						<a class="nav-link stretched-link" href="#">Merry Berry Motel</a>
-					</h3>
-					<ul class="list-inline mb-0 fs-xs">
-						<li class="list-inline-item pe-1"><i
-							class="fi-star-filled mt-n1 me-1 fs-base text-warning align-middle"></i><b>4.5</b><span
-							class="text-muted">&nbsp;(13)</span></li>
-						<li class="list-inline-item pe-1"><i
-							class="fi-credit-card mt-n1 me-1 fs-base text-muted align-middle"></i>$$</li>
-						<li class="list-inline-item pe-1"><i
-							class="fi-map-pin mt-n1 me-1 fs-base text-muted align-middle"></i>0.4
-							km from center</li>
-					</ul>
-				</div>
-			</div>
+			</c:forEach>
+			<!-- End Item -->
+
 		</div>
 	</div>
+
 </section>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
