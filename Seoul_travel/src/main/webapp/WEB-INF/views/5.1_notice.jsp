@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -57,7 +56,13 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 							<option>댓글순</option>
 						</select>
 					</div>
+					
 					<!-- Search-->
+					
+					<c:set var="searchType" value="${param.searchType}"/>
+					<c:if test="${empty searchType}">
+						<c:set var="searchType" value="${'title'}"/>
+					</c:if>
 					<div class="position-relative mb-4">
 						<input class="form-control pe-5" type="text" placeholder="검색어를 입력해주세요.">
 							<i class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>

@@ -74,7 +74,7 @@ public class BoardController {
 		model.addAttribute("param", param);
 		model.addAttribute("pageInfo", pageInfo);
 		
-		return "/5.1_communityMain";
+		return "board/list";
 	}
 	
 	@RequestMapping("/board/view")
