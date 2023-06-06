@@ -16,16 +16,13 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="${path}/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
-			<li class="breadcrumb-item"><a href="${path}/hotMainDetail"><strong>핫플레이스
+			<li class="breadcrumb-item"><a href="${path}/hotTourList"><strong>핫플레이스
 						상세</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>${tItem.title}</strong></li>
 		</ol>
 	</nav>
 
 	<!-- Page content-->
-	<div class="d-flex justify-content-center">
-		<h1 class=" h5 pt-5" style="color: #55AC9B;">고궁</h1>
-	</div>
 
 	<div class="d-flex justify-content-center">
 		<h1 class=" h2 mb-5">${tItem.title}</h1>
@@ -82,8 +79,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<div class="col-lg-8">
 			<!-- Post meta-->
 			<div class="d-flex flex-wrap border-bottom pb-3 mb-4">
-				<a
-					class="text-uppercase text-decoration-none border-end pe-3 me-3 mb-2">개요</a>
+				<a class="text-uppercase text-decoration-none border-end pe-3 me-3 mb-2">개요</a>
 				<a class="nav-link-muted d-flex align-items-center mb-2"
 					href="#comments" data-scroll><i
 					class="fi-chat-circle opacity-70 me-2"></i><span>3 comments</span></a>
@@ -92,19 +88,9 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 			<!-- Tags + Sharing-->
 			<div class="pt-4 pb-5 mb-md-3">
-				<div
-					class="d-md-flex align-items-center justify-content-between border-top pt-4">
+				<div	class="d-md-flex align-items-center justify-content-between border-top pt-4">
 					<div class="d-flex align-items-center me-3 mb-3 mb-md-0">
-						<div class="d-none d-sm-block fw-bold text-nowrap mb-2 me-2 pe-1">태그:</div>
-						<div class="d-flex flex-wrap">
-							<a
-								class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2"
-								href="#">#서울궁궐</a><a
-								class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2"
-								href="#">#한국전통</a><a
-								class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal mb-2"
-								href="#">$서울명소</a>
-						</div>
+						<div class="d-none d-sm-block fw-bold text-nowrap mb-2 me-2 pe-1">홈페이지: ${tItem.homepage}</div>
 					</div>
 					<div class="d-flex align-items-center">
 						<div class="fw-bold text-nowrap pe-1 mb-2">공유:</div>
@@ -374,16 +360,22 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 								</div>
 							</div>
 							<!-- Location (Map) end -->
+ 
 
-
-							<div class="text-nowrap ">
-								<i class="fi-ticket fs-lg opacity-70 me-2"></i> 
-								<span class="align-middle">체험 프로그램</span>
+							<div class="text-pre-line ">
+								<i class="fi-phone fs-lg opacity-70 me-2"></i> 
+								<span class="align-middle">전화번호</span>
+								<div class="align-middle px-2">${tItem.infocenter}</div>
+							<div class="text-nowrap">
+								<i class="fi-info-square fs-lg opacity-70 me-2"></i> 
+								<span class="align-middle">안내</span>
 							</div>
-							<div class="bg-secondary rounded-2">
-								<div class="align-middle px-2">-</div>
-								<div class="align-middle px-2">-</div>
-
+								<div class="align-middle px-2">- 이용시간</div>
+								<div class="align-middle px-3">${tItem.usetime}</div>
+								<div class="align-middle px-2">- 주차</div>
+								<div class="align-middle px-3">${tItem.parking}</div>
+								<div class="align-middle px-2">- 쉬는날</div>
+								<div class="align-middle px-3">${tItem.restdate}</div>
 							</div>
 
 							<div class="d-flex">
