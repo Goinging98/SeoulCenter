@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class Community {
 	private int bno;
 	private int mno;
+	private int contenttypeid;
 	private String writerId;
 	private String title;
 	private String content;

@@ -18,13 +18,13 @@ public interface CommunityMapper {
 	 * @param map (key=id, title, content, limit(필수), offset(필수))
 	 * @return
 	 */
-	List<Community> selectBoardList(Map<String, Object> map);
+	List<Community> selectCommunityList(Map<String, Object> map);
 
 	/**
 	 * @param map (key=id, title, content)
 	 * @return
 	 */
-	int selectBoardCount(Map<String, Object> map);
+	int selectCommunityCount(Map<String, Object> map);
 	
 	///////////////////////////////////////////////////////////////	
 	// 숙박 
@@ -41,13 +41,13 @@ public interface CommunityMapper {
 	///////////////////////////////////////////////////////////////
 	
 
-	Community selectBoardByNo(int bno);
+	Community selectCommunityByNo(int bno);
 
-	int insertBoard(Community board);
+	int insertCommunity(Community board);
 
-	int insertReply(Replies reply);
+	int insertReplies(Replies reply);
 
-	int updateBoard(Community board);
+	int updateCommunity(Community board);
 
 	/**
 	 * @param map (key=readCount, bno)
@@ -56,7 +56,7 @@ public interface CommunityMapper {
 
 	int updateReadCount(Community board);
 
-	int deleteBoard(int bno);
+	int deleteCommunity(int bno);
 
-	int deleteReply(int rno);
+	int deleteReplies(int rno);
 }

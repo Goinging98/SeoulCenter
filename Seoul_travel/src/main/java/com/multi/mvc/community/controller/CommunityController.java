@@ -137,7 +137,8 @@ public class CommunityController {
 		return "5.1_communityFood";
 	}
 	
-	@RequestMapping(value = "/community/hotplace", method = RequestMethod.GET)
+	// 핫플레이스 
+	@GetMapping(value = "/community/hotplace")
 	public String comu_hotplace(Model model, @RequestParam Map<String, Object> param) {
 		log.info("Hotplace list 요청, param: " + param);
 		int page = 1;
@@ -165,6 +166,18 @@ public class CommunityController {
 		return "5.1_communityHotplace";
 	}
 	
+	
+	// 상세 글 확인
+	@RequestMapping("/community/view")
+	public String view(Model model, @RequestParam("no") int no) {
+		Community board = service.findByNo(no);
+		if(board == null) {
+			return "redirect:error";
+		}
+		model.addAttribute("board", board);
+		//model.addAttribute("replyList", board.getReplies());
+		return "5.2_communityBlog";
+	}
 	
 	
 	

@@ -1,8 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <jsp:include page="/WEB-INF/views/common/header.jsp" />
@@ -29,7 +28,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><strong>커뮤니티</strong></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>맛집</strong></li>
-
 		</ol>
 	</nav>
 	<!-- Sponsored posts-->
@@ -102,7 +100,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						<article class="card card-horizontal border-0 mb-4">
 							<div class="card-body px-0 pt-0 pb-lg-5 pb-sm-4 pb-2">
 								<h3 class="h5 pt-1 mb-2">
-									<a class="nav-link" href="${path}/board/view?no=${bitem.bno}">
+									<a class="nav-link" href="${path}/community/view?no=${bitem.bno}">
 										<c:out value="${bitem.title}"/>
 									</a>
 								</h3>
