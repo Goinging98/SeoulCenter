@@ -32,8 +32,7 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="${path}/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>핫플레이스
-					상세</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>축제/행사 상세</strong></li>
 
 		</ol>
 	</nav>
@@ -78,13 +77,13 @@
 							<h3 class="h5">카테고리</h3>
 							<a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="2.1_hotplaceTouristSpot.html">관광지 <span
+								href="${path}/hotTourList">관광지 <span
 								class=" ms-394">${tCount}</span></a> <a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="2.1_hotplaceTouristSpot.html">문화시설 <span
+								href="${path}/hotCultureContent">문화시설 <span
 								class=" ms-300">${cCount}</span></a> <a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="2.1_hotplaceTouristSpot.html">축제/공연 행사 <span
+								href="${path}/hotFestival">축제/공연 행사 <span
 								class=" ms-300">${fCount}</span></a>
 							<!-- <a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="#">일식
                             <span class=" ms-2">(1)</span></a>
@@ -145,16 +144,13 @@
 
 					<!-- Overlay item -->
 					<div class="position-absolute top-0 start-0 z-index-1 m-2">
-						<span class="badge badge-lg badge-floating text-white"
-							style="background-color: #28c9a9;">BEST</span>
 					</div>
-
 					<div class="card-bodypb-lg-5 ">
-
+						<c:forEach var="fItem" items="${fList}">
 						<h3 class="h5 pt-1 mb-2">
-							<a class="nav-link" href="2.2_hotplaceDetailed .html">1관광지</a>
+							<a class="nav-link" href="${path}/hotFestivalDetail?id=${fItem.contentid}">${fItem.title}</a>
 						</h3>
-						<p class="fs-sm text-muted">주소</p>
+						<p class="fs-sm text-muted">${fItem.addr1}</p>
 
 						<!-- Price and Button -->
 						<div
@@ -165,6 +161,7 @@
 									class="btn btn-sm btn-dark mb-0 w-100">더보기</a>
 							</div>
 						</div>
+					</c:forEach>
 					</div>
 				</div>
 

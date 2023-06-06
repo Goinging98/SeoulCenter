@@ -4,7 +4,7 @@
 <mapper namespace="com.multi.mvc.tour.model.mapper.FestivalMapper">
 
 	<select id="selectFestivalList" parameterType="map" resultType="Festival">
-		SELECT
+		SELECT *
 		FROM Festival
 		WHERE 1 = 1
 		<if test="searchValue != null">

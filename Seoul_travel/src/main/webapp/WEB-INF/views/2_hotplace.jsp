@@ -91,7 +91,7 @@
 			</div>
 			<div class="text-end">
 				<a class="btn btn-link fw-normal ms-sm-3 p-0"
-					href="${path}/hotMainDetail"> 더 보기 <i
+					href="${path}/hotFestival"> 더 보기 <i
 					class="fi-arrow-long-right ms-2"></i>
 				</a>
 			</div>
@@ -147,7 +147,7 @@
 			</div>
 			<div class="text-end">
 				<a class="btn btn-link fw-normal ms-sm-3 p-0"
-					href="${path}/hotMainDetail"> 더 보기 <i
+					href="${path}/hotCultureContent"> 더 보기 <i
 					class="fi-arrow-long-right ms-2"></i>
 				</a>
 			</div>
@@ -365,7 +365,7 @@
 	</div>
 	<div class="text-end">
 		<a class="btn btn-link fw-normal ms-sm-3 p-0"
-			href="${path}/hotMainDetail"> 더 보기 <i
+			href="${path}/hotTourList"> 더 보기 <i
 			class="fi-arrow-long-right ms-2"></i>
 		</a>
 	</div>

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.FestivalMapper;
 import com.multi.mvc.tour.model.vo.Festival;
 
@@ -15,8 +16,10 @@ public class FestivalService {
 	@Autowired
 	private FestivalMapper mapper;
 	
-	public List<Festival> selectFestivalList(Map<String, Object> map){
-		return mapper.selectFestivalList(null);
+	public List<Festival> selectFestivalList(PageInfo pageInfo, Map<String, Object> param){
+	    param.put("limit", pageInfo.getListLimit());
+	    param.put("offset", (pageInfo.getStartList() - 1));
+		return mapper.selectFestivalList(param);
 	}
 	
 	public List<Festival> selectFestivalRandomList(Map<String, Object> map){
