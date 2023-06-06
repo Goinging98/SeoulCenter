@@ -89,8 +89,12 @@ public class AccomController {
 	
 	
 	@RequestMapping("/accomGall")
-	public String accomGallery() {
-		
+	public String accomGallery(Model model, int id) {
+			Accommodation accom = accomoService.selectByContentId(id);
+			if(accom == null) {
+				// 에러처리
+			}
+			model.addAttribute("item", accom);
 
 		
 		return "4.2_accommoGallery";	

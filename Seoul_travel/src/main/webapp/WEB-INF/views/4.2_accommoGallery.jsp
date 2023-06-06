@@ -15,13 +15,13 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="accomMain"><strong>숙소</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>Berlin
-					Business Hotel</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>
+					${item.title}</strong></li>
 		</ol>
 	</nav>
 	<div
 		class="d-sm-flex align-items-center justify-content-between mb-4 pb-sm-2">
-		<h1 class="h2 me-3 mb-sm-0">Berlin Business Hotel</h1>
+		<h1 class="h2 me-3 mb-sm-0">${item.title}</h1>
 		<div class="text-nowrap">
 			<button
 				class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
@@ -129,7 +129,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<!-- Place info-->
 					<div class="d-flex align-items-start mb-3 pb-3 border-bottom">
 						<div class="ps-2 ms-1">
-							<h3 class="h5 mb-2">Berlin Business Hotel</h3>
+							<h3 class="h5 mb-2">${item.title}</h3>
 							<ul class="list-unstyled d-flex flex-wrap fs-sm">
 								<li class="me-2 mb-1 pe-1"><i
 									class="fi-star-filled mt-n1 me-1 text-warning align-middle opacity-70"></i><b>4.9

@@ -31,10 +31,10 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<ul class="nav nav-pills border-bottom pb-3 mb-4">
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center"
-			href="accomGall">갤러리</a></li>
+			href="${path}/accomGall?id=${item.contentid}">갤러리</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center"
-			href="accomDetail">정보</a></li>
+			href="${path}/accomDetail?id=${item.contentid}">정보</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center "
 			href="accomRev">리뷰</a></li>
@@ -98,15 +98,13 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 										<li class="col"><div
 												class="p-0 fw-normal d-flex align-items-start" href="#">
 												<div class="fi-map-pin mt-1 me-2 align-middle opacity-70"></div>
-												강남구 역삼동 676 센터필드타워 웨스트동
+												${item.addr1}
 											</div></li>
 										<li class="col"><div
 												class="d-inline-block p-0 fw-normal d-inline-flex align-items-start">
 												<div class="fi-phone mt-1 me-2 align-middle opacity-70"></div>
-												(302) 555-0107
-											</div>,
-											<div class="nav-link d-inline-block p-0 fw-normal">(302)
-												555-0208</div></li>
+												${item.tel }
+											</div></li>
 										<li class="col"><div
 												class="p-0 fw-normal d-flex align-items-start">
 												<div class="fi-globe mt-1 me-2 align-middle opacity-60"></div>
@@ -116,7 +114,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 												class="p-0 fw-normal d-flex align-items-start"
 												href="mailto:bb-hotel@example.com">
 												<div class="fi-mail mt-1 me-2 align-middle opacity-70"></div>
-												bb-hotel@example.com
+												${item.homepage}
 											</div></li>
 									</ul>
 								</div>
