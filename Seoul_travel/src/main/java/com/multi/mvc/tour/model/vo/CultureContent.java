@@ -109,7 +109,7 @@ public class CultureContent extends TourVO {
 	}
 
 	public String getParkingculture() {
-		return parkingculture;
+		return parkingculture == null ? "정보없음" : parkingculture;
 	}
 
 	public void setParkingculture(String parkingculture) {
@@ -125,7 +125,7 @@ public class CultureContent extends TourVO {
 	}
 
 	public String getRestdateculture() {
-		return restdateculture;
+		return restdateculture == null ? "정보없음" : restdateculture;
 	}
 
 	public void setRestdateculture(String restdateculture) {
@@ -141,7 +141,7 @@ public class CultureContent extends TourVO {
 	}
 
 	public String getUsetimeculture() {
-		return usetimeculture;
+		return usetimeculture == null ? "정보없음" : usetimeculture;
 	}
 
 	public void setUsetimeculture(String usetimeculture) {

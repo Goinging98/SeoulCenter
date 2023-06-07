@@ -149,7 +149,7 @@ public class TourList extends TourVO {
 	}
 
 	public String getParking() {
-		return parking;
+		return parking == null ? "정보없음" : parking;
 	}
 
 	public void setParking(String parking) {
@@ -157,7 +157,7 @@ public class TourList extends TourVO {
 	}
 
 	public String getRestdate() {
-		return restdate;
+		return restdate == null ? "정보없음" : restdate;
 	}
 
 	public void setRestdate(String restdate) {
@@ -173,7 +173,7 @@ public class TourList extends TourVO {
 	}
 
 	public String getUsetime() {
-		return usetime;
+		return usetime == null ? "정보없음" : usetime;
 	}
 
 	public void setUsetime(String usetime) {

@@ -77,7 +77,7 @@ public class TourVO {
 	}
 
 	public String getHomepage() {
-		return homepage;
+		return homepage == null ? "정보없음" : homepage;
 	}
 
 	public void setHomepage(String homepage) {
