@@ -60,7 +60,8 @@ SELECT * FROM MEMBER;
 -------------------------------------------------
 CREATE TABLE BOARD (	
     bNO INT AUTO_INCREMENT,
-    mNO INT, 
+    mNO INT,
+    contenttypeid INT,
 	TITLE VARCHAR(1000), 
 	CONTENT VARCHAR(2000), 
 	TYPE VARCHAR(100), 
@@ -75,8 +76,8 @@ CREATE TABLE BOARD (
 );
 
 
-use tourapi;
-drop table board;
+-- use tourapi;
+-- drop table board;
 select * from board;
 select count(*) from board where contenttypeid=39;
 
@@ -368,18 +369,32 @@ CREATE TABLE Festival(
 	sponsor2tel			VARCHAR(100),
 	subevent			VARCHAR(300),
 	usetimefestival		VARCHAR(300),
+    imgname				VARCHAR(1000),
+	originimgurl 		VARCHAR(1000),
+	smallimageurl		VARCHAR(1000),
     PRIMARY KEY (contentid) 
 );
 -- DROP TABLE Festival;
 desc festival;
 select * from Festival;
 
-SELECT contentid FROM Festival;
+CREATE TABLE TourImage(
+iNo	INT PRIMARY KEY AUTO_INCREMENT,
+contentid	INT,
+imgname	VARCHAR(1000),
+originimgurl VARCHAR(1000),
+smallimageurl	VARCHAR(1000)
+);
+DESC TourImage;
+SELECT * FROM TourImage;
 
 
-SELECT * FROM Festival WHERE eventstartdate >= DATE_FORMAT(NOW(), '%Y%m01') ORDER BY eventstartdate;
+-- SELECT contentid FROM Festival;
 
-select title, eventstartdate, eventenddate, firstimage
-from tourapi.festival
-where date_format(now(), '%Y%m%d') between  eventstartdate and eventenddate
-order by eventstartdate;
+
+-- SELECT * FROM Festival WHERE eventstartdate >= DATE_FORMAT(NOW(), '%Y%m01') ORDER BY eventstartdate;
+
+-- select title, eventstartdate, eventenddate, firstimage
+-- from tourapi.festival
+-- where date_format(now(), '%Y%m%d') between  eventstartdate and eventenddate
+-- order by eventstartdate;
