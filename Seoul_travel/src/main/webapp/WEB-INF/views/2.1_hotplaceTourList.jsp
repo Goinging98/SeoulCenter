@@ -120,9 +120,9 @@
 							data-carousel-options='{"gutter": 16}'>
 
 							<!-- Image item -->
-							<img href="${path}/hotTourListDetail?id=${fItem.contentid}"
+							<img href="${path}/hotTourListDetail?id=${tItem.contentid}"
 								src="${tItem.firstimage}"></img>
-							<img href="${path}/hotTourListDetail?id=${fItem.contentid}"
+							<img href="${path}/hotTourListDetail?id=${tItem.contentid}"
 								src="${tItem.firstimage2}"></img>
 						</div>
 					</div>

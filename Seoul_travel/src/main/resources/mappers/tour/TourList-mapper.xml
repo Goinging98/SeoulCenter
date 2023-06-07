@@ -16,7 +16,7 @@
 	<select id="selectTourListRandomList" parameterType="map" resultType="TourList">
 		SELECT 
 			*
-		FROM TourList ORDER BY RAND() limit 6
+		FROM TourList ORDER BY RAND() limit 10
 	</select>
 	
 	<select id="selectByContentId" parameterType="int" resultType="TourList">

@@ -251,15 +251,18 @@
 
 <!-- 오늘은 여기 어때요? -->
 <section class="container mb-sm-2 mb-4 pb-lg-4">
-	<div class="row">
-		<div class="col-sm-12 h3 widget-title pb-1">오늘은 여기 어때요?</div>
+	<div
+		class="d-sm-flex align-items-center justify-content-between mb-4 pb-2">
+		<h2 class="h4" style="margin-bottom: -25px;">서울 상담소의 추천 관광지</h2>
+		<a class="btn btn-link fw-normal ms-sm-3 p-0"
+			href="${path}/hotTourList">더보기<i class="fi-arrow-long-right ms-2"></i>
+		</a>
 	</div>
 	<div class="card-body">
 		<div class="tab-content">
 			<div class="tab-pane fade show active" id="result5" role="tabpanel">
 				<div class="px-5">
-					<div
-						class="tns-carousel-wrapper tns-controls-outside tns-nav-outside">
+					<div class="tns-carousel-wrapper tns-controls-outside tns-nav-outside">
 						<div class="tns-carousel-inner"
 							data-carousel-options="
                           {&quot;items&quot;: 5, &quot;responsive&quot;: 
@@ -267,32 +270,10 @@
                             &quot;480&quot;:{&quot;items&quot;:3, &quot;gutter&quot;: 16},
                             &quot;680&quot;:{&quot;items&quot;:4, &quot;gutter&quot;: 16},
                             &quot;850&quot;:{&quot;items&quot;:5, &quot;gutter&quot;: 16}}}">
-							<a class="swap-image" href="2.2_hotplaceDetailed .html"><img
-								src="${path}/resources/img/city-guide/home/1.jpeg"
-								class="rounded-2 img-fluid gallery-item" alt="Image1"
-								width="300px" height="250px"></a> <a class="swap-image"
-								href="2.2_hotplaceDetailed .html"><img
-								src="${path}/resources/img/city-guide/home/2.jpeg"
-								class="rounded-2 img-fluid gallery-item" alt="Image1"
-								width="300px" height="250px"></a> <a class="swap-image"
-								href="2.2_hotplaceDetailed .html"><img
-								src="${path}/resources/img/city-guide/home/3.jpeg"
-								class="rounded-2 img-fluid gallery-item" alt="Image1"
-								width="300px" height="250px"></a> <a class="swap-image"
-								href="2.2_hotplaceDetailed .html"><img
-								src="${path}/resources/img/city-guide/home/4.jpeg"
-								class="rounded-2 img-fluid gallery-item" alt="Image1"
-								width="300px" height="250px"></a> <a class="swap-image"
-								href="2.2_hotplaceDetailed .html"><img
-								src="${path}/resources/img/city-guide/home/5.jpeg"
-								class="rounded-2 img-fluid gallery-item" alt="Image1"
-								width="300px" height="250px"></a> <a class="swap-image"
-								href="${path}/resources/2.2_hotplaceDetailed .html"><img
-								src="img/city-guide/home/1.jpeg"
-								class="rounded-2 img-fluid gallery-item" alt="Image1"
-								width="300px" height="250px"></a>
-
-
+							<c:forEach var="tItem" items="${tList}">
+							<a class="swap-image" href="${path}/hotTourListDetail?id=${tItem.contentid}">
+							<img	 src="${tItem.firstimage}" class="rounded-2 img-fluid gallery-item" alt="Image1" width="300px" height="270px"></a>
+							</c:forEach>
 						</div>
 					</div>
 				</div>
@@ -300,7 +281,6 @@
 			<div class="tab-pane fade" id="html5" role="tabpanel">
 				<pre class="line-numbers">
 						<code class="lang-html">
-    
                       </code>
 					</pre>
 			</div>
