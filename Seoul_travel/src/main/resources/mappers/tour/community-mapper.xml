@@ -42,7 +42,7 @@
 -->
 
 	<!-- 기본 -->
-	<select id="selectBoardList" parameterType="map" resultMap="boardResultMap">
+	<select id="selectCommunityList" parameterType="map" resultMap="boardResultMap">
 		SELECT 
 			B.bNO, B.TITLE, M.ID, B.CREATE_DATE, B.ORIGINAL_FILENAME, B.READCOUNT,B.STATUS
 		FROM BOARD B 
@@ -54,7 +54,7 @@
 		ORDER BY B.bNO DESC LIMIT ${limit} OFFSET ${offset}
 	</select>
 
-	<select id="selectBoardCount" parameterType="map" resultType="int">
+	<select id="selectCommunityCount" parameterType="map" resultType="int">
 		SELECT 
 			COUNT(*)
 		FROM BOARD B 
@@ -65,7 +65,7 @@
 		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
 	</select>
 	
-	<select id="selectBoardByNo" parameterType="int" resultMap="boardDetailResultMap">
+	<select id="selectCommunityByNo" parameterType="int" resultMap="boardDetailResultMap">
 		SELECT  B.bNO, B.TITLE, M.ID, B.READCOUNT, B.ORIGINAL_FILENAME, B.RENAMED_FILENAME, B.CONTENT, B.CREATE_DATE, B.MODIFY_DATE,
 				R.rNO as R_RNO, 
 		        R.bNO as R_BNO, 
@@ -91,7 +91,7 @@
 		WHERE 1 = 1
 		AND B.STATUS = 'Y'
 		AND B.CONTENTTYPEID = 32
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
+		AND ( B.TITLE LIKE '%${searchValue}%' OR B.CONTENT LIKE '%${searchValue}%')
 		ORDER BY B.bNO DESC LIMIT ${limit} OFFSET ${offset}
 	</select>
 
@@ -103,7 +103,7 @@
 		WHERE 1 = 1
 		AND B.STATUS = 'Y'
 		AND B.CONTENTTYPEID = 32
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
+		AND ( B.TITLE LIKE '%${searchValue}%' OR B.CONTENT LIKE '%${searchValue}%')
 	</select>
 	
 	<!-- 맛집 -->
@@ -115,7 +115,7 @@
 		WHERE 1 = 1
 		AND B.STATUS = 'Y'
 		AND B.CONTENTTYPEID = 39
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
+		AND ( B.TITLE LIKE '%${searchValue}%' OR B.CONTENT LIKE '%${searchValue}%')
 		ORDER BY B.bNO DESC LIMIT ${limit} OFFSET ${offset}
 	</select>
 
@@ -127,7 +127,7 @@
 		WHERE 1 = 1
 		AND B.STATUS = 'Y'
 		AND B.CONTENTTYPEID = 39
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
+		AND ( B.TITLE LIKE '%${searchValue}%' OR B.CONTENT LIKE '%${searchValue}%')
 	</select>
 	
 	

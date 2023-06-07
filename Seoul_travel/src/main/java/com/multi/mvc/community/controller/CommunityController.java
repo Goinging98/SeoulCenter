@@ -53,7 +53,7 @@ public class CommunityController {
 	}
 
 	@GetMapping(value = "/community/notice")
-	public String notice_list(Model model, @RequestParam Map<String, Object> param) {
+	public String communityList(Model model, @RequestParam Map<String, Object> param) {
 		log.info("notice list 요청, param: "+param);
 		int page = 1;
 
@@ -86,13 +86,6 @@ public class CommunityController {
 		int page = 1;
 
 		try {
-			if(param.get("searchType") != null) {
-				// searchType이 없어서 제거하고 searchValue만 남기는 것은 안되나?
-				param.put((String) param.get("searchType"), param.get("searchValue"));
-				// title - 숙소
-				// content - 삽니다
-			}
-			
 			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
 			page = Integer.parseInt((String) param.get("page"));
 		} catch (Exception e) {}
@@ -115,14 +108,6 @@ public class CommunityController {
 		int page = 1;
 
 		try {
-			if(param.get("searchType") != null) {
-				// searchType이 없어서 제거하고 searchValue만 남기는 것은 안되나?
-				param.put((String) param.get("searchType"), param.get("searchValue"));
-				// title - 숙소
-				// content - 삽니다
-			}
-			
-			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
 			page = Integer.parseInt((String) param.get("page"));
 		} catch (Exception e) {}
 		

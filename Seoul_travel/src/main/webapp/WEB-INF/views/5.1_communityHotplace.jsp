@@ -36,6 +36,7 @@
 <div class="container mb-md-4 py-2" style="margin-top: 60px;">
 
 	<!-- List of posts + Sidebar-->
+	<form name="searchform" action="${path}/community/food" method="get">
 	<div class="row">
 		<!-- Sidebar (offcanvas)-->
 		<aside class="col-lg-3">
@@ -45,35 +46,16 @@
 					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
 				</div>
 				<div class="offcanvas-body">
-					<!-- Sorting-->
-					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">
-							<i class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 
-							정렬
-						</label> 
-						<select class="form-select" id="sort">
-							<option>최신순</option>
-							<option>조회순</option>
-							<option>댓글순</option>
-						</select>
-					</div>
-					
-					
-					<!-- Search-->
+					<!-- 검색 -->
 					<c:set var="searchType" value="${param.searchType}"/>
 					<c:if test="${empty searchType}">
 						<c:set var="searchType" value="${'title'}"/>
 					</c:if>
 					<div class="position-relative mb-4">
-						<form name="searchform" action="${path}/community/accomodation" method="get">
 							<input type="hidden" name="page" value="1">
 							<input class="form-control pe-5" type="text" placeholder="검색어를 입력해주세요."
 									id="searchValue" name="searchValue" value="${param.searchValue}" />
-							<i class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i> <!-- 검색 아이콘 -->
-						</form>
 					</div>
-					
-					
 					
 					<!-- 플로팅 메뉴 -->
 					<div class="card card-flush pb-2 pb-lg-0 mb-4">
@@ -91,11 +73,22 @@
 								href="qna">문의 남기기</a>
 						</div>
 					</div>
+					
+					<!-- 정렬 -->
+					<div class="d-flex align-items-center mb-4">
+						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">
+						<i class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 
+								정렬
+						</label> 
+						<select class="form-select" id="sort">
+							<option>최신순</option>
+							<option>조회순</option>
+						</select>
+					</div>
+					
 				</div>
 			</div>
 		</aside>
-		
-		
 		
 		
 		<!-- 게시글 링크 -->
@@ -182,14 +175,15 @@
 			</div>
 		</div>
 	</div>
+	</form>
 </div>
 
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 <script type="text/javascript">
 	function movePage(page){
-		searchForm.page.value = page;
-		searchForm.submit();
+		searchform.page.value = page;
+		searchform.submit();
 	}
 </script>
 

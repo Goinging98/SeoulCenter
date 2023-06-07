@@ -44,30 +44,18 @@
 					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
 				</div>
 				<div class="offcanvas-body">
-					<!-- Sorting-->
-					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap"
-							for="sort"><i class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 
-								정렬
-						</label> 
-						<select class="form-select" id="sort">
-							<option>최신순</option>
-							<option>조회순</option>
-							<option>댓글순</option>
-						</select>
-					</div>
-					
-					<!-- Search-->
-					
+					<!-- 검색 -->
 					<c:set var="searchType" value="${param.searchType}"/>
 					<c:if test="${empty searchType}">
 						<c:set var="searchType" value="${'title'}"/>
 					</c:if>
 					<div class="position-relative mb-4">
-						<input class="form-control pe-5" type="text" placeholder="검색어를 입력해주세요.">
-							<i class="fi-search position-absolute top-50 end-0 translate-middle-y me-3"></i>
+							<input type="hidden" name="page" value="1">
+							<input class="form-control pe-5" type="text" placeholder="검색어를 입력해주세요."
+									id="searchValue" name="searchValue" value="${param.searchValue}" />
 					</div>
-					<!-- Categories-->
+					
+					<!-- 플로팅 메뉴 -->
 					<div class="card card-flush pb-2 pb-lg-0 mb-4">
 						<div class="card-body">
 							<h3 class="h5">커뮤니티</h3>
@@ -83,6 +71,19 @@
 								href="qna">문의 남기기</a>
 						</div>
 					</div>
+					
+					<!-- 정렬 -->
+					<div class="d-flex align-items-center mb-4">
+						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">
+						<i class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 
+								정렬
+						</label> 
+						<select class="form-select" id="sort">
+							<option>최신순</option>
+							<option>조회순</option>
+						</select>
+					</div>
+					
 				</div>
 			</div>
 		</aside>
@@ -91,56 +92,84 @@
 		<!-- 게시글 링크 -->
 		<div class="col-lg-9">
 			<div class="ps-lg-3">
-				<!-- Article-->
-				<article class="card card-horizontal border-0 mb-4">
-					<div class="card-body px-0 pt-0 pb-lg-5 pb-sm-4 pb-2">
-						<h3 class="h5 pt-1 mb-2">
-							<a class="nav-link" href="5.2_communityBlog.html">서울여행 후기72편
-								- 용산 삼각지역 맥주집 추천: 용리단길 및 부라보 선술집</a>
-						</h3>
-						<p class="fs-sm text-muted">처음 1차를 용산역 남쪽 한참 끝부분에서 먹었다. 외국인이
-							많다해서 서울 용산쪽으로 왔는데 술집도 힙한곳을 가고싶어 검색을 했더니 삼각지역 근처로 나오는거다. 이 근처 힙한
-							술집, 식당들은 죄다 여기있는거임!!.</p>
-						<a class="d-flex align-items-center text-decoration-none" href="#">
-							<img class="rounded-circle" src="img/avatars/25.png" width="38" alt="Avatar">
-							<div class="ps-2">
-								<h6 class="fs-sm text-nav lh-base mb-1">계장쟁이 면봉</h6>
-								<div class="d-flex text-body fs-xs">
-									<span class="me-2 pe-1">
-										<i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i>2023.05.24
-									</span>
-									<span>
-										<i class="fi-chat-circle opacity-70 mt-n1 me-1 align-middle"></i>3 comments
-									</span>
-								</div>
-							</div> 
-						</a>
-					</div>
-				</article>
+				<!-- 게시글이 검색되지 않을 때 -->
+				<c:if test="${empty list}">
+					<tr>
+						<td colspan="6">조회된 글이 없습니다.</td>
+					</tr>
+				</c:if>
+				
+				<c:if test="${not empty list}">			
+					<!-- 목록 호출 -->
+					<c:forEach var="bitem" items="${list}">
+						<article class="card card-horizontal border-0 mb-4">
+							<div class="card-body px-0 pt-0 pb-lg-5 pb-sm-4 pb-2">
+								<h3 class="h5 pt-1 mb-2">
+									<a class="nav-link" href="${path}/community/view?no=${bitem.bno}">
+										<c:out value="${bitem.title}"/>
+									</a>
+								</h3>
+								<p class="fs-sm text-muted">${bitem.content}</p>
+								<a class="d-flex align-items-center text-decoration-none" href="#">
+									<img class="rounded-circle" src="${path}/resources/img/avatars/25.png" width="38" alt="Avatar">
+									<div class="ps-2">
+										<h6 class="fs-sm text-nav lh-base mb-1"><c:out value="${bitem.writerId}"/></h6>
+										<div class="d-flex text-body fs-xs">
+											<span class="me-2 pe-1">
+												<i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i><fmt:formatDate type="date" value="${bitem.createDate}"/>
+											</span>
+											<span>
+												<i class="fi-chat-circle opacity-70 mt-n1 me-1 align-middle"></i>comments exist
+											</span>
+										</div>
+									</div> 
+								</a>
+							</div>
+						</article>
+					</c:forEach>
+				</c:if>
 				
 				
-				<!-- 페이지 분할 -->
-				<div class="d-flex justify-content-end pt-4 border-top">
-					<nav aria-label="Blog pagination">
-						<ul class="pagination mb-0">
-							<li class="page-item d-sm-none"><span
-								class="page-link page-link-static">1 / 8</span></li>
-							<li class="page-item active d-none d-sm-block" aria-current="page"><span
-								class="page-link">1<span class="visually-hidden">(current)</span></span></li>
-							<li class="page-item d-none d-sm-block"><a class="page-link"
-								href="5.1_communityAccommodation.html">2</a></li>
-							<li class="page-item d-none d-sm-block"><a class="page-link"
-								href="5.1_communityAccommodation.html">3</a></li>
-							<li class="page-item d-none d-sm-block">...</li>
-							<li class="page-item d-none d-sm-block"><a class="page-link"
-								href="5.1_communityAccommodation.html">8</a></li>
-							<li class="page-item"><a class="page-link"
-								href="5.1_communityAccommodation.html" aria-label="Next"><i
-									class="fi-chevron-right"></i></a></li>
-						</ul>
-					</nav>
+				<!-- 글쓰기 버튼 -->			
+				<c:if test="${loginMember != null}">
+						<button type="button" id="btn-add" onclick="location.href='${path}/board/write'">글쓰기</button>
+				</c:if>
+				
+				<!-- page부 시작 -->
+				<div align="center">
+					<%-- 
+					순수 페이지만 이동하는 코드
+					<!-- 처음 페이지 -->
+					<button onclick="location.href='${path}/board/list?page=1'">&lt;&lt;</button>
+					<!-- 이전 페이지 -->
+					<button onclick="location.href='${path}/board/list?page=${pageInfo.prevPage}'">&lt;</button>
+					--%>
+					
+					<!-- 처음 페이지 -->
+					<button onclick="movePage(1)">&lt;&lt;</button>
+					<!-- 이전 페이지 -->
+					<button onclick="movePage(${pageInfo.prevPage})">&lt;</button>
+				
+					<!-- 10개 페이지가 보여지는 부분 -->
+					<c:forEach begin="${pageInfo.startPage}" end="${pageInfo.endPage}" varStatus="status" step="1">
+						<c:if test="${status.current == pageInfo.currentPage}">
+							<button disabled>${status.current}</button>
+						</c:if>
+						<c:if test="${status.current != pageInfo.currentPage}">
+							<button onclick="movePage(${status.current})">
+								${status.current}
+							</button>
+						</c:if>
+					</c:forEach>
+					
+					<!-- 다음 페이지 -->
+					<button onclick="movePage(${pageInfo.nextPage})">&gt;</button>
+					<!-- 마지막 페이지 -->
+					<button onclick="movePage(${pageInfo.maxPage})">&gt;&gt;</button>
+				
 				</div>
-			
+				<!-- page부 끝 -->
+				
 			</div>
 		</div>
 	</div>
