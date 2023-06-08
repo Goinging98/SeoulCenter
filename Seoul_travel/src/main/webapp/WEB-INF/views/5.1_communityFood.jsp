@@ -25,7 +25,7 @@
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="/mvc/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><strong>커뮤니티</strong></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>맛집</strong></li>
 		</ol>

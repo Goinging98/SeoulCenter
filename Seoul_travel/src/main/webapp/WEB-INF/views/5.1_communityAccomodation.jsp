@@ -25,7 +25,7 @@
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="/mvc/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><strong>커뮤니티</strong></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>숙소</strong></li>
 		</ol>
@@ -134,7 +134,7 @@
 									
 				<!-- 글쓰기 버튼 -->			
 				<c:if test="${loginMember != null}">
-						<button type="button" id="btn-add" onclick="location.href='${path}/board/write'">글쓰기</button>
+						<button type="button" id="btn-add" onclick="location.href='${path}/community/write'">글쓰기</button>
 				</c:if>
 				
 				<!-- page부 시작 -->
