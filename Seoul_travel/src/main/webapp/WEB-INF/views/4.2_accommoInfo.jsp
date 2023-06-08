@@ -74,96 +74,93 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			</section>
 			<!-- Page content-->
 			<section class="container pb-5 mb-md-4">
-				<div class="row">
-					<div class="col-md-7 mb-md-0 mb-3">
-						<div class="card py-2 px-sm-4 px-3 shadow-sm">
-							<div class="card-body mx-n2">
-								<!-- Place info-->
-								<div class="d-flex align-items-start mb-3 pb-3 border-bottom">
-									<div class="ps-2 ms-1">
-										<h3 class="h5 mb-2">${item.title}</h3>
-										<ul class="list-unstyled d-flex flex-wrap fs-sm">
-											<li class="me-2 mb-1 pe-1"><i
-												class="fi-star-filled mt-n1 me-1 text-warning align-middle opacity-70"></i><b>4.9
-											</b>(48)</li>
-											<li class="me-2 mb-1 pe-1"><i
-												class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>${guAddress}</li>
-										</ul>
-									</div>
-								</div>
-								<!-- Place contacts-->
-								<div class="mb-3 pb-3 border-bottom">
-									<h4 class="h5 mb-2">Contacts:</h4>
-									<ul class="nav row row-cols-sm-2 row-cols-1 gy-1">
-										<li class="col"><div
-												class="p-0 fw-normal d-flex align-items-start" href="#">
-												<div class="fi-map-pin mt-1 me-2 align-middle opacity-70"></div>
-												${item.addr1}
-											</div></li>
-										<li class="col"><div
-												class="d-inline-block p-0 fw-normal d-inline-flex align-items-start">
-												<div class="fi-phone mt-1 me-2 align-middle opacity-70"></div>
-												${item.tel }
-											</div></li>
-										<li class="col"><div
-												class="p-0 fw-normal d-flex align-items-start">
-												<div class="fi-globe mt-1 me-2 align-middle opacity-60"></div>
-												bb-hotel.com
-											</div></li>
-										<li class="col"><div
-												class="p-0 fw-normal d-flex align-items-start"
-												href="mailto:bb-hotel@example.com">
-												<div class="fi-mail mt-1 me-2 align-middle opacity-70"></div>
-												${item.homepage}
-											</div></li>
-									</ul>
-								</div>
-								<!-- Place pricing-->
-								<div class="mb-3 pb-3 border-bottom">
-									<div class="row row-cols-sm-2 row-cols-1">
-										<div class="col">
-											<a
-												class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
-												href="#">예약<i class="fi-chevron-right fs-sm ms-2"></i></a>
-										</div>
-									</div>
-								</div>
-								<!-- Follow-->
-								<div class="d-flex align-items-center">
-									<h4 class="h5 mb-0 me-3">Follow:</h4>
-									<div class="text-nowrap">
-										<a
-											class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
-											href="#"><i class="fi-facebook"></i></a><a
-											class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
-											href="#"><i class="fi-instagram"></i></a><a
-											class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
-											href="#"><i class="fi-twitter"></i></a>
-									</div>
-								</div>
+	<div class="row">
+		<div class="col-md-7 mb-md-0 mb-3">
+			<div class="card py-2 px-sm-4 px-3 shadow-sm">
+				<div class="card-body mx-n2">
+					<!-- Place info-->
+					<div class="d-flex align-items-start mb-3 pb-3 border-bottom">
+						<div class="ps-2 ms-1">
+							<h3 class="h5 mb-2">${item.title}</h3>
+							<ul class="list-unstyled d-flex flex-wrap fs-sm">
+								<li class="me-2 mb-1 pe-1"><i
+									class="fi-star-filled mt-n1 me-1 text-warning align-middle opacity-70"></i><b>4.9
+								</b>(48)</li>
+								<li class="me-2 mb-1 pe-1"><i
+									class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>${guAddress}</li>
+							</ul>
+						</div>
+					</div>
+					<!-- Place contacts-->
+					<div class="mb-3 pb-3 border-bottom">
+						<h4 class="h5 mb-2">Contacts:</h4>
+						<ul class="nav row row-cols-sm-2 row-cols-1 gy-1">
+							<li class="col"><div
+									class="p-0 fw-normal d-flex align-items-start" href="#">
+									<div class="fi-map-pin mt-1 me-2 align-middle opacity-70"></div>
+									${item.addr1}
+								</div></li>
+							<li class="col"><div
+									class="d-inline-block p-0 fw-normal d-inline-flex align-items-start">
+									<div class="fi-phone mt-1 me-2 align-middle opacity-70"></div>
+									${item.tel }
+								</div></li>
+							<li class="col"><div
+									class="p-0 fw-normal d-flex align-items-start">
+									<div class="fi-globe mt-1 me-2 align-middle opacity-60"></div>
+									${item.homepage}
+								</div></li>
+							
+						</ul>
+					</div>
+
+					<!-- Place pricing-->
+					<div class="mb-3 pb-3 border-bottom">
+						<div class="row row-cols-sm-2 row-cols-1">
+							<div class="col">
+								<a id="reservationLink" class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
+									href='${item.homepage}' >예약<i class="fi-chevron-right fs-sm ms-2"></i></a>
 							</div>
 						</div>
 					</div>
-					<!-- Location (Map)-->
-					<div class="col-md-5">
-						<div
-							class="position-relative bg-size-cover bg-position-center bg-repeat-0 h-100 rounded-3"
-							style="background-image: url(img/city-guide/single/map.jpg); min-height: 250px;">
-							<div
-								class="d-flex h-100 flex-column align-items-center justify-content-center">
-								<img class="d-block mx-auto mb-4 rounded-circle bg-white shadow"
-									src="img/city-guide/brands/hotel.svg" width="40"
-									alt="Place logo"><a
-									class="btn btn-primary rounded-pill stretched-link"
-									href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.924340088787!2d13.428504251724927!3d52.58906113876177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85284201593ab%3A0x28af69e02ce0e2fc!2sBusinesshotel%20Berlin!5e0!3m2!1sru!2sua!4v1618908622013!5m2!1sru!2sua"
-									data-iframe="true" data-bs-toggle="lightbox"><i
-									class="fi-route me-2"></i>위치 보기</a>
-							</div>
+					<!-- Follow-->
+					<div class="d-flex align-items-center">
+						<h4 class="h5 mb-0 me-3">Follow:</h4>
+						<div class="text-nowrap">
+							<a
+								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
+								href="#"><i class="fi-facebook"></i></a><a
+								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
+								href="#"><i class="fi-instagram"></i></a><a
+								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
+								href="#"><i class="fi-twitter"></i></a>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
 		</div>
+
+
+		<div class="col-md-5">
+			<!-- Location (Map) start -->
+			<div id="map" class="rounded" style="width: 500px; height: 350px;"></div>
+			<!-- Location (Map) end -->
+			<div
+				class="position-relative bg-size-cover bg-position-center bg-repeat-0 h-100 rounded-3"
+				style="background-image: url(img/city-guide/single/map.jpg); min-height: 250px;">
+				<div
+					class="d-flex h-25 flex-column align-items-center justify-content-center">
+					<a class="btn btn-primary rounded-pill stretched-link"
+						 href=
+						data-iframe="true" data-bs-toggle="lightbox"><i
+						class="fi-route me-2"></i>위치 보기</a>
+
+				</div>
+			</div>
+		</div></section>
+
+
+
 		<!-- Recently viewed-->
 		<section class="container pb-5 mb-lg-4" >
 			<div
@@ -213,3 +210,60 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					</div>
 		</section>
 		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+		
+		
+		
+<!-- 카카오 토큰 JavaScript 키 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31c2dc2677eb86c0811d24bdcfe862f4"></script>
+<script>
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+	mapOption = { 
+	    center: new kakao.maps.LatLng(${item.mapy}, ${item.mapx}), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+	//마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+	var positions = [
+			{
+			    content: '<div>${item.title}</div>', 
+			    latlng: new kakao.maps.LatLng(${item.mapy}, ${item.mapx})
+			},
+	];
+	
+	for (var i = 0; i < positions.length; i ++) {
+	// 마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	    map: map, // 마커를 표시할 지도
+	    position: positions[i].latlng // 마커의 위치
+	});
+	
+	// 마커에 표시할 인포윈도우를 생성합니다 
+	var infowindow = new kakao.maps.InfoWindow({
+	    content: positions[i].content // 인포윈도우에 표시할 내용
+	});
+	
+	// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+	// 이벤트 리스너로는 클로저를 만들어 등록합니다 
+	// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+	kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+	kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+	}
+	
+	//인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+	function makeOverListener(map, marker, infowindow) {
+	return function() {
+	    infowindow.open(map, marker);
+	};
+	}
+	
+	//인포윈도우를 닫는 클로저를 만드는 함수입니다 
+	function makeOutListener(infowindow) {
+	return function() {
+	    infowindow.close();
+	};
+	}
+	
+
+</script>
