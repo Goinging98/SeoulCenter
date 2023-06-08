@@ -58,13 +58,6 @@ public class CommunityController {
 		int page = 1;
 
 		try {
-			if(param.get("searchType") != null) {
-				param.put((String) param.get("searchType"), param.get("searchValue"));
-				// title - 숙소
-				// content - 삽니다
-			}
-			
-			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
 			page = Integer.parseInt((String) param.get("page"));
 		} catch (Exception e) {}
 		
@@ -86,7 +79,6 @@ public class CommunityController {
 		int page = 1;
 
 		try {
-			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
 			page = Integer.parseInt((String) param.get("page"));
 		} catch (Exception e) {}
 		
@@ -129,14 +121,6 @@ public class CommunityController {
 		int page = 1;
 
 		try {
-			if(param.get("searchType") != null) {
-				// searchType이 없어서 제거하고 searchValue만 남기는 것은 안되나?
-				param.put((String) param.get("searchType"), param.get("searchValue"));
-				// title - 숙소
-				// content - 삽니다
-			}
-			
-			// page 파라메터를 숫자로 바꿔주는 코드, 항상 try 끝에 존재해야한다.
 			page = Integer.parseInt((String) param.get("page"));
 		} catch (Exception e) {}
 		
@@ -165,7 +149,54 @@ public class CommunityController {
 	}
 	
 	
+	// 글쓰기
+	@GetMapping("/community/write")
+	public String writeView() {
+		return "5.3_communityWrite";
+	}
 	
+	// 게시글 처리 + 파일 업로드
+		@PostMapping("/community/write")
+		public String write(Model model, HttpSession session,
+				@SessionAttribute(name="loginMember", required = false) Member loginMember,
+				@ModelAttribute Board board,
+				@RequestParam("upfile") MultipartFile upfile
+				) {
+			log.info("board write 요청, board : " + board);
+			
+			// 보안코드 예시
+			if(loginMember.getId().equals(board.getWriterId()) == false) {
+				model.addAttribute("msg","잘못된 접근입니다.");
+				model.addAttribute("location","/");
+				return "common/msg";
+			}
+			
+			board.setMno(loginMember.getMno());
+			
+			// 파일 저장 로직
+			if(upfile != null && upfile.isEmpty() == false) {
+				String rootPath = session.getServletContext().getRealPath("resources");
+				String savePath = rootPath + "/upload/board";
+				String renamedFileName = service.saveFile(upfile, savePath); // 실제 파일 저장로직
+				
+				if(renamedFileName != null) {
+					board.setRenamedFileName(renamedFileName);
+					board.setOriginalFileName(upfile.getOriginalFilename());
+				}
+			}
+			log.debug(" board : " + board);
+			int result = service.saveBoard(board);
+			
+			if(result > 0) {
+				model.addAttribute("msg", "게시글이 등록 되었습니다.");
+				model.addAttribute("location", "/board/list");
+			}else {
+				model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
+				model.addAttribute("location", "/board/list");
+			}
+			return "common/msg";
+		}
+		
 	
 	
 	

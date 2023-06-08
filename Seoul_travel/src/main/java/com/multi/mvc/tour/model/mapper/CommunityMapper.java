@@ -35,9 +35,13 @@ public interface CommunityMapper {
 	List<Community> selectFoodList(Map<String, Object> map);
 	int selectFoodCount(Map<String, Object> map);
 
-	// 식당  
+	// 핫플  
 	List<Community> selectHotplaceList(Map<String, Object> map);
 	int selectHotplaceCount(Map<String, Object> map);
+
+	// 공지  
+	List<Community> selectNoticeList(Map<String, Object> map);
+	int selectNoticeCount(Map<String, Object> map);
 	///////////////////////////////////////////////////////////////
 	
 

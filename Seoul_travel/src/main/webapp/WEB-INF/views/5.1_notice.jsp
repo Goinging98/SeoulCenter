@@ -35,6 +35,7 @@
 <div class="container mb-md-4 py-2" style="margin-top: 60px;">
 
 	<!-- List of posts + Sidebar-->
+	<form name="searchform" action="${path}/community/notice" method="get">
 	<div class="row">
 		<!-- Sidebar (offcanvas)-->
 		<aside class="col-lg-3">
@@ -70,20 +71,7 @@
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="qna">문의 남기기</a>
 						</div>
-					</div>
-					
-					<!-- 정렬 -->
-					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">
-						<i class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 
-								정렬
-						</label> 
-						<select class="form-select" id="sort">
-							<option>최신순</option>
-							<option>조회순</option>
-						</select>
-					</div>
-					
+					</div>					
 				</div>
 			</div>
 		</aside>
@@ -173,6 +161,7 @@
 			</div>
 		</div>
 	</div>
+	</form>
 </div>
 
 

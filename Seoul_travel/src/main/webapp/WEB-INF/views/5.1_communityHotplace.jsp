@@ -36,7 +36,7 @@
 <div class="container mb-md-4 py-2" style="margin-top: 60px;">
 
 	<!-- List of posts + Sidebar-->
-	<form name="searchform" action="${path}/community/food" method="get">
+	<form name="searchform" action="${path}/community/hotplace" method="get">
 	<div class="row">
 		<!-- Sidebar (offcanvas)-->
 		<aside class="col-lg-3">
