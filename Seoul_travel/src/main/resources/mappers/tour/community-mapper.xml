@@ -40,32 +40,7 @@
 	selectBoardCount : selectBoardList와 쌍으로 갯수를 세오는 Count문, 검색조건이 selectBoardList 일치 해야함
 	selectBoardByNo : 내용을 디테일하게 볼수 있는 쿼리 모든 컬럼 내용을 가지고 온다. +@(리플도 한번에 가져올때도 사용)
 -->
-
-	<!-- 기본 -->
-	<select id="selectCommunityList" parameterType="map" resultMap="boardResultMap">
-		SELECT 
-			B.bNO, B.TITLE, M.ID, B.CREATE_DATE, B.ORIGINAL_FILENAME, B.READCOUNT,B.STATUS
-		FROM BOARD B 
-		JOIN MEMBER M ON(B.mNO = M.mNO)
-		WHERE 1 = 1
-		AND B.STATUS = 'Y'
-		AND B.CONTENTTYPEID = 32
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
-		ORDER BY B.bNO DESC LIMIT ${limit} OFFSET ${offset}
-	</select>
-
-	<select id="selectCommunityCount" parameterType="map" resultType="int">
-		SELECT 
-			COUNT(*)
-		FROM BOARD B 
-		JOIN MEMBER M ON(B.mNO = M.mNO)
-		WHERE 1 = 1
-		AND B.STATUS = 'Y'
-		AND B.CONTENTTYPEID = 32
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
-	</select>
-	
-	<select id="selectCommunityByNo" parameterType="int" resultMap="boardDetailResultMap">
+	<select id="selectBoardByNo" parameterType="int" resultMap="boardDetailResultMap">
 		SELECT  B.bNO, B.TITLE, M.ID, B.READCOUNT, B.ORIGINAL_FILENAME, B.RENAMED_FILENAME, B.CONTENT, B.CREATE_DATE, B.MODIFY_DATE,
 				R.rNO as R_RNO, 
 		        R.bNO as R_BNO, 
@@ -82,6 +57,30 @@
 	
 	
 	<!--=============페이지별 mapper 시작 ==============-->	
+	<!-- 공지 -->
+	<select id="selectBoardList" parameterType="map" resultMap="boardResultMap">
+		SELECT 
+			B.bNO, B.TITLE, M.ID, B.CREATE_DATE, B.ORIGINAL_FILENAME, B.READCOUNT,B.STATUS
+		FROM BOARD B 
+		JOIN MEMBER M ON(B.mNO = M.mNO)
+		WHERE 1 = 1
+		AND B.STATUS = 'Y'
+		AND B.CONTENTTYPEID = 1
+		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
+		ORDER BY B.bNO DESC LIMIT ${limit} OFFSET ${offset}
+	</select>
+
+	<select id="selectBoardCount" parameterType="map" resultType="int">
+		SELECT 
+			COUNT(*)
+		FROM BOARD B 
+		JOIN MEMBER M ON(B.mNO = M.mNO)
+		WHERE 1 = 1
+		AND B.STATUS = 'Y'
+		AND B.CONTENTTYPEID = 1
+		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
+	</select>
+	
 	<!-- 숙박 -->
 	<select id="selectAccomodationList" parameterType="map" resultMap="boardResultMap">
 		SELECT 
@@ -154,33 +153,6 @@
 		AND B.CONTENTTYPEID in (14, 15)
 		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
 	</select>
-	
-	
-	<!-- 공지 -->
-	<select id="selectNoticeList" parameterType="map" resultMap="boardResultMap">
-		SELECT 
-			B.bNO, B.TITLE, M.ID, B.CREATE_DATE, B.ORIGINAL_FILENAME, B.READCOUNT,B.STATUS
-		FROM BOARD B 
-		JOIN MEMBER M ON(B.mNO = M.mNO)
-		WHERE 1 = 1
-		AND B.STATUS = 'Y'
-		AND B.CONTENTTYPEID = 1
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
-		ORDER BY B.bNO DESC LIMIT ${limit} OFFSET ${offset}
-	</select>
-
-	<select id="selectNoticeCount" parameterType="map" resultType="int">
-		SELECT 
-			COUNT(*)
-		FROM BOARD B 
-		JOIN MEMBER M ON(B.mNO = M.mNO)
-		WHERE 1 = 1
-		AND B.STATUS = 'Y'
-		AND B.CONTENTTYPEID = 1
-		AND ( B.TITLE LIKE '%${title}%' OR B.CONTENT LIKE '%${content}%')
-	</select>
-	
-	
 	<!--=============페이지별 mapper 끝 ==============-->
 	
 	

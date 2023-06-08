@@ -26,7 +26,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.multi.mvc.board.model.vo.Board;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.service.CommunityService;
 import com.multi.mvc.tour.model.vo.Community;
@@ -147,11 +146,18 @@ public class CommunityController {
 		//model.addAttribute("replyList", board.getReplies());
 		return "5.2_communityBlog";
 	}
+
+	// Error 
+	@GetMapping("/community/error")
+	public String error() {
+		return "/common/error";
+	}
 	
 	
 	// 글쓰기
 	@GetMapping("/community/write")
 	public String writeView() {
+		log.info("community write");
 		return "5.3_communityWrite";
 	}
 	
@@ -159,7 +165,7 @@ public class CommunityController {
 		@PostMapping("/community/write")
 		public String write(Model model, HttpSession session,
 				@SessionAttribute(name="loginMember", required = false) Member loginMember,
-				@ModelAttribute Board board,
+				@ModelAttribute Community board,
 				@RequestParam("upfile") MultipartFile upfile
 				) {
 			log.info("board write 요청, board : " + board);
@@ -189,22 +195,14 @@ public class CommunityController {
 			
 			if(result > 0) {
 				model.addAttribute("msg", "게시글이 등록 되었습니다.");
-				model.addAttribute("location", "/board/list");
+				model.addAttribute("location", "/community/notice");
 			}else {
 				model.addAttribute("msg", "게시글 작성에 실패하였습니다.");
-				model.addAttribute("location", "/board/list");
+				model.addAttribute("location", "/community/notice");
 			}
 			return "common/msg";
 		}
 		
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

@@ -22,11 +22,10 @@ public class CommunityService {
 	@Autowired
 	private CommunityMapper mapper;
 
-	// basic
+	// 5.1 Notice
 	public int getBoardCount(Map<String, Object> param) {
 		return mapper.selectBoardCount(param);
 	}
-
 
 	public List<Community> getBoardList(PageInfo pageInfo, Map<String, Object> param) {
 		param.put("limit", pageInfo.getListLimit());
@@ -34,7 +33,6 @@ public class CommunityService {
 		return mapper.selectBoardList(param);
 	}
 	
-	///////////////////////////////////////////////////////////////
 	// 5.1 communityAccomodation Mapper
 	public int getAccomodationCount(Map<String, Object> param) {
 		return mapper.selectAccomodationCount(param);
@@ -133,13 +131,13 @@ public class CommunityService {
 
 	@Transactional(rollbackFor = Exception.class)
 	public int saveReply(Replies reply) {
-		return mapper.insertReply(reply);
+		return mapper.insertReplies(reply);
 	}
 
 
 	@Transactional(rollbackFor = Exception.class)
 	public int deleteReply(int rno) {
-		return mapper.deleteReply(rno);
+		return mapper.deleteReplies(rno);
 	}
 
 	

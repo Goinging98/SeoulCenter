@@ -11,22 +11,12 @@ import com.multi.mvc.tour.model.vo.Replies;
 
 @Mapper
 public interface CommunityMapper {
-	
-	
-	//Basic 
-	/**
-	 * @param map (key=id, title, content, limit(필수), offset(필수))
-	 * @return
-	 */
-	List<Community> selectCommunityList(Map<String, Object> map);
 
-	/**
-	 * @param map (key=id, title, content)
-	 * @return
-	 */
-	int selectCommunityCount(Map<String, Object> map);
-	
 	///////////////////////////////////////////////////////////////	
+	// 공지사항  
+	List<Community> selectBoardList(Map<String, Object> map);
+	int selectBoardCount(Map<String, Object> map);
+	
 	// 숙박 
 	List<Community> selectAccomodationList(Map<String, Object> map);
 	int selectAccomodationCount(Map<String, Object> map);
@@ -45,7 +35,7 @@ public interface CommunityMapper {
 	///////////////////////////////////////////////////////////////
 	
 
-	Community selectCommunityByNo(int bno);
+	Community selectBoardByNo(int bno);
 
 	int insertCommunity(Community board);
 
@@ -60,7 +50,11 @@ public interface CommunityMapper {
 
 	int updateReadCount(Community board);
 
-	int deleteCommunity(int bno);
+	int deleteBoard(int bno);
 
 	int deleteReplies(int rno);
+
+	int insertBoard(Community board);
+
+	int updateBoard(Community board);
 }
