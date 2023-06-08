@@ -20,7 +20,6 @@
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/bootstrap-icons/bootstrap-icons.css">
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/tiny-slider/tiny-slider.css">
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/glightbox/css/glightbox.css">
-      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/flatpickr/css/flatpickr.min.css">
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/choices/css/choices.min.css">
 
       <!-- Theme CSS -->
@@ -214,10 +213,10 @@
 <!-- ======================= 추천 문화시설 END -->
 
 <!-- ======================= 슬라이드 후기 -->
-<div class="col-12 text-center mt-4">
+<div class="col-12 text-center mt-7">
   <h3 class="mb-4">이달의 리뷰</h3>
 </div>
-<section class="pb-0 py-md-5 mt-7" style="background-color: #ace1d9;">
+<section class="pb-0 py-md-3 mt-3" style="background-color: #ace1d9;">
 	<div class="container">
 		<div class="row">
 			<!-- Slider START -->
@@ -346,19 +345,18 @@
 	<div class="col-12 text-center">
 		<h3 class="mb-0">관광지는 어때요?</h3>
 	</div>
+</div>
 	<div class="text-end">
 		<a class="btn btn-link fw-normal ms-sm-3 p-0"
 			href="${path}/hotTourList"> 더 보기 <i
 			class="fi-arrow-long-right ms-2"></i>
 		</a>
 	</div>
-</div>
-<div
-	style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
+<div	style="padding-bottom: 10px; display: flex; justify-content: center; align-items: center; margin-top: 1px; margin-bottom: 10px;">
 	<c:forEach var="tItem" items="${tList}" begin="0" end="2">
 		<div class="box rounded-2"
 			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+			onmouseover="this.style.filter = 'brightness(50%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 			<a class="d-block flex-shrink-0 " href="${path}/hotTourListDetail?id=${tItem.contentid}">
 				<img src="${tItem.firstimage}"
@@ -376,13 +374,11 @@
 	<c:forEach var="tItem" items="${tList}" begin="3" end="5">
 		<div class="box rounded-2"
 			style="width: 350px; height: 200px; margin-right: 15px; margin-left: 15px; overflow: hidden;"
-			onmouseover="this.style.filter = 'brightness(70%)'; this.querySelector('.text-overlay').style.opacity = '1';"
+			onmouseover="this.style.filter = 'brightness(50%)'; this.querySelector('.text-overlay').style.opacity = '1';"
 			onmouseout="this.style.filter = 'none'; this.querySelector('.text-overlay').style.opacity = '0';">
 			<a class="d-block flex-shrink-0 " href="${path}/hotTourListDetail?id=${tItem.contentid}">
-				<img src="${tItem.firstimage}"
-				style="width: 100%; height: auto; object-fit: contain;">
-				<div class="text-overlay"
-					style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
+				<img src="${tItem.firstimage}" style="width: 100%; height: auto; object-fit: contain;">
+				<div class="text-overlay" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0;">
 					<p style="color: #ffffff; font-weight: bold; font-size: 150%;">${tItem.title}</p>
 				</div>
 			</a>
@@ -407,7 +403,6 @@
 
 <!-- ThemeFunctions -->
 <script src="${path}/resources/booking/booking_v1.1.0/template/assets/js/functions.js"></script>
-</div>
 
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

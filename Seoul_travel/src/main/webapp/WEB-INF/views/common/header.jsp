@@ -137,32 +137,6 @@
 	<!-- Main Theme Styles + Bootstrap-->
 	<link rel="stylesheet" media="screen" href="${path}/resources/css/theme.min.css">
 	
-	<!-- 2_hotplace.jsp에서 카피한 부분 시작  -->
-	<!-- ----------------------------------------------booking 연결파트------------------------------------------ -->
-	<script type="text/javascript">
-		var theme = localStorage.getItem('data-theme');
-		var root = document.documentElement;
-		if (theme === 'dark' && theme !== undefined) {
-			root.classList.add('dark-mode');
-		} else {
-			root.classList.remove('dark-mode');
-		}
-	</script>
-	
-	<!-- Favicon -->
-	<!-- <link rel="shortcut icon" href="/booking\booking_v1.1.0\template\assets\images\favicon.ico"> -->
-	
-	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css"	href="/booking\booking_v1.1.0\template\assets\vendor\font-awesome\css\all.min.css">
-	<link rel="stylesheet" type="text/css"	href="/booking\booking_v1.1.0\template\assets\vendor\bootstrap-icons\bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css"	href="/booking\booking_v1.1.0\template\assets\vendor\tiny-slider\tiny-slider.css">
-	<link rel="stylesheet" type="text/css"	href="/booking\booking_v1.1.0\template\assets\vendor\glightbox\css\glightbox.css">
-	<link rel="stylesheet" type="text/css"	href="/booking\booking_v1.1.0\template\assets\vendor\flatpickr\css\flatpickr.min.css">
-	<link rel="stylesheet" type="text/css"	href="/booking\booking_v1.1.0\template\assets\vendor\choices\css\choices.min.css">
-	
-	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css"	href="/booking\booking_v1.1.0\template\assets\css\style.css">
-	<!-- 2_hotplace.jsp에서 카피한 부분 끝 -->
 	
 	
 </head>
@@ -364,7 +338,7 @@
 						<a class="dropdown-item" href="mypageinfo">리뷰</a>
 						<div class="dropdown-divider"></div>
 						<a class="dropdown-item" href="mypageinfo">고객센터</a><a
-							class="dropdown-item" href="main">로그아웃</a>
+							class="dropdown-item" href="${path}/logout">로그아웃</a>
 					</div>
 				</div>
 			</c:if>
