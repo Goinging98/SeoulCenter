@@ -28,7 +28,7 @@ public class FoodController {
 		} catch (Exception e) {}
 		
 		int count = foodService.selectFoodCount(param);
-		PageInfo pageInfo = new PageInfo(page, 5, count, 12);
+		PageInfo pageInfo = new PageInfo(page, 5, count, 10);
 		System.out.println(pageInfo);
 		List<Food> list = foodService.selectFoodList(pageInfo, param);
 		
@@ -38,8 +38,11 @@ public class FoodController {
 				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
 			}
 		}
+		int maxPage =count/5;
 		model.addAttribute("list",list);
 		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("page",page);
 		
 		return "3_food";
 	}

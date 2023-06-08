@@ -110,96 +110,14 @@
 				<!-- Specs-->
 
 				<div class="py-5">
-					<h2 class="h4 " id="comments">평점</h2>
-					<div class="row  ">
-						<div class="card card-light card-body mb-4">
-							<div class="row mb-md-5 mb-4">
-
-								<!-- Rating breakdown-->
-								<!-- Rating breakdown-->
-								<div class="col-sm-8 order-sm-1 order-2 text-dark">
-									<div class="d-flex align-items-center mb-2 fs-sm text-dark">
-										<div class="text-nowrap text-dark">
-											5<i
-												class="fi-star mt-n1 ms-1 align-middle opacity-70 text-dark"></i>
-										</div>
-										<div class="progress w-100 mx-3">
-											<div class="progress-bar bg-warning" role="progressbar"
-												style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										<span style="min-width: 48px;">80%</span>
-									</div>
-									<div class="d-flex align-items-center mb-2 fs-sm">
-										<div class="text-nowrap">
-											4<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-										</div>
-										<div class="progress w-100 mx-3">
-											<div class="progress-bar bg-warning" role="progressbar"
-												style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										<span style="min-width: 48px;">10%</span>
-									</div>
-									<div class="d-flex align-items-center mb-2 fs-sm">
-										<div class="text-nowrap">
-											3<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-										</div>
-										<div class="progress w-100 mx-3">
-											<div class="progress-bar bg-warning" role="progressbar"
-												style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										<span style="min-width: 48px;">0%</span>
-									</div>
-									<div class="d-flex align-items-center mb-2 fs-sm">
-										<div class="text-nowrap">
-											2<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-										</div>
-										<div class="progress w-100 mx-3">
-											<div class="progress-bar bg-warning" role="progressbar"
-												style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										<span style="min-width: 48px;">0%</span>
-									</div>
-									<div class="d-flex align-items-center mb-2 fs-sm">
-										<div class="text-nowrap">
-											1<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-										</div>
-										<div class="progress w-100 mx-3">
-											<div class="progress-bar bg-warning" role="progressbar"
-												style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-												aria-valuemax="100"></div>
-										</div>
-										<span style="min-width: 48px;">10%</span>
-									</div>
-								</div>
-
-								<!-- Score-->
-								<div
-									class="col-sm-4 order-sm-2 order-1 mb-sm-0 mb-3  text-center">
-									<h5 class="display-4 mb-2">4,7</h5>
-									<div>
-										<span class="star-rating"><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i></span>
-									</div>
-									<span class="fs-sm text-dark">48 reviews</span>
-								</div>
-							</div>
-
-						</div>
+					<h2 class="h3">맛집 리뷰</h2>
+					<div class="row">
 
 						<!-- Add review btn + Reviews sort-->
-						<div
-							class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
-							<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3"
-								href="#modal-review" data-bs-toggle="modal"><i
-								class="fi-edit mt-n1 me-1 align-middle"></i>리뷰 작성하기</a>
+						<div	class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
+							<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal">
+								<i	class="fi-edit mt-n1 me-1 align-middle">
+								</i>리뷰 작성하기</a>
 						</div>
 
 						<!-- Review-->
@@ -272,22 +190,9 @@
 					<div class="d-none d-md-block ">
 						<!-- Heart icon -->
 						<div class="col-6 pr-5">
-							<button
-								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
-								type="button" data-bs-toggle="tooltip" title="Add to Wishlist">
-								<i class="fi-heart"></i>
-							</button>
 						</div>
-						<!-- 별점 -->
-						<span class="star-rating"><i
-							class="star-rating-icon fi-star-filled active"></i><i
-							class="star-rating-icon fi-star-filled active"></i><i
-							class="star-rating-icon fi-star-filled active"></i><i
-							class="star-rating-icon fi-star-filled active"></i><i
-							class="star-rating-icon fi-star-filled active"></i></span><span
-							class="fs-sm opacity-70 align-middle ms-1">(5 reviews)</span>
-
-						<div class="h1">${item.title}</div>
+						<div class="h1" >${item.title}</div>
+						<span class="placeholder col-12 placeholder-xs"></span>
 						<div class="d-flex align-items-center mb-1 ">
 							<div class="text-nowrap border-end border-light pe-3 me-3">
 								<div class="text-nowrap">
@@ -298,16 +203,23 @@
 									<i class="fi-map-pin fs-lg opacity-70 me-2"></i> <span
 										class="align-middle">${item.addr1}</span>
 								</div>
-								<i class="fi-clock fs-lg opacity-70 me-2"> </i> <span
-									class="align-middle mb-3">${item.opentimefood}, ${item.restdatefood}</span>
+								<div class="text-nowrap">
+									<i class="fi-clock fs-lg opacity-70 me-2"> </i> <span
+										class="align-middle mb-3">${item.opentimefood}</span>
+								</div>
+								<div class="text-nowrap">
+									<i class="fi-plane fs-lg opacity-70 me-2"> </i> <span>${item.restdatefood}</span>
+								</div>
+								<div class="text-nowrap">
+									<i class="fi-phone fs-lg opacity-70 me-2"> </i> <span>${item.infocenterfood}</span>
+								</div>
 							</div>
 						</div>
+						<span class="placeholder col-12 placeholder-xs"></span>
 
 						<div class="bg-secondary rounded-2 mt-3">
 							<div class="d-flex align-items-center mx-2 ">
 								${item.overview}
-								<br/>
-								전화 : ${item.infocenterfood}
 							</div>
 						</div>
 					</div>
@@ -319,13 +231,13 @@
 								<div class="d-table bg-secondary rounded-3 mx-auto p-3">
 									<img src="${path}/resources/img/food/free-icon-parking.png" width="48" alt="Icon">
 								</div>
-								<div class="fs-sm pt-2 mt-1">${item.parkingfood}</div>
+								<div class="fs-sm pt-1 mt-1">${item.parkingfood}</div>
 							</div>
 							<div class="col text-dark text-center">
 								<div class="d-table bg-secondary k rounded-3 mx-auto p-3">
 									<img src="${path}/resources/img/food/free-icon-food.png" width="48" alt="Icon">
 								</div>
-								<div class="fs-sm pt-2 mt-1">포장 ${item.packing}</div>
+								<div class="fs-sm pt-1 mt-1">포장 ${item.packing}</div>
 							</div>
 						</div>
 					</div>

@@ -4,11 +4,24 @@
 <mapper namespace="com.multi.mvc.tour.model.mapper.FoodMapper">
 
 	<select id="selectFoodList" parameterType="map" resultType="Food">
-		SELECT *
-		FROM Food
-		WHERE 1 = 1 
+		SELECT title, addr1, firstimage, contentid, 
+		CASE 
+			WHEN cat3 = 'A05020100' THEN '한식'
+			WHEN cat3 = 'A05020200' THEN '양식'
+			WHEN cat3 = 'A05020300' THEN '일식'
+			WHEN cat3 = 'A05020400' THEN '중식'
+		ELSE '기타' 
+		END AS cat3
+		FROM food
+		WHERE 1 = 1
 		<if test="searchValue != null">
 			AND title LIKE '%${searchValue}%' 
+		</if>
+		<if test='cat3 != null and cat3 != "etc"'>
+			AND cat3 = #{cat3}
+		</if>
+		<if test='cat3 != null and cat3 == "etc"'>
+			AND cat3 NOT IN ('A05020100', 'A05020200', 'A05020300','A05020400')
 		</if>
 		ORDER BY contentid LIMIT ${limit} OFFSET ${offset}
 	</select>

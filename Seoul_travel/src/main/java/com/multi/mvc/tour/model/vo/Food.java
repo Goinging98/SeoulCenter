@@ -87,7 +87,7 @@ public class Food extends TourVO {
 	}
 
 	public String getFirstmenu() {
-		return firstmenu;
+		return firstmenu == null ? "정보없음" : firstmenu;
 	}
 
 	public void setFirstmenu(String firstmenu) {
@@ -119,7 +119,7 @@ public class Food extends TourVO {
 	}
 
 	public String getOpentimefood() {
-		return opentimefood;
+		return opentimefood == null ? "정보없음" : opentimefood;
 	}
 
 	public void setOpentimefood(String opentimefood) {
@@ -127,7 +127,7 @@ public class Food extends TourVO {
 	}
 
 	public String getPacking() {
-		return packing;
+		return packing == null ? "정보없음" : packing;
 	}
 
 	public void setPacking(String packing) {
@@ -135,7 +135,7 @@ public class Food extends TourVO {
 	}
 
 	public String getParkingfood() {
-		return parkingfood;
+		return parkingfood == null ? "정보없음" : parkingfood;
 	}
 
 	public void setParkingfood(String parkingfood) {
@@ -151,7 +151,7 @@ public class Food extends TourVO {
 	}
 
 	public String getRestdatefood() {
-		return restdatefood;
+		return restdatefood == null ? "정보없음" : restdatefood;
 	}
 
 	public void setRestdatefood(String restdatefood) {
