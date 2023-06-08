@@ -35,7 +35,10 @@
 	</nav>
 	
 	<!-- 사진 -->
-	<h1 class="h2 pb-3" style="text-align: center; margin-top: 100px;"><c:out value="${board.title}"/></h1>
+	<c:forEach var="citem" items="${list}">
+	<h1 class="h2 pb-3" style="text-align: center; margin-top: 100px;">
+		<c:out value="${citem.title}"/>
+	</h1>
 	<div style="text-align: center;">
 		<img class="rounded-3" src="${path}/resources/img/city-guide/community/restaurant2.jpeg"
 			alt="Post image" width="800" height="150">
@@ -58,7 +61,7 @@
 							<img class="me-3 rounded-circle" src="${path}/resources/img/avatars/28.png" width="80" alt="Avatar">
 							<div>
 								<h4 class="h5 mb-2">
-									<a class="nav-link stretched-link p-0 fw-bold"><c:out value="${board.writerId}"/></a>
+									<a class="nav-link stretched-link p-0 fw-bold"><c:out value="${citem.writerId}"/></a>
 								</h4>
 							</div>
 						</div>
@@ -75,14 +78,15 @@
 					href="/community/food">맛집</a>
 				<div class="d-flex align-items-center border-end pe-3 me-3 mb-2">
 					<i class="fi-calendar-alt opacity-70 me-2"></i>
-					<span><fmt:formatDate type="both" value="${board.createDate}"/></span>
+					<span><fmt:formatDate type="both" value="${citem.createDate}"/></span>
 				</div>
 				<a class="nav-link-muted d-flex align-items-center mb-2" href="#"><i
 					class="fi-chat-circle opacity-70 me-2"></i><span>comments exist</span></a>
 			</div>
-			<p class="fs-lg fw-bold text-dark mb-4">${board.title}</p>
-			<p>${board.content}</p>
+			<p class="fs-lg fw-bold text-dark mb-4">${citem.title}</p>
+			<p>${citem.content}</p>
 		</div>
 	</div>
+	</c:forEach>
 </div>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

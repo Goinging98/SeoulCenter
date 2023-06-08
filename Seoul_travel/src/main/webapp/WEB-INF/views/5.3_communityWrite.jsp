@@ -22,7 +22,7 @@
 	<nav aria-label="breadcrumb">
 		<ol class="breadcrumb pt-3 mb-4">
 			<li class="breadcrumb-item"><a href="/mvc/main"><strong>Home</strong></a></li>
-			<li class="breadcrumb-item"><a href="city-guide-home-v1.html"><strong>커뮤니티</strong></a></li>
+			<li class="breadcrumb-item"><a href="notice"><strong>커뮤니티</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>글쓰기</strong></li>
 		</ol>
 	</nav>

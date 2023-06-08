@@ -1,100 +1,113 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<c:set var="path" value="${pageContext.request.contextPath}"/>
+<c:set var="path" value="${pageContext.request.contextPath}" />
 
+<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 <style>
-    section>div#board-write-container{width:600px; margin:0 auto; text-align:center;}
-    section>div#board-write-container h2{margin:10px 0;}
-    table#tbl-board{width:500px; margin:0 auto; border:1px solid black; border-collapse:collapse; clear:both; }
-    table#tbl-board th {width: 125px; border:1px solid; padding: 5px 0; text-align:center;} 
-    table#tbl-board td {border:1px solid; padding: 5px 0 5px 10px; text-align:left;}
-    div#comment-container button#btn-insert{width:60px;height:50px; color:white; background-color:#3300FF;position:relative;top:-20px;}
-    
-    /*댓글테이블*/
-    table#tbl-comment{width:580px; margin:0 auto; border-collapse:collapse; clear:both; } 
-    table#tbl-comment tr td{border-bottom:1px solid; border-top:1px solid; padding:5px; text-align:left; line-height:120%;}
-    table#tbl-comment tr td:first-of-type{padding: 5px 5px 5px 50px;}
-    table#tbl-comment tr td:last-of-type {text-align:right; width: 100px;}
-    table#tbl-comment button.btn-delete{display:none;}
-    table#tbl-comment tr:hover {background:lightgray;}
-    table#tbl-comment tr:hover button.btn-delete{display:inline;}
-    table#tbl-comment sub.comment-writer {color:navy; font-size:14px}
-    table#tbl-comment sub.comment-date {color:tomato; font-size:10px}
+.col1 .form-control {
+	width: 530px;
+}
+
+.col-12 .form-control {
+	width: 130%;
+}
 </style>
 
+<!-- 사진 띠 부분-->
+<section class="bg-dark-overlay-4"
+	style="background-image: url('${path}/resources/img/community/d94ed70d0a33341d.jpg' ); background-position: center left; background-size: cover; margin-top: 120px;">
+	<div class="container ">
+		<div class="row ">
+			<div class="col-lg-8 py-xxl-5 my-lg-4 ">
+				<a href="#" class="badge text-bg-primary mb-2">
+					<i class="fas fa-circle me-2 small fw-bold"></i>
+				</a>
+				<h1 class="mice text-white fw-bold mb-2"></h1>
+				<p class="mice lead text-white fw-bold mb-0"></p>
+			</div>
+		</div>
+	</div>
+</section>
 
-
-<jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param value="게시글 상세조회" name="title"/>
-</jsp:include>
-
-
-<section id="board-write-container">
-	<h2 align="center">게시글 상세조회</h2>
+<!-- Page container-->
+<div class="container mb-md-4 mt-0 pt-4">
+	<!-- Breadcrumb-->
+	<nav class="pt-md-3" aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/mvc/main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><strong>커뮤니티</strong></li>
+			<li class="breadcrumb-item">
+				<a href="/mvc/community/food"><strong>맛집</strong></a></li>
+		</ol>
+	</nav>
 	
+	
+	<!-- 사진 -->
+	<h1 class="h2 pb-3" style="text-align: center; margin-top: 100px;">
+		<c:out value="${board.title}"/>
+	</h1>
+	
+	<div style="text-align: center;">
+		<c:if test="${empty board.originalFileName}">
+		<img class="rounded-3" src="${path}/resources/img/city-guide/community/restaurant2.jpeg"
+			alt="Post image" width="800" height="150">
+		</c:if>
+		<c:if test="${not empty board.originalFileName}">
+			<a href="javascript:fileDownload('${board.originalFileName}','${board.renamedFileName}');">
+				<img src="${board.originalFileName}" width="20" height="20"/>
+				<c:out value="${board.originalFileName}"></c:out>		
+			</a>
+		</c:if>
+	</div>
+	
+	<div class="row mt-4 pt-3">
+		<!-- 작성자 정보 -->
+		<aside class="col-lg-4">
+			<!-- Offcanvas-->
+			<div class="offcanvas offcanvas-start offcanvas-collapse pe-lg-1"
+				id="blog-sidebar">
+				<div class="offcanvas-header shadow-sm mb-2">
+					<h3 class="h5 offcanvas-title">Sidebar</h3>
+					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+				</div>
+				<div class="offcanvas-body">
+					<!-- Author-->
+					<div class="card card-flush py-2 py-lg-0 mb-4">
+						<div class="card-body d-flex align-items-start">
+							<img class="me-3 rounded-circle" src="${path}/resources/img/avatars/28.png" width="80" alt="Avatar">
+							<div>
+								<h4 class="h5 mb-2">
+									<a class="nav-link stretched-link p-0 fw-bold"><c:out value="${board.writerId}"/></a>
+								</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</aside>
+
+	
+		<!-- 리뷰 - 글 파트 -->
+		<div class="col-lg-8">
+			<!-- Post meta-->
+			<div class="d-flex flex-wrap border-bottom pb-3 mb-4">
+				<a class="text-uppercase text-decoration-none border-end pe-3 me-3 mb-2"
+					href="/community/food">맛집</a>
+				<div class="d-flex align-items-center border-end pe-3 me-3 mb-2">
+					<i class="fi-calendar-alt opacity-70 me-2"></i>
+					<span><fmt:formatDate type="both" value="${board.createDate}"/></span>
+				</div>
+				<a class="nav-link-muted d-flex align-items-center mb-2" href="#"><i
+					class="fi-chat-circle opacity-70 me-2"></i><span>comments exist</span></a>
+			</div>
+			<p class="fs-lg fw-bold text-dark mb-4">${board.title}</p>
+			<p><c:out value="${board.content}"/></p>
+		</div>
+		
 	<table id="tbl-board">
-		<tr>
-			<th>글번호</th>
-			<td><c:out value="${board.bno}"/></td>
-		</tr>
-		<tr>
-			<th>제목</th>
-			<td><c:out value="${board.title}"/></td>
-		</tr>
-		<tr>
-			<th>작성자</th>
-			<td><c:out value="${board.writerId}"/></td>
-		</tr>
-		<tr>
-			<th>조회수</th>
-			<td><c:out value="${board.readCount}"/></td>
-		</tr>
-		<tr>
-			<th>작성 시간</th>
-			<td> <fmt:formatDate type="both" value="${board.createDate}"/> </td>
-		</tr>
-		<tr>
-			<th>수정 시간</th>
-			<td> <fmt:formatDate type="both" value="${board.modifyDate}"/> </td>
-		</tr>
-		<tr>
-			<th>첨부파일</th>
-			<td>
-				<c:if test="${not empty board.originalFileName}">
-					<a href="javascript:fileDownload('${board.originalFileName}',
-																'${board.renamedFileName}');">
-						<img src="${path}/resources/images/file.png" width="20" height="20"/>
-						<c:out value="${board.originalFileName}"></c:out>		
-					</a>
-				</c:if>
-				
-				<c:if test="${empty board.originalFileName}">
-					<span> - </span>
-				</c:if>
-			</td>
-		</tr>
-		<tr>
-			<th>첨부파일(이미지)</th>
-			<td>
-				<c:if test="${not empty board.originalFileName 
-								and (fn:contains(board.originalFileName,'.jpg')
-									 or fn:contains(board.originalFileName,'.png')
-									  or fn:contains(board.originalFileName,'.jpeg'))}">
-							<img src="${path}/resources/upload/board/${board.renamedFileName}"
-								width="100%" height="100%"/>
-				</c:if>
-			</td>
-		</tr>
-		<tr>
-			<th>내용</th>
-			<td>
-				<textarea rows="15" cols="50" readonly><c:out value="${board.content}"/></textarea>
-			</td>
-		</tr>
 		<!-- 수정 / 삭제 기능 -->
 		<tr>
 			<th colspan="2">
@@ -145,7 +158,8 @@
 			</tr>
 		</c:if>
 	</table>
-</section>
+</div>
+</div>
 <br>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

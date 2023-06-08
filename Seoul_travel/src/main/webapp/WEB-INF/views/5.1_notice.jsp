@@ -93,7 +93,7 @@
 						<article class="card card-horizontal border-0 mb-4">
 							<div class="card-body px-0 pt-0 pb-lg-5 pb-sm-4 pb-2">
 								<h3 class="h5 pt-1 mb-2">
-									<a class="nav-link" href="${path}/community/view?no=${bitem.bno}">
+									<a class="nav-link" href="${path}/board/view?no=${bitem.bno}">
 										<c:out value="${bitem.title}"/>
 									</a>
 								</h3>
