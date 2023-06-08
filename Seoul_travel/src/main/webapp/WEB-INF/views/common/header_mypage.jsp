@@ -186,7 +186,7 @@
 							<a class="dropdown-item" href="mypageinfo">리뷰</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="community">고객센터</a>
-							<a class="dropdown-item" href="main">로그아웃</a>
+							<a class="dropdown-item" href="${path}/logout">로그아웃</a>
 						</div>
 					</div>
 					<div class="collapse navbar-collapse order-lg-2" id="navbarNav">
