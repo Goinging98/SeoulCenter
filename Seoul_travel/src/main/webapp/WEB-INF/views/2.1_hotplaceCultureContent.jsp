@@ -49,18 +49,6 @@
 					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
 				</div>
 				<div class="offcanvas-body">
-					<!-- Sorting-->
-					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">
-						<i class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 정렬 : 
-						</label>
-						<select class="form-select" id="sort">
-							<option>인기순</option>
-							<option>최신순</option>
-							<option>조회순</option>
-							<option>댓글순</option>
-						</select>
-					</div>
 					
 					<!-- Search-->
 					<div class="position-relative mb-4">

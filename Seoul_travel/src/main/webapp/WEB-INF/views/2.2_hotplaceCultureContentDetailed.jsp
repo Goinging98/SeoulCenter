@@ -380,21 +380,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 								<div class="align-middle px-3">${cItem.parkingculture}</div>
 								<div class="align-middle px-3">${cItem.parkingfee} </div>
 							</div>
-
-							<div class="d-flex">
-								<a
-									class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm me-2"
-									href="#"><i class="fi-facebook"></i></a><a
-									class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm me-2"
-									href="#"><i class="fi-twitter"></i></a><a
-									class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm me-2"
-									href="#"><i class="fi-linkedin"></i></a>
-							</div>
 						</div>
 					</div>
-
-					
-
 				</div>
 			</div>
 		</aside>

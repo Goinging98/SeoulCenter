@@ -90,20 +90,6 @@
 								href="3.1_foodKorea.html">일식 <span class=" ms-300">(5)</span></a>
 						</div>
 					</div>
-					<!-- Tags 태그 -->
-					<div class="card card-flush pb-2 pb-lg-0 mb-4">
-						<div class="card-body">
-							<h4 class="h5">태그로 검색하는 맛집</h4>
-							<div class="d-flex flex-wrap mb-n1">
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이거 필요한가요?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼터~?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집맛집</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주 핫플</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS핫플!!</button>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</aside>
@@ -175,7 +161,7 @@
 
 											<!-- Price -->
 											<div class="mt-3 mt-sm-0">
-												<a href="3.2_foodDetailed.html"
+												<a href="${path}/foodDetail?id=${item.contentid}"
 													class="btn btn-sm btn-dark mb-0 w-100">더보기</a>
 											</div>
 										</div>
