@@ -272,7 +272,8 @@
                             &quot;850&quot;:{&quot;items&quot;:5, &quot;gutter&quot;: 16}}}">
 							<c:forEach var="tItem" items="${tList}">
 							<a class="swap-image" href="${path}/hotTourListDetail?id=${tItem.contentid}">
-							<img	 src="${tItem.firstimage}" class="rounded-2 img-fluid gallery-item" alt="Image1" width="300px" height="270px"></a>
+							<img	 src="${tItem.firstimage}" class="rounded-2 img-fluid gallery-item" alt="Image1"
+							style= "min-width:13em; min-height:13em; max-width:13em; max-height:13em;"></a>
 							</c:forEach>
 						</div>
 					</div>
