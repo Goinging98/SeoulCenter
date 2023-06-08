@@ -172,49 +172,23 @@
 					<h3 class="widget-title pb-1">오늘의 맛집</h3>
 					<div class="widget mt-n1 mb-5"
 						style="border: 1px solid #e8e8e8; padding: 4px; border-radius: 12px;">
-						<div class="d-flex align-items-start mb-3 mt-3"
-							style="margin-left: 3%;">
-							<a class="d-block flex-shrink-0" href="3.2_foodDetailed.html"><img
-								class="rounded" src="${path}/resources/img/city-guide/home/bbosik.jpg" alt="Post"
-								width="64"></a>
+				<c:forEach var="food" items="${foodList}">
+						<div class="d-flex align-items-start mb-3 mt-3" style="margin-left: 3%;">
+							<a class="d-block flex-shrink-0" href="${path}/foodDetail?id=${food.contentid}">
+							<img class="rounded" style= "width: 5rem; height: 4rem;" src="${food.firstimage}" alt="Post" width="34">
+							</a>
 							<div class="ps-2 ms-1">
 								<h5 class="fs-md nav-heading mb-1">
-									<a class="fw-medium" href="3.2_foodDetailed.html"
-										style="text-decoration: none;">뽀글이 두루찌개</a>
+									<a class="fw-medium" href="${path}/foodDetail?id=${food.contentid}"
+										style="text-decoration: none;">${food.title}</a>
 								</h5>
-								<p class="fs-xs text-muted mb-0">마곡동 중앙6로 93 1층</p>
+								<p class="fs-xs text-muted mb-0">${food.addr1}</p>
 							</div>
 						</div>
-						<div class="d-flex align-items-start mb-3 mt-3"
-							style="margin-left: 3%;">
-							<a class="d-block flex-shrink-0" href="3.2_foodDetailed.html"><img
-								class="rounded" img src="${path}/resources/img/city-guide/home/samgyupsal.jpg"
-								alt="Post" width="64"></a>
-							<div class="ps-2 ms-1">
-								<h5 class="fs-md nav-heading mb-1">
-									<a class="fw-medium" href="3.2_foodDetailed.html"
-										style="text-decoration: none;">바담</a>
-								</h5>
-								<p class="fs-xs text-muted mb-0">공항대로 269-15</p>
-							</div>
-						</div>
-						<div class="d-flex align-items-start mb-3 mt-3"
-							style="margin-left: 10px;">
-							<a class="d-block flex-shrink-0" href="3.2_foodDetailed.html"><img
-								class="rounded" src="${path}/resources/img/city-guide/home/sushi.jpg" alt="Post"
-								width="64"></a>
-							<div class="ps-2 ms-1">
-								<h5 class="fs-md nav-heading mb-1">
-									<a class="fw-medium" href="3.2_foodDetailed.html"
-										style="text-decoration: none;">나미식당</a>
-								</h5>
-								<p class="fs-xs text-muted mb-0">가양동 160-13</p>
-							</div>
-						</div>
+				</c:forEach>
 					</div>
 				</div>
 			</div>
-	</div>
 	</div>
 </section>
 

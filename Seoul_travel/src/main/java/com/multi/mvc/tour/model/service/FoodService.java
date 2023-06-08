@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.FoodMapper;
 import com.multi.mvc.tour.model.vo.Food;
+import com.multi.mvc.tour.model.vo.TourList;
 
 @Service
 public class FoodService {
@@ -19,6 +20,10 @@ public class FoodService {
 		param.put("limit", pageInfo.getListLimit());
 		param.put("offset", (pageInfo.getStartList() - 1));
 		return mapper.selectFoodList(param);
+	}
+	
+	public List<Food> selectFoodRandomList(Map<String, Object> map){
+		return mapper.selectFoodRandomList(null);
 	}
 	
 	public int selectFoodCount(Map<String, Object> map) {

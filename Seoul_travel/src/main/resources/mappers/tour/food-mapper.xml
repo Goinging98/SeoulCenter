@@ -40,5 +40,11 @@
 		FROM Food
 		WHERE contentid = #{id}
 	</select>
+	
+	<select id="selectFoodRandomList" parameterType="map" resultType="Food">
+		SELECT 
+			*
+		FROM Food ORDER BY RAND() limit 3
+	</select>
 </mapper>
 

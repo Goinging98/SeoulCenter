@@ -37,7 +37,7 @@
 <!--  						data-carousel-options="{&quot;navAsThumbnails&quot;: true, &quot;navContainer&quot;: &quot;#thumbnails&quot;, &quot;gutter&quot;: 12, &quot;responsive&quot;: {&quot;0&quot;:{&quot;controls&quot;: false},&quot;500&quot;:{&quot;controls&quot;: true}}}">
 -->						<div>
 							<img class="rounded-3"
-								src="${item.firstimage}" alt="Image" style= "width:100%; height:100%">
+								src="${item.firstimage}" alt="Image" style= "width:100%; height:40rem">
 						</div>
 						<div>
 							<img class="rounded-3"
@@ -217,7 +217,7 @@
 						</div>
 						<span class="placeholder col-12 placeholder-xs"></span>
 
-						<div class="bg-secondary rounded-2 mt-3">
+						<div class="bg-secondary rounded-2 mt-4">
 							<div class="d-flex align-items-center mx-2 ">
 								${item.overview}
 							</div>

@@ -12,34 +12,15 @@
 
   <!-- ----------------------------------------------booking 연결파트------------------------------------------ -->
 
-      <!-- Favicon -->
-      <!-- <link rel="shortcut icon" href="/booking\booking_v1.1.0\template\assets\images\favicon.ico"> -->
 
       <!-- Plugins CSS -->
-      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/font-awesome/css/all.min.css">
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/bootstrap-icons/bootstrap-icons.css">
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/tiny-slider/tiny-slider.css">
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/glightbox/css/glightbox.css">
-      <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/choices/css/choices.min.css">
 
       <!-- Theme CSS -->
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/css/style.css">
 </head>
-
-<!--검색바 관련-->
-<style>
-.searchbarmoveTop {
-	position: absolute;
-	top: 460px;
-	left: calc(50% - 590px);
-	width: 510px;
-	max-width: 100%;
-	margin: 0 auto;
-	resize: horizontal;
-	z-index: 1;
-}
-</style>
-
 
 <section class="jarallax bg-dark zindex-1 py-xxl-1" data-jarallax
 	data-speed="0.5" style="margin-top: 100px;">

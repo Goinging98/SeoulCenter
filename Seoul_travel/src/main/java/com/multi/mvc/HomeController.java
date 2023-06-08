@@ -19,6 +19,7 @@ import com.multi.mvc.tour.model.service.FoodService;
 import com.multi.mvc.tour.model.service.TourListService;
 import com.multi.mvc.tour.model.vo.Accommodation;
 import com.multi.mvc.tour.model.vo.CultureContent;
+import com.multi.mvc.tour.model.vo.Food;
 import com.multi.mvc.tour.model.vo.TourList;
 
 import lombok.extern.slf4j.Slf4j;
@@ -49,6 +50,7 @@ public class HomeController {
 		// selectRandomAccom을 호출하여 무작위 숙박 시설 목록을 가져옴
 			List<Accommodation> randomAccommodations = accomoService.selectRandomAccom(12);
 			List<TourList> tList = tourListService.selectTourListRandomList(null);
+			List<Food> foodList = foodService.selectFoodRandomList(null);
 			for (Accommodation a : randomAccommodations) {
 				if (a.firstimage == null) {
 					a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
@@ -59,8 +61,14 @@ public class HomeController {
 					t.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
 				}
 			}
+			for(Food food : foodList) {
+				if(food.firstimage == null) {
+					food.firstimage = "http://tong.visitkorea.or.kr/cms/resource/08/399808_image2_1.jpg";
+				}
+			}
 			model.addAttribute("randomAccommodations", randomAccommodations);
 			model.addAttribute("tList",tList);
+			model.addAttribute("foodList",foodList);
 		
 		return "1_main_page";
 	}
