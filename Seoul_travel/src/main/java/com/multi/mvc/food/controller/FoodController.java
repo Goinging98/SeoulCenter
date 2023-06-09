@@ -57,10 +57,7 @@ public class FoodController {
 	@RequestMapping("/foodDetail")
 	public String foodMain(Model model
 			, int id
-			, @SessionAttribute(name = "loginMember", required = false) Member loginMember
-			, @ModelAttribute Reply reply
-			) {
-		log.info("리플작성 : "+reply);
+			, @SessionAttribute(name = "loginMember", required = false) Member loginMember) {
 		Food food = foodService.selectByContentId(id);
 		if(food == null) {
 			// 에러처리
@@ -68,4 +65,26 @@ public class FoodController {
 		model.addAttribute("item", food);
 		return "3.2_foodDetailed";	
 	}
+	
+	
+
+	@RequestMapping("/foodReplyWrite")
+	public String writeReply(Model model,
+			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+			@ModelAttribute Reply reply
+			) {
+		log.info("리플 작성, reply : "+ reply);
+		reply.setMno(loginMember.getMno());
+//		int result = foodService.sa
+		
+		if(result > 0) {
+			model.addAttribute("msg","리플이 등록되었습니다.");
+		} else {
+			model.addAttribute("msg","리플 등록에 실패하였습니다.");
+		}
+		model.addAttribute("location", "/board/view?no="+reply.getBno());
+		return "/common/msg";
+	}
+	
+	
 }

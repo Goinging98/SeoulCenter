@@ -170,12 +170,6 @@ public class CommunityController {
 				) {
 			log.info("board write 요청, board : " + board);
 			
-			// 보안코드 예시
-			if(loginMember.getId().equals(board.getWriterId()) == false) {
-				model.addAttribute("msg","잘못된 접근입니다.");
-				model.addAttribute("location","/");
-				return "common/msg";
-			}
 			
 			board.setMno(loginMember.getMno());
 			

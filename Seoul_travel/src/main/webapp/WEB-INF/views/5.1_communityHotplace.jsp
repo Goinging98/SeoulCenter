@@ -134,7 +134,7 @@
 									
 				<!-- 글쓰기 버튼 -->			
 				<c:if test="${loginMember != null}">
-						<button type="button" id="btn-add" onclick="location.href='${path}/board/write'">글쓰기</button>
+						<button type="button" id="btn-add" onclick="location.href='${path}/community/write'">글쓰기</button>
 				</c:if>
 				
 				<!-- page부 시작 -->

@@ -68,7 +68,7 @@
 									type="button" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body px-sm-5 px-4">
-								<form class="needs-validation" action="${path}/foodDetail?id=${item.contentid}" method="post" novalidate>
+								<form class="needs-validation" action="${path}/foodReplyWrite" method="post" novalidate>
 					    			<input type="hidden" name="bno" value="${item.contentid}" />
 					    			<input type="hidden" name="writerId" value="${loginMember.id}" />
 									<div class="mb-4">

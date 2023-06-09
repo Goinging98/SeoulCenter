@@ -36,10 +36,10 @@
 
 			<!-- Contact form-->
 			<form name="comnunitywrite" action="${path}/community/write" method="post" enctype="multipart/form-data" 
-				class="needs-validation row row-cols-sm-2 row-cols-1 gy-sm-4 gy-3" novalidate>
+				class="row row-cols-sm-2 row-cols-1 gy-sm-4 gy-3" novalidate>
 				<div class="col1">
 					<label class="form-label" for="c-title">제목</label> 
-					<input class="form-control form-control-lg" id="c-title" type="text" required>
+					<input class="form-control form-control-lg" id="c-title" name="title" type="text" required>
 				</div>
 				
 				<div class="col"><!-- 빈공간 : 지우면 안됨  -->
@@ -53,7 +53,7 @@
 
 				<div class="col">
 					<label class="form-label" for="c-subject">유형</label>
-					<select class="form-select form-select-lg" id="c-subject" required>
+					<select class="form-select form-select-lg" id="c-subject" name="type" required>
 						<option value="" selected disabled>카테고리 선택</option>
 						<option value="B2">핫플레이스</option>
 						<option value="B1">맛집</option>
@@ -63,14 +63,14 @@
 				<div class="col">
 					<label class="form-label" for="c-image">이미지</label>
 					<div class="custom-file">
-						<input class="custom-file-input form-control-lg" id="c-phone" type="file" accept="image/*" required>
+						<input class="custom-file-input form-control-lg" id="c-phone" name="upfile" type="file" accept="image/*" required>
 					</div>
 					<div class="invalid-tooltip mt-1"></div>
 				</div>
 
 				<div class="col-12 w-100">
 					<label class="form-label" for="c-message">게시판 글 </label>
-					<textarea class="form-control form-control-lg" id="c-message" rows="6" cols="80%" required></textarea>
+					<textarea class="form-control form-control-lg" id="c-message" rows="6" cols="80%" name="content"  required></textarea>
 				</div>
 				<div class="col-12 w-100">
 					<button class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" type="submit">등록</button>
