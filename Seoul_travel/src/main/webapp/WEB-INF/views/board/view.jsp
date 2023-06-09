@@ -56,12 +56,11 @@
 			alt="Post image" width="800" height="150">
 		</c:if>
 		<c:if test="${not empty board.originalFileName}">
-			<a href="javascript:fileDownload('${board.originalFileName}','${board.renamedFileName}');">
-				<img src="${board.originalFileName}" width="20" height="20"/>
-				<c:out value="${board.originalFileName}"></c:out>		
-			</a>
+				<img src="${path}/resources/img/boardpic/1.jfif" width="40%"/>
 		</c:if>
 	</div>
+	
+		
 	
 	<div class="row mt-4 pt-3">
 		<!-- 작성자 정보 -->
@@ -192,20 +191,3 @@
 		location.href = url + '?originName=' + originName + '&reName=' + reName;
 	}
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

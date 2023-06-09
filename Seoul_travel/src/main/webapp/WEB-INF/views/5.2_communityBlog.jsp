@@ -40,11 +40,11 @@
 		<c:out value="${citem.title}"/>
 	</h1>
 	<div style="text-align: center;">
-		<img class="rounded-3" src="${path}/resources/img/city-guide/community/restaurant2.jpeg"
-			alt="Post image" width="800" height="150">
+		<img class="rounded-3" src="${path}/resources/img/boardpic/${citem.bNO}.jfif" alt="Post image" width="800" height="150">
 	</div>
 
 	<div class="row mt-4 pt-3">
+	
 		<!-- 작성자 정보 -->
 		<aside class="col-lg-4">
 			<!-- Offcanvas-->

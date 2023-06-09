@@ -68,39 +68,17 @@
 									type="button" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body px-sm-5 px-4">
-								<form class="needs-validation" novalidate>
-									<div class="mb-3">
-										<label class="form-label" for="review-name">닉네임 <span
-											class='text-danger'>*</span></label> <input class="form-control"
-											type="text" id="review-name" placeholder="이름을 입력하세요" required>
-									</div>
-									<div class="mb-3">
-										<label class="form-label" for="review-email">이메일 <span
-											class='text-danger'>*</span></label> <input class="form-control"
-											type="email" id="review-email" placeholder="이메일을 입력하세요"
-											required>
-									</div>
-									<div class="mb-3">
-										<label class="form-label" for="review-rating">별점 <span
-											class='text-danger'>*</span></label> <select
-											class="form-control form-select" id="review-rating" required>
-
-											<option value="5 stars">5 점</option>
-											<option value="4 stars">4 점</option>
-											<option value="3 stars">3 점</option>
-											<option value="2 stars">2 점</option>
-											<option value="1 star">1 점</option>
-										</select>
-									</div>
+								<form class="needs-validation" action="${path}/foodReplyWrite" method="post" novalidate>
+					    			<input type="hidden" name="bno" value="${item.contentid}" />
+					    			<input type="hidden" name="writerId" value="${loginMember.id}" />
 									<div class="mb-4">
-										<label class="form-label" for="review-text">리뷰<span
+										<label class="form-label" for="replyContent">리뷰<span
 											class='text-danger'>*</span></label>
-										<textarea class="form-control" id="review-text" rows="5"
+										<textarea class="form-control" id="replyContent" rows="8"
 											placeholder="리뷰를 입력하세요" required></textarea>
-
 									</div>
 									<button class="btn btn-primary d-block rounded-pill w-100 mb-4"
-										type="submit">리뷰 작성하기</button>
+										type="submit">등록</button>
 								</form>
 							</div>
 						</div>
@@ -108,76 +86,38 @@
 				</div>
 
 				<!-- Specs-->
-
 				<div class="py-5">
-					<h2 class="h3">맛집 리뷰</h2>
+					<h2 class="h3">${item.title} 리뷰</h2>
 					<div class="row">
-
-						<!-- Add review btn + Reviews sort-->
+						<!-- 리뷰 자성 버튼 -->
 						<div	class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
 							<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal">
 								<i	class="fi-edit mt-n1 me-1 align-middle">
 								</i>리뷰 작성하기</a>
 						</div>
 
-						<!-- Review-->
+						<!-- 리뷰 -->
 						<div class="mb-4 pb-4 border-bottom">
-							<div class="d-flex justify-content-between mb-3">
-								<div class="d-flex align-items-center pe-2">
-									<img class="rounded-circle me-1" src="img/avatars/03.jpg"
-										width="48" alt="Avatar">
-									<div class="ps-2">
-										<h6 class="fs-base mb-0">홍길동</h6>
-										<span class="star-rating"><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i></span>
+							<c:if test="${!empty replyList}">
+								<c:forEach var="reply" items="${replyList}">
+									<div class="d-flex justify-content-between mb-3">
+										<div class="d-flex align-items-center pe-2">
+											<div class="ps-2">
+												<h6 class="fs-base mb-0">${reply.writerId}</h6>
+											</div>
+											<span class="text-muted fs-sm"><fmt:formatDate type="both" value="${reply.createDate}"/></span>
+										</div>
+										<p><c:out value="${reply.content}"/></p>
+										<div class="d-flex align-items-center">
+										</div>
 									</div>
-								</div>
-								<span class="text-muted fs-sm">2021.6.7</span>
-							</div>
-							<p>등촌 가고 싶어요</p>
-							<div class="d-flex align-items-center">
-								<button class="btn-like" type="button">
-									<i class="fi-like"></i><span>(3)</span>
-								</button>
-								<div class="border-end me-1">&nbsp;</div>
-								<button class="btn-dislike" type="button">
-									<i class="fi-dislike"></i><span>(0)</span>
-								</button>
-							</div>
-						</div>
-						<!-- Review-->
-						<div class="mb-4 pb-4 border-bottom">
-							<div class="d-flex justify-content-between mb-3">
-								<div class="d-flex align-items-center pe-2">
-									<img class="rounded-circle me-1" src="img/avatars/13.png"
-										width="48" alt="Avatar">
-									<div class="ps-2">
-										<h6 class="fs-base mb-0">Darrell Steward</h6>
-										<span class="star-rating"><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star-filled active"></i><i
-											class="star-rating-icon fi-star"></i><i
-											class="star-rating-icon fi-star"></i></span>
-									</div>
-								</div>
-								<span class="text-muted fs-sm">Dec 1, 2020</span>
-							</div>
-							<p>Vel dictum nunc ut tristique. Egestas diam amet, ut proin
-								hendrerit. Dui accumsan at phasellus tempus consequat dignissim.</p>
-							<div class="d-flex align-items-center">
-								<button class="btn-like" type="button">
-									<i class="fi-like"></i><span>(0)</span>
-								</button>
-								<div class="border-end me-1">&nbsp;</div>
-								<button class="btn-dislike" type="button">
-									<i class="fi-dislike"></i><span>(1)</span>
-								</button>
-							</div>
+								</c:forEach>
+							</c:if>
+							<c:if test="${empty replyList}">
+								<tr>
+									<td colspan="3" style="text-align: center;">등록된 리플이 없습니다.</td>
+								</tr>
+							</c:if>
 						</div>
 					</div>
 				</div>

@@ -119,10 +119,11 @@ SELECT * FROM BOARD;
 ------------------------- REPLY 관련 테이블 -------------------------
 ------------------------------------------------------------------
 
-
+use tourapi;
+drop table reply;
 CREATE TABLE REPLY(
   rNO INT PRIMARY KEY AUTO_INCREMENT,
-  bNO INT,
+  bNO INT, -- contentid 
   mNO INT,
   CONTENT VARCHAR(1000),
   STATUS VARCHAR(1) DEFAULT 'Y' CHECK (STATUS IN ('Y', 'N')),
