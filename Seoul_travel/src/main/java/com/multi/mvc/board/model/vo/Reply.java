@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Reply {
 	private int rno;			// rNO 			INT PRIMARY KEY AUTO_INCREMENT,
-	private int bno;			// bNO 			INT,
+	private int bno;			// bNO 			INT, contentid 
 	private int mno;			// mNO 			INT,
 	private String writerId;		// writerId 	String,
 	private String content;		// CONTENT 		VARCHAR(1000),

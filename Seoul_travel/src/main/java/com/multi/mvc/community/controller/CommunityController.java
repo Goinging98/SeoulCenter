@@ -203,8 +203,6 @@ public class CommunityController {
 			return "common/msg";
 		}
 		
-	
-	
-	
+
 	
 }

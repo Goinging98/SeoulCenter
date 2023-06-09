@@ -6,13 +6,20 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
+import com.multi.mvc.board.model.vo.Reply;
 import com.multi.mvc.common.util.PageInfo;
+import com.multi.mvc.member.model.vo.Member;
 import com.multi.mvc.tour.model.service.FoodService;
 import com.multi.mvc.tour.model.vo.Food;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class FoodController {
 	@Autowired
@@ -48,7 +55,12 @@ public class FoodController {
 	}
 	
 	@RequestMapping("/foodDetail")
-	public String foodMain(Model model, int id) {
+	public String foodMain(Model model
+			, int id
+			, @SessionAttribute(name = "loginMember", required = false) Member loginMember
+			, @ModelAttribute Reply reply
+			) {
+		log.info("리플작성 : "+reply);
 		Food food = foodService.selectByContentId(id);
 		if(food == null) {
 			// 에러처리

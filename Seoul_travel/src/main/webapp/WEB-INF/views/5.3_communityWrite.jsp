@@ -41,8 +41,8 @@
 					<label class="form-label" for="c-title">제목</label> 
 					<input class="form-control form-control-lg" id="c-title" type="text" required>
 				</div>
-				<!-- 빈공간 : 지우면 안됨  -->
-				<div class="col">
+				
+				<div class="col"><!-- 빈공간 : 지우면 안됨  -->
 					<div class="invalid-tooltip mt-1"></div>
 				</div>
 				
@@ -70,7 +70,7 @@
 
 				<div class="col-12 w-100">
 					<label class="form-label" for="c-message">게시판 글 </label>
-					<textarea class="form-control form-control-lg" id="c-message" rows="10" cols="70%" required></textarea>
+					<textarea class="form-control form-control-lg" id="c-message" rows="6" cols="80%" required></textarea>
 				</div>
 				<div class="col-12 w-100">
 					<button class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" type="submit">등록</button>

@@ -192,20 +192,3 @@
 		location.href = url + '?originName=' + originName + '&reName=' + reName;
 	}
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
