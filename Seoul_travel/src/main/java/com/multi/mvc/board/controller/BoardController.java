@@ -113,7 +113,7 @@ public class BoardController {
 		// 파일 저장 로직
 		if(upfile != null && upfile.isEmpty() == false) {
 			String rootPath = session.getServletContext().getRealPath("resources");
-			String savePath = rootPath + "/upload/board";
+			String savePath = rootPath + "/img/boardpic";
 			String renamedFileName = service.saveFile(upfile, savePath); // 실제 파일 저장로직
 			
 			if(renamedFileName != null) {

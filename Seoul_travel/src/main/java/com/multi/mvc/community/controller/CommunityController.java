@@ -134,19 +134,6 @@ public class CommunityController {
 		return "5.1_communityHotplace";
 	}
 	
-	
-	// 상세 글 확인
-	@RequestMapping("/community/view")
-	public String view(Model model, @RequestParam("no") int no) {
-		Community board = service.findByNo(no);
-		if(board == null) {
-			return "redirect:error";
-		}
-		model.addAttribute("board", board);
-		//model.addAttribute("replyList", board.getReplies());
-		return "5.2_communityBlog";
-	}
-
 	// Error 
 	@GetMapping("/community/error")
 	public String error() {

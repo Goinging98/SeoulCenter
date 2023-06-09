@@ -110,8 +110,8 @@
 				<tr>
 					<th colspan="2">
 						<c:if test="${not empty loginMember && (loginMember.id == board.writerId || loginMember.role == 'ROLE_ADMIN')}">
-							<button type="button" id="btnUpdate">수정</button>
-							<button type="button" id="btnDelete">삭제</button>
+							<button class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" type="button" id="btnUpdate">수정</button>
+							<button class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" type="button" id="btnDelete">삭제</button>
 						</c:if>
 					</th>
 				</tr>

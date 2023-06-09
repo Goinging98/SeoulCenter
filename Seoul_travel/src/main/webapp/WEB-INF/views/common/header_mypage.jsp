@@ -193,27 +193,27 @@
 						<ul class="navbar-nav navbar-nav-scroll" style="max-height: 35rem;">
 							<!-- Menu items-->
 							<li class="nav-item dropdown active">
-								<a class="nav-link" href="/" data-bs-toggle="" aria-expanded="false"> 
+								<a class="nav-link" href="/mvc/" data-bs-toggle="" aria-expanded="false"> 
 									<strong>Home</strong>
 								</a>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link" href="foodMain" data-bs-toggle="" aria-expanded="false">
+								<a class="nav-link" href="/mvc/foodMain" data-bs-toggle="" aria-expanded="false">
 								<strong>맛집</strong>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="accomMain" data-bs-toggle="" aria-expanded="false">
+								<a class="nav-link" href="/mvc/accomMain" data-bs-toggle="" aria-expanded="false">
 									<strong>숙소</strong>
 								</a>
 							</li>
 							<li class="nav-item">
-							<a class="nav-link" href="hotMain"	data-bs-toggle="" aria-expanded="false">
+							<a class="nav-link" href="/mvc/hotMain"	data-bs-toggle="" aria-expanded="false">
 								<strong>핫플레이스</strong>
 								</a>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link"	href="community" data-bs-toggle="" aria-expanded="false">
+								<a class="nav-link"	href="/mvc/community/notice" data-bs-toggle="" aria-expanded="false">
 									<strong>커뮤니티</strong>
 								</a>
 							</li>
