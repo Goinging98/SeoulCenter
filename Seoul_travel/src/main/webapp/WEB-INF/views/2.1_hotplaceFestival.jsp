@@ -158,12 +158,12 @@
 
 						<c:if test="${page > 2}">
 							<li class="page-item d-none d-sm-block"><a class="page-link"
-								href="hotFestival?page=${page-2}">${page - 2}</a></li>
+								href="hotFestival?page=${page-2}&searchValue=${searchValue}">${page - 2}</a></li>
 						</c:if>
 						
 						<c:if test="${page > 1}">
 							<li class="page-item d-none d-sm-block"><a class="page-link"
-								href="hotFestival?page=${page-1}">${page - 1}</a></li>
+								href="hotFestival?page=${page-1}&searchValue=${searchValue}">${page - 1}</a></li>
 						</c:if>
 						
 						<li class="page-item active d-none d-sm-block" aria-current="page"><span
@@ -171,17 +171,17 @@
 						
 						<c:if test="${page <= maxPage}">
 						<li class="page-item d-none d-sm-block"><a class="page-link"
-							href="hotFestival?page=${page+1}">${page + 1}</a></li>
+							href="hotFestival?page=${page+1}&searchValue=${searchValue}">${page + 1}</a></li>
 						</c:if>
 						
 						<c:if test="${page < maxPage}">
 						<li class="page-item d-none d-sm-block"><a class="page-link"
-							href="hotFestival?page=${page+2}">${page + 2}</a></li>
+							href="hotFestival?page=${page+2}&searchValue=${searchValue}">${page + 2}</a></li>
 						</c:if>
 						
 						<c:if test="${page < maxPage}">
 						<li class="page-item"><a class="page-link next-page"
-							href="hotFestival?page=${page+3}" aria-label="Next"><i
+							href="hotFestival?page=${page+3}&searchValue=${searchValue}" aria-label="Next"><i
 								class="fi-chevron-right"></i></a></li>
 								</c:if>
 					</ul>

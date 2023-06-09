@@ -38,8 +38,8 @@
 						<span style="color: #25af9b;">서울 상담소</span>와 함께!
 					</p>
 				</h1>
-				<p class="fs-xs text-white">
-					Find great places to stay, eat, shop, and local experts. Plan your trip with <span style="color: #25af9b;">서울 상담소</span>
+				<p class="fs-ms text-white">
+					Find great places to festival, culture, tour, local experts. Plan your trip with <span style="color: #25af9b;">서울 상담소</span>
 				</p>
 			</div>
 			<div class="col-xl-8 col-lg-9 col-md-10 mx-auto px-0"></div>

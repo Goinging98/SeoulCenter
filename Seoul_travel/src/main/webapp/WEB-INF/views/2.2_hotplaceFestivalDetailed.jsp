@@ -63,12 +63,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			style="width: 55em; height: auto;">
 			<div class="tns-carousel-inner  "
 				data-carousel-options='{"gutter": 16}'>
-				<img src="${fItem.firstimage}"	alt="Image">
-				<img src="${fItem.firstimage2}"
-					alt="Image">
-				<!-- <img class="rounded-3" src="https://mono.aks.ac.kr/s/media/7f/7fb47219-31a1-4dd9-bc41-d1a1bea62190.jpg?preset=page" alt="Image">
-        <img class="rounded-3" src="https://media-cdn.tripadvisor.com/media/photo-s/15/6a/f8/e8/palace.jpg" alt="Image"> -->
-
+					<img src="${fItem.firstimage}" alt="Image">
+					<img src="<%-- ${imgfItem.originimgurl} --%>" alt="Image">
 			</div>
 		</div>
 	</div>

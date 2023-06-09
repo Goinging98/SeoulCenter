@@ -30,4 +30,10 @@
 		SELECT count(*)
 		FROM Festival
 	</select>
+	
+	<select id="selectFestivalImgList" parameterType="map" resultType="TourImageVO">
+		SELECT f.contentid, f.firstimage, t.originimgurl, t.iNo, t.imgname
+		FROM Festival f
+		JOIN TourImage t ON f.contentid = t.contentid
+	</select>
 </mapper>

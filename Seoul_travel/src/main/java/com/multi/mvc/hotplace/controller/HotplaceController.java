@@ -17,6 +17,7 @@ import com.multi.mvc.tour.model.service.TourListService;
 import com.multi.mvc.tour.model.vo.Accommodation;
 import com.multi.mvc.tour.model.vo.CultureContent;
 import com.multi.mvc.tour.model.vo.Festival;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 import com.multi.mvc.tour.model.vo.TourList;
 
 @Controller
@@ -97,6 +98,7 @@ public class HotplaceController {
 		model.addAttribute("page",page);
 		model.addAttribute("pageInfo", pageInfo);
 		model.addAttribute("cultureContentList", cList2);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		return "2.1_hotplaceCultureContent";
 	}
@@ -130,6 +132,7 @@ public class HotplaceController {
 		model.addAttribute("page",page);
 		model.addAttribute("pageInfo", pageInfo);
 		model.addAttribute("festivalList", fList2);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		return "2.1_hotplaceFestival";
 	}
@@ -163,6 +166,7 @@ public class HotplaceController {
 		model.addAttribute("page",page);
 		model.addAttribute("pageInfo", pageInfo);
 		model.addAttribute("tourList", tList2);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		return "2.1_hotplaceTourList";
 	}
@@ -170,12 +174,14 @@ public class HotplaceController {
 	
 // 행사/축제 상세상세 페이지
 	@RequestMapping(value ="/hotFestivalDetail", method = RequestMethod.GET)
-	public String hotFestivalDetail(Model model, int id) {
+	public String hotFestivalDetail(Model model, int id, Map<String, Object> param) {
 		Festival festival = festivalService.selectByContentId(id);	
+		List<TourImageVO> imgFestival = festivalService.selectFestivalImgList(param);
 		if(festival == null) {
 			// 에러처리
 		}
 		
+		model.addAttribute("imgfItem",imgFestival);
 		model.addAttribute("fItem", festival);
 		return "2.2_hotplaceFestivalDetailed";
 	}

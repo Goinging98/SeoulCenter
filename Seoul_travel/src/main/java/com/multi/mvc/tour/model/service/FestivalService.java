@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.FestivalMapper;
 import com.multi.mvc.tour.model.vo.Festival;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 
 @Service
 public class FestivalService {
@@ -32,5 +33,9 @@ public class FestivalService {
 	
 	public int selectFestivalCount(Map<String, Object> map) {
 		return mapper.selectFestivalCount(map);
+	}
+	
+	public List<TourImageVO> selectFestivalImgList(Map<String, Object> param){
+		return mapper.selectFestivalImgList(param);
 	}
 }
