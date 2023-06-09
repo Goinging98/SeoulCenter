@@ -73,7 +73,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			</div>
 			</section>
 			<!-- Page content-->
-			<section class="container pb-5 mb-md-4">
+<section class="container pb-5 mb-md-4">
 	<div class="row">
 		<div class="col-md-7 mb-md-0 mb-3">
 			<div class="card py-2 px-sm-4 px-3 shadow-sm">
@@ -110,22 +110,23 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 									<div class="fi-globe mt-1 me-2 align-middle opacity-60"></div>
 									${item.homepage}
 								</div></li>
-							
+
 						</ul>
 					</div>
 
 					<!-- Place pricing-->
-<div class="mb-3 pb-3 border-bottom">
-    <div class="row row-cols-sm-2 row-cols-1">
-        <div class="col">
-            <a id="reservationLink" class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
-                href="#" target="_blank" title="새창: 서울올림픽파크텔 홈페이지로 이동">
-                예약<i class="fi-chevron-right fs-sm ms-2"></i>
-            </a>
-        </div>
-    </div>
-</div>
-<script>
+					<div class="mb-3 pb-3 border-bottom">
+						<div class="row row-cols-sm-2 row-cols-1">
+							<div class="col">
+								<a id="reservationLink"
+									class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
+									href="#" target="_blank" title="새창: 서울올림픽파크텔 홈페이지로 이동"> 예약<i
+									class="fi-chevron-right fs-sm ms-2"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<script>
     // HTML 문자열에서 주소 추출 함수
     function extractURL(html) {
         var tempDiv = document.createElement('div');
@@ -164,23 +165,22 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<!-- Location (Map) start -->
 			<div id="map" class="rounded" style="width: 500px; height: 350px;"></div>
 			<!-- Location (Map) end -->
+
+
 			<div
-				class="position-relative bg-size-cover bg-position-center bg-repeat-0 h-100 rounded-3"
-				style="background-image: url(img/city-guide/single/map.jpg); min-height: 250px;">
-				<div
-					class="d-flex h-25 flex-column align-items-center justify-content-center">
-					<a class="btn btn-primary rounded-pill stretched-link"
-						 href=
-						data-iframe="true" data-bs-toggle="lightbox"><i
-						class="fi-route me-2"></i>위치 보기</a>
-
-				</div>
+				class="d-flex h-25 flex-column align-items-center justify-content-center">
+				<a class="btn btn-primary rounded-pill stretched-link"
+					href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.924340088787!2d13.428504251724927!3d52.58906113876177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85284201593ab%3A0x28af69e02ce0e2fc!2sBusinesshotel%20Berlin!5e0!3m2!1sru!2sua!4v1618908622013!5m2!1sru!2sua"
+					data-iframe="true" data-bs-toggle="lightbox"><i
+					class="fi-route me-2"></i>위치 보기</a>
 			</div>
-		</div></section>
+		</div>
+	</div>
+</section>
 
 
 
-		<!-- Recently viewed-->
+<!-- Recently viewed-->
 		<section class="container pb-5 mb-lg-4" >
 			<div
 				class="d-flex align-items-center justify-content-between mb-4 pb-2" >
@@ -283,5 +283,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	    infowindow.close();
 	};
 	}
+</script>
+
 	
 
