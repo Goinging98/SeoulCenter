@@ -266,8 +266,3 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	}
 	
 
-<<<<<<< Upstream, based on branch 'master' of https://github.com/Goinging98/semi_pro
-</script>
-=======
-</script>
->>>>>>> 0e20f4f update - gayoung
