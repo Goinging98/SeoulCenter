@@ -53,73 +53,34 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<ul class="nav nav-pills border-bottom pb-3 mb-4">
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center active"
-			href="4.2_accmmoGallery.html"><i class="fi-image me-2"></i>갤러리</a></li>
-		<li class="nav-item"><a
-			class="nav-link d-flex align-items-center" 
-			href="${path}/accomDetail?id=${item.contentid}"><i class="fi-image me-2"></i>정보</a></li>
+			href="${path}/accomGall?id=${item.contentid}">갤러리</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center"
-			href="accomRev"><i class="fi-edit me-2"></i>리뷰</a></li>
+			href="${path}/accomDetail?id=${item.contentid}">정보</a></li>
+		<li class="nav-item"><a
+			class="nav-link d-flex align-items-center "
+			href="${path}/accomRev?id=${item.contentid}">리뷰</a></li>
 	</ul>
 </section>
 <!-- Gallery-->
-<section class="container overflow-auto mb-5" data-simplebar>
-	<div class="row g-2 g-md-3 gallery" data-thumbnails="true"
-		style="min-width: 30rem;">
-		<div class="col-8">
-			<a class="gallery-item rounded rounded-md-3"
-				href="img/city-guide/single/01.jpg"
-				data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;Kids bed&lt;/h6&gt;"><img
-				src="img/city-guide/single/01.jpg" alt="Gallery thumbnail"></a>
-		</div>
-		<div class="col-4">
-			<a class="gallery-item rounded rounded-md-3 mb-2 mb-md-3"
-				href="img/city-guide/single/02.jpg"
-				data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;Kids bed&lt;/h6&gt;"><img
-				src="img/city-guide/single/02.jpg" alt="Gallery thumbnail"></a><a
-				class="gallery-item rounded rounded-md-3"
-				href="img/city-guide/single/03.jpg"
-				data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;Working desk&lt;/h6&gt;"><img
-				src="img/city-guide/single/03.jpg" alt="Gallery thumbnail"></a>
-		</div>
-		<div class="col-12">
-			<div class="row g-2 g-md-3">
-				<div class="col">
-					<a class="gallery-item rounded-1 rounded-md-2"
-						href="img/city-guide/single/04.jpg"
-						data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;Working desk&lt;/h6&gt;"><img
-						src="img/city-guide/single/th04.jpg" alt="Gallery thumbnail"></a>
-				</div>
-				<div class="col">
-					<a class="gallery-item rounded-1 rounded-md-2"
-						href="img/city-guide/single/05.jpg"
-						data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;King size bed&lt;/h6&gt;"><img
-						src="img/city-guide/single/th05.jpg" alt="Gallery thumbnail"></a>
-				</div>
-				<div class="col">
-					<a class="gallery-item rounded-1 rounded-md-2"
-						href="img/city-guide/single/06.jpg"
-						data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;Towels&lt;/h6&gt;"><img
-						src="img/city-guide/single/th06.jpg" alt="Gallery thumbnail"></a>
-				</div>
-				<div class="col">
-					<a class="gallery-item rounded-1 rounded-md-2"
-						href="img/city-guide/single/07.jpg"
-						data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;Bathroom&lt;/h6&gt;"><img
-						src="img/city-guide/single/th07.jpg" alt="Gallery thumbnail"></a>
-				</div>
-				<div class="col">
-					<a class="gallery-item more-item rounded-1 rounded-md-2"
-						href="img/city-guide/single/08.jpg"
-						data-sub-html="&lt;h6 class=&quot;fs-sm text-light&quot;&gt;Bathroom&lt;/h6&gt;"><img
-						src="img/city-guide/single/th08.jpg" alt="Gallery thumbnail"><span
-						class="gallery-item-caption fs-base">+5 <span
-							class='d-none d-md-inline'>photos</span></span></a>
-				</div>
+      <section>
+      	<!-- slide -->
+      	
+	<div class="d-flex justify-content-center" style ="margin-bottom:25px;">
+		<div class="tns-carousel-wrapper overflow-hidden d-flex rounded-3"
+			style="width: 35em; height: auto;">
+			<div class="tns-carousel-inner  "
+				data-carousel-options='{"gutter": 16}'>
+				<img src="${item.firstimage}"	alt="Image">
+				<img src="${item.firstimage2}"
+					alt="Image">
+				<!-- <img class="rounded-3" src="https://mono.aks.ac.kr/s/media/7f/7fb47219-31a1-4dd9-bc41-d1a1bea62190.jpg?preset=page" alt="Image">
+        <img class="rounded-3" src="https://media-cdn.tripadvisor.com/media/photo-s/15/6a/f8/e8/palace.jpg" alt="Image"> -->
+
 			</div>
 		</div>
 	</div>
-</section>
+      </section>
 <!-- Page content-->
 <section class="container pb-5 mb-md-4">
 	<div class="row">
@@ -143,14 +104,14 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<div class="mb-3 pb-3 border-bottom">
 						<h4 class="h5 mb-2">Contacts:</h4>
 						<ul class="nav row row-cols-sm-2 row-cols-1 gy-1">
-							<li class="col"><a
-								class="nav-link p-0 fw-normal d-flex align-items-start" href="#"><i
-									class="fi-map-pin mt-1 me-2 align-middle opacity-70"></i>
-									${item.addr1}</a></li>
-							<li class="col"><a
-								class="nav-link d-inline-block p-0 fw-normal d-inline-flex align-items-start"
-								href="tel:3025550107"><i
-									class="fi-phone mt-1 me-2 align-middle opacity-70"></i>${item.tel}</a>
+							<li class="col"><div
+									class="p-0 fw-normal d-flex align-items-start">
+									<div class="fi-map-pin mt-1 me-2 align-middle opacity-70"></div>
+									${item.addr1}
+								</div></li>
+							<li class="col"><div
+									class="d-inline-block p-0 fw-normal d-inline-flex align-items-start">
+									<div class="fi-phone mt-1 me-2 align-middle opacity-70"></div>${item.tel}</div>
 							<li class="col"><div
 									class="p-0 fw-normal d-flex align-items-start">
 									<div class="fi-globe mt-1 me-2 align-middle opacity-60"></div>
@@ -162,11 +123,31 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<div class="mb-3 pb-3 border-bottom">
 						<div class="row row-cols-sm-2 row-cols-1">
 							<div class="col">
-								<a class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
-									href="#">예약<i class="fi-chevron-right fs-sm ms-2"></i></a>
+								<a id="reservationLink"
+									class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
+									href="#" target="_blank" title="새창: 서울올림픽파크텔 홈페이지로 이동"> 예약<i
+									class="fi-chevron-right fs-sm ms-2"></i>
+								</a>
 							</div>
 						</div>
 					</div>
+					<script>
+    // HTML 문자열에서 주소 추출 함수
+    function extractURL(html) {
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        var linkElement = tempDiv.firstChild;
+        return linkElement.getAttribute('href');
+    }
+
+    // 예약 버튼에 주소 적용
+    document.addEventListener('DOMContentLoaded', function() {
+        var homepageLink = '${item.homepage}'; // 주소가 포함된 문자열
+        var extractedURL = extractURL(homepageLink);
+        var reservationLink = document.getElementById('reservationLink');
+        reservationLink.href = extractedURL;
+    });
+</script>
 					<!-- Follow-->
 					<div class="d-flex align-items-center">
 						<h4 class="h5 mb-0 me-3">Follow:</h4>
@@ -185,14 +166,15 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		</div>
 		<!-- Location (Map)-->
 		<div class="col-md-5">
+			<!-- Location (Map) start -->
+			<div id="map" class="rounded" style="width: 500px; height: 350px;"></div>
+			<!-- Location (Map) end -->
 			<div
 				class="position-relative bg-size-cover bg-position-center bg-repeat-0 h-100 rounded-3"
 				style="background-image: url(img/city-guide/single/map.jpg); min-height: 250px;">
 				<div
-					class="d-flex h-100 flex-column align-items-center justify-content-center">
-					<img class="d-block mx-auto mb-4 rounded-circle bg-white shadow"
-						src="img/city-guide/brands/hotel.svg" width="40" alt="Place logo"><a
-						class="btn btn-primary rounded-pill stretched-link"
+					class="d-flex h-25 flex-column align-items-center justify-content-center">
+					<a class="btn btn-primary rounded-pill stretched-link"
 						href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.924340088787!2d13.428504251724927!3d52.58906113876177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85284201593ab%3A0x28af69e02ce0e2fc!2sBusinesshotel%20Berlin!5e0!3m2!1sru!2sua!4v1618908622013!5m2!1sru!2sua"
 						data-iframe="true" data-bs-toggle="lightbox"><i
 						class="fi-route me-2"></i>위치 보기</a>
@@ -250,3 +232,58 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 </section>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
+
+
+
+<!-- 카카오 토큰 JavaScript 키 -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31c2dc2677eb86c0811d24bdcfe862f4"></script>
+<script>
+	var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+	mapOption = { 
+	    center: new kakao.maps.LatLng(${item.mapy}, ${item.mapx}), // 지도의 중심좌표
+	    level: 3 // 지도의 확대 레벨
+	};
+	
+	var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+	
+	//마커를 표시할 위치와 내용을 가지고 있는 객체 배열입니다 
+	var positions = [
+			{
+			    content: '<div>${item.title}</div>', 
+			    latlng: new kakao.maps.LatLng(${item.mapy}, ${item.mapx})
+			},
+	];
+	
+	for (var i = 0; i < positions.length; i ++) {
+	// 마커를 생성합니다
+	var marker = new kakao.maps.Marker({
+	    map: map, // 마커를 표시할 지도
+	    position: positions[i].latlng // 마커의 위치
+	});
+	
+	// 마커에 표시할 인포윈도우를 생성합니다 
+	var infowindow = new kakao.maps.InfoWindow({
+	    content: positions[i].content // 인포윈도우에 표시할 내용
+	});
+	
+	// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+	// 이벤트 리스너로는 클로저를 만들어 등록합니다 
+	// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+	kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+	kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+	}
+	
+	//인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+	function makeOverListener(map, marker, infowindow) {
+	return function() {
+	    infowindow.open(map, marker);
+	};
+	}
+	
+	//인포윈도우를 닫는 클로저를 만드는 함수입니다 
+	function makeOutListener(infowindow) {
+	return function() {
+	    infowindow.close();
+	};
+	}
+</script>

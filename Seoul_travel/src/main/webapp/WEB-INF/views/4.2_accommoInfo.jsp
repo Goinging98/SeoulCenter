@@ -37,7 +37,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			href="${path}/accomDetail?id=${item.contentid}">정보</a></li>
 		<li class="nav-item"><a
 			class="nav-link d-flex align-items-center "
-			href="accomRev">리뷰</a></li>
+			href="${path}/accomRev?id=${item.contentid}">리뷰</a></li>
 	</ul>
 </section>
 <!-- Page content -->
@@ -114,7 +114,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						</ul>
 					</div>
 
-					<!-- Place pricing-->
+<!-- Place pricing-->
 					<div class="mb-3 pb-3 border-bottom">
 						<div class="row row-cols-sm-2 row-cols-1">
 							<div class="col">
