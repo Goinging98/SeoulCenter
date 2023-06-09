@@ -115,14 +115,33 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					</div>
 
 					<!-- Place pricing-->
-					<div class="mb-3 pb-3 border-bottom">
-						<div class="row row-cols-sm-2 row-cols-1">
-							<div class="col">
-								<a id="reservationLink" class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
-									href='${item.homepage}' >예약<i class="fi-chevron-right fs-sm ms-2"></i></a>
-							</div>
-						</div>
-					</div>
+<div class="mb-3 pb-3 border-bottom">
+    <div class="row row-cols-sm-2 row-cols-1">
+        <div class="col">
+            <a id="reservationLink" class="btn btn-primary btn-lg rounded-pill w-sm-auto w-100"
+                href="#" target="_blank" title="새창: 서울올림픽파크텔 홈페이지로 이동">
+                예약<i class="fi-chevron-right fs-sm ms-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    // HTML 문자열에서 주소 추출 함수
+    function extractURL(html) {
+        var tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+        var linkElement = tempDiv.firstChild;
+        return linkElement.getAttribute('href');
+    }
+
+    // 예약 버튼에 주소 적용
+    document.addEventListener('DOMContentLoaded', function() {
+        var homepageLink = '${item.homepage}'; // 주소가 포함된 문자열
+        var extractedURL = extractURL(homepageLink);
+        var reservationLink = document.getElementById('reservationLink');
+        reservationLink.href = extractedURL;
+    });
+</script>
 					<!-- Follow-->
 					<div class="d-flex align-items-center">
 						<h4 class="h5 mb-0 me-3">Follow:</h4>
