@@ -297,8 +297,8 @@
 	<!-- Navbar-->
 	<header class="navbar navbar-expand-lg navbar-light bg-white fixed-top"	data-scroll-header>
 		<div class="container">
-			<a class="navbar-brand me-3 me-xl-4" href="/mvc/main"> <img
-				class="d-block" src="${path}/resources/img/city-guide/logo/logo.gif"
+			<a class="navbar-brand me-3 me-xl-4" href="/mvc/main"> 
+				<img class="d-block" src="${path}/resources/img/city-guide/logo/logo.gif"
 				width="116" alt="Finder">
 			</a>
 			<button class="navbar-toggler ms-auto" type="button"
@@ -314,7 +314,7 @@
 			</c:if>
 			<c:if test="${loginMember != null}">
 				<div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3">
-					<a class="d-block py-2" href="mypageinfo"><img
+					<a class="d-block py-2" href="/mvc/mypageinfo"><img
 						class="rounded-circle" src="${path}/resources/img/avatars/36.png"
 						width="40" alt="member"></a>
 					<div class="dropdown-menu dropdown-menu-end">

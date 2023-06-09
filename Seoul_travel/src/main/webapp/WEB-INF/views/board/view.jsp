@@ -39,8 +39,7 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="/mvc/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><strong>커뮤니티</strong></li>
-			<li class="breadcrumb-item">
-				<a href="/mvc/community/food"><strong>맛집</strong></a></li>
+			<li class="breadcrumb-item"><strong>상세글</strong></li>
 		</ol>
 	</nav>
 	
@@ -56,7 +55,7 @@
 			alt="Post image" width="800" height="150">
 		</c:if>
 		<c:if test="${not empty board.originalFileName}">
-				<img src="${path}/resources/img/boardpic/1.jfif" width="40%"/>
+				<img src="${path}/resources/img/boardpic/${board.originalFileName}" width="50%"/>
 		</c:if>
 	</div>
 	
@@ -100,63 +99,70 @@
 					<span><fmt:formatDate type="both" value="${board.createDate}"/></span>
 				</div>
 				<a class="nav-link-muted d-flex align-items-center mb-2" href="#"><i
-					class="fi-chat-circle opacity-70 me-2"></i><span>comments exist</span></a>
+					class="fi-chat-circle opacity-70 me-2"></i><span>조회수 ${board.readCount}</span></a>
 			</div>
 			<p class="fs-lg fw-bold text-dark mb-4">${board.title}</p>
 			<p><c:out value="${board.content}"/></p>
+			<br/>
+			<br/>
+			<!-- 수정 / 삭제 기능 -->
+			<table id="tbl-board">
+				<tr>
+					<th colspan="2">
+						<c:if test="${not empty loginMember && (loginMember.id == board.writerId || loginMember.role == 'ROLE_ADMIN')}">
+							<button type="button" id="btnUpdate">수정</button>
+							<button type="button" id="btnDelete">삭제</button>
+						</c:if>
+					</th>
+				</tr>
+			</table>
+			
+			<!-- 리플 작성 Form -->
+			<div>
+				<label class="form-label" for="reply">댓글쓰기</label>
+	    		<form action="${path}/board/reply" method="post">
+	    			<input type="hidden" name="bno" value="${board.bno}" />
+	    			<input type="hidden" name="writerId" value="${loginMember.id}" />
+					<textarea class="form-control form-control-lg"  name="content" id="replyContent" cols="55" rows="3"></textarea>
+					<button class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" type="submit" id="btn-insert">등록</button>	  	
+	    		</form>
+	   		</div>
+			<br/>
+			<br/>
+	   	
+		   	<!-- 리플 출력 -->
+			<table id="tbl-comment">
+				<c:if test="${!empty replyList}">
+					<c:forEach var="reply" items="${replyList}">
+						<tr>
+							<td>
+								<sub class="comment-writer">${reply.writerId}</sub>
+								<sub class="comment-date"><fmt:formatDate type="both" value="${reply.createDate}"/></sub>	
+								<br>
+								<c:out value="${reply.content}"/>
+							</td>
+							<td>
+								<c:if test="${ !empty loginMember && (loginMember.id == reply.writerId 	|| loginMember.role == 'ROLE_ADMIN') }">
+								<button class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" class="btn-delete" onclick="deleteReply('${reply.rno}','${board.bno}');" >삭제</button>
+								</c:if>
+							</td>
+						</tr>
+					</c:forEach>
+				</c:if>
+				
+				<c:if test="${empty replyList}">
+					<tr>
+						<td colspan="3" style="text-align: center;">등록된 리플이 없습니다.</td>
+					</tr>
+				</c:if>
+			</table>
+			
+			
 		</div>
 		
-	<table id="tbl-board">
-		<!-- 수정 / 삭제 기능 -->
-		<tr>
-			<th colspan="2">
-				<c:if test="${not empty loginMember && (loginMember.id == board.writerId 
-									|| loginMember.role == 'ROLE_ADMIN')}">
-					<button type="button" id="btnUpdate">수정</button>
-					<button type="button" id="btnDelete">삭제</button>
-				</c:if>
-			</th>
-		</tr>
-	</table>
-	
-	<!-- 리플 작성 Form -->
-	<div id="comment-container">
-    	<div class="comment-editor" align="center">
-    		<form action="${path}/board/reply" method="post">
-    			<input type="hidden" name="bno" value="${board.bno}" />
-    			<input type="hidden" name="writerId" value="${loginMember.id}" />
-				<textarea name="content" id="replyContent" cols="55" rows="3"></textarea>
-				<button type="submit" id="btn-insert">등록</button>	  	
-    		</form>
-    	</div>
-   	</div>
-   	
-   	<!-- 리플 출력 -->
-	<table id="tbl-comment">
-		<c:if test="${!empty replyList}">
-			<c:forEach var="reply" items="${replyList}">
-				<tr>
-					<td>
-						<sub class="comment-writer">${reply.writerId}</sub>
-						<sub class="comment-date"><fmt:formatDate type="both" value="${reply.createDate}"/></sub>	
-						<br>
-						<c:out value="${reply.content}"/>
-					</td>
-					<td>
-						<c:if test="${ !empty loginMember && (loginMember.id == reply.writerId 	|| loginMember.role == 'ROLE_ADMIN') }">
-						<button class="btn-delete" onclick="deleteReply('${reply.rno}','${board.bno}');" >삭제</button>
-						</c:if>
-					</td>
-				</tr>
-			</c:forEach>
-		</c:if>
 		
-		<c:if test="${empty replyList}">
-			<tr>
-				<td colspan="3" style="text-align: center;">등록된 리플이 없습니다.</td>
-			</tr>
-		</c:if>
-	</table>
+	
+		
 </div>
 </div>
 <br>
