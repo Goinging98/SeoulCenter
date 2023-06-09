@@ -308,8 +308,8 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<c:if test="${loginMember == null}">
-			<a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal" style="font-size: 20px;">
-				<i class="fi-user me-2"  style="font-size: 20px;"></i>Sign in
+			<a class="btn btn-sm text-primary d-none d-lg-block order-lg-3" href="#signin-modal" data-bs-toggle="modal" style="font-size: 18px;">
+				<i class="fi-user me-2"  style="font-size: 18px;"></i>Sign in
 			</a>
 			</c:if>
 			<c:if test="${loginMember != null}">
@@ -346,27 +346,27 @@
 					<!-- Menu items-->
 					<li class="nav-item dropdown active">
 						<a class="nav-link" href="/mvc/main" data-bs-toggle="" aria-expanded="false"> 
-							<strong style="font-size: 20px;">Home</strong>
+							<strong style="font-size: 18px;">Home</strong>
 						</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link" href="/mvc/foodMain" data-bs-toggle="" aria-expanded="false">
-						<strong style="font-size: 20px;">맛집</strong>
+						<strong style="font-size: 18px;">맛집</strong>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="/mvc/accomMain" data-bs-toggle="" aria-expanded="false">
-							<strong style="font-size: 20px;">숙소</strong>
+							<strong style="font-size: 18px;">숙소</strong>
 						</a>
 					</li>
 					<li class="nav-item">
 					<a class="nav-link" href="/mvc/hotMain"	data-bs-toggle="" aria-expanded="false">
-						<strong style="font-size: 20px;">핫플레이스</strong>
+						<strong style="font-size: 18px;">핫플레이스</strong>
 						</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link"	href="/mvc/community/notice" data-bs-toggle="" aria-expanded="false">
-							<strong style="font-size: 20px;">커뮤니티</strong>
+							<strong style="font-size: 18px;">커뮤니티</strong>
 						</a>
 					</li>
 				</ul>
