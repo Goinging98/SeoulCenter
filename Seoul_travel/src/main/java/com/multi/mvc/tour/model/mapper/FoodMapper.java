@@ -15,6 +15,12 @@ public interface FoodMapper {
 	List<Food> selectFoodRandomList(Map<String, Object> map);
 	
 	int selectFoodCount(Map<String, Object> map);
+
+	int selectkoreaCount(Map<String, Object> map);
+	int selectwesternCount(Map<String, Object> map);
+	int selectjapanCount(Map<String, Object> map);
+	int selectchinaCount(Map<String, Object> map);
+	int selectelseCount(Map<String, Object> map);
 	
 	Food selectByContentId(int id);
 	

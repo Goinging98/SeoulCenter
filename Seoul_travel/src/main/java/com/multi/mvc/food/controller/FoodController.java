@@ -35,6 +35,12 @@ public class FoodController {
 		} catch (Exception e) {}
 		
 		int count = foodService.selectFoodCount(param);
+		int koreacount = foodService.selectkoreaCount(param);
+		int westerncount = foodService.selectwesternCount(param);
+		int japancount = foodService.selectjapanCount(param);
+		int chinacount = foodService.selectchinaCount(param);
+		int elsecount = foodService.selectelseCount(param);
+		
 		PageInfo pageInfo = new PageInfo(page, 5, count, 10);
 		System.out.println(pageInfo);
 		List<Food> list = foodService.selectFoodList(pageInfo, param);
@@ -50,6 +56,12 @@ public class FoodController {
 		model.addAttribute("pageInfo", pageInfo);
 		model.addAttribute("maxPage", maxPage);
 		model.addAttribute("page",page);
+		model.addAttribute("koreacount",koreacount);
+		model.addAttribute("westerncount",westerncount);
+		model.addAttribute("japancount",japancount);
+		model.addAttribute("chinacount",chinacount);
+		model.addAttribute("elsecount",elsecount);
+		model.addAttribute("count",count);
 		
 		return "3_food";
 	}

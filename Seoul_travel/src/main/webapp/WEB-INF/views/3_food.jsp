@@ -55,15 +55,15 @@
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="${path}/foodMain">전체 <span class=" ms-394">${count}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020100">한식 <span class=" ms-394">${count}</span></a>
+								href="${path}/foodMain?cat3=A05020100">한식 <span class=" ms-394">${koreacount}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020200">양식 <span class=" ms-300">${count}</span></a>
+								href="${path}/foodMain?cat3=A05020200">양식 <span class=" ms-300">${westerncount}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020300">일식 <span class=" ms-300">${count}</span></a>
+								href="${path}/foodMain?cat3=A05020300">일식 <span class=" ms-300">${japancount}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020400">중식 <span class=" ms-300">${count}</span></a>
+								href="${path}/foodMain?cat3=A05020400">중식 <span class=" ms-300">${chinacount}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=etc">기타 <span class=" ms-300">${count}</span></a>
+								href="${path}/foodMain?cat3=etc">기타 <span class=" ms-300">${elsecount}</span></a>
 						</div>
 					</div>
 				</div>
@@ -103,18 +103,15 @@
 									<!-- Card body -->
 									<div class="col-md-8">
 										<div class="card-body py-md-2 d-flex flex-column h-100 position-relative">
-											
-	
 											<!-- Title -->
-											<h5 class="card-title mb-1">
+											<h5 class="h5 pt-1 mb-2">
 												<a href="${path}/foodDetail?id=${item.contentid}">${item.title}</a>
 											</h5>
-											<small><i class="bi bi-geo-alt me-2"></i>${item.addr1}</small>
+											<small><i class="fi-map-pin fs-lg opacity-70 me-2"></i>${item.addr1}</small>
 											<!-- Amenities -->
 											<ul class="nav nav-divider mt-3">
 												<li class="nav-item">${item.cat3}</li>
 											</ul>
-	
 											<!-- Price and Button -->
 											<div
 												class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">

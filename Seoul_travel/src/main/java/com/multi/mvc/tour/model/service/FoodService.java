@@ -31,6 +31,22 @@ public class FoodService {
 		return mapper.selectFoodCount(map);
 	}
 	
+	public int selectkoreaCount(Map<String, Object> map) {
+		return mapper.selectkoreaCount(map);
+	}
+	public int selectwesternCount(Map<String, Object> map) {
+		return mapper.selectwesternCount(map);
+	}
+	public int selectjapanCount(Map<String, Object> map) {
+		return mapper.selectjapanCount(map);
+	}
+	public int selectchinaCount(Map<String, Object> map) {
+		return mapper.selectchinaCount(map);
+	}
+	public int selectelseCount(Map<String, Object> map) {
+		return mapper.selectelseCount(map);
+	}
+	
 	public Food selectByContentId(int id) {
 		return mapper.selectByContentId(id);
 	}

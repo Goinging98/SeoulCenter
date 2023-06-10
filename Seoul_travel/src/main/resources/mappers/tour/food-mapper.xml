@@ -22,7 +22,7 @@
 			WHEN cat3 = 'A05020100' THEN '한식'
 			WHEN cat3 = 'A05020200' THEN '양식'
 			WHEN cat3 = 'A05020300' THEN '일식'
-			WHEN cat3 = 'A05020400' THEN '중식'
+			WHEN cat3 = 'A05020400' THEN '중식' 
 		ELSE '기타' 
 		END AS cat3
 		FROM food
@@ -46,6 +46,33 @@
 		<if test="searchValue != null">
 			AND title LIKE '%${searchValue}%' 
 		</if>
+	</select>
+	
+	<!-- 카테고리 개수 추출 -->
+	<select id="selectkoreaCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM food
+	where cat3 = 'A05020100' ;
+	</select>
+	<select id="selectwesternCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM food
+	where cat3 = 'A05020200' ;
+	</select>
+	<select id="selectjapanCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM food
+	where cat3 = 'A05020300' ;
+	</select>
+	<select id="selectchinaCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM food
+	where cat3 = 'A05020400' ;
+	</select>
+	<select id="selectelseCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM food
+	where cat3 not in ( 'A05020400', 'A05020300', 'A05020200', 'A05020100')
 	</select>
 	
 	<select id="selectByContentId" parameterType="int" resultType="Food">
