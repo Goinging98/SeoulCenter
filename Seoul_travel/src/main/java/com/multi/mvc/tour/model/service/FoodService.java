@@ -5,11 +5,12 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.FoodMapper;
 import com.multi.mvc.tour.model.vo.Food;
-import com.multi.mvc.tour.model.vo.TourList;
+import com.multi.mvc.tour.model.vo.Replies;
 
 @Service
 public class FoodService {
@@ -33,4 +34,16 @@ public class FoodService {
 	public Food selectByContentId(int id) {
 		return mapper.selectByContentId(id);
 	}
+
+	@Transactional(rollbackFor = Exception.class)
+	public int insertFoodReply(Replies reply) {
+		return mapper.insertFoodReply(reply);
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	public int deleteFoodReply(int rno) {
+		return mapper.deleteFoodReply(rno);
+	}
+
+
 }

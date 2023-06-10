@@ -11,8 +11,8 @@
 	<!-- Breadcrumb-->
 	<nav class="pt-md-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="1_main_page.html"><strong>Home</strong></a></li>
-			<li class="breadcrumb-item"><a href="3_food.html"><strong>맛집</strong></a></li>
+			<li class="breadcrumb-item"><a href="/mvc/main"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="/mvc/foodMain"><strong>맛집</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>${item.title}</strong></li>
 		</ol>
 	</nav>
@@ -34,27 +34,26 @@
 						</div>
 					</div>
 					<div class="tns-carousel-inner">
-<!--  						data-carousel-options="{&quot;navAsThumbnails&quot;: true, &quot;navContainer&quot;: &quot;#thumbnails&quot;, &quot;gutter&quot;: 12, &quot;responsive&quot;: {&quot;0&quot;:{&quot;controls&quot;: false},&quot;500&quot;:{&quot;controls&quot;: true}}}">
--->						<div>
-							<img class="rounded-3"
-								src="${item.firstimage}" alt="Image" style= "width:100%; height:40rem">
+  						<div>
+							<c:if test="${empty item.firstimage}">
+								<img class="rounded-3" src="${path}/resources/images/restaurant.jpg" alt="Image" style= "width:100%; height:40rem">
+							</c:if>
+							<c:if test="${not empty item.firstimage}">
+								<img class="rounded-3" src="${item.firstimage}" alt="Image" style= "width:100%; height:40rem">
+							</c:if>
 						</div>
-						<div>
-							<img class="rounded-3"
-								src="https://blog.kakaocdn.net/dn/dGr3Ur/btrvvciLeKl/mwFEMIknLWeofThts39RGk/img.jpg"
-								alt="Image">
-						</div>
-
 					</div>
 				</div>
-				<ul class="tns-thumbnails" id="thumbnails">
-					<li class="tns-thumbnail"><img
-						src="${item.firstimage}"
-						alt="Thumbnail"></li>
-					<li class="tns-thumbnail"><img
-						src="https://blog.kakaocdn.net/dn/dGr3Ur/btrvvciLeKl/mwFEMIknLWeofThts39RGk/img.jpg"
-						alt="Thumbnail"></li>
-				</ul>
+				<c:if test="${not empty item.firstimage}">
+					<ul class="tns-thumbnails" id="thumbnails">
+						<li class="tns-thumbnail">
+							<img src="${item.firstimage}" alt="Thumbnail">
+						</li>
+					</ul>
+				</c:if>
+				<c:if test="${empty item.firstimage}">
+					<ul class="tns-thumbnails" id="thumbnails"></ul>
+				</c:if>
 
 				<!-- Review modal-->
 				<div class="modal fade" id="modal-review" tabindex="-1">
@@ -72,20 +71,20 @@
 					    			<input type="hidden" name="bno" value="${item.contentid}" />
 					    			<input type="hidden" name="writerId" value="${loginMember.id}" />
 									<div class="mb-4">
-										<label class="form-label" for="replyContent">리뷰<span
-											class='text-danger'>*</span></label>
+										<label class="form-label" for="replyContent">
+											리뷰<span class='text-danger'>*</span>
+										</label>
 										<textarea class="form-control" id="replyContent" rows="8"
 											placeholder="리뷰를 입력하세요" required></textarea>
 									</div>
-									<button class="btn btn-primary d-block rounded-pill w-100 mb-4"
-										type="submit">등록</button>
+									<button class="btn btn-primary d-block rounded-pill w-100 mb-4" type="submit">등록</button>
 								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Specs-->
+				<!-- 리뷰칸 -->
 				<div class="py-5">
 					<h2 class="h3">${item.title} 리뷰</h2>
 					<div class="row">
@@ -136,30 +135,31 @@
 						<div class="d-flex align-items-center mb-1 ">
 							<div class="text-nowrap border-end border-light pe-3 me-3">
 								<div class="text-nowrap">
-									<i class="fi-cafe fs-lg opacity-70 me-2 "></i> <span
-										class="align-middle">${item.firstmenu}</span>
+									<i class="fi-cafe fs-lg opacity-70 me-2 "></i> 
+									<span class="align-middle">${item.firstmenu}</span>
 								</div>
 								<div class="text-nowrap">
-									<i class="fi-map-pin fs-lg opacity-70 me-2"></i> <span
-										class="align-middle">${item.addr1}</span>
+									<i class="fi-map-pin fs-lg opacity-70 me-2"></i>
+									<span class="align-middle">${item.addr1}</span>
 								</div>
 								<div class="text-nowrap">
-									<i class="fi-clock fs-lg opacity-70 me-2"> </i> <span
-										class="align-middle mb-3">${item.opentimefood}</span>
+									<i class="fi-clock fs-lg opacity-70 me-2"></i>
+									<span class="align-middle mb-3">${item.opentimefood}</span>
 								</div>
 								<div class="text-nowrap">
-									<i class="fi-plane fs-lg opacity-70 me-2"> </i> <span>${item.restdatefood}</span>
+									<i class="fi-plane fs-lg opacity-70 me-2"></i>
+									<span>${item.restdatefood}</span>
 								</div>
 								<div class="text-nowrap">
-									<i class="fi-phone fs-lg opacity-70 me-2"> </i> <span>${item.infocenterfood}</span>
+									<i class="fi-phone fs-lg opacity-70 me-2"></i> 
+									<span>${item.infocenterfood}</span>
 								</div>
 							</div>
 						</div>
 						<span class="placeholder col-12 placeholder-xs"></span>
-
 						<div class="bg-secondary rounded-2 mt-4">
 							<div class="d-flex align-items-center mx-2 ">
-								${item.overview}
+								<br/>${item.overview}<br/>
 							</div>
 						</div>
 					</div>
@@ -184,21 +184,22 @@
 
 
 					<!-- Location (Map)-->
-
-							<!-- Location (Map) start -->
-							<div>
-								<div class="position-relative mb-2">
-								<p class="mb-0 fs-md text-center">${item.addr1}</p>
-									<div id="map" style="width: 345px; height: 200px;">
-									</div>
-								</div>
-							</div>
-							<!-- Location (Map) end -->
+					<!-- Location (Map) start -->
+					<div>
+						<div class="position-relative mb-2">
+							<p>
+								<i class="fi-map-pin fs-lg opacity-70 me-2"></i> ${item.addr1}
+							</p>
+							<div id="map" style="width: 345px; height: 200px;">
 							</div>
 						</div>
 					</div>
+					<!-- Location (Map) end -->
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 

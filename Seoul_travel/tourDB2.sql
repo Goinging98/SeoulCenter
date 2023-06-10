@@ -389,6 +389,20 @@ smallimageurl	VARCHAR(1000)
 DESC TourImage;
 SELECT * FROM TourImage;
 
+use tourapi;
+drop table foodreply;
+CREATE TABLE FOODREPLY(
+  rNO INT PRIMARY KEY AUTO_INCREMENT,
+  contentid INT,
+  contenttypeid int,
+  mNO INT,
+  CONTENT VARCHAR(1000),
+  STATUS VARCHAR(1) DEFAULT 'Y' CHECK (STATUS IN ('Y', 'N')),
+  CREATE_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,
+  MODIFY_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (mNO) REFERENCES MEMBER(mNO)
+);
+select * from foodreply;
 
 -- SELECT contentid FROM Festival;
 

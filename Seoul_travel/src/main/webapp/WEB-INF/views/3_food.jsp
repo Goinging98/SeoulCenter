@@ -53,15 +53,15 @@
 						<div class="card-body ">
 							<h3 class="h5">카테고리</h3>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020100">한식 <span class=" ms-394">(2)</span></a>
+								href="${path}/foodMain?cat3=A05020100">한식 <span class=" ms-394">${count}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020200">양식 <span class=" ms-300">(4)</span></a>
+								href="${path}/foodMain?cat3=A05020200">양식 <span class=" ms-300">${count}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020300">일식 <span class=" ms-300">(5)</span></a>
+								href="${path}/foodMain?cat3=A05020300">일식 <span class=" ms-300">${count}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=A05020400">중식 <span class=" ms-300">(5)</span></a>
+								href="${path}/foodMain?cat3=A05020400">중식 <span class=" ms-300">${count}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="${path}/foodMain?cat3=etc">기타 <span class=" ms-300">(5)</span></a>
+								href="${path}/foodMain?cat3=etc">기타 <span class=" ms-300">${count}</span></a>
 						</div>
 					</div>
 				</div>
@@ -87,11 +87,16 @@
 											<div class="tns-carousel-inner" data-autoplay="false"
 												data-arrow="true" data-dots="false" data-items="1">
 												<!-- Image item -->
-												<img src="${item.firstimage}" alt="Card image">
+												<c:if test="${empty item.firstimage}">
+													<img src="${path}/resources/images/restaurant.jpg" alt="Image">
+												</c:if>
+												<c:if test="${not empty item.firstimage}">
+													<img src="${item.firstimage}" alt="Image">
+												</c:if>
 											</div>
 										</div>
 									</div>
-										<!-- img END -->
+									<!-- img END -->
 	
 									<!-- Card body -->
 									<div class="col-md-8">

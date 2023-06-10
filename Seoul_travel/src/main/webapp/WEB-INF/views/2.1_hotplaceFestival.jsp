@@ -43,24 +43,11 @@
 	<div class="row">
 		<!-- Sidebar (offcanvas)-->
 		<aside class="col-lg-3">
-			<div class="offcanvas offcanvas-start offcanvas-collapse"
-				id="blog-sidebar">
+			<div class="offcanvas offcanvas-start offcanvas-collapse" id="blog-sidebar">
 				<div class="offcanvas-header shadow-sm mb-2">
 					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
 				</div>
 				<div class="offcanvas-body">
-					<!-- Sorting-->
-					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap"
-							for="sort"><i class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i> 정렬
-							: </label> <select class="form-select" id="sort">
-							<option>인기순</option>
-							<option>최신순</option>
-							<option>조회순</option>
-							<option>댓글순</option>
-						</select>
-					</div>
-					
 					<!-- Search-->
 					<div class="position-relative mb-4">
 						<input class="form-control pe-5" type="text" name="searchValue" placeholder="검색어를 입력해주세요."><i
@@ -71,8 +58,7 @@
 					<div class="card card-flush pb-2 pb-lg-0 mb-4 ">
 						<div class="card-body ">
 							<h3 class="h5">카테고리</h3>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="${path}/hotTourList">관광지 <span
 								class=" ms-394">${tCount}</span></a> <a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
@@ -82,24 +68,6 @@
 								href="${path}/hotFestival">축제/공연 행사 <span
 								class=" ms-300">${fCount}</span></a>
 						</div>
-					</div>
-					
-					<!-- Tags-->
-					<div class="card card-flush pb-2 pb-lg-0 mb-4">
-						<div class="card-body">
-							<h4 class="h5">핫플레이스 태그</h4>
-							<div class="d-flex flex-wrap mb-n1">
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이거	필요한가요?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼터~?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집맛집</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주핫플</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS핫플!!</button>
-							</div>
-						</div>
-
-						<!-- Subscribe-->
-						<div class="card card-flush mb-4"></div>
 					</div>
 				</div>
 		</aside>

@@ -3,6 +3,18 @@
 
 <mapper namespace="com.multi.mvc.tour.model.mapper.FoodMapper">
 
+	<resultMap type="Reply" id="boardReplyResultMap">
+		<result property="rno" column="rNO" />
+		<result property="contentid" column="contentid" />
+		<result property="contenttypeid" column="contenttypeid" />
+		<result property="mno" column="mNO" />
+		<result property="writerId" column="ID"/>
+		<result property="content" column="CONTENT" />
+		<result property="status" column="STATUS" />
+		<result property="createDate" column="CREATE_DATE" />
+		<result property="modifyDate" column="MODIFY_DATE" />
+	</resultMap>
+	
 	<select id="selectFoodList" parameterType="map" resultType="Food">
 		SELECT title, addr1, firstimage, contentid, 
 		CASE 
@@ -46,5 +58,19 @@
 			*
 		FROM Food ORDER BY RAND() limit 3
 	</select>
+		
+	<insert id="insertFoodReply" parameterType="Reply">
+		INSERT INTO FOODREPLY(
+			RNO, contentid, contenttypeid, MNO, 
+			CONTENT, STATUS, CREATE_DATE, MODIFY_DATE) 
+		VALUES(
+			default, #{bno}, #{contentid}, 39, #{mno}, #{content}, 
+			default, default, default
+		)
+	</insert>
+	
+	<delete id="deleteFoodReply" parameterType="int">
+		DELETE FROM FOODREPLY WHERE RNO=#{rno}
+	</delete>
 </mapper>
 

@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import com.multi.mvc.board.model.vo.Reply;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.member.model.vo.Member;
 import com.multi.mvc.tour.model.service.FoodService;
 import com.multi.mvc.tour.model.vo.Food;
+import com.multi.mvc.tour.model.vo.Replies;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,12 +39,12 @@ public class FoodController {
 		System.out.println(pageInfo);
 		List<Food> list = foodService.selectFoodList(pageInfo, param);
 		
-		//이미지 없는 것 후처리
-		for (Food a : list) {
-			if (a.firstimage == null) {
-				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
-			}
-		}
+//		//이미지 없는 것 후처리
+//		for (Food a : list) {
+//			if (a.firstimage == null) {
+//				a.firstimage = "${path}/resources/images/restaurant.jpg";
+//			}
+//		}
 		int maxPage =count/5;
 		model.addAttribute("list",list);
 		model.addAttribute("pageInfo", pageInfo);
@@ -66,25 +66,39 @@ public class FoodController {
 		return "3.2_foodDetailed";	
 	}
 	
-	
 
 	@RequestMapping("/foodReplyWrite")
-	public String writeReply(Model model,
+	public String writeFoodReply(Model model,
 			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
-			@ModelAttribute Reply reply
+			@ModelAttribute Replies reply
 			) {
 		log.info("리플 작성, reply : "+ reply);
 		reply.setMno(loginMember.getMno());
-//		int result = foodService.sa
+		int result = foodService.insertFoodReply(reply);
 		
 		if(result > 0) {
 			model.addAttribute("msg","리플이 등록되었습니다.");
 		} else {
 			model.addAttribute("msg","리플 등록에 실패하였습니다.");
 		}
-		model.addAttribute("location", "/board/view?no="+reply.getBno());
+		model.addAttribute("location", "/board/view?no="+reply.getContentid());
 		return "/common/msg";
 	}
 	
-	
+	@RequestMapping("/foodReplyDel")
+	public String deleteFoodReply(Model model, 
+			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+			int rno, int bno
+			){
+		log.info("리플 삭제 요청");
+		int result = foodService.deleteFoodReply(rno);
+		
+		if(result > 0) {
+			model.addAttribute("msg", "리플 삭제가 정상적으로 완료되었습니다.");
+		}else {
+			model.addAttribute("msg", "리플 삭제에 실패하였습니다.");
+		}
+		model.addAttribute("location", "/board/view?no=" + bno);
+		return "/common/msg";
+	}
 }

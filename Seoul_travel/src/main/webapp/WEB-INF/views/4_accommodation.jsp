@@ -44,36 +44,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<aside class="col-lg-3">
 			<div class="offcanvas offcanvas-start offcanvas-collapse" id="blog-sidebar">
 				<div class="offcanvas-body">
-					<!-- Sorting-->
-					<div class="d-flex align-items-center mb-4">
-						<label class="d-inline-block me-2 pe-1 text-muted text-nowrap" for="sort">지역검색</label> 
-						<select class="form-select" id="sort">
-							<option>강남구</option>
-							<option>강동구</option>
-							<option>강북구</option>
-							<option>강서구</option>
-							<option>광진구</option>
-							<option>구로구</option>
-							<option>금천구</option>
-							<option>노원구</option>
-							<option>도봉구</option>
-							<option>동대문구</option>
-							<option>동작구</option>
-							<option>마포구</option>
-							<option>서대문구</option>
-							<option>서초구</option>
-							<option>성동구</option>
-							<option>성북구</option>
-							<option>송파구</option>
-							<option>양천구</option>
-							<option>영등포구</option>
-							<option>용산구</option>
-							<option>은평구</option>
-							<option>종로구</option>
-							<option>중구</option>
-							<option>중랑구</option>
-						</select>
-					</div>
 					<!-- Search-->
 					<div class="position-relative mb-4">
 						<input class="form-control pe-5" type="text"name="searchValue" placeholder="검색어를 입력해주세요.">
@@ -84,36 +54,19 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 							<h3 class="h5">카테고리</h3>
 							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="accomCate">호텔<span
-								class="text-muted ms-394">(2)</span></a><a
+								class="text-muted ms-394">${count}</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="4accomCate">펜션<span
-								class="text-muted ms-300">(4)</span></a><a
+								class="text-muted ms-300">${count}</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="accomCate">모텔<span
-								class="text-muted ms-300">(5)</span></a><a
+								class="text-muted ms-300">${count}</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="accomCate">게스트하우스<span
-								class="text-muted ms-2">(1)</span></a><a
+								class="text-muted ms-2">${count}</span></a><a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="accomCate">한옥<span
-								class="text-muted ms-2">(8)</span></a><a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">기타<span
-								class="text-muted ms-2">(8)</span></a>
-						</div>
-					</div>
-					<!-- Tags-->
-					<div class="card card-flush pb-2 pb-lg-0 mb-4">
-						<div class="card-body">
-							<h4 class="h5">태그로 검색하는 숙소</h4>
-							<div class="d-flex flex-wrap mb-n1">
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이거 필요한가요?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼터~?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집맛집</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주 핫플</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS핫플!!</button>
-							</div>
+								class="text-muted ms-2">${count}</span></a>
 						</div>
 					</div>
 				</div>
