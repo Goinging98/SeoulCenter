@@ -52,21 +52,20 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<div class="card card-flush pb-2 pb-lg-0 mb-4">
 						<div class="card-body">
 							<h3 class="h5">카테고리</h3>
-							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">호텔<span
-								class="text-muted ms-394">${count}</span></a><a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="4accomCate">펜션<span
-								class="text-muted ms-300">${count}</span></a><a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">모텔<span
-								class="text-muted ms-300">${count}</span></a><a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">게스트하우스<span
-								class="text-muted ms-2">${count}</span></a><a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
-								href="accomCate">한옥<span
-								class="text-muted ms-2">${count}</span></a>
+							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="${path}/accomMain">
+								전체<span class="text-muted ms-394">${count}</span></a>
+							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="${path}/accomMain?cat3=B02010100">
+								호텔<span class="text-muted ms-394">${hotelcount}</span></a>
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="${path}/accomMain?cat3=B02010600">
+								유스호스텔<span class="text-muted ms-300">${youthcount}</span></a>
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="${path}/accomMain?cat3=B02010900">
+								비즈니스호텔<span class="text-muted ms-300">${businesscount}</span></a>
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="${path}/accomMain?cat3=B02011600">
+								한옥<span class="text-muted ms-2">${hanokcount}</span></a>
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="${path}/accomMain?cat3=B02011100">
+								민박<span class="text-muted ms-2">${foreigncount}</span></a>
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0" href="${path}/accomMain?cat3=etc">
+								기타<span class="text-muted ms-2">${elsecount}</span></a>
 						</div>
 					</div>
 				</div>

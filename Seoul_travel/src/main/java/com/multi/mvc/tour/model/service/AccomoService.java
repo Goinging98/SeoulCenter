@@ -6,10 +6,12 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.AccomoMapper;
 import com.multi.mvc.tour.model.vo.Accommodation;
+import com.multi.mvc.tour.model.vo.Replies;
 
 @Service
 public class AccomoService {
@@ -38,6 +40,36 @@ public class AccomoService {
 	}
 	
 	
+	public int selecthotelCount(Map<String, Object> map) {
+		return mapper.selecthotelCount(map);
+	}
+	public int selectyouthCount(Map<String, Object> map) {
+		return mapper.selectyouthCount(map);
+	}
+	public int selecthanokCount(Map<String, Object> map) {
+		return mapper.selecthanokCount(map);
+	}
+	public int selectbuisnessCount(Map<String, Object> map) {
+		return mapper.selectbuisnessCount(map);
+	}
+	public int selectforeignCount(Map<String, Object> map) {
+		return mapper.selectforeignCount(map);
+	}
+	public int selectelseCount(Map<String, Object> map) {
+		return mapper.selectelseCount(map);
+	}
+	
+
+	@Transactional(rollbackFor = Exception.class)
+	public int insertAccomoReply(Replies reply) {
+		return mapper.insertAccomoReply(reply);
+	}
+
+	@Transactional(rollbackFor = Exception.class)
+	public int deleteAccomoReply(int rno) {
+		return mapper.deleteAccomoReply(rno);
+	}
+
 
 
 }

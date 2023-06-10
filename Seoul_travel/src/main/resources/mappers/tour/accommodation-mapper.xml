@@ -3,12 +3,37 @@
 
 <mapper namespace="com.multi.mvc.tour.model.mapper.AccomoMapper">
 
+	<resultMap type="Replies" id="FoodReplyResultMap">
+		<result property="rno" column="rNO" />
+		<result property="contentid" column="contentid" />
+		<result property="contenttypeid" column="contenttypeid" />
+		<result property="mno" column="mNO" />
+		<result property="writerId" column="ID"/>
+		<result property="content" column="CONTENT" />
+		<result property="status" column="STATUS" />
+		<result property="createDate" column="CREATE_DATE" />
+		<result property="modifyDate" column="MODIFY_DATE" />
+	</resultMap>
+	
+	
 	<select id="selectAccomoList" parameterType="map" resultType="Accommodation">
-		SELECT  *
+		SELECT  *,
+			case when cat3 ='B02010100' then '호텔'
+				 when cat3 ='B02010600' then '유호텔'
+				 when cat3 ='B02011600' then '한옥'
+				 when cat3 ='B02010900' then '비즈니스호텔'
+				 when cat3 ='B02011100' then '민박'
+				 else '기타' end as cat3
 		FROM Accommodation
 		WHERE 1 = 1 
 		<if test="searchValue != null">
 			AND title LIKE '%${searchValue}%' 
+		</if>
+		<if test='cat3 != null and cat3 != "etc"'>
+			AND cat3 = #{cat3}
+		</if>
+		<if test='cat3 != null and cat3 == "etc"'>
+			AND cat3 NOT IN ('B02010100','B02010600','B02011600','B02010900','B02011100')
 		</if>
 		ORDER BY contentid LIMIT ${limit} OFFSET ${offset}
 	</select>
@@ -34,6 +59,55 @@
 		ORDER BY RAND()
 		LIMIT 6
 	</select>
+	
+	<!-- 카테고리 개수 추출 -->
+	<select id="selecthotelCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM accommodation 
+	where cat3 = 'B02010100'
+	</select>
+	<select id="selectyouthCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM accommodation 
+	where cat3 = 'B02010600'
+	</select>
+	<select id="selecthanokCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM accommodation 
+	where cat3 = 'B02011600'
+	</select>
+	<select id="selectbuisnessCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM accommodation 
+	where cat3 = 'B02010900'
+	</select>
+	<select id="selectforeignCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM accommodation 
+	where cat3 = 'B02011100'
+	</select>
+	<select id="selectelseCount"  parameterType="map" resultType="int">
+	SELECT count(contentid) as cnt 
+	FROM accommodation 
+	where cat3 not in ('B02010100','B02010600','B02011600','B02010900','B02011100')
+	</select>
+	
+	
+	
+		
+	<insert id="insertAccomoReply" parameterType="Replies">
+		INSERT INTO REPLIES(
+			RNO, contentid, contenttypeid, MNO, 
+			CONTENT, STATUS, CREATE_DATE, MODIFY_DATE) 
+		VALUES(
+			default, #{contentid}, 32, #{mno}, #{content}, 
+			default, default, default
+		)
+	</insert>
+	
+	<delete id="deleteAccomoReply" parameterType="int">
+		DELETE FROM REPLIES WHERE RNO=#{rno}
+	</delete>
 
 
 

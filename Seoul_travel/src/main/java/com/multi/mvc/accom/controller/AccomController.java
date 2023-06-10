@@ -6,13 +6,20 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.multi.mvc.common.util.PageInfo;
+import com.multi.mvc.member.model.vo.Member;
 import com.multi.mvc.tour.model.service.AccomoService;
 import com.multi.mvc.tour.model.vo.Accommodation;
+import com.multi.mvc.tour.model.vo.Replies;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 public class AccomController {
 	@Autowired
@@ -27,16 +34,15 @@ public class AccomController {
 		} catch (Exception e) {}
 		
 		int count = accomoService.selectAccomoCount(param);
+		int hotelcount = accomoService.selecthotelCount(param);
+		int youthcount = accomoService.selectyouthCount(param);
+		int hanokcount = accomoService.selecthanokCount(param);
+		int businesscount = accomoService.selectbuisnessCount(param);
+		int foreigncount = accomoService.selectforeignCount(param);
+		int elsecount = accomoService.selectelseCount(param);
 		PageInfo pageInfo = new PageInfo(page, 5, count, 12); // 게시글이 보여지는 갯수 = 10
 		List<Accommodation> list = accomoService.selectAccomoList(pageInfo, param);
 
-
-//		// 이미지 없는 것 후처리 
-//		for(Accommodation a : list) {
-//			if(a.firstimage == null) {
-//				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
-//			}
-//		}
 		int maxPage = count/12;
 		
 		model.addAttribute("list", list);
@@ -45,6 +51,12 @@ public class AccomController {
 		
 		model.addAttribute("page",page);
 		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("hotelcount", hotelcount);
+		model.addAttribute("youthcount", youthcount);
+		model.addAttribute("hanokcount", hanokcount);
+		model.addAttribute("businesscount", businesscount);
+		model.addAttribute("foreigncount", foreigncount);
+		model.addAttribute("elsecount", elsecount);
 		model.addAttribute("accommodationList", list);
 		
 		
@@ -157,26 +169,45 @@ public class AccomController {
 			}
 		}
 		model.addAttribute("guAddress", guAddress); // 구 주소를 모델에 추가
-
-		
 		return "4.2_accommoReview";	
 	}
-	
-	
-	
-	
-	
-	
-	@RequestMapping("/accomCate")
-	public String accomCate() {
-//		int count = accomoService.selectAccomoCount(param);
-//		PageInfo pageInfo = new PageInfo(page, 5, count, 12); // 게시글이 보여지는 갯수 = 10
-//		List<Accommodation> list = accomoService.selectAccomoList(pageInfo, param);
-//		int maxPage = count/12;
 
+
+	@RequestMapping("/AccomoReplyWrite")
+	public String writeAccomoReply(Model model,
+			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+			@ModelAttribute Replies reply
+			) {
+		log.info("리플 작성, reply : "+ reply);
+		reply.setMno(loginMember.getMno());
+		int result = accomoService.insertAccomoReply(reply);
 		
-		return "4.1_accommodationCategory";	
+		if(result > 0) {
+			model.addAttribute("msg","리플이 등록되었습니다.");
+		} else {
+			model.addAttribute("msg","리플 등록에 실패하였습니다.");
+		}
+		model.addAttribute("location", "/accomRev?id="+reply.getContentid());
+		return "/common/msg";
 	}
+	
+	@RequestMapping("/AccomoReplyDel")
+	public String deleteAccomoReply(Model model, 
+			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
+			int rno, int contentid
+			){
+		log.info("리플 삭제 요청");
+		int result = accomoService.deleteAccomoReply(rno);
+		
+		if(result > 0) {
+			model.addAttribute("msg", "리플 삭제가 정상적으로 완료되었습니다.");
+		}else {
+			model.addAttribute("msg", "리플 삭제에 실패하였습니다.");
+		}
+		model.addAttribute("location", "/accomRev?id=" + contentid);
+		return "/common/msg";
+	}
+	
 	
 	
 	
