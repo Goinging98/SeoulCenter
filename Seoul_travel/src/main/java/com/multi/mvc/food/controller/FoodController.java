@@ -62,6 +62,7 @@ public class FoodController {
 		model.addAttribute("chinacount",chinacount);
 		model.addAttribute("elsecount",elsecount);
 		model.addAttribute("count",count);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		return "3_food";
 	}
