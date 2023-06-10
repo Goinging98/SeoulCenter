@@ -31,12 +31,12 @@ public class AccomController {
 		List<Accommodation> list = accomoService.selectAccomoList(pageInfo, param);
 
 
-		// 이미지 없는 것 후처리 
-		for(Accommodation a : list) {
-			if(a.firstimage == null) {
-				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
-			}
-		}
+//		// 이미지 없는 것 후처리 
+//		for(Accommodation a : list) {
+//			if(a.firstimage == null) {
+//				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
+//			}
+//		}
 		int maxPage = count/12;
 		
 		model.addAttribute("list", list);

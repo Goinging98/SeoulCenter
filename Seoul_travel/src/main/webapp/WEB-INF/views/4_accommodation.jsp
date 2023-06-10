@@ -98,16 +98,20 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 										data-bs-placement="left" title="Add to Favorites">
 										<i class="fi-heart"></i>
 									</button>
-									<img class="rounded-3" src="${item.firstimage}" style="width: 18rem; height: 12rem;"
-									alt="Article img">
+									<c:if test="${empty item.firstimage}">
+										<img class="rounded-3" src="${path}/resources/images/hotel.jpg" style="width: 18rem; height: 12rem;" alt="Image">
+									</c:if>
+									<c:if test="${not empty item.firstimage}">
+										<img class="rounded-3" src="${item.firstimage}" style="width: 18rem; height: 12rem;" alt="Article img">
+									</c:if>
 							</div>
 							<h3 class="mb-2 fs-lg">
 								<a class="nav-link stretched-link" href="${path}/accomDetail?id=${item.contentid}">${item.title}</a>
 							</h3>
 							<ul class="list-inline mb-0 fs-xs">
-								<li class="list-inline-item pe-1"><b>5.0</b><span
-									class="text-muted">&nbsp;(48)</span></li>
-								<li class="list-inline-item pe-1">강남구</li>
+								<li class="list-inline-item pe-1">
+									<i class="fi-map-pin fs-lg opacity-70 me-2"></i>${item.addr1}
+								</li>
 							</ul>
 						</article>
 					</div>
