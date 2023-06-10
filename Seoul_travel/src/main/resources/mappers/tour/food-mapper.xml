@@ -3,7 +3,7 @@
 
 <mapper namespace="com.multi.mvc.tour.model.mapper.FoodMapper">
 
-	<resultMap type="Reply" id="boardReplyResultMap">
+	<resultMap type="Replies" id="FoodReplyResultMap">
 		<result property="rno" column="rNO" />
 		<result property="contentid" column="contentid" />
 		<result property="contenttypeid" column="contenttypeid" />
@@ -14,6 +14,7 @@
 		<result property="createDate" column="CREATE_DATE" />
 		<result property="modifyDate" column="MODIFY_DATE" />
 	</resultMap>
+	
 	
 	<select id="selectFoodList" parameterType="map" resultType="Food">
 		SELECT title, addr1, firstimage, contentid, 
@@ -53,24 +54,34 @@
 		WHERE contentid = #{id}
 	</select>
 	
+	
+<!-- 	<select id="selectReplyList" parameterType="int" resultType="FoodReplyMap">
+		SELECT F.*, R.rNO, R.mNO, R.CONTENT, R.CREATE_DATE
+		FROM Food F
+			LEFT OUTER JOIN REPLIES R ON (R.CONTENTID = F.CONTENTID)
+			LEFT OUTER JOIN MEMBER M ON (R.MNO = M.MNO)
+		WHERE contentid = #{id}
+	</select>
+	 -->
+	
 	<select id="selectFoodRandomList" parameterType="map" resultType="Food">
 		SELECT 
 			*
 		FROM Food ORDER BY RAND() limit 3
 	</select>
 		
-	<insert id="insertFoodReply" parameterType="Reply">
-		INSERT INTO FOODREPLY(
+	<insert id="insertFoodReply" parameterType="Replies">
+		INSERT INTO REPLIES(
 			RNO, contentid, contenttypeid, MNO, 
 			CONTENT, STATUS, CREATE_DATE, MODIFY_DATE) 
 		VALUES(
-			default, #{bno}, #{contentid}, 39, #{mno}, #{content}, 
+			default, #{contentid}, 39, #{mno}, #{content}, 
 			default, default, default
 		)
 	</insert>
 	
 	<delete id="deleteFoodReply" parameterType="int">
-		DELETE FROM FOODREPLY WHERE RNO=#{rno}
+		DELETE FROM REPLIES WHERE RNO=#{rno}
 	</delete>
 </mapper>
 

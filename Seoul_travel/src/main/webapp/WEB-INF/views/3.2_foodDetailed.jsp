@@ -67,14 +67,14 @@
 									type="button" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body px-sm-5 px-4">
-								<form class="needs-validation" action="${path}/foodReplyWrite" method="post" novalidate>
-					    			<input type="hidden" name="bno" value="${item.contentid}" />
+								<form class="needs-validation" action="${path}/foodReplyWrite" method="post">
+					    			<input type="hidden" name="contentid" value="${item.contentid}" />
 					    			<input type="hidden" name="writerId" value="${loginMember.id}" />
 									<div class="mb-4">
 										<label class="form-label" for="replyContent">
 											리뷰<span class='text-danger'>*</span>
 										</label>
-										<textarea class="form-control" id="replyContent" rows="8"
+										<textarea name="content" class="form-control" id="replyContent" rows="8"
 											placeholder="리뷰를 입력하세요" required></textarea>
 									</div>
 									<button class="btn btn-primary d-block rounded-pill w-100 mb-4" type="submit">등록</button>
@@ -88,12 +88,14 @@
 				<div class="py-5">
 					<h2 class="h3">${item.title} 리뷰</h2>
 					<div class="row">
-						<!-- 리뷰 자성 버튼 -->
-						<div	class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
-							<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal">
-								<i	class="fi-edit mt-n1 me-1 align-middle">
-								</i>리뷰 작성하기</a>
-						</div>
+						<!-- 리뷰 작성 버튼 -->
+						<c:if test="${loginMember != null}">
+							<div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
+								<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal">
+									<i	class="fi-edit mt-n1 me-1 align-middle">
+									</i>리뷰 작성하기</a>
+							</div>
+						</c:if>
 
 						<!-- 리뷰 -->
 						<div class="mb-4 pb-4 border-bottom">
@@ -203,6 +205,9 @@
 
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
+
+
+
 <!-- 카카오 토큰 JavaScript 키 -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=31c2dc2677eb86c0811d24bdcfe862f4"></script>
 <script>
@@ -254,4 +259,15 @@
 	    infowindow.close();
 	};
 	}
+</script>
+
+<script type="text/javascript">
+
+	function deleteReply(replyNo, boardNo){
+		var url = "${path}/foodReplyDel?rno=";
+		var requestURL = url + replyNo +"&bno=" + boardNo;
+		location.replace(requestURL);
+	}
+
+	
 </script>

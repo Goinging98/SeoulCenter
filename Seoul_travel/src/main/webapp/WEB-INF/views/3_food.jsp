@@ -53,6 +53,8 @@
 						<div class="card-body ">
 							<h3 class="h5">카테고리</h3>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+								href="${path}/foodMain">전체 <span class=" ms-394">${count}</span></a>
+							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="${path}/foodMain?cat3=A05020100">한식 <span class=" ms-394">${count}</span></a>
 							<a class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="${path}/foodMain?cat3=A05020200">양식 <span class=" ms-300">${count}</span></a>
@@ -130,6 +132,7 @@
 							</div>
 						</c:forEach>
 						<!-- Card item END -->
+						<br/><br/><br/>
 
 						<!-- Pagination-->
 						<div class="d-flex justify-content-end pt-4 border-top">

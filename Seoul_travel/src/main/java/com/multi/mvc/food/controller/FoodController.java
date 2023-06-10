@@ -63,6 +63,7 @@ public class FoodController {
 			// 에러처리
 		}
 		model.addAttribute("item", food);
+		model.addAttribute("replyList", food.getReplies());
 		return "3.2_foodDetailed";	
 	}
 	
@@ -81,14 +82,14 @@ public class FoodController {
 		} else {
 			model.addAttribute("msg","리플 등록에 실패하였습니다.");
 		}
-		model.addAttribute("location", "/board/view?no="+reply.getContentid());
+		model.addAttribute("location", "/foodDetail?id="+reply.getContentid());
 		return "/common/msg";
 	}
 	
 	@RequestMapping("/foodReplyDel")
 	public String deleteFoodReply(Model model, 
 			@SessionAttribute(name = "loginMember", required = false) Member loginMember,
-			int rno, int bno
+			int rno, int contentid
 			){
 		log.info("리플 삭제 요청");
 		int result = foodService.deleteFoodReply(rno);
@@ -98,7 +99,7 @@ public class FoodController {
 		}else {
 			model.addAttribute("msg", "리플 삭제에 실패하였습니다.");
 		}
-		model.addAttribute("location", "/board/view?no=" + bno);
+		model.addAttribute("location", "/foodDetail?no=" + contentid);
 		return "/common/msg";
 	}
 }

@@ -391,7 +391,7 @@ SELECT * FROM TourImage;
 
 use tourapi;
 drop table foodreply;
-CREATE TABLE FOODREPLY(
+CREATE TABLE Replies(
   rNO INT PRIMARY KEY AUTO_INCREMENT,
   contentid INT,
   contenttypeid int,
@@ -402,7 +402,7 @@ CREATE TABLE FOODREPLY(
   MODIFY_DATE DATETIME DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (mNO) REFERENCES MEMBER(mNO)
 );
-select * from foodreply;
+select * from Replies;
 
 -- SELECT contentid FROM Festival;
 

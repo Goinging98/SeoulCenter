@@ -1,5 +1,6 @@
 package com.multi.mvc.tour.model.vo;
 
+import java.util.List;
 
 public class Food extends TourVO {
 
@@ -19,8 +20,10 @@ public class Food extends TourVO {
 	public String smoking;
 	public String treatmenu;
 	public String lcnsno;
+	public List<Replies> replies;
 	
 	
+
 	public Food() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -37,7 +40,7 @@ public class Food extends TourVO {
 	public Food(TourVO tour, String chkcreditcardfood, String discountinfofood, String firstmenu, String infocenterfood,
 			String kidsfacility, String opendatefood, String opentimefood, String packing, String parkingfood,
 			String reservationfood, String restdatefood, String scalefood, String seat, String smoking,
-			String treatmenu, String lcnsno) {
+			String treatmenu, String lcnsno, List<Replies> replies) {
 		super(tour.contentid, tour.contenttypeid, tour.homepage, tour.tel, tour.title, tour.firstimage,
 				tour.firstimage2, tour.areacode, tour.sigungucode, tour.cat1, tour.cat2, tour.cat3, tour.addr1,
 				tour.addr2, tour.zipcode, tour.mapx, tour.mapy, tour.overview, tour.mlevel);
@@ -58,6 +61,7 @@ public class Food extends TourVO {
 		this.smoking = smoking;
 		this.treatmenu = treatmenu;
 		this.lcnsno = lcnsno;
+		this.replies = replies;
 	}
 
 	@Override
@@ -198,7 +202,14 @@ public class Food extends TourVO {
 		this.lcnsno = lcnsno;
 	}
 	
-	
+
+	public List<Replies> getReplies() {
+		return replies;
+	}
+
+	public void setReplies(List<Replies> replies) {
+		this.replies = replies;
+	}
 	
 	
 	

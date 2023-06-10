@@ -10,14 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Replies {
-	private int rno;			// rNO 				INT PRIMARY KEY AUTO_INCREMENT,
-	private int contentid;		// contentid		INT,
-	private int contenttypeid;	// contenttypeid	INT,
-	private int mno;			// mNO 				INT,
-	private String writerId;	// writerId 		String,
-	private String content;		// CONTENT 			VARCHAR(1000),
-	private String status;		// STATUS 			VARCHAR(1) DEFAULT 'Y' CHECK (STATUS IN ('Y', 'N')),
-	private Date createDate;	// CREATE_DATE 		DATETIME DEFAULT CURRENT_TIMESTAMP,
-	private Date modifyDate;	// MODIFY_DATE 		DATETIME DEFAULT CURRENT_TIMESTAMP,
-	
+	public int rno;			// rNO 				INT PRIMARY KEY AUTO_INCREMENT,
+	public int contentid;		// contentid		INT,
+	public int contenttypeid;	// contenttypeid	INT,
+	public int mno;			// mNO 				INT,
+	public String writerId;	// writerId 		String,
+	public String content;		// CONTENT 			VARCHAR(1000),
+	public String status;		// STATUS 			VARCHAR(1) DEFAULT 'Y' CHECK (STATUS IN ('Y', 'N')),
+	public Date createDate;	// CREATE_DATE 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+	public Date modifyDate;	// MODIFY_DATE 		DATETIME DEFAULT CURRENT_TIMESTAMP,
 }
