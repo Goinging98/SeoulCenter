@@ -157,7 +157,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
 
 			<div class="d-flex h-25 flex-column align-items-center justify-content-center">
-				<a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.924340088787!2d13.428504251724927!3d52.58906113876177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85284201593ab%3A0x28af69e02ce0e2fc!2sBusinesshotel%20Berlin!5e0!3m2!1sru!2sua!4v1618908622013!5m2!1sru!2sua"
+				<a href="https://www.google.com/maps/search/${item.title} ${item.addr1}"
 					class="btn btn-primary rounded-pill "
 					data-iframe="true" data-bs-toggle="lightbox"><i
 					class="fi-route me-2"></i>위치 보기</a>
