@@ -1,17 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
 
 <jsp:include page="/WEB-INF/views/common/header_mypage.jsp" />
-
 
 <div class="container mt-5 mb-md-4 py-5">
 	<!-- 상단 이름 노출 -->
 	<nav class="mb-4 pt-2 pt-lg-3" aria-label="breadcrumb">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="/"><strong>Home</strong></a></li>
+			<li class="breadcrumb-item"><a href="main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>마이페이지</strong></li>
 		</ol>
 	</nav>
@@ -28,8 +27,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				<span class="star-rating"></span>
 			</div>
 		</div>
-		<a class="nav-link p-0 d-none d-md-block" href="signin-light.html"><i
-			class="fi-logout mt-n1 me-2"></i>Sign out</a>
+		<a class="nav-link p-0 d-none d-md-block" href="${path}/logout">
+			<i class="fi-logout mt-n1 me-2"></i>로그아웃</a>
 	</div>
 	
 	
@@ -41,37 +40,23 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				href="#account-nav" data-bs-toggle="collapse">마이페이지</a>
 			<div class="collapse d-md-block" id="account-nav">
 				<ul class="nav nav-pills flex-column flex-md-row pt-3 pt-md-0 pb-md-4 border-bottom-md">
-					<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a
-						class="nav-link" href="0_myPage-info.html">나의 정보</a></li>
-					<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a
-						class="nav-link" href="0_myPage-favoritHotel.html"
-						aria-current="page">찜한 숙소</a></li>
-					<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a
-						class="nav-link" href="0_myPage-favoritFood.html"
-						aria-current="page">찜한 맛집</a></li>
-					<li class="nav-item mb-md-0 me-md-2 pe-md-1"><a
-						class="nav-link active" href="0_myPage-reviews.html">나의 리뷰</a></li>
-
-					<li class="nav-item d-md-none"><a class="nav-link"
-						href="signin-light.html">Sign Out</a></li>
+					<li class="nav-item mb-md-0 me-md-2 pe-md-1">
+						<a class="nav-link" href="mypageinfo">나의 정보</a>
+					</li>
+					<li class="nav-item mb-md-0 me-md-2 pe-md-1">
+						<a class="nav-link" href="myaccomodation">찜한 숙소</a>
+					</li>
+					<li class="nav-item mb-md-0 me-md-2 pe-md-1">
+						<a class="nav-link active" href="myfood">찜한 맛집</a>
+					</li>
+					<li class="nav-item mb-md-0 me-md-2 pe-md-1">
+						<a class="nav-link" href="myreview">나의 리뷰</a>
+					</li>
 				</ul>
 			</div>
 		</div>
 		<div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-4 py-2">
 			<h1 class="h3 mb-md-0">나의 리뷰</h1>
-			<!-- Sort-->
-			<div class="d-flex align-items-sm-center align-items-end">
-				<div class="d-flex flex-sm-row flex-column align-items-sm-center w-100 pe-sm-2">
-					<label class="mb-sm-0 mb-2 me-sm-2 pe-sm-1 text-nowrap"
-						for="sortby">정렬 : </label> <select
-						class="form-select form-select-sm" id="sortby"
-						style="min-width: 180px;">
-						<option>최신순</option>
-						<option>오래된순</option>
-						<option>평점순</option>
-					</select>
-				</div>
-			</div>
 		</div>
 		
 		<!-- Articles list-->
@@ -178,8 +163,10 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				</article>
 			</div>
 		</div>
+	</div>
+</div>
 
 
-		<jsp:include page="/WEB-INF/views/common/footer.jsp" />
+<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 		
 		

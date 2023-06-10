@@ -85,5 +85,19 @@ public class HomeController {
 	public String mypage(Locale locale, Model model) {
 		return "0_myPage-info";
 	}
+	
+	@RequestMapping(value = "/myaccomodation", method = RequestMethod.GET)
+	public String myaccomodation(Locale locale, Model model) {
+		return "0_myPage-favoritHotel";
+	}
 
+	@RequestMapping(value = "/myfood", method = RequestMethod.GET)
+	public String myfood(Locale locale, Model model) {
+		return "0_myPage-favoritFood";
+	}
+	
+	@RequestMapping(value = "/myreview", method = RequestMethod.GET)
+	public String myreview(Locale locale, Model model) {
+		return "0_myPage-reviews";
+	}
 }
