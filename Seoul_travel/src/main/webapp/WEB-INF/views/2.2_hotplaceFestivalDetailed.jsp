@@ -71,6 +71,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			</div>
 		</div>
 	</div>
+	
+	<!-- 추가 이미지 필요 -->
 
 
 	<div class="row mt-4 pt-3">
