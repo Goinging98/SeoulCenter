@@ -61,12 +61,16 @@ public class CommunityController {
 		} catch (Exception e) {}
 		
 		int boardcount = service.getBoardCount(param);
-		PageInfo pageInfo = new PageInfo(page, 10, boardcount, 10);
+		PageInfo pageInfo = new PageInfo(page, 5, boardcount, 5);
 		List<Community> list = service.getBoardList(pageInfo, param);
 		
+		int maxPage = boardcount/5;
 		model.addAttribute("list", list);
 		model.addAttribute("param", param);
 		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("page",page);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("searchValue", param.get("searchValue"));	
 		
 		return "5.1_notice";
 	}
@@ -82,12 +86,16 @@ public class CommunityController {
 		} catch (Exception e) {}
 		
 		int accomocount = service.getAccomodationCount(param);
-		PageInfo pageInfo = new PageInfo(page, 10, accomocount, 10);
+		PageInfo pageInfo = new PageInfo(page, 5, accomocount, 5);
 		List<Community> list = service.getAccomodationList(pageInfo, param);
 		
+		int maxPage = accomocount/5;
 		model.addAttribute("list", list);
 		model.addAttribute("param", param);
 		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("page",page);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		return "5.1_communityAccomodation";
 	}
@@ -103,12 +111,16 @@ public class CommunityController {
 		} catch (Exception e) {}
 		
 		int foodcount = service.getFoodCount(param);
-		PageInfo pageInfo = new PageInfo(page, 10, foodcount, 10);
+		PageInfo pageInfo = new PageInfo(page, 5, foodcount, 5);
 		List<Community> list = service.getFoodList(pageInfo, param);
 		
+		int maxPage = foodcount/5;
 		model.addAttribute("list", list);
 		model.addAttribute("param", param);
 		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("page",page);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		return "5.1_communityFood";
 	}
@@ -124,12 +136,16 @@ public class CommunityController {
 		} catch (Exception e) {}
 		
 		int Hotplacecount = service.getHotplaceCount(param);
-		PageInfo pageInfo = new PageInfo(page, 10, Hotplacecount, 10);
+		PageInfo pageInfo = new PageInfo(page, 5, Hotplacecount, 5);
 		List<Community> list = service.getHotplaceList(pageInfo, param);
 		
+		int maxPage = Hotplacecount/5;
 		model.addAttribute("list", list);
 		model.addAttribute("param", param);
 		model.addAttribute("pageInfo", pageInfo);
+		model.addAttribute("page",page);
+		model.addAttribute("maxPage", maxPage);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		return "5.1_communityHotplace";
 	}

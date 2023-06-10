@@ -123,7 +123,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
         <li class="page-item">
     <c:choose>
         <c:when test="${page > 1}">
-            <a class="page-link next-page" href="accomMain?page=${page-1}" aria-label="Previous">
+            <a class="page-link next-page" href="accomMain?page=${page-1}&searchValue=${searchValue}" aria-label="Previous">
                 <i class="fi-chevron-left"></i>
             </a>
         </c:when>
@@ -137,13 +137,13 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
         <c:if test="${page > 3}">
             <li class="page-item d-none d-sm-block">
-                <a class="page-link" href="accomMain?page=${page-2}">${page - 2}</a>
+                <a class="page-link" href="accomMain?page=${page-2}&searchValue=${searchValue}">${page - 2}</a>
             </li>
         </c:if>
 
         <c:if test="${page > 2}">
             <li class="page-item d-none d-sm-block">
-                <a class="page-link" href="accomMain?page=${page-1}">${page - 1}</a>
+                <a class="page-link" href="accomMain?page=${page-1}&searchValue=${searchValue}">${page - 1}</a>
             </li>
         </c:if>
 
@@ -153,19 +153,19 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
         <c:if test="${page <= maxPage}">
             <li class="page-item d-none d-sm-block">
-                <a class="page-link" href="accomMain?page=${page+1}">${page + 1}</a>
+                <a class="page-link" href="accomMain?page=${page+1}&searchValue=${searchValue}">${page + 1}</a>
             </li>
         </c:if>
 
         <c:if test="${page < maxPage-1}">
             <li class="page-item d-none d-sm-block">
-                <a class="page-link" href="accomMain?page=${page+2}">${page + 2}</a>
+                <a class="page-link" href="accomMain?page=${page+2}&searchValue=${searchValue}">${page + 2}</a>
             </li>
         </c:if>
         
 		 <c:if test="${page < maxPage}">
         <li class="page-item">
-            <a class="page-link next-page" href="accomMain?page=${page+2}" aria-label="Next">
+            <a class="page-link next-page" href="accomMain?page=${page+2}&searchValue=${searchValue}" aria-label="Next">
                 <i class="fi-chevron-right"></i>
             </a>
         </li>

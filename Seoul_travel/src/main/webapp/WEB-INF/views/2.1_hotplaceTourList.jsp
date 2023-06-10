@@ -119,46 +119,61 @@
 				</c:forEach>
 
 
-				<!-- Pagination-->
-				<div class="d-flex justify-content-end pt-4 border-top">
-					<nav class="border-top pb-md-4 pt-4" aria-label="Pagination">
-					<ul class="pagination mb-1">
-						<li class="page-item"><a class="page-link next-page"
-							href="hotTourList?page=${page-3}" aria-label="Next"><i
-								class="fi-chevron-left"></i></a></li>
-							
+<!-- Pagination-->
+<nav class="border-top pb-md-4 pt-4" aria-label="Pagination">
+    <ul class="pagination mb-1">
+        <li class="page-item">
+    <c:choose>
+        <c:when test="${page > 1}">
+            <a class="page-link next-page" href="hotTourList?page=${page-1}&searchValue=${searchValue}" aria-label="Previous">
+                <i class="fi-chevron-left"></i>
+            </a>
+        </c:when>
+        <c:otherwise>
+            <span class="page-link next-page disabled" aria-label="Previous">
+                <i class="fi-chevron-left"></i>
+            </span>
+        </c:otherwise>
+    </c:choose>
+</li>
 
-						<c:if test="${page > 2}">
-							<li class="page-item d-none d-sm-block"><a class="page-link"
-								href="hotTourList?page=${page-2}&searchValue=${searchValue}">${page - 2}</a></li>
-						</c:if>
-						
-						<c:if test="${page > 1}">
-							<li class="page-item d-none d-sm-block"><a class="page-link"
-								href="hotTourList?page=${page-1}&searchValue=${searchValue}">${page - 1}</a></li>
-						</c:if>
-						
-						<li class="page-item active d-none d-sm-block" aria-current="page"><span
-							class="page-link">${page}<span class="visually-hidden">(current)</span></span></li>
-						
-						<c:if test="${page <= maxPage}">
-						<li class="page-item d-none d-sm-block"><a class="page-link"
-							href="hotTourList?page=${page+1}&searchValue=${searchValue}">${page + 1}</a></li>
-						</c:if>
-						
-						<c:if test="${page < maxPage}">
-						<li class="page-item d-none d-sm-block"><a class="page-link"
-							href="hotTourList?page=${page+2}&searchValue=${searchValue}">${page + 2}</a></li>
-						</c:if>
-						
-						<c:if test="${page < maxPage}">
-						<li class="page-item"><a class="page-link next-page"
-							href="hotTourList?page=${page+3}&searchValue=${searchValue}" aria-label="Next"><i
-								class="fi-chevron-right"></i></a></li>
-								</c:if>
-					</ul>
-				</nav>
-				</div>
+        <c:if test="${page > 3}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotTourList?page=${page-2}&searchValue=${searchValue}">${page - 2}</a>
+            </li>
+        </c:if>
+
+        <c:if test="${page > 2}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotTourList?page=${page-1}&searchValue=${searchValue}">${page - 1}</a>
+            </li>
+        </c:if>
+
+        <li class="page-item active d-none d-sm-block" aria-current="page">
+            <span class="page-link">${page}<span class="visually-hidden">(current)</span></span>
+        </li>
+
+        <c:if test="${page <= maxPage}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotTourList?page=${page+1}&searchValue=${searchValue}">${page + 1}</a>
+            </li>
+        </c:if>
+
+        <c:if test="${page < maxPage-1}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotTourList?page=${page+2}&searchValue=${searchValue}">${page + 2}</a>
+            </li>
+        </c:if>
+        
+		 <c:if test="${page < maxPage}">
+        <li class="page-item">
+            <a class="page-link next-page" href="hotTourList?page=${page+2}&searchValue=${searchValue}" aria-label="Next">
+                <i class="fi-chevron-right"></i>
+            </a>
+        </li>
+        </c:if>
+    </ul>
+</nav>
 			</div>
 		</div>
 	</div>

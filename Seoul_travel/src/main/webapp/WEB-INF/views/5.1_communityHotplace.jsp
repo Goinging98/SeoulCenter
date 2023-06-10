@@ -124,40 +124,61 @@
 						<button class="btn btn-lg btn-primary w-sm-auto w-100 mt-2" type="button" id="btn-add" onclick="location.href='${path}/community/write'">글쓰기</button>
 				</c:if>
 				
-				<!-- page부 시작 -->
-				<div align="center">
-					<%-- 
-					순수 페이지만 이동하는 코드
-					<!-- 처음 페이지 -->
-					<button onclick="location.href='${path}/board/list?page=1'">&lt;&lt;</button>
-					<!-- 이전 페이지 -->
-					<button onclick="location.href='${path}/board/list?page=${pageInfo.prevPage}'">&lt;</button>
-					--%>
-					
-					<!-- 처음 페이지 -->
-					<button onclick="movePage(1)">&lt;&lt;</button>
-					<!-- 이전 페이지 -->
-					<button onclick="movePage(${pageInfo.prevPage})">&lt;</button>
-				
-					<!-- 10개 페이지가 보여지는 부분 -->
-					<c:forEach begin="${pageInfo.startPage}" end="${pageInfo.endPage}" varStatus="status" step="1">
-						<c:if test="${status.current == pageInfo.currentPage}">
-							<button disabled>${status.current}</button>
-						</c:if>
-						<c:if test="${status.current != pageInfo.currentPage}">
-							<button onclick="movePage(${status.current})">
-								${status.current}
-							</button>
-						</c:if>
-					</c:forEach>
-					
-					<!-- 다음 페이지 -->
-					<button onclick="movePage(${pageInfo.nextPage})">&gt;</button>
-					<!-- 마지막 페이지 -->
-					<button onclick="movePage(${pageInfo.maxPage})">&gt;&gt;</button>
-				
-				</div>
-				<!-- page부 끝 -->
+					<!-- Pagination-->
+<nav class="border-top pb-md-4 pt-4" aria-label="Pagination">
+    <ul class="pagination mb-1">
+        <li class="page-item">
+    <c:choose>
+        <c:when test="${page > 1}">
+            <a class="page-link next-page" href="hotplace?page=${page-1}&searchValue=${searchValue}" aria-label="Previous">
+                <i class="fi-chevron-left"></i>
+            </a>
+        </c:when>
+        <c:otherwise>
+            <span class="page-link next-page disabled" aria-label="Previous">
+                <i class="fi-chevron-left"></i>
+            </span>
+        </c:otherwise>
+    </c:choose>
+</li>
+
+        <c:if test="${page > 3}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotplace?page=${page-2}&searchValue=${searchValue}">${page - 2}</a>
+            </li>
+        </c:if>
+
+        <c:if test="${page > 2}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotplace?page=${page-1}&searchValue=${searchValue}">${page - 1}</a>
+            </li>
+        </c:if>
+
+        <li class="page-item active d-none d-sm-block" aria-current="page">
+            <span class="page-link">${page}<span class="visually-hidden">(current)</span></span>
+        </li>
+
+        <c:if test="${page <= maxPage}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotplace?page=${page+1}&searchValue=${searchValue}">${page + 1}</a>
+            </li>
+        </c:if>
+
+        <c:if test="${page < maxPage-1}">
+            <li class="page-item d-none d-sm-block">
+                <a class="page-link" href="hotplace?page=${page+2}&searchValue=${searchValue}">${page + 2}</a>
+            </li>
+        </c:if>
+        
+		 <c:if test="${page < maxPage}">
+        <li class="page-item">
+            <a class="page-link next-page" href="hotplace?page=${page+2}&searchValue=${searchValue}" aria-label="Next">
+                <i class="fi-chevron-right"></i>
+            </a>
+        </li>
+        </c:if>
+    </ul>
+</nav>
 				
 			</div>
 		</div>

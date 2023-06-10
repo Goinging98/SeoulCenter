@@ -58,6 +58,7 @@ public class AccomController {
 		model.addAttribute("foreigncount", foreigncount);
 		model.addAttribute("elsecount", elsecount);
 		model.addAttribute("accommodationList", list);
+		model.addAttribute("searchValue", param.get("searchValue"));
 		
 		
 		return "4_accommodation";
