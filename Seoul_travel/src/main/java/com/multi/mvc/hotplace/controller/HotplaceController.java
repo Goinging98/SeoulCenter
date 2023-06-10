@@ -174,9 +174,9 @@ public class HotplaceController {
 	
 // 행사/축제 상세상세 페이지
 	@RequestMapping(value ="/hotFestivalDetail", method = RequestMethod.GET)
-	public String hotFestivalDetail(Model model, int id, Map<String, Object> param) {
+	public String hotFestivalDetail(Model model, int id) {
 		Festival festival = festivalService.selectByContentId(id);	
-		List<TourImageVO> imgFestival = festivalService.selectFestivalImgList(param);
+		List<TourImageVO> imgFestival = festivalService.selectFestivalImgList(id);
 		if(festival == null) {
 			// 에러처리
 		}

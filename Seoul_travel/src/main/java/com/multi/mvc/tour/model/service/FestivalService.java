@@ -35,7 +35,7 @@ public class FestivalService {
 		return mapper.selectFestivalCount(map);
 	}
 	
-	public List<TourImageVO> selectFestivalImgList(Map<String, Object> param){
-		return mapper.selectFestivalImgList(param);
+	public List<TourImageVO> selectFestivalImgList(int id){
+		return mapper.selectFestivalImgList(id);
 	}
 }
