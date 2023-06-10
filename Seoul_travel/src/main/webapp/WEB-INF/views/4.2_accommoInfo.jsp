@@ -92,7 +92,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						</div>
 					</div>
 					<!-- Place contacts-->
-					<div class="mb-3 pb-3 border-bottom">
+					<div class="mb-3 pb-3">
 						<h4 class="h5 mb-2">Contacts:</h4>
 						<ul class="nav row row-cols-sm-2 row-cols-1 gy-1">
 							<li class="col"><div
@@ -144,19 +144,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
     });
 </script>
 
-					<!-- Follow-->
-					<div class="d-flex align-items-center">
-						<h4 class="h5 mb-0 me-3">Follow:</h4>
-						<div class="text-nowrap">
-							<a
-								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
-								href="#"><i class="fi-facebook"></i></a><a
-								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
-								href="#"><i class="fi-instagram"></i></a><a
-								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
-								href="#"><i class="fi-twitter"></i></a>
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</div>

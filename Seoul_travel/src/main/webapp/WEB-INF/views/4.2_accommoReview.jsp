@@ -392,7 +392,7 @@
   </div>
 </div>
 <!-- Place contacts-->
-<div class="mb-3 pb-3 border-bottom">
+<div class="mb-3 pb-3 ">
   <h4 class="h5 mb-2">Contacts:</h4>
   <ul class="nav flex-column">
     <li class="nav-item mb-2">

@@ -71,9 +71,11 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			style="width: 35em; height: auto;">
 			<div class="tns-carousel-inner  "
 				data-carousel-options='{"gutter": 16}'>
-				<img src="${item.firstimage}"	alt="Image">
-				<img src="${item.firstimage2}"
-					alt="Image">
+				
+			<img src="${item.firstimage}" alt="Image" onerror="this.onerror=null; this.src='http://hk-clean.co.kr/images/no_image.jpg';">
+	<img src="${item.firstimage2}" alt="Image" onerror="this.onerror=null; this.src='http://hk-clean.co.kr/images/no_image.jpg';">
+
+
 				<!-- <img class="rounded-3" src="https://mono.aks.ac.kr/s/media/7f/7fb47219-31a1-4dd9-bc41-d1a1bea62190.jpg?preset=page" alt="Image">
         <img class="rounded-3" src="https://media-cdn.tripadvisor.com/media/photo-s/15/6a/f8/e8/palace.jpg" alt="Image"> -->
 
@@ -101,7 +103,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						</div>
 					</div>
 					<!-- Place contacts-->
-					<div class="mb-3 pb-3 border-bottom">
+					<div class="mb-3 pb-3 ">
 						<h4 class="h5 mb-2">Contacts:</h4>
 						<ul class="nav row row-cols-sm-2 row-cols-1 gy-1">
 							<li class="col"><div
@@ -148,19 +150,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
         reservationLink.href = extractedURL;
     });
 </script>
-					<!-- Follow-->
-					<div class="d-flex align-items-center">
-						<h4 class="h5 mb-0 me-3">Follow:</h4>
-						<div class="text-nowrap">
-							<a
-								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
-								href="#"><i class="fi-facebook"></i></a><a
-								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle me-2"
-								href="#"><i class="fi-instagram"></i></a><a
-								class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
-								href="#"><i class="fi-twitter"></i></a>
-						</div>
-					</div>
+				
 				</div>
 			</div>
 		</div>
@@ -175,7 +165,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				<div
 					class="d-flex h-25 flex-column align-items-center justify-content-center">
 					<a class="btn btn-primary rounded-pill stretched-link"
-						href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2423.924340088787!2d13.428504251724927!3d52.58906113876177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a85284201593ab%3A0x28af69e02ce0e2fc!2sBusinesshotel%20Berlin!5e0!3m2!1sru!2sua!4v1618908622013!5m2!1sru!2sua"
+						href="https://www.google.com/maps/search/${item.title} ${item.addr1}"
 						data-iframe="true" data-bs-toggle="lightbox"><i
 						class="fi-route me-2"></i>위치 보기</a>
 				</div>
