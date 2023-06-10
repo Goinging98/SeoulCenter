@@ -104,9 +104,9 @@
 									<div class="col-md-8">
 										<div class="card-body py-md-2 d-flex flex-column h-100 position-relative">
 											<!-- Title -->
-											<h5 class="h5 pt-1 mb-2">
-												<a href="${path}/foodDetail?id=${item.contentid}">${item.title}</a>
-											</h5>
+											<h5 class="card-title mb-1">
+  <a href="${path}/foodDetail?id=${item.contentid}" style="text-decoration: none">${item.title}</a>
+</h5>
 											<small><i class="fi-map-pin fs-lg opacity-70 me-2"></i>${item.addr1}</small>
 											<!-- Amenities -->
 											<ul class="nav nav-divider mt-3">
