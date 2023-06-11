@@ -227,66 +227,74 @@
 		</a>
 	</div>
 	<!-- Carousel-->
-	<div class="tns-carousel-wrapper tns-nav-outside mb-md-2">
-		<div class="tns-carousel-inner d-block" data-carousel-options="{&quot;controls&quot;: false, &quot;gutter&quot;: 24, &quot;autoHeight&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1,&quot;nav&quot;:true},&quot;500&quot;:{&quot;items&quot;:2},&quot;850&quot;:{&quot;items&quot;:3},&quot;1200&quot;:{&quot;items&quot;:3}}}">
-			<!-- Item-->
-			<article>
-				<a class="d-block mb-3" href="/mvc/board/view?no=35">
-					<img class="rounded-3" src="${path}/resources/img/boardpic/2.png" alt="Post image"></a><a
-					class="fs-xs text-uppercase text-decoration-none" href="/mvc/community/food">맛집</a>
-				<h3 class="fs-base pt-1">
-					<a class="nav-link" href="/mvc/board/view?no=35">[홍대맛집/연남동맛집] 미쁘동 -토마토 연어국수JMT 내돈내산 솔직후기</a>
-				</h3>
-				<a class="d-flex align-items-center text-decoration-none" href=""><img
-					class="rounded-circle" src="${path}/resources/img/avatars/16.png" width="44"
-					alt="Avatar">
-					<div class="ps-2">
-						<h6 class="fs-sm text-nav lh-base mb-1">박길동</h6>
-						<div class="d-flex text-body fs-xs">
-							<span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i>2023.06.11</span>
-						</div>
-					</div>
-				</a>
-			</article>
+    <div class="tns-carousel-wrapper tns-nav-outside mb-md-2">
+        <div class="tns-carousel-inner d-block" data-carousel-options="{&quot;controls&quot;: false, &quot;gutter&quot;: 24, &quot;autoHeight&quot;: true, &quot;responsive&quot;: {&quot;0&quot;:{&quot;items&quot;:1,&quot;nav&quot;:true},
+        &quot;700&quot;:{&quot;items&quot;:1},
+        &quot;1080&quot;:{&quot;items&quot;:2},
+        &quot;1300&quot;:{&quot;items&quot;:2},
+        &quot;1500&quot;:{&quot;items&quot;:3}}}">
+            <!-- Item-->
+            <article>
+                <a class="d-block mb-3" href="/mvc/board/view?no=35">
+                    <img class="rounded-3" style="background-image: url('${path}/resources/img/boardpic/2.png'); 
+                     padding-bottom: 208px; padding-right: 400px; max-width: 25em; max-height: 13em; Background-size : cover; background-position: center;" alt="Post image"></a><a
+                    class="fs-xs text-uppercase text-decoration-none" href="/mvc/community/food">맛집</a>
+                <h3 class="fs-base pt-1">
+                    <a class="nav-link" href="/mvc/board/view?no=35">[홍대맛집/연남동맛집] 미쁘동 -토마토 연어국수JMT 내돈내산 솔직후기</a>
+                </h3>
+                <a class="d-flex align-items-center text-decoration-none" href=""><img
+                    class="rounded-circle" src="${path}/resources/img/avatars/16.png" width="44"
+                    alt="Avatar">
+                    <div class="ps-2">
+                        <h6 class="fs-sm text-nav lh-base mb-1">박길동</h6>
+                        <div class="d-flex text-body fs-xs">
+                            <span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i>2023.06.11</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
 			
 			<!-- Item-->
-			<article>
-				<a class="d-block mb-3" href="/mvc/board/view?no=43">
-					<img class="rounded-3" src="${path}/resources/img/boardpic/13.jpg" alt="Post image"></a><a
-					class="fs-xs text-uppercase text-decoration-none" href="/mvc/community/hotplace">핫플레이스</a>
-				<h3 class="fs-base pt-1">
-					<a class="nav-link" href="/mvc/board/view?no=43">[서울 가볼만한 곳]어느 수집가의 초대 국립중앙 박물관 전시</a>
-				</h3>
-				<a class="d-flex align-items-center text-decoration-none" href="#"><img
-					class="rounded-circle" src="${path}/resources/img/avatars/18.png" width="44"
-					alt="Avatar">
-					<div class="ps-2">
-						<h6 class="fs-sm text-nav lh-base mb-1">최길동</h6>
-						<div class="d-flex text-body fs-xs">
-							<span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i>2023.06.11</span>
-						</div>
-					</div></a>
-			</article>
+            <article>
+                <a class="d-block mb-3" href="/mvc/board/view?no=43">
+                    <img class="rounded-3" style="background-image: url('${path}/resources/img/boardpic/13.jpg'); 
+                     padding-bottom: 208px; padding-right: 400px; max-width: 25em; max-height: 13em; Background-size : cover; background-position: center;" alt="Post image"></a><a
+                    class="fs-xs text-uppercase text-decoration-none" href="/mvc/community/hotplace">핫플레이스</a>
+                <h3 class="fs-base pt-1">
+                    <a class="nav-link" href="/mvc/board/view?no=43">[서울 가볼만한 곳]어느 수집가의 초대 국립중앙 박물관 전시</a>
+                </h3>
+                <a class="d-flex align-items-center text-decoration-none" href="#"><img
+                    class="rounded-circle" src="${path}/resources/img/avatars/18.png" width="44"
+                    alt="Avatar">
+                    <div class="ps-2">
+                        <h6 class="fs-sm text-nav lh-base mb-1">최길동</h6>
+                        <div class="d-flex text-body fs-xs">
+                            <span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i>2023.06.11</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
 			<!-- Item-->
-			<article>
-				<a class="d-block mb-3" href="/mvc/board/view?no=46"><img
-					class="rounded-3" src="${path}/resources/img/boardpic/12.jpg" alt="Post image"></a><a
-					class="fs-xs text-uppercase text-decoration-none" href="/mvc/community/accomodation">숙박</a>
-				<h3 class="fs-base pt-1">
-					<a class="nav-link" href="/mvc/board/view?no=46">시그니엘 서울 호텔 한강뷰 후기</a>
-				</h3>
-				<a class="d-flex align-items-center text-decoration-none" href="#"><img
-					class="rounded-circle" src="${path}/resources/img/avatars/17.png" width="44"
-					alt="Avatar">
-					<div class="ps-2">
-						<h6 class="fs-sm text-nav lh-base mb-1">김길동</h6>
-						<div class="d-flex text-body fs-xs">
-							<span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i>2023.06.11</span>
-						</div>
-					</div></a>
-			</article>
-		</div>
-	</div>
+            <article>
+                <a class="d-block mb-3" href="/mvc/board/view?no=46"><img
+                    class="rounded-3" style="background-image: url('${path}/resources/img/boardpic/12.jpg'); 
+                     padding-bottom: 208px; padding-right: 400px; max-width: 25em; max-height: 13em; Background-size : cover; background-position: center;" alt="Post image"></a><a
+                    class="fs-xs text-uppercase text-decoration-none" href="/mvc/community/accomodation">숙박</a>
+                <h3 class="fs-base pt-1">
+                    <a class="nav-link" href="/mvc/board/view?no=46">시그니엘 서울 호텔 한강뷰 후기</a>
+                </h3>
+                <a class="d-flex align-items-center text-decoration-none" href="#"><img
+                    class="rounded-circle" src="${path}/resources/img/avatars/17.png" width="44"
+                    alt="Avatar">
+                    <div class="ps-2">
+                        <h6 class="fs-sm text-nav lh-base mb-1">김길동</h6>
+                        <div class="d-flex text-body fs-xs">
+                            <span class="me-2 pe-1"><i class="fi-calendar-alt opacity-70 mt-n1 me-1 align-middle"></i>2023.06.11</span>
+                        </div>
+                    </div></a>
+            </article>
+        </div>
+    </div>
 </section>
 
 
