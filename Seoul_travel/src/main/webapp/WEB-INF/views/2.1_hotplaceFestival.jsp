@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -32,7 +31,7 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="${path}/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>축제/행사 상세</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>축제/행사</strong></li>
 		</ol>
 	</nav>
 	<!-- Sponsored posts-->

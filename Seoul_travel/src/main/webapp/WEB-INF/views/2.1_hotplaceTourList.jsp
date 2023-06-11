@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -32,7 +31,7 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="${path}/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>관광지 상세</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>관광지</strong></li>
 		</ol>
 	</nav>
 	<!-- Sponsored posts-->
@@ -59,8 +58,7 @@
 					<div class="card card-flush pb-2 pb-lg-0 mb-4 ">
 						<div class="card-body ">
 							<h3 class="h5">카테고리</h3>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="${path}/hotTourList">관광지 <span
 								class=" ms-394">${tCount}</span></a> <a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"

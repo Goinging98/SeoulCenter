@@ -16,8 +16,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="${path}/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
-			<li class="breadcrumb-item"><a href="${path}/hotCultureContent"><strong>핫플레이스
-						상세</strong></a></li>
+			<li class="breadcrumb-item"><a href="${path}/hotCultureContent"><strong>문화시설</strong></a></li>
 			<li class="breadcrumb-item active" aria-current="page"><strong>${cItem.title}</strong></li>
 		</ol>
 	</nav>
@@ -29,32 +28,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	</div>
 
 	<!-- Heart icon -->
-	<div class="d-flex justify-content-center pb-2"
-		style="margin-top: -40px;">
-		<button
-			class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
-			type="button" data-bs-toggle="tooltip" title="Add to Wishlist">
-			<i class="fi-heart"></i>
-		</button>
-		<div class="dropdown d-inline-block" data-bs-toggle="tooltip"
-			title="Share">
-			<button
-				class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2"
-				type="button" data-bs-toggle="dropdown">
-				<i class="fi-share"></i>
-			</button>
-			<div class="dropdown-menu dropdown-menu-end">
-				<button class="dropdown-item" type="button">
-					<i class="fi-facebook fs-base opacity-75 me-2"></i>Facebook
-				</button>
-				<button class="dropdown-item" type="button">
-					<i class="fi-twitter fs-base opacity-75 me-2"></i>Twitter
-				</button>
-				<button class="dropdown-item" type="button">
-					<i class="fi-instagram fs-base opacity-75 me-2"></i>Instagram
-				</button>
-			</div>
-		</div>
+	<div class="d-flex justify-content-center pb-2" style="margin-top: -40px;">
 	</div>
 
 	<!-- slide -->
@@ -79,11 +53,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<div class="col-lg-8">
 			<!-- Post meta-->
 			<div class="d-flex flex-wrap border-bottom pb-3 mb-4">
-				<a
-					class="text-uppercase text-decoration-none border-end pe-3 me-3 mb-2">개요</a>
-				<a class="nav-link-muted d-flex align-items-center mb-2"
-					href="#comments" data-scroll><i
-					class="fi-chat-circle opacity-70 me-2"></i><span>3 comments</span></a>
+				<a class="text-uppercase text-decoration-none border-end pe-3 me-3 mb-2">개요</a>
 			</div>
 			<p class="fs-lg fw-bold text-dark mb-4">${cItem.overview}</p>
 
@@ -94,58 +64,19 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 					<div class="d-flex align-items-center me-3 mb-3 mb-md-0">
 						<div class="d-none d-sm-block fw-bold text-nowrap mb-2 me-2 pe-1">홈페이지: ${cItem.homepage}</div>
 					</div>
-					<div class="d-flex align-items-center">
-						<div class="fw-bold text-nowrap pe-1 mb-2">공유:</div>
-						<div class="d-flex">
-							<a
-								class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm mb-2 ms-2"
-								href="#" data-bs-toggle="tooltip" title="Share with Facebook"><i
-								class="fi-facebook"></i></a><a
-								class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm mb-2 ms-2"
-								href="#" data-bs-toggle="tooltip" title="Share with Twitter"><i
-								class="fi-twitter"></i></a><a
-								class="btn btn-icon btn-light-primary btn-xs rounded-circle shadow-sm mb-2 ms-2"
-								href="#" data-bs-toggle="tooltip" title="Share with LinkedIn"><i
-								class="fi-linkedin"></i></a>
-						</div>
-					</div>
 				</div>
 			</div>
 			<!-- Review modal-->
 			<div class="modal fade" id="modal-review" tabindex="-1">
 				<div class="modal-dialog modal-dialog-centered" role="document">
 					<div class="modal-content">
-						<div
-							class="modal-header d-block position-relative border-0 pb-0 px-sm-5 px-4">
+						<div class="modal-header d-block position-relative border-0 pb-0 px-sm-5 px-4">
 							<h3 class="modal-title mt-4 text-center">리뷰 작성하기</h3>
 							<button class="btn-close position-absolute top-0 end-0 mt-3 me-3"
 								type="button" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body px-sm-5 px-4">
 							<form class="needs-validation" novalidate>
-								<div class="mb-3">
-									<label class="form-label" for="review-name">닉네임 <span
-										class='text-danger'>*</span></label> <input class="form-control"
-										type="text" id="review-name" placeholder="이름을 입력하세요" required>
-								</div>
-								<div class="mb-3">
-									<label class="form-label" for="review-email">이메일 <span
-										class='text-danger'>*</span></label> <input class="form-control"
-										type="email" id="review-email" placeholder="이메일을 입력하세요"
-										required>
-								</div>
-								<div class="mb-3">
-									<label class="form-label" for="review-rating">별점 <span
-										class='text-danger'>*</span></label> <select
-										class="form-control form-select" id="review-rating" required>
-
-										<option value="5 stars">5 점</option>
-										<option value="4 stars">4 점</option>
-										<option value="3 stars">3 점</option>
-										<option value="2 stars">2 점</option>
-										<option value="1 star">1 점</option>
-									</select>
-								</div>
 								<div class="mb-4">
 									<label class="form-label" for="review-text">리뷰<span
 										class='text-danger'>*</span></label>
@@ -164,108 +95,14 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<!-- Specs-->
 
 			<div id="comments">
-				<h2 class="h4  ">평점</h2>
+				<h2 class="h4  ">리뷰</h2>
 				<div class="row  ">
-					<div class="card card-light card-body mb-4">
-						<div class="row mb-md-5 mb-4">
-
-							<!-- Rating breakdown-->
-							<!-- Rating breakdown-->
-							<div class="col-sm-8 order-sm-1 order-2 text-dark">
-								<div class="d-flex align-items-center mb-2 fs-sm text-dark">
-									<div class="text-nowrap text-dark">
-										5<i
-											class="fi-star mt-n1 ms-1 align-middle opacity-70 text-dark"></i>
-									</div>
-									<div class="progress w-100 mx-3">
-										<div class="progress-bar bg-warning" role="progressbar"
-											style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									<span style="min-width: 48px;">80%</span>
-								</div>
-								<div class="d-flex align-items-center mb-2 fs-sm">
-									<div class="text-nowrap">
-										4<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-									</div>
-									<div class="progress w-100 mx-3">
-										<div class="progress-bar bg-warning" role="progressbar"
-											style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									<span style="min-width: 48px;">10%</span>
-								</div>
-								<div class="d-flex align-items-center mb-2 fs-sm">
-									<div class="text-nowrap">
-										3<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-									</div>
-									<div class="progress w-100 mx-3">
-										<div class="progress-bar bg-warning" role="progressbar"
-											style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									<span style="min-width: 48px;">0%</span>
-								</div>
-								<div class="d-flex align-items-center mb-2 fs-sm">
-									<div class="text-nowrap">
-										2<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-									</div>
-									<div class="progress w-100 mx-3">
-										<div class="progress-bar bg-warning" role="progressbar"
-											style="width: 0%" aria-valuenow="0" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									<span style="min-width: 48px;">0%</span>
-								</div>
-								<div class="d-flex align-items-center mb-2 fs-sm">
-									<div class="text-nowrap">
-										1<i class="fi-star mt-n1 ms-1 align-middle opacity-70"></i>
-									</div>
-									<div class="progress w-100 mx-3">
-										<div class="progress-bar bg-warning" role="progressbar"
-											style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-											aria-valuemax="100"></div>
-									</div>
-									<span style="min-width: 48px;">10%</span>
-								</div>
-							</div>
-
-							<!-- Score-->
-							<div
-								class="col-sm-4 order-sm-2 order-1 mb-sm-0 mb-3  text-center">
-								<h5 class="display-4 mb-2">4,7</h5>
-								<div>
-									<span class="star-rating"><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i></span>
-								</div>
-								<span class="fs-sm text-dark">48 reviews</span>
-							</div>
-						</div>
-
-					</div>
 
 					<!-- Add review btn + Reviews sort-->
-					<div
-						class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
+					<div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
 						<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3"
 							href="#modal-review" data-bs-toggle="modal"><i
 							class="fi-edit mt-n1 me-1 align-middle"></i>리뷰 작성하기</a>
-						<div class="d-flex align-items-center ms-sm-4">
-							<label class="d-inline-block me-2 pe-1 text-muted text-nowrap"
-								for="reviews-sort"><i
-								class="fi-arrows-sort mt-n1 me-1 align-middle opacity-80"></i>Sort
-								by:</label> <select class="form-select" id="reviews-sort"
-								style="min-width: 180px;">
-								<option>인기순</option>
-								<option>최신순</option>
-								<option>조회순</option>
-								<option>리뷰순</option>
-							</select>
-						</div>
 					</div>
 
 					<!-- Review-->
@@ -294,36 +131,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 							<div class="border-end me-1">&nbsp;</div>
 							<button class="btn-dislike" type="button">
 								<i class="fi-dislike"></i><span>(0)</span>
-							</button>
-						</div>
-					</div>
-					<!-- Review-->
-					<div class="mb-4 pb-4 border-bottom">
-						<div class="d-flex justify-content-between mb-3">
-							<div class="d-flex align-items-center pe-2">
-								<img class="rounded-circle me-1" src="img/avatars/13.png"
-									width="48" alt="Avatar">
-								<div class="ps-2">
-									<h6 class="fs-base mb-0">Darrell Steward</h6>
-									<span class="star-rating"><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star"></i><i
-										class="star-rating-icon fi-star"></i></span>
-								</div>
-							</div>
-							<span class="text-muted fs-sm">Dec 1, 2020</span>
-						</div>
-						<p>Vel dictum nunc ut tristique. Egestas diam amet, ut proin
-							hendrerit. Dui accumsan at phasellus tempus consequat dignissim.</p>
-						<div class="d-flex align-items-center">
-							<button class="btn-like" type="button">
-								<i class="fi-like"></i><span>(0)</span>
-							</button>
-							<div class="border-end me-1">&nbsp;</div>
-							<button class="btn-dislike" type="button">
-								<i class="fi-dislike"></i><span>(1)</span>
 							</button>
 						</div>
 					</div>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -32,7 +31,7 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="${path}/main"><strong>Home</strong></a></li>
 			<li class="breadcrumb-item"><a href="${path}/hotMain"><strong>핫플레이스</strong></a></li>
-			<li class="breadcrumb-item active" aria-current="page"><strong>문화시설 상세</strong></li>
+			<li class="breadcrumb-item active" aria-current="page"><strong>문화시설</strong></li>
 		</ol>
 	</nav>
 	<!-- Sponsored posts-->
@@ -43,8 +42,7 @@
 	<div class="row">
 		<!-- Sidebar (offcanvas)-->
 		<aside class="col-lg-3">
-			<div class="offcanvas offcanvas-start offcanvas-collapse"
-				id="blog-sidebar">
+			<div class="offcanvas offcanvas-start offcanvas-collapse" id="blog-sidebar">
 				<div class="offcanvas-header shadow-sm mb-2">
 					<button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
 				</div>
@@ -60,8 +58,7 @@
 					<div class="card card-flush pb-2 pb-lg-0 mb-4 ">
 						<div class="card-body ">
 							<h3 class="h5">카테고리</h3>
-							<a
-								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
+							<a	class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
 								href="${path}/hotTourList">관광지 <span
 								class=" ms-394">${tCount}</span></a> <a
 								class="nav-link fw-normal d-flex justify-content-between py-1 px-0"
@@ -71,24 +68,6 @@
 								href="${path}/hotFestival">축제/공연 행사 <span
 								class=" ms-300">${fCount}</span></a>
 						</div>
-					</div>
-					
-					<!-- Tags-->
-					<div class="card card-flush pb-2 pb-lg-0 mb-4">
-						<div class="card-body">
-							<h4 class="h5">핫플레이스 태그</h4>
-							<div class="d-flex flex-wrap mb-n1">
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이거	필요한가요?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">가볼터~?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">여기어때?</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이집맛집</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">이번주핫플</button>
-								<button class="btn btn-xs btn-outline-secondary rounded-pill fs-sm fw-normal me-2 mb-2">SNS핫플!!</button>
-							</div>
-						</div>
-
-						<!-- Subscribe-->
-						<div class="card card-flush mb-4"></div>
 					</div>
 				</div>
 		</aside>
