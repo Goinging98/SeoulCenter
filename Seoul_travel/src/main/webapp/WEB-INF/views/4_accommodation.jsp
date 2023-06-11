@@ -78,12 +78,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 			<div class="d-sm-flex align-items-center justify-content-between pb-3 pb-sm-4">
 				<h1 class="h2 mb-sm-0">숙소 검색결과</h1>
 			</div>
-			<!-- Sorting-->
-			<div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch my-2">
-				<hr class="d-none d-sm-block w-100 mx-4">
-					<div class="d-none d-sm-flex align-items-center flex-shrink-0 text-muted">
-						${count} results</div>
-				</div>
+			
 			<!-- Catalog grid-->
 			<div class="row row-cols-xl-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-xxl-4 py-4" >
 				<c:forEach var="item" items="${list}">

@@ -21,9 +21,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		class="d-sm-flex align-items-center justify-content-between mb-4 pb-sm-2">
 		<h1 class="h2 me-3 mb-sm-0">${item.title}</h1>
 		<div class="text-nowrap">
-			<button
-				class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
-				type="button" data-bs-toggle="tooltip" title="Add to Wishlist">
+			<button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle"
+				type="button" data-bs-toggle="tooltip" title="Add to Wishlist"><i class="fi-heart"></i>
 			</button>
 		</div>
 	</div>
@@ -46,11 +45,8 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<!-- 개요-->
 		<div class="col-md-12 mb-md-0 mb-4 pb-md-0 pb-2">
 			<h2 class="h4">소개</h2>
-			<ul class="list-unstyled">
-				<li><i class="fi-star-filled mt-n1 me-1 text-warning align-middle"></i><b>4.9</b><span class="text-muted">(48 reviews)</span></li>
-			</ul>
 			<div class="mb-4 pb-md-3">
-				<p class="mb-1">${item.addr1}<br/>${item.overview}</p>
+				<p class="mb-1"><i class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>${item.addr1}<br/>${item.overview}</p>
 			</div>
 			</div>
 			<!-- 편의 시설/ 서비스 -->
@@ -83,9 +79,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 						<div class="ps-2 ms-1">
 							<h3 class="h5 mb-2">${item.title}</h3>
 							<ul class="list-unstyled d-flex flex-wrap fs-sm">
-								<li class="me-2 mb-1 pe-1"><i
-									class="fi-star-filled mt-n1 me-1 text-warning align-middle opacity-70"></i><b>4.9
-								</b>(48)</li>
 								<li class="me-2 mb-1 pe-1"><i
 									class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>${guAddress}</li>
 							</ul>
