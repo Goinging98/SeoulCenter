@@ -313,13 +313,12 @@
 								</div>
 							</div>
 						</div>
-						<a class="dropdown-item" href="mypageinfo">나의 정보</a>
-						<a class="dropdown-item" href="mypageinfo">찜한 숙소</a>
-						<a class="dropdown-item" href="mypageinfo">찜한 맛집</a>
-						<a class="dropdown-item" href="mypageinfo">리뷰</a>
+						<a class="dropdown-item" href="/mvc/mypageinfo">나의 정보</a>
+						<a class="dropdown-item" href="/mvc/myaccomodation">찜한 숙소</a>
+						<a class="dropdown-item" href="/mvc/myfood">찜한 맛집</a>
+						<a class="dropdown-item" href="/mvc/myreview">리뷰</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="mypageinfo">고객센터</a><a
-							class="dropdown-item" href="${path}/logout">로그아웃</a>
+						<a class="dropdown-item" href="${path}/logout">로그아웃</a>
 					</div>
 				</div>
 			</c:if>
