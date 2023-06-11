@@ -94,46 +94,26 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				</div>
 			</div>
 
-			<!-- Specs-->
-
+			<!-- 리뷰허위 -->
 			<div id="comments">
-				<h2 class="h4  ">리뷰</h2>
-				<div class="row  ">
-					<!-- Add review btn + Reviews sort-->
-					<div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
-						<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3"
-							href="#modal-review" data-bs-toggle="modal"><i
-							class="fi-edit mt-n1 me-1 align-middle"></i>리뷰 작성하기</a>
-					</div>
+				<h2 class="h4 ">리뷰</h2>
+				<div class="row ">
+						<!-- 리뷰 작성 버튼 -->
+						<c:if test="${loginMember != null}">
+							<div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
+								<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal">
+									<i	class="fi-edit mt-n1 me-1 align-middle">
+									</i>리뷰 작성하기</a>
+							</div>
+						</c:if>
 
 					<!-- Review-->
 					<div class="mb-4 pb-4 border-bottom">
-						<div class="d-flex justify-content-between mb-3">
-							<div class="d-flex align-items-center pe-2">
-								<img class="rounded-circle me-1" src="img/avatars/03.jpg"
-									width="48" alt="Avatar">
-								<div class="ps-2">
-									<h6 class="fs-base mb-0">홍길동</h6>
-									<span class="star-rating"><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i><i
-										class="star-rating-icon fi-star-filled active"></i></span>
-								</div>
-							</div>
-							<span class="text-muted fs-sm">2021.6.7</span>
-						</div>
-						<p>경복궁 가고 싶어요</p>
-						<div class="d-flex align-items-center">
-							<button class="btn-like" type="button">
-								<i class="fi-like"></i><span>(3)</span>
-							</button>
-							<div class="border-end me-1">&nbsp;</div>
-							<button class="btn-dislike" type="button">
-								<i class="fi-dislike"></i><span>(0)</span>
-							</button>
-						</div>
+					<table>
+						<tr>
+							<td colspan="3" style="text-align: center;">등록된 리플이 없습니다.</td>
+						</tr>
+					</table>
 					</div>
 				</div>
 			</div>
