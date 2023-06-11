@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="d-flex flex-md-row flex-column align-items-md-center justify-content-md-between mb-4 py-2">
-			<h1 class="h3 mb-md-0">나의 리뷰</h1>
+			<h1 class="h3 mb-md-0">찜한 맛집</h1>
 		</div>
 		
 		<div class="col-lg-9">

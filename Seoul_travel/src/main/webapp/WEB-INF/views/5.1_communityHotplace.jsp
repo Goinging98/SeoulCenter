@@ -100,7 +100,6 @@
 								</h3>
 								<p class="fs-sm text-muted">${bitem.content}</p>
 								<a class="d-flex align-items-center text-decoration-none" href="#">
-									<img class="rounded-circle" src="${path}/resources/img/avatars/25.png" width="38" alt="Avatar">
 									<div class="ps-2">
 										<h6 class="fs-sm text-nav lh-base mb-1"><c:out value="${bitem.writerId}"/></h6>
 										<div class="d-flex text-body fs-xs">
