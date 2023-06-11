@@ -68,17 +68,12 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
       	
 	<div class="d-flex justify-content-center" style ="margin-bottom:25px;">
 		<div class="tns-carousel-wrapper overflow-hidden d-flex rounded-3"
-			style="width: 35em; height: auto;">
-			<div class="tns-carousel-inner  "
-				data-carousel-options='{"gutter": 16}'>
-				
-			<img src="${item.firstimage}" alt="Image" onerror="this.onerror=null; this.src='http://hk-clean.co.kr/images/no_image.jpg';">
-	<img src="${item.firstimage2}" alt="Image" onerror="this.onerror=null; this.src='http://hk-clean.co.kr/images/no_image.jpg';">
-
-
-				<!-- <img class="rounded-3" src="https://mono.aks.ac.kr/s/media/7f/7fb47219-31a1-4dd9-bc41-d1a1bea62190.jpg?preset=page" alt="Image">
-        <img class="rounded-3" src="https://media-cdn.tripadvisor.com/media/photo-s/15/6a/f8/e8/palace.jpg" alt="Image"> -->
-
+			style="width: 30em; height: auto;">
+			<div class="tns-carousel-inner" data-carousel-options='{"gutter": 16}'>
+				<img src="${item.firstimage}" alt="Image" onerror="this.onerror=null; this.src='http://hk-clean.co.kr/images/no_image.jpg';">
+			<c:forEach var="imgaItem" items="${imgAccomo}">	
+				<img src="${imgaItem.originimgurl}" alt="Image">
+			</c:forEach>
 			</div>
 		</div>
 	</div>

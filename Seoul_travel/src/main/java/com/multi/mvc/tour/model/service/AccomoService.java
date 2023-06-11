@@ -12,6 +12,7 @@ import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.AccomoMapper;
 import com.multi.mvc.tour.model.vo.Accommodation;
 import com.multi.mvc.tour.model.vo.Replies;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 
 @Service
 public class AccomoService {
@@ -70,7 +71,9 @@ public class AccomoService {
 		return mapper.deleteAccomoReply(rno);
 	}
 
-
+	public List<TourImageVO> selectAccomoImgList(int id){
+		return mapper.selectAccomoImgList(id);
+	}
 
 }
 

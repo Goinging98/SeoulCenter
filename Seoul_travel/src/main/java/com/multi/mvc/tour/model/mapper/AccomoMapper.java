@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.multi.mvc.tour.model.vo.Accommodation;
 import com.multi.mvc.tour.model.vo.Replies;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 
 @Mapper
 public interface AccomoMapper {
@@ -28,5 +29,7 @@ public interface AccomoMapper {
 	int insertAccomoReply(Replies reply);
 	
 	int deleteAccomoReply(int rno);
+	
+	List<TourImageVO> selectAccomoImgList(int id);
 	
 }

@@ -16,6 +16,7 @@ import com.multi.mvc.member.model.vo.Member;
 import com.multi.mvc.tour.model.service.AccomoService;
 import com.multi.mvc.tour.model.vo.Accommodation;
 import com.multi.mvc.tour.model.vo.Replies;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -105,10 +106,12 @@ public class AccomController {
 	@RequestMapping("/accomGall")
 	public String accomGallery(Model model, int id) {
 		Accommodation accom = accomoService.selectByContentId(id);
+		List<TourImageVO> imgAccomo = accomoService.selectAccomoImgList(id);
 		if (accom == null) {
 			// 에러처리
 		}
 		model.addAttribute("item", accom);
+		model.addAttribute("imgAccomo", imgAccomo);
 
 		// selectRandomAccom을 호출하여 무작위 숙박 시설 목록을 가져옴
 		List<Accommodation> randomAccommodations = accomoService.selectRandomAccom(6);

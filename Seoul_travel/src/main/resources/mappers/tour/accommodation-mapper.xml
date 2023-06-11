@@ -60,6 +60,11 @@
 		LIMIT 6
 	</select>
 	
+	<select id="selectAccomoImgList" parameterType="map" resultType="TourImageVO">
+		SELECT originimgurl, iNo, imgname, contentid
+		FROM TourImage WHERE contentid = #{id}
+	</select>
+	
 	<!-- 카테고리 개수 추출 -->
 	<select id="selecthotelCount"  parameterType="map" resultType="int">
 	SELECT count(contentid) as cnt 
