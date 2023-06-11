@@ -170,14 +170,10 @@
 						<div class="dropdown-menu dropdown-menu-end">
 							<div class="d-flex align-items-start border-bottom px-3 py-1 mb-2"
 								style="width: 16rem;">
-								<img class="rounded-circle" src="${path}/resources/img/avatars/24.png" width="48"
-									alt="member">
+								<img class="rounded-circle" src="${path}/resources/img/avatars/24.png" width="48" alt="member">
 								<div class="ps-2">
 									<h6 class="fs-base mb-0">${loginMember.name}</h6>
-									<span class="star-rating star-rating-sm"></span>
-									<div class="fs-xs py-2">
-										${loginMember.email}
-									</div>
+									<div class="fs-xs py-2">${loginMember.id}</div>
 								</div>
 							</div>
 							<a class="dropdown-item" href="mypageinfo">나의 정보</a>
@@ -185,7 +181,6 @@
 							<a class="dropdown-item" href="mypageinfo">찜한 맛집</a>
 							<a class="dropdown-item" href="mypageinfo">리뷰</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="community">고객센터</a>
 							<a class="dropdown-item" href="${path}/logout">로그아웃</a>
 						</div>
 					</div>

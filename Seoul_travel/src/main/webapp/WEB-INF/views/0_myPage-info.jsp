@@ -23,7 +23,7 @@
 			</div>
 			<div class="ps-3 ps-sm-4">
 				<h3 class="h4 mb-2">${loginMember.name}</h3>
-				<span class="star-rating"></span>
+				<span class="star-rating">${loginMember.id}</span>
 			</div>
 		</div>
 		<a class="nav-link p-0 d-none d-md-block" href="${path}/logout">
@@ -67,68 +67,20 @@
 						<label class="form-label fw-bold">이름</label>
 						<div id="name-value">${loginMember.name}</div>
 					</div>
-					<div class="me-n3" data-bs-toggle="tooltip" title="Edit">
-						<a class="nav-link py-0" href="#name-collapse"
-							data-bs-toggle="collapse"><i class="fi-edit"></i></a>
-					</div>
+					<div class="me-n3" data-bs-toggle="tooltip" title="Edit"></div>
 				</div>
-				<div class="collapse" id="name-collapse"
-					data-bs-parent="#personal-info">
-					<input class="form-control mt-3" type="text"
-						data-bs-binded-element="#name-value"
-						data-bs-unset-value="Not specified" value=${loginMember.name}>
-				</div>
+				
 			</div>
 			<!-- Email-->
 			<div class="border-bottom pb-3 mb-3">
 				<div class="d-flex align-items-center justify-content-between">
 					<div class="pe-2">
 						<label class="form-label fw-bold">Email</label>
-						<div id="email-value">${loginMember.email}</div>
+						<div id="email-value">${loginMember.id}</div>
 					</div>
-					<div class="me-n3" data-bs-toggle="tooltip" title="Edit">
-						<a class="nav-link py-0" href="#email-collapse"
-							data-bs-toggle="collapse"><i class="fi-edit"></i></a>
-					</div>
-				</div>
-				<div class="collapse" id="email-collapse"
-					data-bs-parent="#personal-info">
-					<input class="form-control mt-3" type="email"
-						data-bs-binded-element="#email-value"
-						data-bs-unset-value="Not specified" value=${loginMember.email}>
+					<div class="me-n3" data-bs-toggle="tooltip" title="Edit"></div>
 				</div>
 			</div>
-			<!-- Password-->
-			<div>
-				<div class="d-flex align-items-center justify-content-between">
-					<div class="pe-2">
-						<label class="form-label fw-bold">Password</label>
-						<div>********</div>
-					</div>
-					<div class="me-n3" data-bs-toggle="tooltip" title="Edit">
-						<a class="nav-link py-0" href="#company-collapse"
-							data-bs-toggle="collapse"><i class="fi-edit"></i></a>
-					</div>
-				</div>
-				<div class="collapse" id="company-collapse"
-					data-bs-parent="#personal-info">
-					<div class="password-toggle mt-3">
-						<input class="form-control" type="password" id="pass-visibility"
-							value=${loginMember.password}> <label
-							class="password-toggle-btn" aria-label="Show/hide password">
-							<input class="password-toggle-check" type="checkbox"><span
-							class="password-toggle-indicator"></span>
-						</label>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="d-flex align-items-center justify-content-between mt-4">
-			<button class="btn btn-primary rounded-pill px-3 px-sm-4"
-				type="button">저장</button>
-			<button class="btn btn-link btn-sm px-0" type="button">
-				<i class="fi-trash me-2"></i>계정 삭제
-			</button>
 		</div>
 	</div>
 </div>

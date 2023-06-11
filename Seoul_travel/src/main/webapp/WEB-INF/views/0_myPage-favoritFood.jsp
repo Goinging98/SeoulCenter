@@ -24,7 +24,7 @@
 			</div>
 			<div class="ps-3 ps-sm-4">
 				<h3 class="h4 mb-2">${loginMember.name}</h3>
-				<span class="star-rating"></span>
+				<span class="star-rating">${loginMember.id}</span>
 			</div>
 		</div>
 		<a class="nav-link p-0 d-none d-md-block" href="${path}/logout">
@@ -59,25 +59,6 @@
 			<h1 class="h3 mb-md-0">나의 리뷰</h1>
 		</div>
 		
-		<!-- Articles list-->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap">
-
-		<link rel="stylesheet" type="text/css"
-			href="/booking/booking_v1.1.0/template/assets/vendor/font-awesome/css/all.min.css">
-		<link rel="stylesheet" type="text/css"
-			href="/booking/booking_v1.1.0/template/assets/vendor/bootstrap-icons/bootstrap-icons.css">
-		<link rel="stylesheet" type="text/css"
-			href="/booking/booking_v1.1.0/template/assets/vendor/flatpickr/css/flatpickr.min.css">
-		<link rel="stylesheet" type="text/css"
-			href="/booking/booking_v1.1.0/template/assets/vendor/choices/css/choices.min.css">
-		<link rel="stylesheet" type="text/css"
-			href="/booking/booking_v1.1.0/template/assets/vendor/tiny-slider/tiny-slider.css">
-		<link rel="stylesheet" type="text/css"
-			href="/booking/booking_v1.1.0/template/assets/vendor/nouislider/nouislider.css">
-		
-		
 		<div class="col-lg-9">
 			<div class="ps-lg-3">
 				<!-- Article-->
@@ -91,11 +72,11 @@
 								<div class="col-md-4 col-sm-12 position-relative">
 									<!-- img START -->
 									<div class=" overflow-hidden rounded-2 ">
-										<div class="tns-carousel-inner" data-autoplay="false"
-											data-arrow="true" data-dots="false" data-items="1">
+										<div class="tns-carousel-inner" data-autoplay="false" data-arrow="true" data-dots="false" data-items="1">
 											<!-- Image item -->
-											<img src="https://mblogthumb-phinf.pstatic.net/MjAyMDAxMDZfNjAg/MDAxNTc4Mjk2Nzg4MDkz.ozpWU6UeQftpOFyy0-ntCFcgENUGNt29JOR7ahGiuCcg.XJcL8E_cauK0bOuuG92o4x6W47zW7fbMV0qRfWIpCSIg.JPEG.junef/%EB%A7%88%EB%9D%BC%ED%83%95.jpg?type=w800"
-												style="min-width: 279px; min-height: 209px" alt="Card image">
+											<a href="/mvc/foodDetail?id=134746">
+												<img src="http://tong.visitkorea.or.kr/cms/resource/11/1291311_image2_1.jpg" style="min-width: 279px; min-height: 209px" alt="Card image">
+											</a>
 										</div>
 									</div>
 									<!-- img END -->
@@ -107,29 +88,18 @@
 
 										<!-- Title -->
 										<h5 class="card-title mb-1">
-											<a href="hotel-detail.html">1맛집 </a>
+											<a href="/mvc/foodDetail?id=134746">개화</a>
 										</h5>
-										<small>어디어디 강남구 </small>
+										<small><i class="fi-map-pin fs-lg opacity-70 me-2"></i>서울특별시 중구 남대문로 52-5</small>
 										<!-- Amenities -->
 										<ul class="nav nav-divider mt-3">
-											<li class="nav-item">양식</li>
-										</ul>
-
-										<!-- List -->
-										<ul class="list-group list-group-borderless small mb-0 mt-2">
-											<li class="list-group-item d-flex text-success p-0"></li>
-											<li class="list-group-item d-flex text-success p-0"></li>
+											<li class="nav-item">중식</li>
 										</ul>
 
 										<!-- Price and Button -->
-										<div
-											class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
-											<!-- Button -->
-
-											<!-- Price -->
+										<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
 											<div class="mt-3 mt-sm-0">
-												<a href="3.2_foodDetailed.html"
-													class="btn btn-sm btn-dark mb-0 w-100">더보기</a>
+												<a href="/mvc/foodDetail?id=134746" class="btn btn-sm btn-dark mb-0 w-100">더보기</a>
 											</div>
 										</div>
 									</div>
@@ -137,28 +107,6 @@
 							</div>
 						</div>
 						<!-- Card item END -->
-
-						<!-- Pagination-->
-						<div class="d-flex justify-content-end pt-4 border-top">
-							<nav aria-label="Blog pagination">
-								<ul class="pagination mb-0">
-									<li class="page-item d-sm-none"><span
-										class="page-link page-link-static">1 / 8</span></li>
-									<li class="page-item active d-none d-sm-block"
-										aria-current="page"><span class="page-link">1<span
-											class="visually-hidden">(current)</span></span></li>
-									<li class="page-item d-none d-sm-block"><a
-										class="page-link" href="#">2</a></li>
-									<li class="page-item d-none d-sm-block"><a
-										class="page-link" href="#">3</a></li>
-									<li class="page-item d-none d-sm-block">...</li>
-									<li class="page-item d-none d-sm-block"><a
-										class="page-link" href="#">8</a></li>
-									<li class="page-item"><a class="page-link" href="#"
-										aria-label="Next"><i class="fi-chevron-right"></i></a></li>
-								</ul>
-							</nav>
-						</div>
 					</div>
 				</article>
 			</div>

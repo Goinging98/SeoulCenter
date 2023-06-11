@@ -23,7 +23,7 @@
 			</div>
 			<div class="ps-3 ps-sm-4">
 				<h3 class="h4 mb-2">${loginMember.name}</h3>
-				<span class="star-rating"></span>
+				<span class="star-rating">${loginMember.id}</span>
 			</div>
 		</div>
 		<a class="nav-link p-0 d-none d-md-block" href="${path}/logout">
@@ -61,27 +61,22 @@
 		</div>
 		
 		<!-- 리스트 -->
-		<div
-			class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-lg-4 mb-4">
+		<div class="row row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4 gx-3 gx-lg-4 mb-4">
 			<!-- Item-->
 			<!-- 3*2로 로드해올 예정 -->
 			<div class="col pt-2">
 				<div class="position-relative">
 					<div class="position-relative mb-3">
-						<button
-							class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
-							type="button" data-bs-toggle="tooltip" data-bs-placement="left"
-							title="Remove from Favorites">
+						<button class="btn btn-icon btn-light-primary btn-xs text-primary rounded-circle position-absolute top-0 end-0 m-3 zindex-5"
+							type="button" data-bs-toggle="tooltip" data-bs-placement="left"><i class="fi-heart"></i>
 						</button>
-						<img class="rounded-3" src="${path}/resources/img/city-guide/catalog/07.jpg"
-							alt="Article img">
+						<img class="rounded-3" src="http://tong.visitkorea.or.kr/cms/resource/50/2815050_image2_1.jpg" alt="Article img">
 					</div>
 					<h3 class="mb-2 fs-lg">
-						<a class="nav-link stretched-link" href="4.1_accmmoGallery.html">Merry
-							Berry Motel</a>
+						<a class="nav-link stretched-link" href="/mvc/accomDetail?id=142723">로얄호텔서울</a>
 					</h3>
 					<ul class="list-inline mb-0 fs-xs">
-						<li class="list-inline-item pe-1">강남구</li>
+						<li class="list-inline-item pe-1"><i class="fi-map-pin fs-lg opacity-70 me-2"></i>중구</li>
 					</ul>
 				</div>
 			</div>
