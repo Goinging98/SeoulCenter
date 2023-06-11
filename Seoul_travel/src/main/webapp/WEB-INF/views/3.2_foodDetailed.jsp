@@ -104,9 +104,9 @@
 									<div class="d-flex justify-content-between mb-3">
 										<div class="d-flex align-items-center pe-2">
 											<div class="ps-2">
-												<h6 class="fs-base mb-0">${reply.writerId}</h6>
+												<h6 class="fs-base mb-0">${reply.name}</h6>
 											</div>
-											<span class="text-muted fs-sm"><fmt:formatDate type="both" value="${reply.createDate}"/></span>
+											<span class="text-muted fs-sm"><fmt:formatDate type="both" value="${reply.create_date}"/></span>
 										</div>
 										<p><c:out value="${reply.content}"/></p>
 										<div class="d-flex align-items-center">

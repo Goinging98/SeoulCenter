@@ -27,6 +27,10 @@ public class FoodService {
 		return mapper.selectFoodRandomList(null);
 	}
 	
+	public List<Replies> selectReplyList(int id){
+		return mapper.selectReplyList(id);
+	}
+	
 	public int selectFoodCount(Map<String, Object> map) {
 		return mapper.selectFoodCount(map);
 	}
@@ -60,6 +64,7 @@ public class FoodService {
 	public int deleteFoodReply(int rno) {
 		return mapper.deleteFoodReply(rno);
 	}
+	
 
 
 }

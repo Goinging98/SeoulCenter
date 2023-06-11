@@ -71,12 +71,6 @@ public class HomeController {
 		model.addAttribute("tList",tList);
 		model.addAttribute("foodList",foodList);
 		
-		// 핫플레이스 하나 노출 
-		
-		
-		
-		
-		
 		return "1_main_page";
 	}
 

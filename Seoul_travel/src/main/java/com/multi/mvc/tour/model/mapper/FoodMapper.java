@@ -27,4 +27,6 @@ public interface FoodMapper {
 	int insertFoodReply(Replies reply);
 	
 	int deleteFoodReply(int rno);
+	
+	List<Replies> selectReplyList(int id);
 }

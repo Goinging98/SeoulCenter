@@ -42,7 +42,6 @@ public class FoodController {
 		int elsecount = foodService.selectelseCount(param);
 		
 		PageInfo pageInfo = new PageInfo(page, 5, count, 10);
-		System.out.println(pageInfo);
 		List<Food> list = foodService.selectFoodList(pageInfo, param);
 		
 //		//이미지 없는 것 후처리
@@ -70,13 +69,16 @@ public class FoodController {
 	@RequestMapping("/foodDetail")
 	public String foodMain(Model model
 			, int id
-			, @SessionAttribute(name = "loginMember", required = false) Member loginMember) {
+			, @SessionAttribute(name = "loginMember", required = false) Member loginMember
+			, @RequestParam Map<String, Object> param) {
 		Food food = foodService.selectByContentId(id);
+		List<Replies> replyList = foodService.selectReplyList(id);
 		if(food == null) {
 			// 에러처리
 		}
 		model.addAttribute("item", food);
-		model.addAttribute("replyList", food.getReplies());
+		model.addAttribute("replyList", replyList);
+		System.out.println(replyList);
 		return "3.2_foodDetailed";	
 	}
 	

@@ -14,9 +14,9 @@ public class Replies {
 	public int contentid;		// contentid		INT,
 	public int contenttypeid;	// contenttypeid	INT,
 	public int mno;			// mNO 				INT,
-	public String writerId;	// writerId 		String,
+	public String name;	// writerId 		String,
 	public String content;		// CONTENT 			VARCHAR(1000),
 	public String status;		// STATUS 			VARCHAR(1) DEFAULT 'Y' CHECK (STATUS IN ('Y', 'N')),
-	public Date createDate;	// CREATE_DATE 		DATETIME DEFAULT CURRENT_TIMESTAMP,
+	public Date create_date;	// CREATE_DATE 		DATETIME DEFAULT CURRENT_TIMESTAMP,
 	public Date modifyDate;	// MODIFY_DATE 		DATETIME DEFAULT CURRENT_TIMESTAMP,
 }
