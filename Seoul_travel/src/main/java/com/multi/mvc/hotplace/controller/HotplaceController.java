@@ -42,21 +42,21 @@ public class HotplaceController {
 		// 이미지 없는 것 후처리 
 		for(Festival f : fList) {
 			if(f.firstimage == null) {
-				f.firstimage = "http://tong.visitkorea.or.kr/cms/resource/67/2821767_image2_1.jpg";
+				f.firstimage = "resources/img/hotplace/festivalsample.jpeg";
 			}
 			System.out.println(f);
 		}
 		
 		for(CultureContent c : cList) {
 			if(c.firstimage == null) {
-				c.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+				c.firstimage = "resources/images/seoulculture.png";
 			}
 			System.out.println(c);
 		}
 		
 		for(TourList t : tList) {
 			if(t.firstimage == null) {
-				t.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+				t.firstimage = "resources/images/seoultour.png";
 			}
 			System.out.println(t);
 		}
@@ -69,7 +69,7 @@ public class HotplaceController {
 		return "2_hotplace";
 	}
 	
-	// 관광지 상세 페이지
+	// 문화시설 상세 페이지
 	@RequestMapping("/hotCultureContent")
 	public String hotCultureContent(Model model, @RequestParam Map<String,Object> param) {
 		int page = 1;
@@ -85,7 +85,7 @@ public class HotplaceController {
 		List<CultureContent> cList2 = cultureContentService.selectCultureContentList(pageInfo, param);
 		for(CultureContent c : cList2) {
 			if(c.firstimage == null) {
-				c.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+				c.firstimage = "resources/images/seoulculture.png";
 			}
 		}
 		int maxPage = cCount/5;
@@ -119,7 +119,7 @@ public class HotplaceController {
 		List<Festival> fList2 = festivalService.selectFestivalList(pageInfo, param);
 		for(Festival f : fList2) {
 			if(f.firstimage == null) {
-				f.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+				f.firstimage = "resources/img/hotplace/festivalsample.jpeg";
 			}
 		}
 		int maxPage = fCount/5;
@@ -153,7 +153,7 @@ public class HotplaceController {
 		List<TourList> tList2 = tourListService.selectTourListList(pageInfo, param);
 		for(TourList t : tList2) {
 			if(t.firstimage == null) {
-				t.firstimage = "http://tong.visitkorea.or.kr/cms/resource/83/2402783_image2_1.jpg";
+				t.firstimage = "resources/images/seoultour.png";
 			}
 		}
 		int maxPage = tCount/5;

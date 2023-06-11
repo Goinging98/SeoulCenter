@@ -36,7 +36,12 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 		<div class="tns-carousel-wrapper overflow-hidden d-flex rounded-3"
 			style="width: 660px; height: auto;">
 			<div class="tns-carousel-inner" data-carousel-options='{"gutter": 16}'>
-				<img src="${cItem.firstimage}" alt="Image">
+				<c:if test= "${not empty cItem.firstimage}">
+					<img src="${cItem.firstimage}" alt="Image">
+				</c:if>
+				<c:if test= "${empty cItem.firstimage}">
+					<img src="${path}/resources/images/seoulculture.png" alt="Image">
+				</c:if>
 					<c:if test= "${not empty imgcItem}">
 						<c:forEach var="imgcItem" items="${imgcItem}">					
 							<img src="${imgcItem.originimgurl}" alt="Image"> 
