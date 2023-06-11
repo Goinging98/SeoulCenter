@@ -99,6 +99,14 @@
 	
 	
 	
+	<select id="selectAccomoReply" parameterType="int" resultType="Replies">
+		select r.*, m.id , m.name
+		from replies r
+			join member m on m.mNO = r.mNO
+		where contentid = #{id}
+		order by rNO desc
+	</select>
+	
 		
 	<insert id="insertAccomoReply" parameterType="Replies">
 		INSERT INTO REPLIES(

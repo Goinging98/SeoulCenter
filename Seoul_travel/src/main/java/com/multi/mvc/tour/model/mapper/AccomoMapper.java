@@ -31,5 +31,6 @@ public interface AccomoMapper {
 	int deleteAccomoReply(int rno);
 	
 	List<TourImageVO> selectAccomoImgList(int id);
-	
+
+	List<Replies> selectAccomoReply(int id);
 }

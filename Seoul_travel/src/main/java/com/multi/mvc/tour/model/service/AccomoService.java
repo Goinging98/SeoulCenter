@@ -39,6 +39,11 @@ public class AccomoService {
 	    map.put("count", count);
 	    return mapper.selectRandomAccom(map);
 	}
+
+	
+	public List<Replies> selectAccomoReply(int id){
+		return mapper.selectAccomoReply(id);
+	}
 	
 	
 	public int selecthotelCount(Map<String, Object> map) {

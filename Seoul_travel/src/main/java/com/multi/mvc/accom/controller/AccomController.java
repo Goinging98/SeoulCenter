@@ -152,7 +152,6 @@ public class AccomController {
 
 		// selectRandomAccom을 호출하여 무작위 숙박 시설 목록을 가져옴
 		List<Accommodation> randomAccommodations = accomoService.selectRandomAccom(6);
-
 		for (Accommodation a : randomAccommodations) {
 			if (a.firstimage == null) {
 				a.firstimage = "http://tong.visitkorea.or.kr/cms/resource/35/1359335_image2_1.jpg";
@@ -164,7 +163,6 @@ public class AccomController {
 		String fullAddress = accom.getAddr1(); // 주소 전체를 가져옴
 		String[] addressParts = fullAddress.split(" "); // 주소를 공백을 기준으로 분할
 		String guAddress = ""; // 구 주소를 저장할 변수
-
 		// 주소 부분 중에서 구 주소를 찾음
 		for (String part : addressParts) {
 			if (part.contains("구")) {
@@ -173,6 +171,11 @@ public class AccomController {
 			}
 		}
 		model.addAttribute("guAddress", guAddress); // 구 주소를 모델에 추가
+		
+		// 숙소 리뷰 출력 
+		List<Replies> replyList = accomoService.selectAccomoReply(id);
+		model.addAttribute("replyList", replyList);
+		
 		return "4.2_accommoReview";	
 	}
 
