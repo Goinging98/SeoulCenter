@@ -34,15 +34,14 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<!-- slide -->
 	<div class="d-flex justify-content-center">
 		<div class="tns-carousel-wrapper overflow-hidden d-flex rounded-3"
-			style="width: 55em; height: auto;">
-			<div class="tns-carousel-inner  "
-				data-carousel-options='{"gutter": 16}'>
-				<img src="${tItem.firstimage}"	alt="Image">
-				<img src="${tItem.firstimage2}"
-					alt="Image">
-				<!-- <img class="rounded-3" src="https://mono.aks.ac.kr/s/media/7f/7fb47219-31a1-4dd9-bc41-d1a1bea62190.jpg?preset=page" alt="Image">
-        <img class="rounded-3" src="https://media-cdn.tripadvisor.com/media/photo-s/15/6a/f8/e8/palace.jpg" alt="Image"> -->
-
+			style="width: 660px; height: auto;">
+			<div class="tns-carousel-inner" data-carousel-options='{"gutter": 16}'>
+				<img src="${tItem.firstimage}" alt="Image">
+					<c:if test= "${not empty imgtItem}">
+						<c:forEach var="imgtItem" items="${imgtItem}">					
+							<img src="${imgtItem.originimgurl}" alt="Image"> 
+						</c:forEach>
+					</c:if>
 			</div>
 		</div>
 	</div>

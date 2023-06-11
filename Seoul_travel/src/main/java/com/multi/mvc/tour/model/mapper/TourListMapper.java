@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.multi.mvc.tour.model.vo.TourImageVO;
 import com.multi.mvc.tour.model.vo.TourList;
 
 @Mapper
@@ -13,4 +14,5 @@ public interface TourListMapper {
 	List<TourList> selectTourListRandomList(Map<String, Object> map);
 	TourList selectByContentId(int id);
 	int selectTourListCount(Map<String, Object> map);
+	List<TourImageVO> selectTourImgList(int id);
 }

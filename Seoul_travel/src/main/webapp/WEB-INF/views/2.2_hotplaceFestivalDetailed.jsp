@@ -34,7 +34,7 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 	<!-- slide -->
 	<div class="d-flex justify-content-center">
 		<div class="tns-carousel-wrapper overflow-hidden d-flex rounded-3"
-			style="width: auto; height: auto;">
+			style="width: 660px; height: auto;">
 			<div class="tns-carousel-inner"	data-carousel-options='{"gutter": 16}'>
 					<img src="${fItem.firstimage}" alt="Image">
 					<c:if test= "${not empty imgfItem}">

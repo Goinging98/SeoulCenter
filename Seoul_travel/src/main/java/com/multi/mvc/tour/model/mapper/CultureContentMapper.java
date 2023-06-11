@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.multi.mvc.tour.model.vo.CultureContent;
 import com.multi.mvc.tour.model.vo.Festival;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 
 @Mapper
 public interface CultureContentMapper {
@@ -14,4 +15,5 @@ public interface CultureContentMapper {
 	List<CultureContent> selectCultureContentRandomList(Map<String, Object> map);
 	CultureContent selectByContentId(int id);
 	int selectCultureContentCount(Map<String, Object> map);
+	List<TourImageVO> selectCultureImgList(int id);
 }

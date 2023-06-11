@@ -30,4 +30,9 @@
 		FROM TourList
 	</select>
 	
+	<select id="selectTourImgList" parameterType="map" resultType="TourImageVO">
+		SELECT originimgurl, iNo, imgname, contentid
+		FROM TourImage WHERE contentid = #{id}
+	</select>
+	
 </mapper>

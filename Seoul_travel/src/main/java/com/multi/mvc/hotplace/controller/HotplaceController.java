@@ -190,10 +190,12 @@ public class HotplaceController {
 	@RequestMapping(value ="/hotCultureDetail", method = RequestMethod.GET)
 	public String hotCultureDetail(Model model, int id) {
 		CultureContent cultureContent = cultureContentService.selectByContentId(id);
+		List<TourImageVO> imgCulture = cultureContentService.selectCultureImgList(id);
 		if(cultureContent == null) {
 			// 에러처리
 		}
 		
+		model.addAttribute("imgcItem",imgCulture);
 		model.addAttribute("cItem", cultureContent);
 		return "2.2_hotplaceCultureContentDetailed";
 	}
@@ -202,10 +204,12 @@ public class HotplaceController {
 	@RequestMapping(value ="/hotTourListDetail", method = RequestMethod.GET)
 	public String hotTourListDetail(Model model, int id) {
 		TourList tourList = tourListService.selectByContentId(id);
+		List<TourImageVO> imgTour = tourListService.selectTourImgList(id);
 		if(tourList == null) {
 			// 에러처리
 		}
 		
+		model.addAttribute("imgtItem",imgTour);
 		model.addAttribute("tItem", tourList);
 		return "2.2_hotplaceTourListDetailed";
 	}

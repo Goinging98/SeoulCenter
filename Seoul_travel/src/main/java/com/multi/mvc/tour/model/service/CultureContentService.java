@@ -10,6 +10,7 @@ import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.CultureContentMapper;
 import com.multi.mvc.tour.model.vo.CultureContent;
 import com.multi.mvc.tour.model.vo.Festival;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 
 @Service
 public class CultureContentService {
@@ -34,6 +35,10 @@ public class CultureContentService {
 	
 	public int selectCultureContentCount(Map<String, Object> map) {
 		return mapper.selectCultureContentCount(map);
+	}
+	
+	public List<TourImageVO> selectCultureImgList(int id){
+		return mapper.selectCultureImgList(id);
 	}
 }
 

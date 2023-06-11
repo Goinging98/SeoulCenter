@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.multi.mvc.common.util.PageInfo;
 import com.multi.mvc.tour.model.mapper.TourListMapper;
 import com.multi.mvc.tour.model.vo.Festival;
+import com.multi.mvc.tour.model.vo.TourImageVO;
 import com.multi.mvc.tour.model.vo.TourList;
 
 @Service
@@ -35,6 +36,10 @@ public class TourListService {
 	
 	public int selectTourListCount(Map<String, Object> map) {
 		return mapper.selectTourListCount(map);
+	}
+	
+	public List<TourImageVO> selectTourImgList(int id){
+		return mapper.selectTourImgList(id);
 	}
 }
 
