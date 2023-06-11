@@ -33,11 +33,11 @@
 				<h1 class="display-7 text-light mt-sm- my-4">
 					서울에서
 					<p>
-						<span style="color: #25af9b;">서울 상담소</span>와 함께!
+						<span style="color: #25af9b;">서울상담소</span>와 함께!
 					</p>
 				</h1>
 				<p class="fs-ms text-white">
-					Find great places to festival, culture, tour, local experts. Plan your trip with <span style="color: #25af9b;">서울 상담소</span>
+					<span style="color: #25af9b;">서울 상담소</span>와 서울 여행을 계획해요. <br/> 축제와 행사, 문화시설, 관광지를 만나보세요!
 				</p>
 			</div>
 			<div class="col-xl-8 col-lg-9 col-md-10 mx-auto px-0"></div>
