@@ -42,11 +42,6 @@ uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 				<c:if test= "${empty fItem.firstimage}">
 					<img src="${path}/resources/img/hotplace/festivalsample.jpeg" alt="Image">
 				</c:if>
-					<c:if test= "${not empty imgfItem}">
-						<c:forEach var="imgfItem" items="${imgfItem}">					
-							<img src="${imgfItem.originimgurl}" alt="Image"> 
-						</c:forEach>
-					</c:if>
 			</div>
 		</div>
 	</div>
