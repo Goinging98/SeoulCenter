@@ -146,15 +146,6 @@
 			<!-- Place card-->
 			<div class="card mb-4 p-2 shadow-sm">
 				<div class="card-body">
-					<!-- Place info-->
-					<div class="d-flex align-items-start mb-3 pb-2 border-bottom">
-					  <div class="ps-2 ms-1">
-					    <h3 class="h5 mb-2">${item.title}</h3>
-					    <ul class="list-unstyled d-flex flex-wrap fs-sm">
-					      <li class="me-2 mb-1 pe-1"><i class="fi-map-pin mt-n1 me-1 align-middle opacity-70"></i>${guAddress}</li>
-					    </ul>
-					  </div>
-					</div>
 					<!-- Place contacts-->
 					<div class="mb-3 pb-3 ">
 					  <h4 class="h5 mb-2">세부정보</h4>
