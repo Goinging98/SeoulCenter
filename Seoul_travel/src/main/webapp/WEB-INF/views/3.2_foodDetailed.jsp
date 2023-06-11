@@ -92,8 +92,7 @@
 						<c:if test="${loginMember != null}">
 							<div class="d-flex flex-sm-row flex-column align-items-sm-center justify-content-between mb-4 pb-4 border-bottom">
 								<a class="btn btn-outline-primary rounded-pill mb-sm-0 mb-3" href="#modal-review" data-bs-toggle="modal">
-									<i	class="fi-edit mt-n1 me-1 align-middle">
-									</i>리뷰 작성하기</a>
+									<i	class="fi-edit mt-n1 me-1 align-middle"></i>리뷰 작성하기</a>
 							</div>
 						</c:if>
 

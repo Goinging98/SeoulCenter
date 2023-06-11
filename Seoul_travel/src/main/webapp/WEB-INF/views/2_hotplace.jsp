@@ -11,8 +11,6 @@
 <head>
 
   <!-- ----------------------------------------------booking 연결파트------------------------------------------ -->
-
-
       <!-- Plugins CSS -->
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/bootstrap-icons/bootstrap-icons.css">
       <link rel="stylesheet" type="text/css" href="${path}/resources/booking/booking_v1.1.0/template/assets/vendor/tiny-slider/tiny-slider.css">
@@ -226,33 +224,19 @@
 									</figure>
 
 									<!-- Image -->
-									<img src="${path}/resources/img/hotplace/human01.jpg"
+									<img src="${path}/resources/img/boardpic/15.jpg"
 										class="rounded-3 position-relative" alt="">
 								</div>
 
 								<div class="col-md-6 col-lg-6">
 									<!-- Quote -->
-									<span class="display-3 mb-0 text-primary"><i
-										class="bi bi-quote"></i></span>
+									<span class="display-3 mb-0 text-primary"><i class="bi bi-quote"></i></span>
 									<!-- Content -->
-									<h5 class="fw-light">밤도깨비야시장 작년에 못가서 이번에 기대하면서 갔는데 역시나였습니다
-										여러분 꼭가세요 한번가세요 두번가세요 맛있는거 완전 많습니다!!</h5>
-									<!-- Rating -->
-									<ul class="list-inline small mb-2">
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item"><i
-											class="fa-solid fa-star-half-alt text-warning"></i></li>
-									</ul>
+									<h5 class="fw-light">지난 주말에 종로거리- 광화문 전체에서 연등회가 진행되었는데요! 연등회의 시작은 약 1200여년 전 신라시대때부터 고려시대, 조선의 관등놀이를 거치면서 현대까지 이어져오는 축제라고 해요. 
+									광화문에서 전통적인 모습의 등이나 불을 뿜어내는 용, 귀여운 캐릭터 느낌의 등도 불 수 있었습니다. 로라는 이번에 본 것 중에 불 뿜어내는 용이 가장 기억에 남는다고 하더라구요! <br/></h5>
 									<!-- Title -->
-									<h6 class="mb-0">홍길동</h6>
-									<span>20대</span>
+									<h6 class="mb-0">김영</h6>
+									<span>연등회 서울축제/핫플 가볼만한곳</span>
 								</div>
 							</div>
 						</div>
@@ -264,23 +248,19 @@
 
 								<div class="col-md-6 col-lg-5 position-relative">
 									<!-- Element -->
-									<div
-										class="position-absolute top-0 start-0 translate-middle mt-7 ms-4 z-index-9">
-										<img src="assets/images/element/03.svg"
-											class="h-60px bg-orange p-2 rounded" alt="">
+									<div class="position-absolute top-0 start-0 translate-middle mt-7 ms-4 z-index-9">
+										<img src="assets/images/element/03.svg" class="h-60px bg-orange p-2 rounded" alt="">
 									</div>
 
 									<!-- Svg decoration -->
-									<figure
-										class="position-absolute bottom-0 end-0 mb-n5 me-n5 d-none d-sm-block">
+									<figure class="position-absolute bottom-0 end-0 mb-n5 me-n5 d-none d-sm-block">
 										<svg width="326px" height="335px" viewBox="0 0 326 335">
 											<path class="fill-primary opacity-1"/>
 										</svg>
 									</figure>
 
 									<!-- Image -->
-									<img src="${path}/resources/img/hotplace/human02.jpg"
-										class="rounded-3 position-relative" alt="">
+									<img src="${path}/resources/img/boardpic/16.jpg" class="rounded-3 position-relative" alt="">
 								</div>
 
 								<div class="col-md-6 col-lg-6">
@@ -288,24 +268,13 @@
 									<span class="display-3 mb-0 text-primary"><i
 										class="bi bi-quote"></i></span>
 									<!-- Content -->
-									<h5 class="fw-light">밤도깨비야시장 작년에 못가서 이번에 기대하면서 갔는데 역시나였습니다
-										여러분 꼭가세요 한번가세요 두번가세요 맛있는거 완전 많습니다!!</h5>
+									<h5 class="fw-light">서울에 장미축제가 있었어? 나는 왜 이제안거지.. 5월에만 볼 수 있는 서울 축제 지금 바로 레쯔고우! 지역은 중랑장미공원인데요 지하철로 태릉입구역에 내리서 다리만 건너면 딱! 여기에 도착을 합니다.</h5>
 									<!-- Rating -->
 									<ul class="list-inline small mb-2">
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item me-0"><i
-											class="fa-solid fa-star text-warning"></i></li>
-										<li class="list-inline-item"><i
-											class="fa-solid fa-star text-warning"></i></li>
 									</ul>
 									<!-- Title -->
-									<h6 class="mb-0">김길동</h6>
-									<span>20대</span>
+									<h6 class="mb-0">임정</h6>
+									<span>서울장미 축제 실시간 현황</span>
 								</div>
 							</div>
 						</div>
