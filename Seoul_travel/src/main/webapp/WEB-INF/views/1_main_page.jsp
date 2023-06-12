@@ -254,7 +254,7 @@
 			
 			<!-- Item-->
             <article>
-                <a class="d-block mb-3" href="/mvc/board/view?no=16">
+                <a class="d-block mb-3" href="/mvc/board/view?no=26">
                     <img class="rounded-3" style="background-image: url('${path}/resources/img/boardpic/13.jpg'); 
                      padding-bottom: 208px; padding-right: 400px; max-width: 25em; max-height: 13em; Background-size : cover; background-position: center;" alt="Post image"></a><a
                     class="fs-xs text-uppercase text-decoration-none" href="/mvc/community/hotplace">핫플레이스</a>
